@@ -15,5 +15,8 @@
 	"bugs": {
 		"url": "https://github.com/igorskyflyer/igorskyflyer.github.io/issues"
 	},
-	"homepage": "https://github.com/igorskyflyer/igorskyflyer.github.io#readme"
+	"homepage": "https://github.com/igorskyflyer/igorskyflyer.github.io#readme",
+	"devDependencies": {
+		"astro": "^1.1.6"
+	}
 }
