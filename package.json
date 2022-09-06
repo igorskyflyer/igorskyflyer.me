@@ -4,7 +4,10 @@
 	"description": "🧠 The place where I like to express myself. 🦑",
 	"scripts": {
 		"dev": "astro dev",
-		"build": "astro build"
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro"
 	},
 	"repository": {
 		"type": "git",
