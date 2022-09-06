@@ -3,7 +3,8 @@
 	"version": "1.0.0",
 	"description": "🧠 The place where I like to express myself. 🦑",
 	"scripts": {
-		"test": ""
+		"dev": "astro dev",
+		"build": "astro build"
 	},
 	"repository": {
 		"type": "git",
