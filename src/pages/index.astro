@@ -11,12 +11,15 @@ posts = posts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new
 ---
 
 <!DOCTYPE html>
-<html style="background: #171424; color: #FFF;">
+<html>
   <BaseHead {title} {description} />
   <body>
     <main>
       <h1>🧠 The place where I like to express myself. 🦑</h1>
-      {posts.map((post) => <BlogPostPreview {post} />)}
+      {posts.map((post) => (
+					<BlogPostPreview {post} />
+					<br>
+				))}
     </main>
   </body>
 </html>
