@@ -1,27 +1,22 @@
 ---
-const posts = await Astro.glob('./post/*.md')
+import BaseHead from '../components/BaseHead.astro'
+import BlogPostPreview from '../components/BlogPostPreview.astro'
+
+const title = 'My world'
+const description = 'My own blog'
+
+let posts = await Astro.glob('./post/*.md')
+// sort the posts
+posts = posts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf())
 ---
 
 <!DOCTYPE html>
 <html style="background: #171424; color: #FFF;">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Blog</title>
-  </head>
+  <BaseHead {title} {description} />
   <body>
     <main>
       <h1>🧠 The place where I like to express myself. 🦑</h1>
-
-      <ul>
-        {
-          posts.map((post) => (
-            <li>
-              <a href={post.url}>{post.Content}</a>
-            </li>
-          ))
-        }
-      </ul>
+      {posts.map((post) => <BlogPostPreview {post} />)}
     </main>
   </body>
 </html>
