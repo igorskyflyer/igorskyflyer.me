@@ -1,0 +1,19 @@
+{
+	"name": "igorskyflyer.github.io",
+	"version": "1.0.0",
+	"description": "🧠 The place where I like to express myself. 🦑",
+	"scripts": {
+		"test": ""
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/igorskyflyer/igorskyflyer.github.io.git"
+	},
+	"keywords": [],
+	"author": "Igor Dimitrijević <igor.dvlpr@gmail.com> (https://github.com/igorskyflyer)",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/igorskyflyer/igorskyflyer.github.io/issues"
+	},
+	"homepage": "https://github.com/igorskyflyer/igorskyflyer.github.io#readme"
+}
