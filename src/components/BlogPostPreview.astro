@@ -2,4 +2,11 @@
 const { post } = Astro.props
 ---
 
-<a href={post.url}>{post.frontmatter.title}</a>
+<article>
+  <h3>{post.frontmatter.title}</h3>
+  <sub>{post.frontmatter.minutesRead}</sub>
+  <br />
+  <span>Post content</span>
+  <br />
+  <a href={post.url}>read more</a>
+</article>
