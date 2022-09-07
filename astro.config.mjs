@@ -1,6 +1,5 @@
 import { defineConfig } from 'astro/config'
-import { readingTime } from './src/js/reading-time'
-readingTime
+import { readingTime } from './src/functions/reading-time'
 
 // https://astro.build/config
 export default defineConfig({
