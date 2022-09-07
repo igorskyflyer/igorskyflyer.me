@@ -1,13 +1,9 @@
 ---
-import BaseHead from '../components/BaseHead.astro'
+import Page from '../components/Page.astro'
 
-const { content } = Astro.props
-const { title } = content
+const { content, description, title } = Astro.props
 ---
 
-<html lang="en">
-  <BaseHead {title} />
-  <body>
-    <slot />
-  </body>
-</html>
+<Page {title} {description}>
+  <slot />
+</Page>
