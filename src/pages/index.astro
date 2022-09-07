@@ -1,25 +1,20 @@
 ---
-import BaseHead from '../components/BaseHead.astro'
-import BlogPostPreview from '../components/BlogPostPreview.astro'
-
-const title = 'My world'
-const description = 'My own blog'
+import Page from '../components/Page.astro';
+import BlogPostPreview from '../components/BlogPostPreview.astro';
 
 let posts = await Astro.glob('./post/*.md')
 // sort the posts
 posts = posts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf())
+
+const title = 'My world'
+const description = 'My own blog'
 ---
 
-<!DOCTYPE html>
-<html>
-  <BaseHead {title} {description} />
-  <body>
-    <main>
-      <h1>🧠 The place where I like to express myself. 🦑</h1>
-      {posts.map((post) => (
-					<BlogPostPreview {post} />
-					<br>
-				))}
-    </main>
-  </body>
-</html>
+<Page {title} {description}>
+<h1>🧠 The place where I like to express myself. 🦑</h1>
+
+{posts.map((post) => (
+		<BlogPostPreview {post} />
+		<br>
+	))}
+	</Page>
