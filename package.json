@@ -2,6 +2,7 @@
 	"name": "igorskyflyer.github.io",
 	"version": "1.0.0",
 	"description": "🧠 The place where I like to express myself. 🦑",
+	"private": true,
 	"scripts": {
 		"dev": "astro dev",
 		"start": "astro dev",
@@ -21,6 +22,8 @@
 	},
 	"homepage": "https://github.com/igorskyflyer/igorskyflyer.github.io#readme",
 	"devDependencies": {
-		"astro": "^1.1.6"
+		"astro": "^1.1.6",
+		"mdast-util-to-string": "^3.1.0",
+		"reading-time": "^1.5.0"
 	}
 }
