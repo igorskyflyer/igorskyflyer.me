@@ -1,12 +1,8 @@
 ---
+import type { PageProps } from './interfaces/PageProps'
 import '../css/global.css'
-export interface PageProps {
-  title: string
-  description: string
-  featuredImage: string
-}
 
-let { title, description, featuredImage } = Astro.props
+let { title, description, featuredImage } = Astro.props as PageProps
 
 featuredImage = featuredImage || ''
 ---
