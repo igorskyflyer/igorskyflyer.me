@@ -92,5 +92,5 @@ nav {
 }
 
 #menu-toggle:checked ~ #menu {
-  height: 70vh;
+  height: 100vh;
 }
