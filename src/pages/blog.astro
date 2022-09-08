@@ -7,8 +7,8 @@ const description = 'My own blog'
 const posts = await Astro.glob('./blog/*.md')
 ---
 
-<Page {title} {description}>
-  <h3 style="margin-top: 0; text-align: center">🧠 The place where I like to express myself 🦑</h3>
+<Page title={title} description={description}>
+  <h3 style="margin-top: 0; text-align: center">All posts</h3>
   <br />
   <PostsDisplay {posts} />
 </Page>
