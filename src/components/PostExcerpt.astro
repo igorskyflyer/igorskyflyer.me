@@ -5,18 +5,17 @@ interface PostProps {
   title: string
   minutesRead: string
   description: string
+  publishDate: string
 }
 
-const { title, minutesRead, description } = post.frontmatter as PostProps
+const { title, minutesRead, description, publishDate } = post.frontmatter as PostProps
 ---
 
 <article>
-  <a href={post.url}><h3>{title}</h3></a>
-  <sub>{minutesRead}</sub>
-  <br />
-  <br />
-  <span>{description}</span>
-  <br />
-  <br />
-  <a href={post.url}>read more 👈🏼</a>
+  <a href={post.url} class="post-link"><h3>{title}</h3></a>
+  <div class="post-info">
+    <span>{publishDate}</span>
+    <span>{minutesRead}</span>
+  </div>
+  <p class="post-description">{description}</p>
 </article>
