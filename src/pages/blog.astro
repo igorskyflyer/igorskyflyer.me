@@ -8,7 +8,9 @@ const posts = await Astro.glob('./blog/*.md')
 ---
 
 <Page title={title} description={description}>
-  <h2 style="margin-top: 0; text-align: center">All posts</h2>
-  <br />
-  <PostsDisplay {posts} />
+  <section id="posts">
+    <h2 style="margin-top: 0; text-align: center">All posts</h2>
+    <br />
+    <PostsDisplay {posts} />
+  </section>
 </Page>
