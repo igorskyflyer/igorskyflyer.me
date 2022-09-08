@@ -1,6 +1,5 @@
 ---
 import type { PageProps } from './interfaces/PageProps'
-import '../css/global.css'
 
 let { title, description, featuredImage } = Astro.props as PageProps
 
@@ -27,6 +26,7 @@ featuredImage = featuredImage || ''
   <meta property="twitter:image" content={featuredImage} />
 
   <link rel="icon" href="/favicon.svg" />
+  <link rel="stylesheet" href="/styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
 
   <title>{title}</title>
