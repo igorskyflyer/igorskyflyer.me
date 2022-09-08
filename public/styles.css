@@ -22,6 +22,10 @@ body {
   background: var(--main-bg);
 }
 
+main {
+  padding: 2rem;
+}
+
 article {
   margin-bottom: 1rem;
 }
