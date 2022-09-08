@@ -1,5 +1,5 @@
 :root {
-  --main-bg: #1a0921;
+  --main-bg: #221254;
   --main-text: #fff;
   --border-radius: 6px;
 }
@@ -12,7 +12,7 @@ body {
   color: var(--main-text);
   /* dev: remove after */
   min-height: 100vh;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
@@ -26,17 +26,20 @@ main {
   padding: 2rem;
 }
 
-article {
-  margin-bottom: 1rem;
+.post-link {
+  color: rgb(17, 188, 226);
 }
 
-article h3 {
-  margin: 0;
-}
-
-article a {
+.post-more {
+  display: inline-block;
+  padding: 0.3rem 0.3rem 0.3rem 0;
   color: var(--main-text);
-  text-decoration: none;
+  opacity: 0.6;
+  transition: opacity ease-out 0.3s;
+}
+
+.post-more:hover {
+  opacity: 1;
 }
 
 header {
@@ -56,7 +59,7 @@ nav {
   overflow: hidden;
   margin: 0;
   list-style-type: none;
-  transition: all ease-in 0.4s;
+  transition: all ease-in 0.25s;
 }
 
 #menu li {
@@ -108,6 +111,29 @@ nav {
   padding: 1rem 0 0 0;
 }
 
+.post-info {
+  display: flex;
+  flex-direction: column;
+  color: #9e9ece;
+  font-size: 0.7rem;
+}
+
+.post-description {
+  margin: 1.5rem 0 0 0;
+}
+
+#posts article {
+  margin-bottom: 3rem;
+}
+
+#posts article a {
+  text-decoration: none;
+}
+
+#posts article h3 {
+  margin: 0 0 0.5rem 0;
+}
+
 @media screen and (min-width: 600px) {
   header {
     margin-bottom: 2rem;
@@ -131,5 +157,15 @@ nav {
     padding: 0.5rem 0.8rem;
     font-size: 1rem;
     text-align: center;
+  }
+
+  #posts {
+    margin: auto;
+    width: 70%;
+  }
+
+  .post-info {
+    flex-direction: row;
+    justify-content: space-between;
   }
 }
