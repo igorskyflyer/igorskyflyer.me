@@ -1,15 +1,17 @@
 ---
-import BaseHead from '../components/BaseHead.astro'
+import PageHead from '../components/PageHead.astro'
 import Footer from '../components/Footer.astro'
 import type { PageProps } from '../components/interfaces/PageProps'
+import Header from './Header.astro'
 
 const { title, description, featuredImage } = Astro.props as PageProps
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-  <BaseHead title={title} description={description} featuredImage={featuredImage} />
+  <PageHead title={title} description={description} featuredImage={featuredImage} />
   <body>
+    <Header />
     <slot />
     <Footer />
   </body>
