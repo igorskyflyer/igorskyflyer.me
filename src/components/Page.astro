@@ -13,7 +13,9 @@ const { title, description, featuredImage } = Astro.props as PageProps
   <PageHead title={title} description={description} featuredImage={featuredImage} />
   <body>
     <PageHeader />
-    <slot />
+    <main>
+      <slot />
+    </main>
     <PageFooter />
   </body>
 </html>
