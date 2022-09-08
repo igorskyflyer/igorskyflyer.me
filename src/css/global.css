@@ -6,24 +6,34 @@ body {
   color: #fff;
   /* dev: remove after */
   min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
 }
 
 body {
-  width: 88%;
+  width: 96%;
   margin: 0 auto;
   padding: 2%;
   background: #0f0d17;
 }
 
 article {
-	margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 article h3 {
-	margin: 0;
+  margin: 0;
 }
 
 article a {
+  color: #fff;
+  text-decoration: none;
+}
+
+#menu {
+  list-style-type: none;
+}
+
+#menu a {
   color: #fff;
   text-decoration: none;
 }
