@@ -1,5 +1,5 @@
 ---
-import PostPreview from '../components/PostPreview.astro';
+import PostExcerpt from '../components/PostExcerpt.astro';
 import { sortPosts } from '../functions/posts.js';
 
 let { posts } = Astro.props
@@ -9,7 +9,7 @@ posts = sortPosts(posts)
 
 {
 posts.map((post) => (
-	<PostPreview {post} />
+	<PostExcerpt {post} />
 	<br>
 ))
 }
