@@ -1,20 +1,29 @@
 html,
 body {
-	padding: 0;
-	margin: 0;
+  padding: 0;
+  margin: 0;
   background: #171424;
   color: #fff;
-	/* dev: remove after */
-	min-height: 100vh;
+  /* dev: remove after */
+  min-height: 100vh;
 }
 
 body {
-	width: 88%;
-	margin: 0 auto;
-	padding: 2%;
+  width: 88%;
+  margin: 0 auto;
+  padding: 2%;
   background: #0f0d17;
 }
 
-a {
+article {
+	margin-bottom: 1rem;
+}
+
+article h3 {
+	margin: 0;
+}
+
+article a {
   color: #fff;
+  text-decoration: none;
 }
