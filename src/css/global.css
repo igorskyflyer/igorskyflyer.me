@@ -102,3 +102,25 @@ nav {
   height: 80vh;
   padding: 1rem 0 0 0;
 }
+
+@media screen and (min-width: 400px) {
+  #hamburger-icon {
+    display: none;
+  }
+
+  #menu {
+    flex-direction: row;
+    justify-content: flex-end;
+    height: auto;
+  }
+
+  #menu li {
+    width: auto;
+  }
+
+  #menu a {
+    padding: 0.5rem 0.8rem;
+    font-size: 1rem;
+    text-align: center;
+  }
+}
