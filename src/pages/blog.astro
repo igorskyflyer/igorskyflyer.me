@@ -1,0 +1,14 @@
+---
+import Page from '../components/Page.astro'
+import PostsDisplay from '../components/PostsDisplay.astro'
+
+const title = 'My world'
+const description = 'My own blog'
+const posts = await Astro.glob('./blog/*.md')
+---
+
+<Page {title} {description}>
+  <h3 style="margin-top: 0; text-align: center">🧠 The place where I like to express myself 🦑</h3>
+  <br />
+  <PostsDisplay {posts} />
+</Page>
