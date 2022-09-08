@@ -1,9 +1,11 @@
 ---
 import Page from '../components/Page.astro'
+import type { PageProps } from '../components/interfaces/PageProps'
 
-const { content, description, title } = Astro.props
+const { frontmatter } = Astro.props
+const { title, description, featuredImage } = frontmatter as PageProps
 ---
 
-<Page {title} {description}>
+<Page title={title} description={description} featuredImage={featuredImage}>
   <slot />
 </Page>
