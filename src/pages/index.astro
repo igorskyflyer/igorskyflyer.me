@@ -1,17 +1,18 @@
 ---
 import Page from '../components/Page.astro';
 import BlogPostPreview from '../components/BlogPostPreview.astro';
+import { sortPosts } from '../functions/posts.js';
 
 let posts = await Astro.glob('./post/*.md')
 // sort the posts
-posts = posts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf())
+posts = sortPosts(posts)
 
 const title = 'My world'
 const description = 'My own blog'
 ---
 
 <Page {title} {description}>
-<h1>🧠 The place where I like to express myself. 🦑</h1>
+<h1 style="margin-top: 0">🧠 The place where I like to express myself. 🦑</h1>
 
 {posts.map((post) => (
 		<BlogPostPreview {post} />
