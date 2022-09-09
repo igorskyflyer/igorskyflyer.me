@@ -63,7 +63,7 @@ nav {
 
 #menu {
   display: flex;
-  justify-content: space-around;
+  justify-content: end;
   flex-direction: column-reverse;
   height: 0;
   overflow: hidden;
@@ -124,7 +124,7 @@ nav {
 }
 
 #menu-toggle:checked ~ #menu {
-  height: min(80vh, 400px);
+  height: 80vh;
   padding: 0;
 }
 
