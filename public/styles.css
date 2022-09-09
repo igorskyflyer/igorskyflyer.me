@@ -68,6 +68,7 @@ nav {
   height: 0;
   overflow: hidden;
   margin: 0;
+  z-index: 2;
   background: rgba(0, 0, 0, .6);
   list-style-type: none;
   transition: all ease-in 0.25s;
@@ -79,7 +80,7 @@ nav {
 
 #menu a {
   display: block;
-  padding: 0.7rem 0.4rem;
+  padding: 0.7rem;
   font-size: 1.4rem;
   color: var(--main-text);
   text-decoration: none;
@@ -88,7 +89,7 @@ nav {
 }
 
 #menu a:hover {
-  background: rgba(255, 255, 255, 0.08);
+ background: rgba(164,152,200,.5);
 }
 
 #hamburger-icon {
@@ -101,6 +102,7 @@ nav {
   font-size: 1.5rem;
   */
   padding: 0.25rem;
+  z-index: 2;
   width: 3rem;
   cursor: pointer;
   font-size: 2.2rem;
