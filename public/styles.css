@@ -124,8 +124,8 @@ nav {
 }
 
 #menu-toggle:checked ~ #menu {
-  height: 80vh;
-  padding: 1rem 0 0 0;
+  height: min(80vh, 400px);
+  padding: 0;
 }
 
 .post-info {
