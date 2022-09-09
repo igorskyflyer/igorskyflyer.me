@@ -150,11 +150,9 @@ nav {
 }
 
 #posts article a {
-  text-decoration: none;
-}
-
-#posts article h3 {
+  display: block;
   margin: 0 0 0.5rem 0;
+  text-decoration: none;
 }
 
 #menu-blur {
