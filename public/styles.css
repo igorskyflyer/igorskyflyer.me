@@ -69,7 +69,6 @@ nav {
   overflow: hidden;
   margin: 0;
   z-index: 2;
-  background: rgba(0, 0, 0, .6);
   list-style-type: none;
   transition: all ease-in 0.25s;
 }
@@ -123,6 +122,10 @@ nav {
 
 #menu-toggle:checked + #hamburger-icon {
   transform: rotate(90deg);
+}
+
+#menu-toggle:checked + #menu-blur {
+  display: block;
 }
 
 #menu-toggle:checked ~ #menu {
