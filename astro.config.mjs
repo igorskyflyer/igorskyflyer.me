@@ -8,7 +8,6 @@ export default defineConfig({
     extendDefaultPlugins: true,
     remarkPlugins: [readingTime],
     shikiConfig: {
-      theme: 'dark-plus',
       wrap: true,
     },
   },
