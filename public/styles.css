@@ -111,6 +111,8 @@ nav {
   text-align: center;
   border-radius: 50%;
   user-select: none;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
   opacity: 0.5;
   transition: all ease-in 0.4s;
 }
