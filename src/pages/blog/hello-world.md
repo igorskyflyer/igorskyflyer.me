@@ -5,8 +5,6 @@ publishDate: 08-09-2022 02:45
 description: My first post
 ---
 
-# Hello world
-
 My first post.
 
 <br>
