@@ -12,7 +12,7 @@ const { title, minutesRead, description, publishDate } = post.frontmatter as Pos
 ---
 
 <article>
-  <a href={post.url} class="post-link"><h3>{title}</h3></a>
+  <a href={post.url} class="post-link">{title}</a>
   <div class="post-info">
     <span>{publishDate}</span>
     <span>{minutesRead}</span>
