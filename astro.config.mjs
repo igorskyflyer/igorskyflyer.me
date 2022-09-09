@@ -8,8 +8,7 @@ export default defineConfig({
     extendDefaultPlugins: true,
     remarkPlugins: [readingTime],
     shikiConfig: {
-      theme: 'github-dark-dimmed',
-      langs: [],
+      theme: 'dark-plus',
       wrap: true,
     },
   },
