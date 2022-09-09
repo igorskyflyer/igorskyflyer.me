@@ -125,7 +125,7 @@ nav {
 }
 
 #menu-toggle:checked ~ #menu-blur {
-  display: block;
+  top: 0;
 }
 
 #menu-toggle:checked ~ #menu {
@@ -158,13 +158,13 @@ nav {
 }
 
 #menu-blur {
-  display: none;
   position: fixed;
   left: 0;
   right: 0;
-  top: 0;
+  top: 100%;
   bottom: 0;
   background: rgba(0,0,0,0.5);
+  transition: all ease-in 0.3s;
 }
 
 @media screen and (min-width: 600px) {
