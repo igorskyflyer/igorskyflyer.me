@@ -1,4 +1,6 @@
 ---
+import { Markdown } from 'astro/components';
+
 const { post } = Astro.props
 
 interface PostProps {
@@ -17,5 +19,5 @@ const { title, minutesRead, description, publishDate } = post.frontmatter as Pos
     <span>{publishDate}</span>
     <span>{minutesRead}</span>
   </div>
-  <p class="post-description">{description}</p>
+  <p class="post-description"><Markdown>{post.rawContent()}</Markdown>/p>
 </article>
