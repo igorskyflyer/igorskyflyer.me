@@ -1,5 +1,10 @@
 ---
-import { Markdown } from 'astro/components';
+import { MarkdownInstance } from 'astro'
+import Excerpt from './Excerpt.astro'
+
+export interface Props {
+  post: MarkdownInstance<Record<string, any>>
+}
 
 const { post } = Astro.props
 
@@ -19,5 +24,7 @@ const { title, minutesRead, description, publishDate } = post.frontmatter as Pos
     <span>{publishDate}</span>
     <span>{minutesRead}</span>
   </div>
-  <p class="post-description"><Markdown>{post.rawContent()}</Markdown>/p>
+  <p class="post-description">
+    <Excerpt post={post} words={50} maxLength={0} />
+  </p>
 </article>
