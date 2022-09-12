@@ -8,7 +8,7 @@ const { title, description, featuredImage } = frontmatter as PageProps
 
 <Page title={title} description={description} featuredImage={featuredImage}>
   <h1>{title}</h1>
-  <article>
-   <slot />
+  <article class="post">
+    <slot />
   </article>
 </Page>
