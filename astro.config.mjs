@@ -4,6 +4,11 @@ import { readingTime } from './src/functions/reading-time'
 // https://astro.build/config
 export default defineConfig({
   site: 'https://igorskyflyer.github.io',
+  vite: {
+    ssr: {
+      noExternal: ['astro', '@igor.dvlpr/astro-post-excerpt'],
+    },
+  },
   markdown: {
     extendDefaultPlugins: true,
     remarkPlugins: [readingTime],
