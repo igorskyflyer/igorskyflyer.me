@@ -8,6 +8,10 @@ export interface Props {
 
 const { post } = Astro.props
 
+if (typeof post == 'undefined') {
+  throw new TypeError('No required post prop.')
+}
+
 interface PostProps {
   title: string
   minutesRead: string
