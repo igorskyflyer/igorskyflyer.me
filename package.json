@@ -1,6 +1,6 @@
 {
 	"name": "igorskyflyer.github.io",
-	"version": "1.0.0",
+	"version": "1.0.0-beta",
 	"description": "🧠 The place where I like to express myself. 🦑",
 	"private": true,
 	"scripts": {
@@ -22,7 +22,7 @@
 	},
 	"homepage": "https://github.com/igorskyflyer/igorskyflyer.github.io#readme",
 	"devDependencies": {
-		"@igor.dvlpr/astro-post-excerpt": "^1.0.0",
+		"@igor.dvlpr/astro-post-excerpt": "^1.0.2",
 		"astro": "^1.1.6",
 		"mdast-util-to-string": "^3.1.0",
 		"reading-time": "^1.5.0"
