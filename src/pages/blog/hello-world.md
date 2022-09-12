@@ -1,5 +1,5 @@
 ---
-title: Hello world
+title: Hello world 👋🏼
 layout: ../../layouts/post.astro
 publishDate: 08-09-2022 02:45
 ---
