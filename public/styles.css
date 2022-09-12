@@ -186,6 +186,7 @@ nav {
     right: auto;
     left: auto;
     bottom: auto;
+    margin-top: 0.5rem;
   }
 
   #hamburger-icon {
