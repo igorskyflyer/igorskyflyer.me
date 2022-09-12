@@ -2,7 +2,6 @@
 title: Hello world
 layout: ../../layouts/post.astro
 publishDate: 08-09-2022 02:45
-description: My first post
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sollicitudin enim tellus, id sollicitudin nibh viverra iaculis. Phasellus ligula tellus, efficitur at ligula sed, semper aliquet risus. In dictum lectus a dui laoreet vulputate. Vestibulum at ullamcorper quam. Praesent mollis neque id tellus tempus, eu scelerisque nibh efficitur. In luctus urna sit amet venenatis placerat. Duis ut magna nibh. Sed quis diam diam. Nulla vitae velit ante.
