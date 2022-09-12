@@ -4,9 +4,11 @@ import type { PageProps } from '../components/interfaces/PageProps'
 
 const { frontmatter } = Astro.props
 const { title, description, featuredImage } = frontmatter as PageProps
+
+const pageTitle = `${title} | Blog &ndash; Igor Dimitrijević`
 ---
 
-<Page title={title} description={description} featuredImage={featuredImage}>
+<Page title={pageTitle} description={description} featuredImage={featuredImage}>
   <h1>{title}</h1>
   <article class="post">
     <slot />
