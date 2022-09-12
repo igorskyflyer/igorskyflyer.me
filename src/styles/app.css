@@ -158,13 +158,16 @@ nav {
 
 #posts article {
   margin-bottom: 3rem;
-  color: #d4d4ff;
 }
 
 #posts article a {
   display: block;
   margin: 0 0 0.5rem 0;
   text-decoration: none;
+}
+
+.post {
+  color: #d4d4ff;
 }
 
 #menu-blur {
