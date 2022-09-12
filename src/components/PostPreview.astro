@@ -1,0 +1,29 @@
+---
+import { MarkdownInstance } from 'astro'
+import PostExcerpt from '@igor.dvlpr/astro-post-excerpt'
+
+export interface Props {
+  post: MarkdownInstance<Record<string, any>>
+}
+
+const { post } = Astro.props
+
+interface PostProps {
+  title: string
+  minutesRead: string
+  publishDate: string
+}
+
+const { title, minutesRead, publishDate } = post.frontmatter as PostProps
+---
+
+<article>
+  <a href={post.url} class="post-link">{title}</a>
+  <div class="post-info">
+    <span>{publishDate}</span>
+    <span>{minutesRead}</span>
+  </div>
+  <p class="post-description">
+    <PostExcerpt post={post} words={30} addEllipsis={true} />
+  </p>
+</article>
