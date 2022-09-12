@@ -14,14 +14,17 @@
     U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+html {
+  /* dev: remove after */
+  min-height: 98vh;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
   background: var(--main-bg);
   color: var(--main-text);
-  /* dev: remove after */
-  min-height: 98vh;
   font-family: 'Poppins', sans-serif;
 }
 
