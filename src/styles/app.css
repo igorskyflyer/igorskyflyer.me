@@ -192,6 +192,10 @@ nav {
  font-size: 1.8rem;
 }
 
+.post--inner {
+  padding: 1rem;
+}
+
 .post--meta {
  display: flex;
  justify-content: space-between;
