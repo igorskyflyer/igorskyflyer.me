@@ -37,6 +37,7 @@ body a, body a:visited {
 pre {
  padding: 1rem;
  border-radius: var(--border-radius);
+ background: #151618;
  box-shadow: 0 0 18px inset #000;
  text-align: left;
 }
