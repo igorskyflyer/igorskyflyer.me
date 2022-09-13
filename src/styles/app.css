@@ -197,12 +197,11 @@ nav {
 
 #post--all-posts {
   margin-left: -0.5rem;
-  font-size: 1.4rem;
+  font-size: 1.25rem;
 }
 
 #post--all-posts:before {
-  content: '\2039\20';
-  font-size: 1.8rem;
+  content: '\02770\20';
 }
 
 .post--inner {
