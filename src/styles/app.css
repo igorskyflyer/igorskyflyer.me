@@ -36,12 +36,17 @@ body a, body a:visited {
 }
 
 :not(pre) > code, pre {
- border-radius: var(--border-radius);
  background: #151618 !important;
  box-shadow: 0 0 18px inset #000;
 }
 
+:not(pre) > code {
+ padding: .3rem;
+ border-radius: 4px;
+}
+
 pre {
+ border-radius: var(--border-radius);
  padding: 1rem;
  text-align: left;
 }
