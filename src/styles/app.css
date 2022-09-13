@@ -35,6 +35,8 @@ body a, body a:visited {
 }
 
 pre {
+ padding: 1rem;
+ border-radius: var(--border-radius);
  text-align: left;
 }
 
