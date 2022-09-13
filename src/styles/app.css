@@ -54,7 +54,7 @@ main {
   padding: 0.3rem 0.3rem 0.3rem 0;
   color: var(--main-text);
   opacity: 0.6;
-  transition: opacity ease-out 0.3s;
+  transition: opacity ease-out 0.15s;
 }
 
 .post-more:hover {
@@ -89,7 +89,7 @@ nav {
   margin: 0 0 1.2rem 0;
   z-index: 2;
   list-style-type: none;
-  transition: all ease-in 0.25s;
+  transition: height ease-in 0.15s;
 }
 
 #menu li {
@@ -103,7 +103,7 @@ nav {
   color: var(--main-text);
   text-decoration: none;
   border-radius: var(--border-radius);
-  transition: all ease-out 0.3s;
+  transition: background ease-out 0.3s;
 }
 
 #menu a:hover {
@@ -125,7 +125,7 @@ nav {
   margin-right: 0.8rem;
   margin-bottom: 0.8rem;
   opacity: 0.5;
-  transition: all ease-in 0.2s;
+  transition: transform ease-in 0.2s;
 }
 
 #hamburger-icon:hover {
@@ -184,7 +184,7 @@ nav {
   top: 100%;
   bottom: 0;
   background: linear-gradient(310deg, #000, rgba(34, 18, 84, 0.5));
-  transition: all ease-in 0.3s;
+  transition: top ease-in 0.15s;
 }
 
 @media screen and (min-width: 600px) {
