@@ -19,6 +19,7 @@ body {
   /* dev: remove after */
   min-height: 98vh;
   scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html,
@@ -139,7 +140,7 @@ nav {
   user-select: none;
   margin-right: 0.8rem;
   margin-bottom: 0.8rem;
-  border: 1px solid rgba(255, 255, 255, 0);
+  border: 2px solid rgba(255, 255, 255, 0);
   transition: transform ease-in 0.2s, background ease-out 0.2s, border linear 0.2s;
 }
 
