@@ -1,6 +1,7 @@
 ---
 import { MarkdownInstance } from 'astro'
 import PostExcerpt from '@igor.dvlpr/astro-post-excerpt'
+import { postDate } from '../functions/posts'
 
 export interface Props {
   post: MarkdownInstance<Record<string, any>>
@@ -19,12 +20,14 @@ interface PostProps {
 }
 
 const { title, minutesRead, publishDate } = post.frontmatter as PostProps
+
+const postPublishedDate = postDate(publishDate)
 ---
 
 <article>
   <a href={post.url} class="post-link">{title}</a>
   <div class="post-info">
-    <span>{publishDate}</span>
+    <span>{postPublishedDate}</span>
     <span>{minutesRead}</span>
   </div>
   <p class="post-description">
