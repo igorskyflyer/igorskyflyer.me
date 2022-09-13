@@ -65,8 +65,6 @@ header {
 nav {
   text-align: right;
   overflow: hidden;
-
-  /* test */
   position: fixed;
   right: 0;
   left: 0;
@@ -180,13 +178,13 @@ nav {
 }
 
 #post--all-posts {
- margin-left: -1rem;
+ margin-left: -0.5rem;
  font-size: 1.4rem;
 }
 
 #post--all-posts:before {
  content: '\2039\20';
- font-size: 1.5rem;
+ font-size: 1.8rem;
 }
 
 footer {
