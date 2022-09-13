@@ -193,6 +193,11 @@ nav {
  font-size: 1.8rem;
 }
 
+.post--meta {
+ display: flex;
+ justify-content: space-between;
+}
+
 footer {
  padding: 2rem 0.5rem;
  background: #160c34;
