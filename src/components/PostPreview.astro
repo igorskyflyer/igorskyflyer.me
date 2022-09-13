@@ -19,7 +19,7 @@ interface PostProps {
   publishDate: string
 }
 
-const { title, minutesRead, publishDate } = post.frontmatter as PostProps
+const { title = '', minutesRead = '', publishDate = '' } = post.frontmatter as PostProps
 
 const postPublishedDate = postDate(publishDate)
 ---
