@@ -35,6 +35,10 @@ body {
   background: var(--main-bg);
 }
 
+body a, body a:visited {
+ color: #11bce;
+}
+
 main {
   padding: 2rem;
 }
