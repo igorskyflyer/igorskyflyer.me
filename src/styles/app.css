@@ -107,7 +107,7 @@ nav {
 }
 
 #menu a:hover {
-  background: rgba(164, 152, 200, 0.5);
+  background: rgba(164, 152, 200, 0.65);
 }
 
 #hamburger-icon {
@@ -125,7 +125,7 @@ nav {
   margin-right: 0.8rem;
   margin-bottom: 0.8rem;
   opacity: 0.5;
-  transition: transform ease-in 0.2s;
+  transition: transform ease-in 0.2s, background ease-out 0.2s;
 }
 
 #hamburger-icon:hover {
