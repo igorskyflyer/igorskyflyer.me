@@ -7,5 +7,5 @@ export function sortPosts(posts: MarkdownInstance<Record<string, any>>[]) {
 export function postDate(date: string) {
  const postDate = Date.parse(date)
  const days = [ 'SUN', 'MON', 'TUE', 'WED', 'THU', 'SAT' ]
- return `${days[postDate.getDay()}`
+ return `${days[postDate.getDay()]} ${date}`
 }
