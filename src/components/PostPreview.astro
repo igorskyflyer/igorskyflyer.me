@@ -28,8 +28,10 @@ const postPublishedDate = postDate(publishDate)
   <a href={post.url} class="post-link">{title}</a>
   <div class="post-info">
     <span>by <a href="/igorskyflyer/">igorskyflyer</a></span>
-    <span>{postPublishedDate}</span>
-    <span>{minutesRead}</span>
+    <div class="post--meta">
+      <span>{postPublishedDate}</span>
+      <span>{minutesRead}</span>
+    </div>
   </div>
   <p class="post-description">
     <PostExcerpt post={post} words={30} addEllipsis={true} />
