@@ -189,7 +189,8 @@ nav {
 }
 
 #post--all-posts {
- margin-left: -1rem;
+ margin-left: -1.5rem;
+ font-size: 1.4rem;
 }
 
 #post--all-posts:before {
