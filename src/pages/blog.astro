@@ -5,11 +5,13 @@ import PostsDisplay from '../components/PostsDisplay.astro'
 const title = 'Blog | Igor Dimitrijević'
 const description = 'My own blog'
 const posts = await Astro.glob('./blog/*.md')
+const postsCount = posts.length
 ---
 
 <Page title={title} description={description}>
   <section id="posts">
-    <h2 style="margin-top: 0; text-align: center">All posts</h2>
+    <h2 style="margin-top: 0; text-align: center">All posts ({postsCount})</h2>
+    <br />
     <br />
     <PostsDisplay {posts} />
   </section>
