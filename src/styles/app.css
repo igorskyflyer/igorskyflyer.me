@@ -37,6 +37,7 @@ body {
 
 body a, body a:visited {
  color: #11bce2;
+ text-decoration: none;
 }
 
 main {
@@ -185,6 +186,10 @@ nav {
   bottom: 0;
   background: linear-gradient(310deg, #000, rgba(34, 18, 84, 0.5));
   transition: top ease-in 0.15s;
+}
+
+#post--all-posts {
+  margin-left: -1rem;
 }
 
 @media screen and (min-width: 600px) {
