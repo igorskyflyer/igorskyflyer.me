@@ -151,10 +151,8 @@ nav {
 }
 
 .post-info {
-  display: flex;
-  flex-direction: column;
   color: #9e9ece;
-  font-size: 0.7rem;
+  font-size: 0.85rem;
 }
 
 .post-description {
