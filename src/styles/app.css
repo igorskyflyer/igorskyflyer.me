@@ -41,7 +41,7 @@ body a, body a:visited {
 }
 
 main {
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .post-link {
@@ -175,6 +175,7 @@ nav {
 }
 
 .post {
+  text-align: justify;
   color: #d4d4ff;
 }
 
@@ -189,7 +190,7 @@ nav {
 }
 
 #post--all-posts {
- margin-left: -1.5rem;
+ margin-left: -1rem;
  font-size: 1.4rem;
 }
 
