@@ -35,11 +35,14 @@ body a, body a:visited {
  text-decoration: none;
 }
 
-pre {
- padding: 1rem;
+:not(pre) > code, pre {
  border-radius: var(--border-radius);
  background: #151618 !important;
  box-shadow: 0 0 18px inset #000;
+}
+
+pre {
+ padding: 1rem;
  text-align: left;
 }
 
