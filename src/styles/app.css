@@ -139,11 +139,13 @@ nav {
   user-select: none;
   margin-right: 0.8rem;
   margin-bottom: 0.8rem;
-  transition: transform ease-in 0.2s, background ease-out 0.2s;
+  border: 1px solid rgba(255, 255, 255, 0);
+  transition: transform ease-in 0.2s, background ease-out 0.2s, border linear 0.2s;
 }
 
 #hamburger-icon:hover {
   background: rgb(93, 72, 154);
+  border: 1px solid rgba(255, 255, 255, 0.6);
 }
 
 #menu-toggle {
