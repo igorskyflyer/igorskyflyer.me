@@ -26,14 +26,16 @@ const postPublishedDate = postDate(publishDate)
 
 <article>
   <a href={post.url} class="post-link">{title}</a>
-  <div class="post-info">
-    <div class="post--meta">
-      <span>{postPublishedDate}</span>
-      <span>{minutesRead}</span>
+  <div class="post--inner">
+    <div class="post-info">
+      <div class="post--meta">
+        <span>{postPublishedDate}</span>
+        <span>{minutesRead}</span>
+      </div>
+      <span>by <a href="/igorskyflyer/">igorskyflyer</a></span>
     </div>
-    <span>by <a href="/igorskyflyer/">igorskyflyer</a></span>
+    <p class="post-description">
+      <PostExcerpt post={post} words={30} addEllipsis={true} />
+    </p>
   </div>
-  <p class="post-description">
-    <PostExcerpt post={post} words={30} addEllipsis={true} />
-  </p>
 </article>
