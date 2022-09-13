@@ -14,7 +14,8 @@
     U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-html, body {
+html,
+body {
   /* dev: remove after */
   min-height: 98vh;
   scroll-behavior: smooth;
@@ -30,25 +31,27 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-body a, body a:visited {
- color: #11bce2;
- text-decoration: none;
+body a,
+body a:visited {
+  color: #11bce2;
+  text-decoration: none;
 }
 
-:not(pre) > code, pre {
- background: #151618 !important;
- box-shadow: 0 0 18px inset #000;
+:not(pre) > code,
+pre {
+  background: #151618 !important;
+  box-shadow: 0 0 18px inset #000;
 }
 
 :not(pre) > code {
- padding: .3rem;
- border-radius: 4px;
+  padding: 0.3rem;
+  border-radius: 4px;
 }
 
 pre {
- border-radius: var(--border-radius);
- padding: 1rem;
- text-align: left;
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  text-align: left;
 }
 
 main {
@@ -193,29 +196,29 @@ nav {
 }
 
 #post--all-posts {
- margin-left: -0.5rem;
- font-size: 1.4rem;
+  margin-left: -0.5rem;
+  font-size: 1.4rem;
 }
 
 #post--all-posts:before {
- content: '\2039\20';
- font-size: 1.8rem;
+  content: '\2039\20';
+  font-size: 1.8rem;
 }
 
 .post--inner {
-  padding: .25rem;
+  padding: 0.25rem;
 }
 
 .post--meta {
- display: flex;
- justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 footer {
- padding: 2rem 0.5rem;
- background: #160c34;
- text-align: center;
- font-size: 0.9rem;
+  padding: 2rem 0.5rem;
+  background: #160c34;
+  text-align: center;
+  font-size: 0.9rem;
 }
 
 @media screen and (min-width: 600px) {
@@ -239,7 +242,7 @@ footer {
     flex-direction: row;
     justify-content: flex-end;
     height: auto;
-    margin: 0;
+    margin: 0 0.8rem 0 0;
   }
 
   #menu li {
