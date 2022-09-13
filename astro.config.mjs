@@ -13,6 +13,7 @@ export default defineConfig({
     extendDefaultPlugins: true,
     remarkPlugins: [readingTime],
     shikiConfig: {
+      theme: 'one-dark-pro',
       wrap: true,
     },
   },
