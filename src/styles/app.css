@@ -189,7 +189,12 @@ nav {
 }
 
 #post--all-posts {
-  margin-left: -1rem;
+ margin-left: -1rem;
+}
+
+#post--all-posts:before {
+ content: '\21E6\20';
+ font-size: 1.5rem;
 }
 
 @media screen and (min-width: 600px) {
