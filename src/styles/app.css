@@ -86,7 +86,7 @@ nav {
   flex-direction: column-reverse;
   height: 0;
   overflow: hidden;
-  margin: 0;
+  margin: 0 0 0.6rem 0;
   z-index: 2;
   list-style-type: none;
   transition: all ease-in 0.25s;
@@ -208,6 +208,7 @@ nav {
     flex-direction: row;
     justify-content: flex-end;
     height: auto;
+    margin: 0;
   }
 
   #menu li {
