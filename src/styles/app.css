@@ -131,7 +131,7 @@ nav {
   z-index: 2;
   width: 3rem;
   cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.3);
   font-size: 1.9rem;
   color: var(--main-text);
   text-align: center;
@@ -139,12 +139,11 @@ nav {
   user-select: none;
   margin-right: 0.8rem;
   margin-bottom: 0.8rem;
-  opacity: 0.5;
-  transition: transform ease-in 0.2s, opacity ease-out 0.2s;
+  transition: transform ease-in 0.2s, background ease-out 0.2s;
 }
 
 #hamburger-icon:hover {
-  opacity: 1;
+  background: rgb(93, 72, 154);
 }
 
 #menu-toggle {
