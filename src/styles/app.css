@@ -21,18 +21,12 @@ html {
 
 html,
 body {
+  width: 100%
   padding: 0;
   margin: 0;
   background: var(--main-bg);
   color: var(--main-text);
   font-family: 'Poppins', sans-serif;
-}
-
-body {
-  width: 96%;
-  margin: 0 auto;
-  padding: 0.4%;
-  background: var(--main-bg);
 }
 
 body a, body a:visited {
@@ -41,7 +35,7 @@ body a, body a:visited {
 }
 
 main {
-  padding: 1rem;
+  padding: 1.5rem;
 }
 
 .post-link {
