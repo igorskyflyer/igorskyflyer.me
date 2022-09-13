@@ -1,0 +1,1 @@
+CSS transitions were added back in 2013.
