@@ -17,6 +17,7 @@
 html, body {
   /* dev: remove after */
   min-height: 98vh;
+  scroll-behavior: smooth;
 }
 
 html,
