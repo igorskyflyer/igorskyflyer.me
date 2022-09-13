@@ -197,6 +197,7 @@ footer {
  padding: 2rem 0.5rem;
  background: #160c34;
  text-align: center;
+ font-size: 0.9rem;
 }
 
 @media screen and (min-width: 600px) {
