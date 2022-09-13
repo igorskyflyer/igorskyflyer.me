@@ -162,12 +162,6 @@ nav {
   margin-bottom: 3rem;
 }
 
-#posts article a {
-  display: block;
-  margin: 0 0 0.5rem 0;
-  text-decoration: none;
-}
-
 .post {
   text-align: justify;
   color: #d4d4ff;
