@@ -15,7 +15,7 @@
 				"src/functions/*"
 			],
 			"@styles/*": [
-				"src/styles/*"
+				"public/styles/*"
 			],
 		},
 		"target": "ESNext",
