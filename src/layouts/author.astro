@@ -11,11 +11,16 @@ const { title, description, featuredImage } = frontmatter as PageProps
     text-align: center;
     margin: auto;
   }
+
+  #author-img {
+    max-width: 256px;
+    clip-path: circle(50% at 53% 50%);
+  }
 </style>
 
 <Page title={title} description={description} featuredImage={featuredImage}>
   <div>
-    <img src="https://avatars.githubusercontent.com/u/20957750?v=4" alt="IgorSkyFlyer" />
+    <img src="https://igorskyflyer.github.io/assets/igorskyflyer.jpg" alt="IgorSkyFlyer" id="author-img" />
   </div>
   <br />
   <slot />
