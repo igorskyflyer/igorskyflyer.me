@@ -14,6 +14,9 @@
 			"@functions/*": [
 				"src/functions/*"
 			],
+			"@styles/*": [
+				"src/styles/*"
+			],
 		},
 		"target": "ESNext",
 		"module": "ESNext",
