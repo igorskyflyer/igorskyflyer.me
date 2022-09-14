@@ -5,10 +5,7 @@ const readmeUrl = 'https://raw.githubusercontent.com/igorskyflyer/igorskyflyer/m
 const response = await fetch(readmeUrl)
 const markdown = await response.text()
 const frontmatter = `---
-title: IgorSkyFlyer | Igor Dimitrijević
 layout: ../layouts/author.astro
-publishDate: 2022-09-15 00:00
-featuredImage: https://igorskyflyer.github.io/assets/igorskyflyer.jpg
 ---
 `
 const fileContents = `${frontmatter}
