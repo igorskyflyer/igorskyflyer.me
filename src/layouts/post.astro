@@ -8,6 +8,22 @@ const { title, description, featuredImage } = frontmatter as PageProps
 const pageTitle = `${title} - Blog | Igor Dimitrijević`
 ---
 
+<style>
+  .post {
+    text-align: justify;
+    color: #d4d4ff;
+  }
+
+  #post--all-posts {
+    margin-left: -0.5rem;
+    font-size: 1.25rem;
+  }
+
+  #post--all-posts:before {
+    content: '\02770\20';
+  }
+</style>
+
 <Page title={pageTitle} description={description} featuredImage={featuredImage}>
   <a href="/blog/" id="post--all-posts">Back to all posts</a>
   <br />
