@@ -8,7 +8,7 @@ const frontmatter = `---
 title: IgorSkyFlyer | Igor Dimitrijević
 layout: ../layouts/author.astro
 publishDate: 2022-09-15 00:00
-featuredImage: https://avatars.githubusercontent.com/u/20957750?v=4
+featuredImage: https://igorskyflyer.github.io/assets/igorskyflyer.jpg
 ---
 `
 const fileContents = `${frontmatter}
