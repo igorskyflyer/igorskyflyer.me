@@ -16,8 +16,6 @@
 
 html,
 body {
-  /* dev: remove after */
-  min-height: 98vh;
   scroll-behavior: smooth;
   -webkit-tap-highlight-color: transparent;
 }
@@ -195,16 +193,6 @@ footer {
     padding: 0.5rem 0.8rem;
     font-size: 1rem;
     text-align: center;
-  }
-
-  #posts {
-    margin: auto;
-    width: 80%;
-  }
-
-  .post-info {
-    flex-direction: row;
-    justify-content: space-between;
   }
 
   #menu-blur {
