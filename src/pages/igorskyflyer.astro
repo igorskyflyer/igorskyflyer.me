@@ -4,9 +4,7 @@ import Page from '@components/Page.astro'
 const title = 'IgorSkyFlyer | Igor Dimitrijević'
 const description = 'My own blog'
 
-const readmeUrl = 'https://raw.githubusercontent.com/igorskyflyer/igorskyflyer/main/README.md'
-const response = await fetch(readmeUrl)
-const markdown = await response.text()
+import { Content as IgorSkyFlyer } from './igorskyflyer.md'
 ---
 
 <style>
@@ -20,5 +18,5 @@ const markdown = await response.text()
 </style>
 
 <Page title={title} description={description}>
-  {markdown}
+  <IgorSkyFlyer />
 </Page>
