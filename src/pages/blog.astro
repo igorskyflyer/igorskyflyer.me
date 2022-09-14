@@ -8,6 +8,20 @@ const posts = await Astro.glob('./blog/*.md')
 const postsCount = posts.length
 ---
 
+<style>
+  @media screen and (min-width: 600px) {
+    #posts {
+      margin: auto;
+      width: 80%;
+    }
+
+    .post-info {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+</style>
+
 <Page title={title} description={description}>
   <section id="posts">
     <h2 style="margin-top: 0; text-align: center">All posts ({postsCount})</h2>
