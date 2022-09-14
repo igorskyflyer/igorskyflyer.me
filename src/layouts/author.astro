@@ -8,11 +8,12 @@ const featuredImage = 'https://igorskyflyer.github.io/assets/igorskyflyer.jpg'
 
 <style>
   @keyframes animate {
-    from {
+    0%,
+    100% {
       background-position: 100% 100%;
     }
 
-    to {
+    50% {
       background-position: 400% 100%;
     }
   }
@@ -42,7 +43,10 @@ const featuredImage = 'https://igorskyflyer.github.io/assets/igorskyflyer.jpg'
     background-size: 400% 100%;
     background-position: 100% 100%;
     border-radius: 50%;
-    animation: 5s infinite ease-in-out animate;
+    animation-duration: 4s;
+    animation-name: animate;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
   }
 
   #author img {
