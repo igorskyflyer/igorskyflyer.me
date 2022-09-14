@@ -1,5 +1,20 @@
 {
 	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"@components/*": [
+				"src/components/*"
+			],
+			"@layouts/*": [
+				"src/layouts/*"
+			],
+			"@interfaces/*": [
+				"src/components/interfaces/*"
+			],
+			"@functions/*": [
+				"src/functions/*"
+			],
+		},
 		"target": "ESNext",
 		"module": "ESNext",
 		"moduleResolution": "node",
