@@ -1,0 +1,22 @@
+---
+import Page from '@components/Page.astro'
+import type { PageProps } from '@interfaces/PageProps'
+
+const { frontmatter } = Astro.props
+const { title, description, featuredImage } = frontmatter as PageProps
+---
+
+<style>
+  div {
+    text-align: center;
+    margin: auto;
+  }
+</style>
+
+<Page title={title} description={description} featuredImage={featuredImage}>
+  <div>
+    <img src="https://avatars.githubusercontent.com/u/20957750?v=4" alt="IgorSkyFlyer" />
+  </div>
+  <br />
+  <slot />
+</Page>
