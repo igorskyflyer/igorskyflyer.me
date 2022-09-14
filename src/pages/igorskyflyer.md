@@ -37,6 +37,9 @@ Let me tell you something more about what I do. 🏄
 <!-- 🎉 new stuff that's out 🤩 -->
 <p align="center">
 📢 <em><b>Announcement</b></em> &gt; <br>
+I published my first Astro component ✨🎊🎉, available at <a href="https://www.npmjs.com/package/@igor.dvlpr/astro-post-excerpt">&lt;PostExcerpt /&gt;</a>
+<br>
+<br>
 I updated my AdBlock filter that blocks major ad servers, so it's very lightweight on your hardware's resources, available at <a href="https://github.com/igorskyflyer/ad-void">AdVoid</a> repository 🌷
 <br>
 <br>
@@ -49,7 +52,7 @@ I added new functionalities to my Visual Studio Code extension <a href="https://
 I published a new vanilla JavaScript library, <a href="https://github.com/igorskyflyer/js-zeus">⚡ zeus 🦅</a> that allows you to create HTML elements and set their attributes in a different manner - all at once! 
 </p>
 
-<p align="right"><em><sub>🗓️ 06 Sep 2022</sub></em></p>
+<p align="right"><em><sub>🗓️ 12 Sep 2022</sub></em></p>
 
 <br>
 
@@ -93,8 +96,8 @@ Xamarin, Kotlin, [Dart + Flutter](https://github.com/igorskyflyer?tab=repositori
 🎆 recently released **[Zing](https://github.com/igorskyflyer/npm-zing)** and **[Keppo()](https://github.com/igorskyflyer/npm-keppo)**,  
 🐛 recently created the **[my-pens](https://github.com/igorskyflyer/my-pens)** repository,  
 👀 recently updated **[Zep()](https://github.com/igorskyflyer/npm-zep)**, **[is-rootdir](https://github.com/igorskyflyer/npm-is-rootdir)**, **[path-exists](https://github.com/igorskyflyer/npm-pathexists)**, **[str-is-in](https://github.com/igorskyflyer/npm-str-is-in)**, **[uArray](https://github.com/igorskyflyer/npm-uarray)**, **[unc-path](https://www.npmjs.com/package/@igor.dvlpr/unc-path)**, **[uPath](https://www.npmjs.com/package/@igor.dvlpr/upath)**,  
-🎀 like crafting **[NPM](https://www.npmjs.com/~igor.dvlpr)** modules, **`24+`** modules built already with **`32K+`** of downloads,  
-🧃 like building **[Visual Studio Code](https://marketplace.visualstudio.com/publishers/igordvlpr)** extensions, **`4`** extensions so far, with **`130K+`** of installs,  
+🎀 like crafting **[NPM](https://www.npmjs.com/~igor.dvlpr)** modules, **`26+`** modules built already with **``35K+``** of downloads,  
+🧃 like building **[Visual Studio Code](https://marketplace.visualstudio.com/publishers/igordvlpr)** extensions, **``4``** extensions so far, with **`130K+`** of installs,  
 🎠 like making **[Packagist](https://packagist.org/users/igordvlpr/packages/)** packages,  
 🐣 am excited about these upcoming technologies: **[PyScript](https://pyscript.net)**, **[FormKit](https://formkit.com)**, **[Carbon](https://github.com/carbon-language/carbon-lang)**,  
 💫 am currently working on building my portfolio website,  
@@ -112,7 +115,7 @@ Xamarin, Kotlin, [Dart + Flutter](https://github.com/igorskyflyer?tab=repositori
 > 🍦 &nbsp;[CSS Ice-Cream](https://codepen.io/igorskyflyer/pen/ydaMYJ),  
 > 📱 &nbsp;[CSS Mobile Phone](https://codepen.io/igorskyflyer/pen/pmGyGR),  
 > 🎷 &nbsp;[Audio Player](https://codepen.io/igorskyflyer/pen/OYaLrb) , and  
-> ♾️ still to come.
+> ♾️ still to come.  
 
 🏀 dribble on **[Dribbble](https://dribbble.com/igordvlpr)**,  
 📝 post snippets on my **[Gist](https://gist.github.com/igorskyflyer)**,  
@@ -151,15 +154,14 @@ Xamarin, Kotlin, [Dart + Flutter](https://github.com/igorskyflyer?tab=repositori
 <br>
 
 <!--START_SECTION:activity-->
-
-1. 🎉 Merged PR [#499](https://github.com/igorskyflyer/ad-void/pull/499) in [igorskyflyer/ad-void](https://github.com/igorskyflyer/ad-void)
-2. 💪 Opened PR [#499](https://github.com/igorskyflyer/ad-void/pull/499) in [igorskyflyer/ad-void](https://github.com/igorskyflyer/ad-void)
-3. 🎉 Merged PR [#498](https://github.com/igorskyflyer/ad-void/pull/498) in [igorskyflyer/ad-void](https://github.com/igorskyflyer/ad-void)
-4. 💪 Opened PR [#498](https://github.com/igorskyflyer/ad-void/pull/498) in [igorskyflyer/ad-void](https://github.com/igorskyflyer/ad-void)
-5. 🎉 Merged PR [#497](https://github.com/igorskyflyer/ad-void/pull/497) in [igorskyflyer/ad-void](https://github.com/igorskyflyer/ad-void)
-6. 💪 Opened PR [#497](https://github.com/igorskyflyer/ad-void/pull/497) in [igorskyflyer/ad-void](https://github.com/igorskyflyer/ad-void)
-7. 🎉 Merged PR [#496](https://github.com/igorskyflyer/ad-void/pull/496) in [igorskyflyer/ad-void](https://github.com/igorskyflyer/ad-void)
-8. 💪 Opened PR [#496](https://github.com/igorskyflyer/ad-void/pull/496) in [igorskyflyer/ad-void](https://github.com/igorskyflyer/ad-void)
+1. 🗣 Commented on [#9](https://github.com/igorskyflyer/igorskyflyer.github.io/issues/9) in [igorskyflyer/igorskyflyer.github.io](https://github.com/igorskyflyer/igorskyflyer.github.io)
+2. 🗣 Commented on [#8](https://github.com/igorskyflyer/igorskyflyer.github.io/issues/8) in [igorskyflyer/igorskyflyer.github.io](https://github.com/igorskyflyer/igorskyflyer.github.io)
+3. ❗️ Closed issue [#8](https://github.com/igorskyflyer/igorskyflyer.github.io/issues/8) in [igorskyflyer/igorskyflyer.github.io](https://github.com/igorskyflyer/igorskyflyer.github.io)
+4. ❗️ Closed issue [#9](https://github.com/igorskyflyer/igorskyflyer.github.io/issues/9) in [igorskyflyer/igorskyflyer.github.io](https://github.com/igorskyflyer/igorskyflyer.github.io)
+5. ❗️ Opened issue [#9](https://github.com/igorskyflyer/igorskyflyer.github.io/issues/9) in [igorskyflyer/igorskyflyer.github.io](https://github.com/igorskyflyer/igorskyflyer.github.io)
+6. ❗️ Opened issue [#8](https://github.com/igorskyflyer/igorskyflyer.github.io/issues/8) in [igorskyflyer/igorskyflyer.github.io](https://github.com/igorskyflyer/igorskyflyer.github.io)
+7. ❗️ Opened issue [#7](https://github.com/igorskyflyer/igorskyflyer.github.io/issues/7) in [igorskyflyer/igorskyflyer.github.io](https://github.com/igorskyflyer/igorskyflyer.github.io)
+8. 🗣 Commented on [#13985](https://github.com/microsoft/terminal/issues/13985) in [microsoft/terminal](https://github.com/microsoft/terminal)
 <!--END_SECTION:activity-->
 
 <br>
