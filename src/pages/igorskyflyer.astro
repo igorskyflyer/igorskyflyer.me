@@ -1,6 +1,6 @@
 ---
 import Page from '../components/Page.astro'
-import { Content } from './igorskyflyer.md'
+import { compiledContent } from './igorskyflyer.md'
 
 const title = 'IgorSkyFlyer | Igor Dimitrijević'
 const description = 'My own blog'
@@ -17,5 +17,5 @@ const description = 'My own blog'
 </style>
 
 <Page title={title} description={description}>
-  <Content />
+  <Fragment set:html={compiledContent()} />
 </Page>
