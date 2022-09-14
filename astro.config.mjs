@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config'
 import { readingTime } from './src/functions/reading-time'
+import compress from 'astro-compress'
 
 // https://astro.build/config
 export default defineConfig({
@@ -17,4 +18,5 @@ export default defineConfig({
       wrap: true,
     },
   },
+  integrations: [compress()],
 })
