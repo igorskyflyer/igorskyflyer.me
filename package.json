@@ -4,9 +4,9 @@
 	"description": "🧠 The place where I like to express myself. 🦑",
 	"private": true,
 	"scripts": {
-		"dev": "astro dev",
+		"dev": "node scripts/readme.mjs && astro dev",
 		"start": "astro dev",
-		"build": "astro build",
+		"build": "node scripts/readme.mjs && astro build",
 		"preview": "astro preview",
 		"astro": "astro"
 	},
