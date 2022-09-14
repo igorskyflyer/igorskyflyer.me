@@ -1,7 +1,7 @@
 ---
 import type { MarkdownInstance } from 'astro'
-import PostPreview from '../components/PostPreview.astro';
-import { sortPosts } from '../functions/posts.js';
+import PostPreview from '@components/PostPreview.astro';
+import { sortPosts } from '@functions/posts';
 
  interface PostsProps {
 	posts: MarkdownInstance<Record<string, any>>[]
