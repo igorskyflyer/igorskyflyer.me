@@ -9,6 +9,11 @@ const postsCount = posts.length
 ---
 
 <style>
+  #posts--heading {
+    margin-top: 0;
+    text-align: center;
+  }
+
   @media screen and (min-width: 600px) {
     #posts {
       margin: auto;
@@ -19,7 +24,7 @@ const postsCount = posts.length
 
 <Page title={title} description={description}>
   <section id="posts">
-    <h2 style="margin-top: 0; text-align: center">All posts ({postsCount})</h2>
+    <h2 id="posts--heading">All posts ({postsCount})</h2>
     <br />
     <br />
     <PostsDisplay {posts} />
