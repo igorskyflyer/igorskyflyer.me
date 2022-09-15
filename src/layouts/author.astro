@@ -8,12 +8,27 @@ const featuredImage = 'https://igorskyflyer.github.io/assets/igorskyflyer.jpg'
 
 <style>
   @keyframes animate {
-    0%,
-    100% {
+    0% {
       background-position: 100% 100%;
     }
 
-    50% {
+    20% {
+      background-position: 150% 100%;
+    }
+
+    40% {
+      background-position: 250% 100%;
+    }
+
+    60% {
+      background-position: 300% 100%;
+    }
+
+    80% {
+      background-position: 350% 100%;
+    }
+
+    100% {
       background-position: 400% 100%;
     }
   }
@@ -26,20 +41,7 @@ const featuredImage = 'https://igorskyflyer.github.io/assets/igorskyflyer.jpg'
     justify-content: center;
     text-align: center;
     margin: auto;
-    background: linear-gradient(
-      50deg,
-      rgba(255, 0, 0, 1) 0%,
-      rgba(255, 154, 0, 1) 10%,
-      rgba(208, 222, 33, 1) 20%,
-      rgba(79, 220, 74, 1) 30%,
-      rgba(63, 218, 216, 1) 40%,
-      rgba(47, 201, 226, 1) 50%,
-      rgba(28, 127, 238, 1) 60%,
-      rgba(95, 21, 242, 1) 70%,
-      rgba(186, 12, 248, 1) 80%,
-      rgba(251, 7, 217, 1) 90%,
-      rgba(255, 0, 0, 1) 100%
-    );
+    background: radial-gradient(circle, rgba(0, 0, 0, 0), #02f 10%, #05f 20%, #09f 30%, rgba(0, 0, 0, 0.3) 100%);
     background-size: 400% 100%;
     background-position: 100% 100%;
     border-radius: 50%;
