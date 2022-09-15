@@ -22,6 +22,6 @@
   Content-Security-Policy: base-uri 'self'; default-src 'self'; style-src 'self'; script-src 'none'; img-src *; media-src 'none'; font-src 'self'; connect-src 'none'; worker-src 'none'; frame-src 'none'; form-action 'self';
   # Cross-Origin-Resource-Policy: same-origin
   Cross-Origin-Opener-Policy: same-origin
-  Cross-Origin-Embedder-Policy: require-corp
+  Cross-Origin-Embedder-Policy: credentialless
   X-Permitted-Cross-Domain-Policies: none
 ### Security END ###
