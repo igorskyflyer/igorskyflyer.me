@@ -10,6 +10,7 @@ const postsCount = posts.length
 
 <style>
   #posts--heading {
+    font-size: 1.5rem;
     margin-top: 0;
     text-align: center;
   }
@@ -24,7 +25,7 @@ const postsCount = posts.length
 
 <Page title={title} description={description}>
   <section id="posts">
-    <h2 id="posts--heading">All posts ({postsCount})</h2>
+    <h1 id="posts--heading">All posts ({postsCount})</h1>
     <br />
     <br />
     <PostsDisplay {posts} />
