@@ -1,5 +1,6 @@
 :root {
-  --main-bg: #221254;
+  /* --main-bg: #221254; */
+  --main-bg: #0f062c;
   --main-text: #fff;
   --border-radius: 6px;
 }
@@ -119,11 +120,11 @@ nav {
 }
 
 #hamburger-icon svg path {
- transition: d linear 75ms;
+  transition: d linear 75ms;
 }
 
 #menu-toggle:checked + #hamburger-icon svg path {
-  d: path("M1 1h2M1 4h6M1 7h8");
+  d: path('M1 1h2M1 4h6M1 7h8');
 }
 
 #menu-toggle:checked ~ #menu-blur {
