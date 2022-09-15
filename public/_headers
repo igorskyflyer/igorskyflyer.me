@@ -1,11 +1,11 @@
 ### Caching START ###
 /styles/*
     cache-control: public
-    cache-control: max-age=604800
+    cache-control: max-age=9072000
 
 /css/*
     cache-control: public
-    cache-control: max-age=604800
+    cache-control: max-age=9072000
 
 /font/*
     cache-control: public
