@@ -2,7 +2,10 @@
     cache-control: public
     cache-control: max-age=604800
 
-
 /font/*
     cache-control: public
-    cache-control: max-age=1209600
+    cache-control: max-age=31536000
+
+/blog/*
+    cache-control: public
+    cache-control: max-age=25920
