@@ -5,13 +5,22 @@ import Page from '@components/Page.astro'
 <Page title="Contact | Igor Dimitrijević" description="Contact" featuredImage="">
 Contact
 <br>
-<form name="contact" netlify>
+<form name="contact"
+  method="POST"
+  data-netlify-recaptcha="true"
+  data-netlify="true">
   <p>
     <label>Name <input type="text" name="name" /></label>
   </p>
   <p>
     <label>Email <input type="email" name="email" /></label>
   </p>
+<p>
+    <label>
+      Message: <textarea name="message"></textarea>
+    </label>
+  </p>
+  <div data-netlify-recaptcha="true"></div>
   <p>
     <button type="submit">Send</button>
   </p>
