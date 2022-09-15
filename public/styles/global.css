@@ -106,7 +106,7 @@ nav {
   margin-right: 0.8rem;
   margin-bottom: 0.8rem;
   border: 2px solid rgba(255, 255, 255, 0);
-  transition: transform ease-in 0.2s, background ease-out 0.2s, border linear 0.2s;
+  transition: background ease-out 0.2s, border linear 0.2s;
 }
 
 #hamburger-icon:hover {
@@ -116,6 +116,10 @@ nav {
 
 #menu-toggle {
   display: none;
+}
+
+#hamburger-icon svg path {
+ transition: d linear 75ms;
 }
 
 #menu-toggle:checked + #hamburger-icon svg path {
