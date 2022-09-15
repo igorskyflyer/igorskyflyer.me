@@ -31,5 +31,5 @@
 ### Security END ###
 
 ### Compression START ###
-Content-Encoding: gzip
+ # Content-Encoding: gzip
 ### Compression END ###
