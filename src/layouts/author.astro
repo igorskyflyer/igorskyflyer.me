@@ -55,12 +55,19 @@ const featuredImage = 'https://igorskyflyer.github.io/assets/igorskyflyer.jpg'
     max-width: 256px;
     border-radius: 50%;
   }
+
+  #readme img {
+    display: inline-block;
+    margin: 0 2px;
+  }
 </style>
 
 <Page title={title} description={description} featuredImage={featuredImage}>
-  <div id="author">
-    <img src="https://igorskyflyer.github.io/assets/igorskyflyer.jpg" alt="IgorSkyFlyer" />
+  <div id="readme">
+    <div id="author">
+      <img src="https://igorskyflyer.github.io/assets/igorskyflyer.jpg" alt="IgorSkyFlyer" />
+    </div>
+    <br />
+    <slot />
   </div>
-  <br />
-  <slot />
 </Page>
