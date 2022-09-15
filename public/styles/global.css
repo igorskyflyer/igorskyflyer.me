@@ -36,6 +36,10 @@ body a:visited {
   text-decoration: none;
 }
 
+img {
+  max-width: 100%;
+}
+
 :not(pre) > code,
 pre {
   background: #151618 !important;
