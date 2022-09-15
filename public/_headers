@@ -20,7 +20,8 @@
   Referrer-Policy: no-referrer
   Permissions-Policy: accelerometer=(), ambient-light-sensor=(), autoplay=(), battery=(), camera=(), cross-origin-isolated=(), display-capture=(), document-domain=(), encrypted-media=(), execution-while-not-rendered=(), execution-while-out-of-viewport=(), fullscreen=(), geolocation=(), gyroscope=(), keyboard-map=(), magnetometer=(), microphone=(), midi=(), navigation-override=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), screen-wake-lock=(), sync-xhr=(), usb=(), web-share=(), xr-spatial-tracking=(), clipboard-read=(), clipboard-write=(), gamepad=(), speaker-selection=(), conversion-measurement=(), focus-without-user-activation=(), hid=(), idle-detection=(), interest-cohort=(), serial=(), sync-script=(), trust-token-redemption=(), window-placement=(), vertical-scroll=()
   Content-Security-Policy: base-uri 'self'; default-src 'self'; style-src 'self'; script-src 'none'; img-src *; media-src 'none'; font-src 'self'; connect-src 'none'; worker-src 'none'; frame-src 'none'; form-action 'self';
-  Cross-Origin-Resource-Policy: same-origin
+  # Cross-Origin-Resource-Policy: same-origin
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Embedder-Policy: require-corp
+  X-Permitted-Cross-Domain-Policies: none
 ### Security END ###
