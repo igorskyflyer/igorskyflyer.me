@@ -29,3 +29,7 @@
   Cross-Origin-Embedder-Policy: credentialless
   X-Permitted-Cross-Domain-Policies: none
 ### Security END ###
+
+### Compression START ###
+Content-Encoding: gzip
+### Compression END ###
