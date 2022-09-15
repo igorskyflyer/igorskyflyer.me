@@ -92,15 +92,15 @@ nav {
 }
 
 #hamburger-icon {
-  display: block;
+  display: flex;
+  height: 48px;
+  width: 48px;
+  align-items: center;
+  justify-content: center;
   margin-left: auto;
   z-index: 2;
-  width: 3rem;
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0.3);
-  font-size: 1.9rem;
-  color: var(--main-text);
-  text-align: center;
   border-radius: var(--border-radius);
   user-select: none;
   margin-right: 0.8rem;
