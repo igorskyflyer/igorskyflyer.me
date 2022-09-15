@@ -1,0 +1,8 @@
+/styles/*
+    cache-control: public
+    cache-control: max-age=604800
+
+
+/font/*
+    cache-control: public
+    cache-control: max-age=1209600
