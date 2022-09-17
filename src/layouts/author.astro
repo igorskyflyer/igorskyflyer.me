@@ -6,59 +6,8 @@ const description = ''
 const featuredImage = 'https://igorskyflyer.github.io/assets/igorskyflyer.jpg'
 ---
 
-<style>
-  @keyframes animate {
-    0% {
-      background-position: 100% 100%;
-    }
-
-    20% {
-      background-position: 150% 100%;
-    }
-
-    40% {
-      background-position: 250% 100%;
-    }
-
-    60% {
-      background-position: 300% 100%;
-    }
-
-    80% {
-      background-position: 350% 100%;
-    }
-
-    100% {
-      background-position: 400% 100%;
-    }
-  }
-
-  #author {
-    display: flex;
-    width: 276px;
-    height: 276px;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin: auto;
-    background: linear-gradient(to right, transparent, #02f 10%, #05f 20%, #09f 30%, rgba(0, 0, 0, 0.3) 100%);
-    background-size: 400% 100%;
-    background-position: 100% 100%;
-    border-radius: 50%;
-    animation-duration: 4s;
-    animation-name: animate;
-    animation-fill-mode: both;
-    animation-iteration-count: infinite;
-  }
-
-  #author img {
-    max-width: 256px;
-    border-radius: 50%;
-  }
-</style>
-
 <style is:global>
-  #readme img {
+  img {
     display: inline-block;
     margin: 0 2px;
   }
@@ -72,11 +21,5 @@ const featuredImage = 'https://igorskyflyer.github.io/assets/igorskyflyer.jpg'
 </style>
 
 <Page title={title} description={description} featuredImage={featuredImage}>
-  <div id="readme">
-    <div id="author">
-      <img src="https://igorskyflyer.github.io/assets/igorskyflyer.jpg" alt="IgorSkyFlyer" />
-    </div>
-    <br />
-    <slot />
-  </div>
+  <slot />
 </Page>
