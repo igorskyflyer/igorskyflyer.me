@@ -12,7 +12,8 @@ const { title = '', description = '', featuredImage = '' } = Astro.props as Page
     rel="preload"
     href="/font/Poppins.woff2"
     as="font"
-    type="font/woff2" />
+    type="font/woff2"
+    crossorigin="anonymous" />
 
   <meta name="title" content={title} />
   <meta name="description" content={description} />
