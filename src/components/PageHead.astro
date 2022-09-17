@@ -8,6 +8,12 @@ const { title = '', description = '', featuredImage = '' } = Astro.props as Page
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <link
+    rel="preload"
+    href="fonts/Poppins.woff2"
+    as="font"
+    type="font/woff2" />
+
   <meta name="title" content={title} />
   <meta name="description" content={description} />
 
