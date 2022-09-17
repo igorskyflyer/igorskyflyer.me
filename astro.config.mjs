@@ -27,6 +27,6 @@ export default defineConfig({
     },
   },
   integrations: [
-    compress({ html: { collapseWhitespace: false, html5: true, removeAttributeQuotes: false, removeTagWhitespace: true } }),
+    compress({ html: { collapseWhitespace: true, html5: true, removeAttributeQuotes: false, removeTagWhitespace: false } }),
   ],
 })
