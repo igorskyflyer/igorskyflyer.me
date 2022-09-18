@@ -5,6 +5,7 @@ import { postDate } from '@functions/posts'
 
 export interface Props {
   post: MarkdownInstance<Record<string, any>>
+  tag?: string
 }
 
 const { post } = Astro.props
@@ -12,15 +13,16 @@ const { post } = Astro.props
 if (typeof post == 'undefined') {
   throw new TypeError('No required post prop.')
 }
-
 interface PostProps {
   title: string
   minutesRead: string
   publishDate: string
+  tag?: string
 }
 
-const { title = '', minutesRead = '', publishDate = '' } = post.frontmatter as PostProps
+const { title = '', minutesRead = '', publishDate = '', tag = '' } = post.frontmatter as PostProps
 
+const tags = tag.split(',')
 const postPublishedDate = postDate(publishDate)
 ---
 
@@ -33,7 +35,6 @@ const postPublishedDate = postDate(publishDate)
 
   .post-link {
     display: block;
-    margin-bottom: 0.5rem;
     font-size: 1.4rem;
     font-weight: bold;
     color: rgb(17, 188, 226);
@@ -58,6 +59,24 @@ const postPublishedDate = postDate(publishDate)
   .post--meta {
     display: flex;
     justify-content: space-between;
+    margin-top: 1rem;
+  }
+
+  .post--tags {
+    margin: 0.5rem 0;
+  }
+
+  .post--tags a {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    margin-right: 0.4rem;
+    border-radius: var(--border-radius);
+    background: rgba(17, 188, 226, 0.12);
+  }
+
+  .post--author {
+    display: inline-block;
+    margin-top: 1rem;
   }
 
   @media screen and (min-width: 600px) {
@@ -76,7 +95,16 @@ const postPublishedDate = postDate(publishDate)
         <span>{postPublishedDate}</span>
         <span>{minutesRead}</span>
       </div>
-      <span>by <a href="/igorskyflyer/">igorskyflyer</a></span>
+      {
+        tag.length > 0 && (
+          <div class="post--tags">
+            {tags.map((tagName) => (
+              <a href={`/blog/tag/${tagName}/`}>{tagName}</a>
+            ))}
+          </div>
+        )
+      }
+      <span class="post--author">by <a href="/igorskyflyer/">igorskyflyer</a></span>
     </div>
     <p class="post-description">
       <PostExcerpt post={post} words={20} addEllipsis={true} />
