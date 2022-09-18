@@ -72,6 +72,12 @@ const postPublishedDate = postDate(publishDate)
     margin-right: 0.4rem;
     border-radius: var(--border-radius);
     background: rgba(17, 188, 226, 0.12);
+    transition: background ease-out 120ms, color ease-out 120ms;
+  }
+
+  .post--tags a:hover {
+    background: #5d489a;
+    color: #fff;
   }
 
   .post--author {
