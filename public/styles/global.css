@@ -1,5 +1,6 @@
 :root {
-  /* --main-bg: #221254; */
+  color-scheme: dark light;
+
   --main-bg: #0f062c;
   --main-text: #fff;
   --border-radius: 6px;
