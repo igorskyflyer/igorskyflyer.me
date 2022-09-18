@@ -2,6 +2,7 @@
 layout: ../../layouts/post.astro
 title: Build an HTML element creation utility ⚡
 publishDate: 2022-09-08 02:50
+tag: js,javascript,html,tutorial
 ---
 
 ⚡ Zeus allows you to create HTML elements and set their attributes in a completely different manner &ndash; all at once! Zeus allows you to create HTML elements and set their attributes in a completely different manner &ndash; all at once! 🦅
