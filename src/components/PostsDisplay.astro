@@ -1,20 +1,20 @@
 ---
 import type { MarkdownInstance } from 'astro'
-import PostPreview from '@components/PostPreview.astro';
-import { sortPosts } from '@functions/posts';
+import PostPreview from '@components/PostPreview.astro'
+import { filterPosts, sortPosts } from '@functions/posts'
 
- interface PostsProps {
-	posts: MarkdownInstance<Record<string, any>>[]
- }
+interface PostsProps {
+  posts: MarkdownInstance<Record<string, any>>[]
+  tag?: string
+}
 
-let { posts } = Astro.props as PostsProps
-
+let { posts, tag } = Astro.props as PostsProps
 posts = sortPosts(posts)
 ---
 
 {
-posts.map((post) => (
+filterPosts(posts, { tag }).map((post)=>(
 	<PostPreview post={post} />
-	<br>
+	<br />
 ))
 }
