@@ -15,6 +15,22 @@
     U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #09f;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #11bce2;
+}
+
 html,
 body {
   scroll-behavior: smooth;
