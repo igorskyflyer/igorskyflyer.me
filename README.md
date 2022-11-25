@@ -1,10 +1,8 @@
-## ⚡ igorskyflyer.github.io 🦑
+## ⚡ igorskyflyer.me 🦑
 
-#### * work in progress *
+<div align="center">
 
-<br>
-
-Probably moving to Netlify. 🚀
+<h4>* work in progress *</h4>
 
 <br>
 
@@ -13,6 +11,5 @@ Probably moving to Netlify. 🚀
 <br>
 <br>
 
-<div align="center">
-  <a href="https://igorskyflyer.me"><img src="https://api.netlify.com/api/v1/badges/b906389c-e97b-4e20-a4a4-0d6dc1e66b25/deploy-status" alt="Netlify status"></a>
+<a href="https://igorskyflyer.me"><img src="https://api.netlify.com/api/v1/badges/b906389c-e97b-4e20-a4a4-0d6dc1e66b25/deploy-status" alt="Netlify status"></a>
 </div>
