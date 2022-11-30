@@ -1,5 +1,5 @@
 {
-	"name": "igorskyflyer.github.io",
+	"name": "igorskyflyer.me",
 	"version": "1.0.0-beta",
 	"description": "🧠 The place where I like to express myself. 🦑",
 	"private": true,
@@ -12,15 +12,15 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/igorskyflyer/igorskyflyer.github.io.git"
+		"url": "git+https://github.com/igorskyflyer/igorskyflyer.me.git"
 	},
 	"keywords": [],
 	"author": "Igor Dimitrijević <igor.dvlpr@gmail.com> (https://github.com/igorskyflyer)",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/igorskyflyer/igorskyflyer.github.io/issues"
+		"url": "https://github.com/igorskyflyer/igorskyflyer.me/issues"
 	},
-	"homepage": "https://github.com/igorskyflyer/igorskyflyer.github.io#readme",
+	"homepage": "https://github.com/igorskyflyer/igorskyflyer.me#readme",
 	"devDependencies": {
 		"@igor.dvlpr/astro-post-excerpt": "^1.0.3",
 		"astro": "^1.6.11",
