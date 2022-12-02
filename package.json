@@ -15,8 +15,9 @@
 		"url": "git+https://github.com/igorskyflyer/igorskyflyer.me.git"
 	},
 	"keywords": [],
-	"author": "Igor Dimitrijević <igor.dvlpr@gmail.com> (https://github.com/igorskyflyer)",
+	"author": "Igor Dimitrijević <admin@igorskyflyer.me> (https://github.com/igorskyflyer)",
 	"license": "MIT",
+	"funding": "https://ko-fi.com/igorskyflyer",
 	"bugs": {
 		"url": "https://github.com/igorskyflyer/igorskyflyer.me/issues"
 	},
