@@ -27,7 +27,7 @@
 		"astro": "^1.6.12",
 		"astro-compress": "^1.1.19",
 		"mdast-util-to-string": "^3.1.0",
-		"prettier": "^2.8.0",
+		"prettier": "^2.8.1",
 		"prettier-plugin-astro": "^0.7.0",
 		"reading-time": "^1.5.0"
 	}
