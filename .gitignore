@@ -17,3 +17,6 @@ node_modules/
 
 # auto-fetched at build time
 /src/pages/igorskyflyer.md
+
+# log file (internal)
+log.txt
