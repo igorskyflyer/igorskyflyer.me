@@ -1,6 +1,8 @@
 ---
 import { MarkdownInstance } from 'astro'
-import PostExcerpt from '@igor.dvlpr/astro-post-excerpt'
+
+import PostExcerpt, { PropHeadings } from '@igor.dvlpr/astro-post-excerpt'
+
 import { postDate } from '@functions/posts'
 
 export interface Props {
@@ -113,7 +115,7 @@ const postPublishedDate = postDate(publishDate)
       <span class="post--author">by <a href="/igorskyflyer/">igorskyflyer</a></span>
     </div>
     <p class="post-description">
-      <PostExcerpt post={post} words={20} addEllipsis={true} />
+      <PostExcerpt post={post} words={20} addEllipsis={true} headings={PropHeadings.None} />
     </p>
   </div>
 </article>
