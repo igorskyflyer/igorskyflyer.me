@@ -1,5 +1,2 @@
 /** linguist-detectable
-
 .vscode/** -linguist-detectable
-
-*.mjs linguist-language=JavaScript
