@@ -1,9 +1,10 @@
-*           text=auto
+*               text=auto
 
-*           linguist-detectable
+*               linguist-detectable
 
-.vscode/** -linguist-detectable
-*.json     -linguist-detectable
-*.md       -linguist-detectable
-*.svg      -linguist-detectable
-*.ini      -linguist-detectable
+.vscode/**      -linguist-detectable
+*.json          -linguist-detectable
+*.md            -linguist-detectable
+*.svg           -linguist-detectable
+*.ini           -linguist-detectable
+public/_headers -linguist-detecatable
