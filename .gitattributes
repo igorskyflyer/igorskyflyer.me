@@ -6,4 +6,4 @@
 *.json     -linguist-detectable
 *.md       -linguist-detectable
 *.svg      -linguist-detectable
-*.ini      -linguist-detecatble
+*.ini      -linguist-detectable
