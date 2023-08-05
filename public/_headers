@@ -35,3 +35,9 @@ X-Permitted-Cross-Domain-Policies: none
 ### Security END
 
 ### Security END
+
+### Redirects and rewrites START
+
+https://adbt.igorskyflyer.me/*  https://gregarious-torte-4e532b.netlify.app/:splat  200!
+
+### Redirects and rewrites END
