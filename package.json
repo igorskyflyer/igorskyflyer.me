@@ -23,12 +23,12 @@
 	},
 	"homepage": "https://github.com/igorskyflyer/igorskyflyer.me#readme",
 	"devDependencies": {
-		"@igor.dvlpr/astro-post-excerpt": "^2.0.2",
-		"astro": "^1.9.2",
+		"@igor.dvlpr/astro-post-excerpt": "^2.1.0",
+		"astro": "^3.0.13",
 		"astro-compress": "^2.0.15",
-		"mdast-util-to-string": "^3.1.1",
-		"prettier": "^2.8.7",
-		"prettier-plugin-astro": "^0.8.0",
+		"mdast-util-to-string": "^4.0.0",
+		"prettier": "^3.0.3",
+		"prettier-plugin-astro": "^0.12.0",
 		"reading-time": "^1.5.0"
 	}
 }
