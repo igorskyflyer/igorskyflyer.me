@@ -1,14 +1,25 @@
 ---
 import type { PageProps } from '@interfaces/PageProps'
+import { ViewTransitions } from 'astro:transitions'
 
-const { title = '', description = '', featuredImage = '' } = Astro.props as PageProps
+const {
+  title = '',
+  description = '',
+  featuredImage = '',
+} = Astro.props as PageProps
 ---
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <link rel="preload" href="/font/Poppins.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+  <link
+    rel="preload"
+    href="/font/Poppins.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  />
 
   <meta name="title" content={title} />
   <meta name="description" content={description} />
@@ -29,4 +40,5 @@ const { title = '', description = '', featuredImage = '' } = Astro.props as Page
   <link rel="icon" href="/favicon.svg" />
   <link rel="stylesheet" href="/styles/global.css" />
   <title>{title}</title>
+  <ViewTransitions />
 </head>
