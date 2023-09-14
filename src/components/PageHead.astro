@@ -7,6 +7,8 @@ const {
   description = '',
   featuredImage = '',
 } = Astro.props as PageProps
+
+import '../ui/global.css'
 ---
 
 <head>
@@ -38,7 +40,6 @@ const {
   <meta property="twitter:image" content={featuredImage} />
 
   <link rel="icon" href="/favicon.svg" />
-  <link rel="stylesheet" href="/styles/global.css" />
   <title>{title}</title>
   <ViewTransitions />
 </head>
