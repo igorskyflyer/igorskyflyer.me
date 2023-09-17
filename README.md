@@ -1,11 +1,6 @@
 ## ⚡ igorskyflyer.me 🦑
 
 <div align="center">
-
-<h4>👽 Work in progress 🚀</h4>
-
-<br>
-
 ⚡ The place where I like to express myself. 🦑
 
 <br>
