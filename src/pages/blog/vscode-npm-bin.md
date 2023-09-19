@@ -14,7 +14,7 @@ When working with the `Terminal` in VS Code on Windows one the most frequent dif
 For example when working in an npm project and after successfully installing **`esbuild`**, if one tries to run it from the `Terminal` will see the following error:
 
 <div align="center">
-	<img src="https://igorskyflyer.me/images/terminal-before.png" alt="Terminal error in VS Code caused by missing path">
+	<img src="https://igorskyflyer.me/images/vscode-npm-bin-terminal.png" alt="Terminal error in VS Code caused by missing path">
 	<sub><strong>Terminal error</strong></sub>
 	<br>
 	<sub>Visual Studio Code theme: <a href="https://github.com/igorskyflyer/vscode-theme-kai"><code>Kai</code></a></sub>
