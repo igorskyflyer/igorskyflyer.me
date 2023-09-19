@@ -58,6 +58,10 @@ img {
   max-width: 100%;
 }
 
+code {
+	font-size: 1rem;
+}
+
 main {
 	width: 85%;
 	margin: 2.5rem auto;
