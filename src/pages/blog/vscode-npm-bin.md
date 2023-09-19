@@ -25,15 +25,9 @@ For example when working in an npm project and after successfully installing **`
 
 On Windows, system-wide `PATH` works correctly in the `Terminal` but the `Terminal` doesn't pick up local environment paths, thus, it cannot find any of the binaries that you want to execute.
 
-<br>
-
 To fix it we will need to add a setting inside the current user profile in VS Code and everything will work as expected. 💡
 
-<br>
-
 Navigate to your user profile's Settings by clicking on the cog icon ⚙️ at the bottom of your Activity Bar. When the Settings tab has opened, click on the smaller cog icon ⚙️ at the top right of the tab. That should get you to the current user profile's Settings file in JSON.
-
-<br>
 
 This is where the magic happens! 🪄
 
