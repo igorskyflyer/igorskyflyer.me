@@ -59,7 +59,8 @@ img {
 }
 
 main {
-  padding: 1.5rem;
+	width: 85%;
+	margin: auto;
 }
 
 header {
