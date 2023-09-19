@@ -1,6 +1,9 @@
 ---
 import { MarkdownInstance } from 'astro'
-import PostExcerpt, { PropHeadings, PropRenderer } from '@igor.dvlpr/astro-post-excerpt'
+import PostExcerpt, {
+  PropHeadings,
+  PropRenderer,
+} from '@igor.dvlpr/astro-post-excerpt'
 import { postDate } from '@functions/posts'
 
 export interface Props {
@@ -20,7 +23,12 @@ interface PostProps {
   tag?: string
 }
 
-const { title = '', minutesRead = '', publishDate = '', tag = '' } = post.frontmatter as PostProps
+const {
+  title = '',
+  minutesRead = '',
+  publishDate = '',
+  tag = '',
+} = post.frontmatter as PostProps
 
 const tags = tag.split(',')
 const postPublishedDate = postDate(publishDate)
@@ -72,7 +80,9 @@ const postPublishedDate = postDate(publishDate)
     margin-right: 0.4rem;
     border-radius: var(--border-radius);
     background: rgba(17, 188, 226, 0.12);
-    transition: background ease-out 120ms, color ease-out 120ms;
+    transition:
+      background ease-out 120ms,
+      color ease-out 120ms;
   }
 
   .post--tags a:hover {
@@ -110,10 +120,19 @@ const postPublishedDate = postDate(publishDate)
           </div>
         )
       }
-      <span class="post--author">by <a href="/igorskyflyer/">igorskyflyer</a></span>
+      <span class="post--author"
+        >by <a href="/igorskyflyer/">igorskyflyer</a></span
+      >
     </div>
     <p class="post-description">
-      <PostExcerpt post={post} words={20} addEllipsis={true} headings={PropHeadings.None} renderer={PropRenderer.Hybrid} />
+      <PostExcerpt
+        post={post}
+        words={40}
+        addEllipsis={true}
+        headings={PropHeadings.None}
+        renderer={PropRenderer.Hybrid}
+        smartEllipsis={true}
+      />
     </p>
   </div>
 </article>
