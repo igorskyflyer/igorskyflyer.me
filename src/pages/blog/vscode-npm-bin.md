@@ -2,7 +2,7 @@
 layout: ../../layouts/post.astro
 title: Fix Node binaries in VS Code Terminal 🐢
 description: When working with the Terminal in VS Code on Windows one the most frequent difficulty that all developers face is that the Terminal doesn’t pick up local Node binaries, installed via npm install.
-featuredImage: https://igorskyflyer.me/images/terminal-before.png
+featuredImage: https://igorskyflyer.me/images/featured/vscode-npm-bin-featured.png
 publishDate: 2023-09-19 21:29
 tag: vscode,javascript,npm,node,fix,tutorial
 ---
