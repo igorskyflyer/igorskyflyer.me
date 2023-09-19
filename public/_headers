@@ -26,7 +26,7 @@ X-XSS-Protection: 1; mode=block
 X-Content-Type-Options: nosniff
 Referrer-Policy: no-referrer
 Permissions-Policy: accelerometer=(), ambient-light-sensor=(), autoplay=(), battery=(), camera=(), cross-origin-isolated=(), display-capture=(), document-domain=(), encrypted-media=(), execution-while-not-rendered=(), execution-while-out-of-viewport=(), fullscreen=(), geolocation=(), gyroscope=(), keyboard-map=(), magnetometer=(), microphone=(), midi=(), navigation-override=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), screen-wake-lock=(), sync-xhr=(), usb=(), web-share=(), xr-spatial-tracking=(), clipboard-read=(), clipboard-write=(), gamepad=(), speaker-selection=(), conversion-measurement=(), focus-without-user-activation=(), hid=(), idle-detection=(), interest-cohort=(), serial=(), sync-script=(), trust-token-redemption=(), vertical-scroll=()
-Content-Security-Policy: base-uri 'self'; default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' www.google.com; img-src *; media-src 'none'; font-src 'self'; connect-src 'none'; worker-src 'none'; frame-src www.gstatic.com www.google.com; form-action 'self';
+Content-Security-Policy: base-uri 'self'; default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' www.google.com; img-src *; media-src 'none'; font-src 'self'; connect-src 'self'; worker-src 'none'; frame-src www.gstatic.com www.google.com; form-action 'self';
 Cross-Origin-Resource-Policy: cross-origin
 Cross-Origin-Opener-Policy: same-origin
 Cross-Origin-Embedder-Policy: credentialless
