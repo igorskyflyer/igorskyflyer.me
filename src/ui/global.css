@@ -54,7 +54,7 @@ body a:visited {
   text-decoration: none;
 }
 
-a[href^="http"]:before {
+#menu a[href^="http"]:before {
 	content: '';
 	display: inline-block;
 	width: 16px;
