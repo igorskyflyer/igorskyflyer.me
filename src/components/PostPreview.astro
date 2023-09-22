@@ -13,9 +13,6 @@ export interface Props {
 
 const { post } = Astro.props
 
-if (typeof post == 'undefined') {
-  throw new TypeError('No required post prop.')
-}
 interface PostProps {
   title: string
   minutesRead: string
@@ -90,11 +87,6 @@ const postPublishedDate = postDate(publishDate)
     color: #fff;
   }
 
-  .post--author {
-    display: inline-block;
-    margin-top: 1rem;
-  }
-
   @media screen and (min-width: 600px) {
     .post-info {
       flex-direction: row;
@@ -108,6 +100,12 @@ const postPublishedDate = postDate(publishDate)
   <div class="post--inner">
     <div class="post-info">
       <div class="post--meta">
+        <span
+          ><img
+            src="/images/igorskyflyer.png"
+            alt="IgorSkyFlyer's profile photo"
+          /> by <a href="/igorskyflyer/">igorskyflyer</a></span
+        >
         <span>{postPublishedDate}</span>
         <span>{minutesRead}</span>
       </div>
@@ -120,9 +118,6 @@ const postPublishedDate = postDate(publishDate)
           </div>
         )
       }
-      <span class="post--author"
-        >by <a href="/igorskyflyer/">igorskyflyer</a></span
-      >
     </div>
     <p class="post-description">
       <PostExcerpt
