@@ -3,44 +3,40 @@ import type { MarkdownInstance } from 'astro'
 type BlogPost = MarkdownInstance<Record<string, any>>
 
 export function sortPosts(posts: BlogPost[]) {
-  return posts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf())
+  return posts.sort(
+    (a, b) =>
+      new Date(b.frontmatter.publishDate).valueOf() -
+      new Date(a.frontmatter.publishDate).valueOf()
+  )
 }
 
 export function postDate(date: string) {
   const postDate = new Date(Date.parse(date))
   const days = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT']
   const months = [
-    'January',
-    'February',
-    'March',
-    'April',
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
     'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
   ]
-  let hours = postDate.getHours()
-  let minutes = postDate.getMinutes()
 
-  if (hours < 10) {
-    //@ts-ignore
-    hours = `0${hours}`
-  }
-  if (minutes < 10) {
-    //@ts-ignore
-    minutes = `0${minutes}`
-  }
-
-  return `${days[postDate.getDay()]}, ${postDate.getDate()} ${
+  return `${
     months[postDate.getMonth()]
-  } ${postDate.getFullYear()} @ ${hours}:${minutes}h`
+  } ${postDate.getDate()}, ${postDate.getFullYear()}`
 }
 
-export function filterPosts(posts: BlogPost[], filter: object = {}): BlogPost[] {
+export function filterPosts(
+  posts: BlogPost[],
+  filter: object = {}
+): BlogPost[] {
   if (posts.length === 0) {
     throw new Error('No posts to filter.')
   }
