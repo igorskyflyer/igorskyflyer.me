@@ -65,6 +65,7 @@ body a:visited {
 
 img {
   max-width: 100%;
+	height: auto;
 }
 
 code {
