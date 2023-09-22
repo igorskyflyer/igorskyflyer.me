@@ -12,7 +12,6 @@ export function sortPosts(posts: BlogPost[]) {
 
 export function postDate(date: string) {
   const postDate = new Date(Date.parse(date))
-  const days = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT']
   const months = [
     'Jan',
     'Feb',
