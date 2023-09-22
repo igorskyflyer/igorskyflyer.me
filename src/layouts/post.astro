@@ -3,7 +3,8 @@ import Page from '@components/Page.astro'
 import type { PageProps } from '@interfaces/PageProps'
 
 const { frontmatter } = Astro.props
-const { title, description, featuredImage } = frontmatter as PageProps
+const { title, description, featuredImage, publishDate } =
+  frontmatter as PageProps
 
 const pageTitle = `${title} - Blog | Igor Dimitrijević`
 ---
@@ -53,8 +54,7 @@ const pageTitle = `${title} - Blog | Igor Dimitrijević`
       >by <a href="/igorskyflyer/">igorskyflyer</a></span
     >
     <div class="post--meta">
-      <span>10/10/23</span>
-      <span>2min</span>
+      <span>{publishDate}</span>
     </div>
     <section class="post--content">
       <slot />
