@@ -177,6 +177,10 @@ blockquote {
   transition: top ease-in 0.15s;
 }
 
+article h2 {
+	color: #DDD;
+}
+
 footer {
   padding: 2rem 0.5rem;
   background: #160c34;
