@@ -29,6 +29,9 @@ export default defineConfig({
     compress({
       html: {
         collapseWhitespace: true,
+        minifyJS: true,
+        minifyCSS: true,
+        quoteCharacter: '"',
         html5: true,
         removeAttributeQuotes: false,
         removeTagWhitespace: false,
