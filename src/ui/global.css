@@ -88,6 +88,11 @@ blockquote {
 	margin: 0;
 }
 
+.block--center {
+	text-align: center;
+	margin: auto;
+}
+
 #menu {
   display: flex;
   justify-content: end;
