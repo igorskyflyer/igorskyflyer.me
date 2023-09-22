@@ -1,5 +1,6 @@
 ---
 import Page from '@components/Page.astro'
+import { postDate } from '@functions/posts'
 import type { PageProps } from '@interfaces/PageProps'
 
 const { frontmatter } = Astro.props
@@ -7,6 +8,9 @@ const { title, description, featuredImage, publishDate } =
   frontmatter as PageProps
 
 const pageTitle = `${title} - Blog | Igor Dimitrijević`
+const minutesRead = 0
+const postPublishedDate = postDate(publishDate)
+const tag = []
 ---
 
 <style>
@@ -23,6 +27,78 @@ const pageTitle = `${title} - Blog | Igor Dimitrijević`
   #post--all-posts:before {
     content: '\02770\20';
   }
+
+  article {
+    margin-bottom: 3rem;
+    text-align: justify;
+    color: #d4d4ff;
+  }
+
+  .post-link {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: rgb(17, 188, 226);
+  }
+
+  .post-info {
+    color: #9e9ece;
+    font-size: 0.93rem;
+  }
+
+  .post-description {
+    margin: 1.5rem 0 0 0;
+    font-size: 1.1rem;
+    color: #d4d4ff;
+    text-align: justify;
+  }
+
+  .post--inner {
+    padding: 0.25rem;
+  }
+
+  .post--meta {
+    display: flex;
+    margin-top: 1rem;
+  }
+
+  .post--tags {
+    margin-top: 1.5rem;
+  }
+
+  .post--tags a {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    margin-right: 0.4rem;
+    border-radius: var(--border-radius);
+    background: rgba(17, 188, 226, 0.12);
+    transition:
+      background ease-out 120ms,
+      color ease-out 120ms;
+  }
+
+  .post--tags a:hover {
+    background: #5d489a;
+    color: #fff;
+  }
+
+  .post--author {
+    display: flex;
+    align-items: center;
+  }
+
+  .post--frontmatter {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+  }
+
+  @media screen and (min-width: 600px) {
+    .post-info {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
 </style>
 
 <Page title={pageTitle} description={description} featuredImage={featuredImage}>
@@ -31,11 +107,32 @@ const pageTitle = `${title} - Blog | Igor Dimitrijević`
   <br />
   <article class="post">
     <h2>{title}</h2>
-    <span class="post--author"
-      >by <a href="/igorskyflyer/">igorskyflyer</a></span
-    >
-    <div class="post--meta">
-      <span>{publishDate}</span>
+    <div class="post-info">
+      <div class="post--meta">
+        <span class="post--author"
+          ><a href="/igorskyflyer/"
+            ><img
+              src="/images/igorskyflyer.png"
+              alt="IgorSkyFlyer's profile photo"
+              width="56px"
+              height="56px"
+            /></a
+          ></span
+        >
+        <div class="post--frontmatter">
+          <a href="/igorskyflyer/">Igor Dimitrijević (igorskyflyer)</a>
+          <span>{minutesRead} . {postPublishedDate}</span>
+        </div>
+      </div>
+      {
+        tag.length > 0 && (
+          <div class="post--tags">
+            {tags.map((tagName) => (
+              <a href={`/blog/tag/${tagName}/`}>{tagName}</a>
+            ))}
+          </div>
+        )
+      }
     </div>
     <section class="post--content">
       <slot />
