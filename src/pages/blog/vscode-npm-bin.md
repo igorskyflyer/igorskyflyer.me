@@ -35,7 +35,7 @@ Navigate to your user profile's Settings by clicking on the cog icon ⚙️ at t
 
 This is where the magic happens! 🪄
 
-Add the following code to your JSON Settings file:
+Add the following code to your Settings JSON file:
 
 ```json
 "terminal.integrated.env.windows": {
