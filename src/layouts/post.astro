@@ -49,6 +49,8 @@ const pageTitle = `${title} - Blog | Igor Dimitrijević`
   <br />
   <article class="post">
     <h2>{title}</h2>
-    <slot />
+    <section class="post--content">
+      <slot />
+    </section>
   </article>
 </Page>
