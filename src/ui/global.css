@@ -190,6 +190,10 @@ article h2 {
 	color: #DDD;
 }
 
+.post--content {
+	padding: 1rem;
+}
+
 footer {
   padding: 2rem 0.5rem;
   background: #160c34;
