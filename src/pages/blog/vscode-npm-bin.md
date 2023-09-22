@@ -14,7 +14,7 @@ When working with the `Terminal` in VS Code on Windows one the most frequent dif
 For example when working in an npm project and after successfully installing [**`aria`**](https://www.npmjs.com/package/@igor.dvlpr/aria), if one tries to run it from the `Terminal` will see the following error:
 
 <div class="block--center">
-	<img src="https://igorskyflyer.me/images/vscode-npm-bin-terminal.png" alt="Terminal error in VS Code caused by missing path">
+	<img src="https://igorskyflyer.me/images/vscode-npm-bin-terminal.png" alt="Terminal error in VS Code caused by missing path" width="1847px" height="212px">
 	<sub><strong>Terminal error</strong></sub>
 	<br>
 	<sub>Visual Studio Code theme: <a href="https://github.com/igorskyflyer/vscode-theme-kai"><code>Kai</code></a></sub>
