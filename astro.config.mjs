@@ -25,4 +25,18 @@ export default defineConfig({
       wrap: true,
     },
   },
+  integrations: [
+    compress({
+      html: {
+        collapseWhitespace: true,
+        html5: true,
+        removeAttributeQuotes: false,
+        removeTagWhitespace: false,
+        keepClosingSlash: false,
+        removeStyleLinkTypeAttributes: false,
+        removeScriptTypeAttributes: false,
+      },
+      css: { restructure: true },
+    }),
+  ],
 })
