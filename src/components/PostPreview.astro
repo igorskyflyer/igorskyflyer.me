@@ -47,12 +47,12 @@ const postPublishedDate = postDate(publishDate)
 
   .post-info {
     color: #9e9ece;
-    font-size: 0.85rem;
+    font-size: 0.93rem;
   }
 
   .post-description {
     margin: 1.5rem 0 0 0;
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     color: #d4d4ff;
     text-align: justify;
   }
@@ -63,12 +63,11 @@ const postPublishedDate = postDate(publishDate)
 
   .post--meta {
     display: flex;
-    justify-content: space-between;
     margin-top: 1rem;
   }
 
   .post--tags {
-    margin-top: 0.5rem;
+    margin-top: 1.5rem;
   }
 
   .post--tags a {
@@ -87,6 +86,17 @@ const postPublishedDate = postDate(publishDate)
     color: #fff;
   }
 
+  .post--author {
+    display: flex;
+    align-items: center;
+  }
+
+  .post--frontmatter {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+  }
+
   @media screen and (min-width: 600px) {
     .post-info {
       flex-direction: row;
@@ -100,14 +110,20 @@ const postPublishedDate = postDate(publishDate)
   <div class="post--inner">
     <div class="post-info">
       <div class="post--meta">
-        <span
-          ><img
-            src="/images/igorskyflyer.png"
-            alt="IgorSkyFlyer's profile photo"
-          /> by <a href="/igorskyflyer/">igorskyflyer</a></span
+        <span class="post--author"
+          ><a href="/igorskyflyer/"
+            ><img
+              src="/images/igorskyflyer.png"
+              alt="IgorSkyFlyer's profile photo"
+              width="40px"
+              height="40px"
+            /></a
+          ></span
         >
-        <span>{postPublishedDate}</span>
-        <span>{minutesRead}</span>
+        <div class="post--frontmatter">
+          <a href="/igorskyflyer/">Igor Dimitrijević (igorskyflyer)</a>
+          <span>{minutesRead} . {postPublishedDate}</span>
+        </div>
       </div>
       {
         tag.length > 0 && (
