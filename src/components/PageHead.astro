@@ -6,9 +6,10 @@ const {
   title = '',
   description = '',
   featuredImage = '',
+  keywords = '',
 } = Astro.props as PageProps
 
-import '../ui/global.css'
+import '@ui/global.css'
 ---
 
 <head>
@@ -25,6 +26,7 @@ import '../ui/global.css'
 
   <meta name="title" content={title} />
   <meta name="description" content={description} />
+  <meta name="keywords" content={keywords} />
   <meta name="color-scheme" content="dark light" />
 
   <meta property="og:type" content="website" />
