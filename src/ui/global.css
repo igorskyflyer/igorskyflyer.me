@@ -4,6 +4,7 @@
   --main-bg: #0f062c;
   --main-text: #fff;
   --border-radius: 6px;
+	--accent: #4a3b77;
 }
 
 @font-face {
@@ -147,7 +148,7 @@ pre {
 }
 
 #menu a:hover {
-  background: rgb(93, 72, 154);
+  background: var(--accent);
 }
 
 #hamburger-icon {
@@ -209,7 +210,7 @@ article h2 {
 }
 
 .post--content {
-	padding: 4rem 1rem 1rem 1rem;
+	padding: 3rem 0 0 0;
 }
 
 footer {
@@ -260,4 +261,8 @@ footer {
   #menu-toggle:checked ~ #menu {
     height: auto;
   }
+
+	.post--content {
+		padding: 4rem 3rem 1rem 3rem;
+	}
 }
