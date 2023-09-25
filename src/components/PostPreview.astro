@@ -83,6 +83,17 @@ const postPublishedDate = postDate(post.data.publishDate)
     margin-left: 1rem;
   }
 
+  .post-meta-separator {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 2rem;
+  }
+
+  .post-data {
+    display: flex;
+    align-items: center;
+  }
+
   @media screen and (min-width: 600px) {
     .post-info {
       flex-direction: row;
@@ -110,8 +121,10 @@ const postPublishedDate = postDate(post.data.publishDate)
         </span>
         <div class="post--frontmatter">
           <a href="/igorskyflyer/">Igor Dimitrijević (igorskyflyer)</a>
-          <span>
-            {0} &#183; {postPublishedDate}
+          <span class="post-data">
+            {0}
+            <span class="post-meta-separator">&#183;</span>
+            {postPublishedDate}
           </span>
         </div>
       </div>
