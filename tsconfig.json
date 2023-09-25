@@ -17,6 +17,9 @@
 			"@interfaces/*": [
 				"src/interfaces/*"
 			],
+			"@ui/*": [
+				"src/ui/*"
+			],
 		},
 		"target": "ESNext",
 		"module": "ESNext",
