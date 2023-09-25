@@ -23,3 +23,6 @@ log.txt
 
 # internal assets
 /assets
+
+# Astro
+/.astro
