@@ -1,5 +1,15 @@
 declare module 'astro:content' {
 	interface Render {
+		'.mdx': Promise<{
+			Content: import('astro').MarkdownInstance<{}>['Content'];
+			headings: import('astro').MarkdownHeading[];
+			remarkPluginFrontmatter: Record<string, any>;
+		}>;
+	}
+}
+
+declare module 'astro:content' {
+	interface Render {
 		'.md': Promise<{
 			Content: import('astro').MarkdownInstance<{}>['Content'];
 			headings: import('astro').MarkdownHeading[];
@@ -175,48 +185,48 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
-"bluetooth-audio-codecs.md": {
-	id: "bluetooth-audio-codecs.md";
+"bluetooth-audio-codecs.mdx": {
+	id: "bluetooth-audio-codecs.mdx";
   slug: "bluetooth-audio-codecs";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"build-html-create-utility-zeus.md": {
-	id: "build-html-create-utility-zeus.md";
+} & { render(): Render[".mdx"] };
+"build-html-create-utility-zeus.mdx": {
+	id: "build-html-create-utility-zeus.mdx";
   slug: "build-html-create-utility-zeus";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"hello-world.md": {
-	id: "hello-world.md";
+} & { render(): Render[".mdx"] };
+"hello-world.mdx": {
+	id: "hello-world.mdx";
   slug: "hello-world";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"how-to-write-low-performance-CSS-animations.md": {
-	id: "how-to-write-low-performance-CSS-animations.md";
+} & { render(): Render[".mdx"] };
+"how-to-write-low-performance-CSS-animations.mdx": {
+	id: "how-to-write-low-performance-CSS-animations.mdx";
   slug: "how-to-write-low-performance-css-animations";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"stop-using-all-in-css-transitions.md": {
-	id: "stop-using-all-in-css-transitions.md";
+} & { render(): Render[".mdx"] };
+"stop-using-all-in-css-transitions.mdx": {
+	id: "stop-using-all-in-css-transitions.mdx";
   slug: "stop-using-all-in-css-transitions";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"vscode-npm-bin.md": {
-	id: "vscode-npm-bin.md";
+} & { render(): Render[".mdx"] };
+"vscode-npm-bin.mdx": {
+	id: "vscode-npm-bin.mdx";
   slug: "vscode-npm-bin";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
+} & { render(): Render[".mdx"] };
 };
 
 	};
