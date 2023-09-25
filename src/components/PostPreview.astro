@@ -1,34 +1,20 @@
 ---
-import { MarkdownInstance } from 'astro'
+import { postDate } from '@functions/posts'
 import PostExcerpt, {
   PropHeadings,
   PropRenderer,
 } from '@igor.dvlpr/astro-post-excerpt'
-import { postDate } from '@functions/posts'
 
-export interface Props {
-  post: MarkdownInstance<Record<string, any>>
-  tag?: string
-}
+import { Image } from 'astro:assets'
+import imageAuthor from '../assets/author/igorskyflyer.png'
 
 const { post } = Astro.props
 
-interface PostProps {
-  title: string
-  minutesRead: string
-  publishDate: string
-  tag?: string
-}
+console.log(post)
 
-const {
-  title = '',
-  minutesRead = '',
-  publishDate = '',
-  tag = '',
-} = post.frontmatter as PostProps
-
+const tag = ''
 const tags = tag.split(',')
-const postPublishedDate = postDate(publishDate)
+const postPublishedDate = postDate(post.data.publishDate)
 ---
 
 <style>
@@ -106,23 +92,27 @@ const postPublishedDate = postDate(publishDate)
 </style>
 
 <article>
-  <a href={`${post.url}/`} class="post-link">{title}</a>
+  <a href={`/blog/${post.slug}/`} class="post-link">
+    {post.data.title}
+  </a>
   <div class="post--inner">
     <div class="post-info">
       <div class="post--meta">
-        <span class="post--author"
-          ><a href="/igorskyflyer/"
-            ><img
-              src="/images/igorskyflyer.png"
+        <span class="post--author">
+          <a href="/igorskyflyer/">
+            <Image
+              src={imageAuthor}
               alt="IgorSkyFlyer's profile photo"
-              width="56px"
-              height="56px"
-            /></a
-          ></span
-        >
+              width="56"
+              height="56"
+            />
+          </a>
+        </span>
         <div class="post--frontmatter">
           <a href="/igorskyflyer/">Igor Dimitrijević (igorskyflyer)</a>
-          <span>{minutesRead} &#183; {postPublishedDate}</span>
+          <span>
+            {0} &#183; {postPublishedDate}
+          </span>
         </div>
       </div>
       {
