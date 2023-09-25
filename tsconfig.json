@@ -8,14 +8,11 @@
 			"@layouts/*": [
 				"src/layouts/*"
 			],
-			"@interfaces/*": [
-				"src/components/interfaces/*"
+			"@assets/*": [
+				"src/assets/*"
 			],
 			"@functions/*": [
 				"src/functions/*"
-			],
-			"@styles/*": [
-				"public/styles/*"
 			],
 		},
 		"target": "ESNext",
