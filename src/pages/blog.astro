@@ -1,10 +1,13 @@
 ---
 import Page from '@components/Page.astro'
 import PostsDisplay from '@components/PostsDisplay.astro'
+import { Props } from 'astro'
+import { getCollection } from 'astro:content'
 
-const title = 'Blog | Igor Dimitrijević'
-const description = 'My own blog'
-const posts = await Astro.glob('./blog/*.md')
+const title: string = 'Blog | Igor Dimitrijević'
+const description: string = 'My own blog'
+
+const posts = await getCollection('blog')
 ---
 
 <style>
