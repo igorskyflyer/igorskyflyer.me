@@ -1,11 +1,11 @@
 ---
 import Page from '@components/Page.astro'
 import { postDate } from '@functions/posts'
-import type { PageProps } from '@interfaces/PageProps'
+import { Image } from 'astro:assets'
+import imageAuthor from '../assets/author/igorskyflyer.png'
 
 const { frontmatter } = Astro.props
-const { title, description, featuredImage, publishDate } =
-  frontmatter as PageProps
+const { title, description, featuredImage, publishDate } = frontmatter
 
 const pageTitle = `${title} - Blog | Igor Dimitrijević`
 const minutesRead = 0
@@ -111,11 +111,11 @@ const tag = []
       <div class="post--meta">
         <span class="post--author"
           ><a href="/igorskyflyer/"
-            ><img
-              src="/images/igorskyflyer.png"
+            ><Image
+              src={imageAuthor}
               alt="IgorSkyFlyer's profile photo"
-              width="56px"
-              height="56px"
+              width="56"
+              height="56"
             /></a
           ></span
         >
