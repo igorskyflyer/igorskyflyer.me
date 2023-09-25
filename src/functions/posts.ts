@@ -1,12 +1,13 @@
 import type { MarkdownInstance } from 'astro'
+import { CollectionEntry } from 'astro:content'
 
-type BlogPost = MarkdownInstance<Record<string, any>>
+type BlogPost = CollectionEntry<'blog'>
 
 export function sortPosts(posts: BlogPost[]) {
   return posts.sort(
     (a, b) =>
-      new Date(b.frontmatter.publishDate).valueOf() -
-      new Date(a.frontmatter.publishDate).valueOf()
+      new Date(b.data.publishDate).valueOf() -
+      new Date(a.data.publishDate).valueOf()
   )
 }
 
