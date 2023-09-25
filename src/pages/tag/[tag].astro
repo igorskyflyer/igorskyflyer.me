@@ -10,6 +10,8 @@ const description = 'My own blog'
 const posts = await getCollection('blog')
 
 export async function getStaticPaths() {
+  const posts = await getCollection('blog')
+
   return posts.map((post) => {
     return {
       params: {
