@@ -33,6 +33,8 @@
 		"reading-time": "^1.5.0"
 	},
 	"dependencies": {
-		"@astrojs/mdx": "^1.1.0"
+		"@astrojs/mdx": "^1.1.0",
+		"@astrojs/rss": "^3.0.0",
+		"@astrojs/sitemap": "^3.0.0"
 	}
 }
