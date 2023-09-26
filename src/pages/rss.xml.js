@@ -17,6 +17,9 @@ export async function GET(context) {
     description: '⚡ The place where I like to express myself. 🦑',
     site: context.site,
     stylesheet: '/rss-styles.xsl',
+    xmlns: {
+      atom: 'http://www.w3.org/2005/Atom',
+    },
     items: blog.map((post) => {
       return {
         title: post.data.title,
