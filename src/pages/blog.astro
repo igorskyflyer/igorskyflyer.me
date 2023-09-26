@@ -7,7 +7,15 @@ import { getCollection } from 'astro:content'
 const title: string = 'Blog | Igor Dimitrijević'
 const description: string = 'My own blog'
 
-const posts = await getCollection('blog')
+const posts = (await getCollection('blog'))
+  .filter((post) => {
+    if (!post.data.draft) {
+      return post
+    }
+  })
+  .sort(
+    (a, b) => Date.parse(b.data.publishDate) - Date.parse(a.data.publishDate)
+  )
 ---
 
 <style>
