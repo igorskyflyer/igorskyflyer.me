@@ -8,9 +8,10 @@ import PostExcerpt, {
 import { Image } from 'astro:assets'
 
 const { post } = Astro.props
+const { remarkPluginFrontmatter: data } = await post.render()
 
-const tag = ''
-const tags = tag.split(',')
+const minutesRead = data.minutesRead
+const tags = post.data.tags.split(',')
 const postPublishedDate = postDate(post.data.publishDate)
 ---
 
@@ -119,16 +120,16 @@ const postPublishedDate = postDate(post.data.publishDate)
         <div class="post--frontmatter">
           <a href="/igorskyflyer/">Igor Dimitrijević (igorskyflyer)</a>
           <span class="post-data">
-            {0}
+            {minutesRead}
             <span class="post-meta-separator">&#183;</span>
             {postPublishedDate}
           </span>
         </div>
       </div>
       {
-        tag.length > 0 && (
+        tags.length > 0 && (
           <div class="post--tags">
-            {tags.map((tagName) => (
+            {tags.map((tagName: string) => (
               <a href={`/blog/tag/${tagName}/`}>{tagName}</a>
             ))}
           </div>
@@ -136,14 +137,15 @@ const postPublishedDate = postDate(post.data.publishDate)
       }
     </div>
     <p class="post-description">
-      <PostExcerpt
+      <!-- <PostExcerpt
         post={post}
         words={40}
         addEllipsis={true}
         headings={PropHeadings.None}
         renderer={PropRenderer.Hybrid}
         smartEllipsis={true}
-      />
+      /> -->
+      {post.data.description}
     </p>
   </div>
 </article>
