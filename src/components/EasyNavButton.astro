@@ -1,0 +1,147 @@
+<style>
+  :root {
+    --en-background: rgba(255, 255, 255, 0.3);
+    --en-backgroundHover: #5d489a;
+    --en-size: 48px;
+    --en-border-radius: 6px;
+    --en-offset: 10px;
+    --en-fontSize: 30px;
+    --en-animationTime: 180ms;
+    --en-iconTop: '\2B9D';
+    --en-iconBottom: '\2B9F';
+  }
+
+  @keyframes animation-content {
+    0% {
+      transform: scale(0);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  #easy-nav {
+    display: block;
+    position: fixed;
+    width: var(--en-size);
+    height: var(--en-size);
+    bottom: var(--en-offset);
+    left: var(--en-offset);
+    z-index: 1000;
+    border-radius: var(--en-border-radius);
+    background: var(--en-background);
+  }
+
+  #easy-nav:hover {
+    background-color: var(--en-backgroundHover);
+  }
+
+  #easy-nav-button {
+    display: block;
+    width: var(--en-size);
+    height: var(--en-size);
+    margin: 0;
+  }
+
+  #easy-nav-button::before {
+    display: block;
+    width: var(--en-size);
+    height: var(--en-size);
+    content: var(--en-iconBottom);
+    text-align: center;
+    font-size: var(--en-fontSize);
+    cursor: pointer;
+  }
+
+  #easy-nav-button.nav-up::before {
+    content: var(--en-iconTop);
+  }
+
+  #easy-nav-button.animate::before {
+    animation-name: animation-content;
+    animation-duration: var(--en-animationTime);
+    animation-fill-mode: forwards;
+    animation-direction: normal;
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+</style>
+
+<div id="easy-nav">
+  <p id="easy-nav-button" onclick="window.easyNav.goDown()"></p>
+</div>
+
+<script is:inline>
+  document.addEventListener(
+    'astro:page-load',
+    () => {
+      if (typeof window.easyNav === 'undefined') {
+        window.easyNav = {
+          navButton: document.getElementById('easy-nav-button'),
+          scrollToBottom: true,
+          initialized: false,
+
+          goUp: function () {
+            window.scrollTo(1, 1)
+          },
+
+          goDown: function () {
+            window.scrollTo(0, document.body.scrollHeight)
+          },
+
+          init: function () {
+            if (window.easyNav.initialized) {
+              return
+            } else {
+              window.easyNav.initialized = true
+            }
+
+            document.addEventListener('scrollend', () => {
+              if (
+                document.documentElement.scrollTop >=
+                document.body.scrollHeight / 2
+              ) {
+                if (window.easyNav.scrollToBottom) {
+                  return
+                }
+
+                window.easyNav.navButton.classList.add('nav-up')
+                window.easyNav.navButton.title = 'Go to top'
+                window.easyNav.navButton.onclick = window.easyNav.goUp
+
+                window.easyNav.navButton.classList.remove('animate')
+
+                const timeout = setTimeout(() => {
+                  window.easyNav.navButton.classList.add('animate')
+                  clearTimeout(timeout)
+                }, 0)
+
+                window.easyNav.scrollToBottom = true
+              } else {
+                if (!window.easyNav.scrollToBottom) {
+                  return
+                }
+
+                window.easyNav.navButton.classList.remove('nav-up')
+                window.easyNav.navButton.title = 'Go to bottom'
+                window.easyNav.navButton.onclick = window.easyNav.goDown
+
+                window.easyNav.navButton.classList.remove('animate')
+
+                const timeout = setTimeout(() => {
+                  window.easyNav.navButton.classList.add('animate')
+                  clearTimeout(timeout)
+                }, 0)
+
+                window.easyNav.scrollToBottom = false
+              }
+            })
+          },
+        }
+      }
+
+      window.easyNav.init()
+    },
+    { once: true }
+  )
+</script>
