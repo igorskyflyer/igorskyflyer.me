@@ -7,6 +7,16 @@
   --accent: #4a3b77;
 }
 
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src:
+    local('Poppins'),
+    url('/font/Poppins.woff2') format('woff2');
+}
+
 ::-webkit-scrollbar {
   width: 8px;
 }
