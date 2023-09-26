@@ -1,24 +1,29 @@
 import rss from '@astrojs/rss'
-import { getCollection } from 'astro:content'
+import { getCollection, CollectionEntry } from 'astro:content'
 
 export async function GET(context) {
-  const blog = (await getCollection('blog')).filter((post) => {
-    if (!post.data.draft) {
-      return post
-    }
-  })
+  const blog = (await getCollection('blog'))
+    .filter((post) => {
+      if (!post.data.draft) {
+        return post
+      }
+    })
+    .sort(
+      (a, b) => Date.parse(b.data.publishDate) - Date.parse(a.data.publishDate)
+    )
 
   return rss({
-    title: 'IgorSkyFlyer.me',
+    title: 'Igor Dimitrijević',
     description: '⚡ The place where I like to express myself. 🦑',
     site: context.site,
+    stylesheet: '/rss-styles.xsl',
     items: blog.map((post) => {
       return {
         title: post.data.title,
+        link: `/blog/${post.slug}/`,
         pubDate: post.data.publishDate,
         description: post.data.description,
-        customData: `<language>en-us</language>`,
-        link: `/blog/${post.slug}/`,
+        customData: `<language>en-us</language><author>Igor Dimitrijević (igorskyflyer)</author>`,
       }
     }),
   })
