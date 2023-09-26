@@ -1,0 +1,87 @@
+---
+import Page from '@components/Page.astro'
+import PostsDisplay from '@components/PostsDisplay.astro'
+import { getCollection } from 'astro:content'
+
+const { tag } = Astro.params
+const title = `Posts tagged with "${tag}" - Blog | Igor Dimitrijević`
+const description = 'My own blog'
+
+const posts = (await getCollection('blog'))
+  .filter((post) => {
+    return !post.data.draft && post.data.tags.split(',').includes(tag)
+  })
+  .sort(
+    (a, b) => Date.parse(b.data.publishDate) - Date.parse(a.data.publishDate)
+  )
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog')
+  const allTags = []
+
+  posts.forEach((post) => {
+    if (post.data.draft) {
+      return
+    }
+
+    const unique = []
+    const tags = post.data.tags.split(',')
+
+    for (let i = 0; i < tags.length; i++) {
+      if (tags[i] === '') {
+        continue
+      }
+
+      if (unique.includes(tags[i])) {
+        continue
+      }
+
+      unique.push(tags[i])
+
+      allTags.push({
+        params: {
+          tag: tags[i],
+        },
+      })
+    }
+  })
+
+  return allTags
+}
+---
+
+<style>
+  #posts--heading {
+    font-size: 1.5rem;
+    margin-top: 0;
+    text-align: center;
+  }
+
+  #post--all-posts {
+    margin-left: -0.5rem;
+    font-size: 1.25rem;
+  }
+
+  #post--all-posts:before {
+    content: '\02770\20';
+  }
+
+  @media screen and (min-width: 600px) {
+    #posts {
+      margin: auto;
+      width: 80%;
+    }
+  }
+</style>
+
+<Page title={title} description={description}>
+  <a href="/blog/" id="post--all-posts">Back to all posts</a>
+  <br />
+  <br />
+  <section id="posts">
+    <h1 id="posts--heading">Posts tagged with "{tag}"</h1>
+    <br />
+    <br />
+    <PostsDisplay posts={posts} tag={tag} />
+  </section>
+</Page>
