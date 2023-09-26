@@ -5,12 +5,12 @@ import { postDate } from '@functions/posts'
 import { Image } from 'astro:assets'
 
 const { frontmatter } = Astro.props
-const { title, description, featuredImage, publishDate } = frontmatter
+const { title, description, featuredImage, publishDate, minutesRead, tags } =
+  frontmatter
 
 const pageTitle = `${title} - Blog | Igor Dimitrijević`
-const minutesRead = 0
 const postPublishedDate = postDate(publishDate)
-const tag = []
+const allTags = tags.split(',')
 ---
 
 <style>
@@ -125,9 +125,9 @@ const tag = []
         </div>
       </div>
       {
-        tag.length > 0 && (
+        allTags.length > 0 && (
           <div class="post--tags">
-            {tags.map((tagName) => (
+            {allTags.map((tagName: string) => (
               <a href={`/blog/tag/${tagName}/`}>{tagName}</a>
             ))}
           </div>
