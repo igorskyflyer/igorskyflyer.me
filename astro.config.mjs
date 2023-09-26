@@ -6,15 +6,6 @@ import sitemap from '@astrojs/sitemap'
 export default defineConfig({
   site: 'https://igorskyflyer.me',
   vite: {
-    build: {
-      rollupOptions: {
-        output: {
-          entryFileNames: 'script.[hash].js',
-          chunkFileNames: 'chunks/chunk.[hash].js',
-          assetFileNames: 'css/ui.[hash][extname]',
-        },
-      },
-    },
     ssr: {
       noExternal: ['astro', '@igor.dvlpr/astro-post-excerpt'],
     },
