@@ -19,6 +19,7 @@ export async function GET(context) {
     stylesheet: '/rss-styles.xsl',
     xmlns: {
       atom: 'http://www.w3.org/2005/Atom',
+      dc: 'http://purl.org/dc/elements/1.1/',
     },
     customData: [
       '<language>en-us</language>',
