@@ -20,13 +20,17 @@ export async function GET(context) {
     xmlns: {
       atom: 'http://www.w3.org/2005/Atom',
     },
+    customData: [
+      '<language>en-us</language>',
+      '<atom:link href="https://igorskyflyer.me/rss.xml" rel="self" type="application/rss+xml" />',
+    ].join(''),
     items: blog.map((post) => {
       return {
         title: post.data.title,
         link: `/blog/${post.slug}/`,
         pubDate: post.data.publishDate,
         description: post.data.description,
-        customData: `<language>en-us</language><author>Igor Dimitrijević (igorskyflyer)</author>`,
+        customData: '<author>Igor Dimitrijević (igorskyflyer)</author>',
       }
     }),
   })
