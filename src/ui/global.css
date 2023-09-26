@@ -225,7 +225,7 @@ footer {
   font-size: 0.9rem;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 768px) {
   header {
     margin-bottom: 2rem;
   }
@@ -271,7 +271,7 @@ footer {
     height: auto;
   }
 
-  .post--content {
-    padding: 4rem 3rem 1rem 3rem;
+  .post {
+    padding: 1rem 3rem 3rem 3rem;
   }
 }
