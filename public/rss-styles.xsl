@@ -134,7 +134,7 @@ This file is in BETA. Please test and contribute to the discussion:
                   <xsl:attribute name="href">
                     <xsl:value-of select="'/blog/author/igorskyflyer'"/>
                   </xsl:attribute>
-                  <xsl:value-of select="author"/>
+                  <xsl:value-of select="dc:creator"/>
                 </a>
 							</p>
 							<p>
