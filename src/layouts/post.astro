@@ -92,6 +92,17 @@ const allTags = tags.split(',')
     margin-left: 1rem;
   }
 
+  .post-meta-separator {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 2rem;
+  }
+
+  .post-data {
+    display: flex;
+    align-items: center;
+  }
+
   @media screen and (min-width: 600px) {
     .post-info {
       flex-direction: row;
@@ -120,7 +131,11 @@ const allTags = tags.split(',')
         >
         <div class="post--frontmatter">
           <a href="/igorskyflyer/">Igor Dimitrijević (igorskyflyer)</a>
-          <span>{minutesRead} &#183; {postPublishedDate}</span>
+          <span class="post-data"
+            >{minutesRead}
+            <span class="post-meta-separator">&#183;</span>
+            {postPublishedDate}</span
+          >
         </div>
       </div>
       {
