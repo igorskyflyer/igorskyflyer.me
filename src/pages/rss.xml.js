@@ -10,7 +10,7 @@ export async function GET(context) {
 
   return rss({
     title: 'IgorSkyFlyer.me',
-    description: 'A place where I like to express myself.',
+    description: '⚡ The place where I like to express myself. 🦑',
     site: context.site,
     items: blog.map((post) => {
       return {
