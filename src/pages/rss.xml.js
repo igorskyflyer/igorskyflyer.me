@@ -30,7 +30,7 @@ export async function GET(context) {
         link: `/blog/${post.slug}/`,
         pubDate: post.data.publishDate,
         description: post.data.description,
-        customData: '<author>Igor Dimitrijević (igorskyflyer)</author>',
+        customData: '<dc:creator>Igor Dimitrijević (igorskyflyer)</dc:creator>',
       }
     }),
   })
