@@ -1,9 +1,9 @@
 ---
-import PageHead from '@components/PageHead.astro'
 import PageFooter from '@components/PageFooter.astro'
+import PageHead from '@components/PageHead.astro'
 import PageHeader from '@components/PageHeader.astro'
 import { PageProps } from '@interfaces/PageProps'
-import EasyNav from './EasyNav.astro'
+import EasyNavButton from './EasyNavButton.astro'
 
 const {
   title = '',
@@ -14,7 +14,7 @@ const {
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" transition:animate="slide">
   <PageHead
     title={title}
     description={description}
@@ -26,7 +26,7 @@ const {
     <main>
       <slot />
     </main>
-    <EasyNav />
+    <EasyNavButton />
     <PageFooter />
   </body>
 </html>
