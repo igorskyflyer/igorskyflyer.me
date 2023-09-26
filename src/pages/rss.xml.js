@@ -23,7 +23,10 @@ export async function GET(context) {
     },
     customData: [
       '<language>en-us</language>',
-      '<atom:link href="https://igorskyflyer.me/rss.xml" rel="self" type="application/rss+xml" />',
+      `<atom:link href="${new URL(
+        'rss.xml',
+        context.site
+      )}" rel="self" type="application/rss+xml" />`,
     ].join(''),
     items: blog.map((post) => {
       return {
