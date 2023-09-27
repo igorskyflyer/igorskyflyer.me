@@ -73,10 +73,10 @@
 
 <script is:inline>
   document.addEventListener('astro:page-load', () => {
+    const navButton = document.getElementById('easy-nav-button')
+
     if (typeof window.easyNavHandleScroll === 'undefined') {
       function easyNavHandleScroll() {
-        const navButton = document.getElementById('easy-nav-button')
-
         if (
           document.documentElement.scrollTop >=
           document.body.scrollHeight / 2
@@ -110,12 +110,8 @@
       }
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
-      const navButton = document.getElementById('easy-nav-button')
-
-      navButton.addEventListener('click', () => {
-        window.scrollTo(0, document.body.scrollHeight)
-      })
+    navButton.addEventListener('click', () => {
+      window.scrollTo(0, document.body.scrollHeight)
     })
 
     document.removeEventListener('scrollend', easyNavHandleScroll)
