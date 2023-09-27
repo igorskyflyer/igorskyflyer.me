@@ -11,7 +11,7 @@ const { post } = Astro.props
 const { remarkPluginFrontmatter: data } = await post.render()
 
 const minutesRead = data.minutesRead
-const tags = post.data.tags.split(',')
+const tags = post.data.tags
 const postPublishedDate = postDate(post.data.publishDate)
 ---
 
