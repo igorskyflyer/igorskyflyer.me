@@ -1,0 +1,56 @@
+---
+import PageFooter from '@components/PageFooter.astro'
+import PageHead from '@components/PageHead.astro'
+import PageHeader from '@components/PageHeader.astro'
+import { PageProps } from '@interfaces/PageProps'
+import EasyNavButton from './EasyNavButton.astro'
+
+const {
+  title = '',
+  description = '',
+  featuredImage = '',
+  keywords = '',
+  post,
+} = Astro.props as PageProps
+
+let datePublished = new Date(post.publishDate).toISOString()
+let dateModified = new Date().toISOString()
+datePublished = datePublished.substring(0, datePublished.length - 1)
+dateModified = dateModified.substring(0, dateModified.length - 1)
+
+const postSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: title,
+  image: [featuredImage],
+  datePublished: datePublished,
+  dateModified: dateModified,
+  author: [
+    {
+      '@type': 'Person',
+      name: 'Igor Dimitrijević',
+      url: 'https://igorskyflyer.me/blog/author/igorskyflyer',
+    },
+  ],
+}
+---
+
+<!doctype html>
+<html lang="en" transition:animate="slide">
+  <PageHead
+    title={title}
+    description={description}
+    keywords={keywords}
+    featuredImage={featuredImage}
+  >
+    <script type="application/ld+json" set:html={JSON.stringify(postSchema)} />
+  </PageHead>
+  <body>
+    <PageHeader />
+    <main>
+      <slot />
+    </main>
+    <EasyNavButton />
+    <PageFooter />
+  </body>
+</html>
