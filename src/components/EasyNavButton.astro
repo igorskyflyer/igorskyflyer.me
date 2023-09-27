@@ -68,80 +68,57 @@
 </style>
 
 <div id="easy-nav">
-  <p id="easy-nav-button" onclick="window.easyNav.goDown()"></p>
+  <p id="easy-nav-button"></p>
 </div>
 
 <script is:inline>
-  document.addEventListener(
-    'astro:page-load',
-    () => {
-      if (typeof window.easyNav === 'undefined') {
-        window.easyNav = {
-          navButton: document.getElementById('easy-nav-button'),
-          scrollToBottom: true,
-          initialized: false,
+  document.addEventListener('astro:page-load', () => {
+    if (typeof window.easyNavHandleScroll === 'undefined') {
+      function easyNavHandleScroll() {
+        const navButton = document.getElementById('easy-nav-button')
 
-          goUp: function () {
+        if (
+          document.documentElement.scrollTop >=
+          document.body.scrollHeight / 2
+        ) {
+          navButton.classList.add('nav-up')
+          navButton.title = 'Go to top'
+          navButton.onclick = () => {
             window.scrollTo(1, 1)
-          },
+          }
 
-          goDown: function () {
+          navButton.classList.remove('animate')
+
+          const timeout = setTimeout(() => {
+            navButton.classList.add('animate')
+            clearTimeout(timeout)
+          }, 0)
+        } else {
+          navButton.classList.remove('nav-up')
+          navButton.title = 'Go to bottom'
+          navButton.onclick = () => {
             window.scrollTo(0, document.body.scrollHeight)
-          },
+          }
 
-          init: function () {
-            if (window.easyNav.initialized) {
-              return
-            } else {
-              window.easyNav.initialized = true
-            }
+          navButton.classList.remove('animate')
 
-            document.addEventListener('scrollend', () => {
-              if (
-                document.documentElement.scrollTop >=
-                document.body.scrollHeight / 2
-              ) {
-                if (window.easyNav.scrollToBottom) {
-                  return
-                }
-
-                window.easyNav.navButton.classList.add('nav-up')
-                window.easyNav.navButton.title = 'Go to top'
-                window.easyNav.navButton.onclick = window.easyNav.goUp
-
-                window.easyNav.navButton.classList.remove('animate')
-
-                const timeout = setTimeout(() => {
-                  window.easyNav.navButton.classList.add('animate')
-                  clearTimeout(timeout)
-                }, 0)
-
-                window.easyNav.scrollToBottom = true
-              } else {
-                if (!window.easyNav.scrollToBottom) {
-                  return
-                }
-
-                window.easyNav.navButton.classList.remove('nav-up')
-                window.easyNav.navButton.title = 'Go to bottom'
-                window.easyNav.navButton.onclick = window.easyNav.goDown
-
-                window.easyNav.navButton.classList.remove('animate')
-
-                const timeout = setTimeout(() => {
-                  window.easyNav.navButton.classList.add('animate')
-                  clearTimeout(timeout)
-                }, 0)
-
-                window.easyNav.scrollToBottom = false
-              }
-            })
-          },
+          const timeout = setTimeout(() => {
+            navButton.classList.add('animate')
+            clearTimeout(timeout)
+          }, 0)
         }
       }
+    }
 
-      window.easyNav.init()
-    },
-    { once: true }
-  )
+    document.addEventListener('DOMContentLoaded', () => {
+      const navButton = document.getElementById('easy-nav-button')
+
+      navButton.addEventListener('click', () => {
+        window.scrollTo(0, document.body.scrollHeight)
+      })
+    })
+
+    document.removeEventListener('scrollend', easyNavHandleScroll)
+    document.addEventListener('scrollend', easyNavHandleScroll)
+  })
 </script>
