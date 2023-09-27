@@ -1,6 +1,6 @@
 ---
 import imageAuthor from '@assets/author/igorskyflyer.png'
-import Page from '@components/Page.astro'
+import PostPage from '@components/PostPage.astro'
 import { postDate } from '@functions/posts'
 import { Image } from 'astro:assets'
 
@@ -10,7 +10,6 @@ const { title, description, featuredImage, publishDate, minutesRead, tags } =
 
 const pageTitle = `${title} - Blog | Igor Dimitrijević`
 const postPublishedDate = postDate(publishDate)
-const allTags = tags.split(',')
 ---
 
 <style>
@@ -111,7 +110,12 @@ const allTags = tags.split(',')
   }
 </style>
 
-<Page title={pageTitle} description={description} featuredImage={featuredImage}>
+<PostPage
+  title={pageTitle}
+  description={description}
+  featuredImage={featuredImage}
+  post={frontmatter}
+>
   <a href="/blog/" id="post--all-posts">Back to all posts</a>
   <br />
   <br />
@@ -139,9 +143,9 @@ const allTags = tags.split(',')
         </div>
       </div>
       {
-        allTags.length > 0 && (
+        tags.length > 0 && (
           <div class="post--tags">
-            {allTags.map((tagName: string) => (
+            {tags.map((tagName: string) => (
               <a href={`/blog/tag/${tagName}/`}>{tagName}</a>
             ))}
           </div>
@@ -152,4 +156,4 @@ const allTags = tags.split(',')
       <slot />
     </section>
   </article>
-</Page>
+</PostPage>
