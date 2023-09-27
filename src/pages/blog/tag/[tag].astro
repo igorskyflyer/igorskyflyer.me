@@ -9,11 +9,9 @@ const description = 'My own blog'
 
 const posts = (await getCollection('blog'))
   .filter((post) => {
-    return !post.data.draft && post.data.tags.split(',').includes(tag)
+    return !post.data.draft && post.data.tags.includes(tag)
   })
-  .sort(
-    (a, b) => Date.parse(b.data.publishDate) - Date.parse(a.data.publishDate)
-  )
+  .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime())
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog')
@@ -25,7 +23,7 @@ export async function getStaticPaths() {
     }
 
     const unique = []
-    const tags = post.data.tags.split(',')
+    const tags = post.data.tags
 
     for (let i = 0; i < tags.length; i++) {
       if (tags[i] === '') {
