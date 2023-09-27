@@ -29,12 +29,10 @@ export async function GET(context) {
       )}" rel="self" type="application/rss+xml" />`,
     ].join(''),
     items: blog.map((post) => {
-      const tags = post.data.tags.split(',')
-
       return {
         title: post.data.title,
         link: `/blog/${post.slug}/`,
-        categories: tags,
+        categories: post.data.tags,
         pubDate: post.data.publishDate,
         description: post.data.description,
         customData: '<dc:creator>Igor Dimitrijević (igorskyflyer)</dc:creator>',
