@@ -216,10 +216,11 @@ article h2 {
 }
 
 footer {
+  margin-top: 7rem;
   padding: 2rem 0.5rem;
   background: #160c34;
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
 }
 
 @media screen and (min-width: 768px) {
