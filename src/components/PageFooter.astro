@@ -1,11 +1,85 @@
 ---
 import { getYear } from '@functions/utilities'
+import { Icon } from 'astro-icon'
 
 const year = getYear()
 ---
 
+<style>
+  .footer-link-icon {
+    display: inline-block;
+    margin: 0 0.3rem;
+    color: #fff;
+    opacity: 0.65;
+    transition: opacity cubic-bezier(0.23, 1, 0.32, 1) 400ms;
+  }
+
+  .footer-link-icon:hover {
+    opacity: 1;
+  }
+
+  #footer-author {
+    transition: font-weight cubic-bezier(0.55, 0.055, 0.675, 0.19) 100ms;
+  }
+
+  #footer-author:hover {
+    font-weight: bold;
+  }
+
+  #footer-heart {
+    color: #f00;
+    font-size: 1.4em;
+  }
+</style>
+
 <footer>
-  Built with &hearts; and Astro by <a href="/igorskyflyer/">Igor Dimitrijević</a>.
+  <a
+    href="/rss.xml"
+    rel="alternate"
+    target="_blank"
+    title="Read igorskyflyer.me's RSS Feed"
+    class="footer-link-icon"><Icon name="mdi:rss" width="48" /></a
+  >
+  <a
+    href="https://github.com/igorskyflyer"
+    rel="external"
+    target="_blank"
+    title="Check my GitHub profile"
+    class="footer-link-icon"><Icon name="mdi:github" width="48" /></a
+  >
+  <a
+    href="https://www.linkedin.com/in/igor-dvlpr"
+    rel="external"
+    target="_blank"
+    title="Contact me on LinkedIn"
+    class="footer-link-icon"><Icon name="mdi:linkedin" width="48" /></a
+  >
+  <a
+    href="http://igorskyflyer.me/contact/"
+    target="_blank"
+    title="Contact me via email"
+    class="footer-link-icon"><Icon name="ic:outline-email" width="48" /></a
+  >
+  <a
+    href="https://www.instagram.com/igorskyflyer"
+    rel="external"
+    target="_blank"
+    title="Check my daily update on Instagram"
+    class="footer-link-icon"><Icon name="mdi:instagram" width="48" /></a
+  >
+  <a
+    href="https://youtube.com/@igorskyflyer"
+    rel="external"
+    target="_blank"
+    title="Watch my latest videos on YouTube"
+    class="footer-link-icon"><Icon name="ri:youtube-fill" width="48" /></a
+  >
+  <br />
+  <br />
+   Built with <span id="footer-heart">&hearts;</span> and 🚀 Astro by <a
+    href="/igorskyflyer/"
+    id="footer-author">Igor Dimitrijević</a
+  >.
   <br />
    &copy; {year}, all rights reserved.
 </footer>
