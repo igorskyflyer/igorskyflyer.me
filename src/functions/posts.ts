@@ -28,7 +28,18 @@ export function postDate(date: string) {
     'Dec',
   ]
 
+  let hours: number | string = postDate.getHours()
+  let minutes: number | string = postDate.getMinutes()
+
+  if (hours < 10) {
+    hours = `0${hours}`
+  }
+
+  if (minutes < 10) {
+    minutes = `0${minutes}`
+  }
+
   return `${
     months[postDate.getMonth()]
-  } ${postDate.getDate()}, ${postDate.getFullYear()}`
+  } ${postDate.getDate()}, ${postDate.getFullYear()}, ${hours}:${minutes}`
 }
