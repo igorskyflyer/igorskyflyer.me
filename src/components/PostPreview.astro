@@ -6,6 +6,7 @@ import PostExcerpt, {
   PropRenderer,
 } from '@igor.dvlpr/astro-post-excerpt'
 import { Image } from 'astro:assets'
+import { Icon } from 'astro-icon'
 
 const { post } = Astro.props
 const { remarkPluginFrontmatter: data } = await post.render()
@@ -57,7 +58,7 @@ const postPublishedDate = postDate(post.data.publishDate)
   .post--tags a {
     display: inline-block;
     padding: 0.2rem 0.5rem;
-    margin-right: 0.4rem;
+    margin: 0.5rem 0.4rem 0.3rem 0;
     border-radius: var(--border-radius);
     background: rgba(17, 188, 226, 0.12);
     transition:
@@ -81,13 +82,11 @@ const postPublishedDate = postDate(post.data.publishDate)
     margin-left: 1rem;
   }
 
-  .post-meta-separator {
-    display: inline-block;
-    margin: 0 10px;
-    font-size: 2rem;
+  .post-data {
+    margin-top: 0.4rem;
   }
 
-  .post-data {
+  .post-data-inner {
     display: flex;
     align-items: center;
   }
@@ -119,11 +118,16 @@ const postPublishedDate = postDate(post.data.publishDate)
         </span>
         <div class="post--frontmatter">
           <a href="/igorskyflyer/">Igor Dimitrijević (igorskyflyer)</a>
-          <span class="post-data">
-            {minutesRead}
-            <span class="post-meta-separator">&#183;</span>
-            {postPublishedDate}
-          </span>
+          <div class="post-data">
+            <div class="post-data-inner">
+              <Icon name="mdi:clock-outline" width="24" />&nbsp;
+              {postPublishedDate}
+            </div>
+            <div class="post-data-inner">
+              <Icon name="ic:baseline-menu-book" width="24" />&nbsp;
+              {minutesRead}
+            </div>
+          </div>
         </div>
       </div>
       {
