@@ -220,7 +220,11 @@ footer {
   padding: 2rem 0.5rem;
   background: #160c34;
   text-align: center;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
+}
+
+footer svg {
+  width: 36px;
 }
 
 @media screen and (min-width: 768px) {
@@ -271,5 +275,13 @@ footer {
 
   .post {
     padding: 1rem 3rem 3rem 3rem;
+  }
+
+  footer {
+    font-size: 1.1rem;
+  }
+
+  footer svg {
+    width: 48px;
   }
 }
