@@ -33,7 +33,12 @@ const posts = (await getCollection('blog'))
   }
 </style>
 
-<Page title={title} description={description}>
+<Page
+  title={title}
+  description={description}
+  keywords="blog,igorskyflyer,igor dimitrijević,posts,it,javascript,typescript,code,programming,developer"
+  featuredImage=""
+>
   <section id="posts">
     <h1 id="posts--heading">All posts</h1>
     <br />
