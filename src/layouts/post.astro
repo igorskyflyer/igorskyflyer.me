@@ -2,6 +2,7 @@
 import imageAuthor from '@assets/author/igorskyflyer.png'
 import PostPage from '@components/PostPage.astro'
 import { postDate } from '@functions/posts'
+import { Icon } from 'astro-icon'
 import { Image } from 'astro:assets'
 
 const { frontmatter } = Astro.props
@@ -98,6 +99,10 @@ const postPublishedDate = postDate(publishDate)
   }
 
   .post-data {
+    margin-top: 0.4rem;
+  }
+
+  .post-data-inner {
     display: flex;
     align-items: center;
   }
@@ -135,11 +140,16 @@ const postPublishedDate = postDate(publishDate)
         >
         <div class="post--frontmatter">
           <a href="/igorskyflyer/">Igor Dimitrijević (igorskyflyer)</a>
-          <span class="post-data"
-            >{minutesRead}
-            <span class="post-meta-separator">&#183;</span>
-            {postPublishedDate}</span
-          >
+          <div class="post-data">
+            <div class="post-data-inner">
+              <Icon name="mdi:clock-outline" width="24" />&nbsp;
+              {postPublishedDate}
+            </div>
+            <div class="post-data-inner">
+              <Icon name="ic:baseline-menu-book" width="24" />&nbsp;
+              {minutesRead}
+            </div>
+          </div>
         </div>
       </div>
       {
