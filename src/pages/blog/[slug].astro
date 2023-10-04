@@ -11,11 +11,11 @@ export async function getStaticPaths() {
   return posts.map((post) => {
     return {
       params: {
-        slug: post.slug,
+        slug: post.slug
       },
       props: {
-        post,
-      },
+        post
+      }
     }
   })
 }
