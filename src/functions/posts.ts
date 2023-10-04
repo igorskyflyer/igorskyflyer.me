@@ -1,4 +1,3 @@
-import type { MarkdownInstance } from 'astro'
 import { CollectionEntry } from 'astro:content'
 
 type BlogPost = CollectionEntry<'blog'>
@@ -25,7 +24,7 @@ export function postDate(date: string) {
     'Sep',
     'Oct',
     'Nov',
-    'Dec',
+    'Dec'
   ]
 
   let hours: number | string = postDate.getHours()
