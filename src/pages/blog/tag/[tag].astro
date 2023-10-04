@@ -11,7 +11,10 @@ const posts = (await getCollection('blog'))
   .filter((post) => {
     return !post.data.draft && post.data.tags.includes(tag)
   })
-  .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime())
+  .sort(
+    (first, second) =>
+      second.data.publishDate.getTime() - first.data.publishDate.getTime()
+  )
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog')
@@ -38,8 +41,8 @@ export async function getStaticPaths() {
 
       allTags.push({
         params: {
-          tag: tags[i],
-        },
+          tag: tags[i]
+        }
       })
     }
   })
