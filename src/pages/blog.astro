@@ -14,7 +14,8 @@ const posts = (await getCollection('blog'))
     }
   })
   .sort(
-    (a, b) => Date.parse(b.data.publishDate) - Date.parse(a.data.publishDate)
+    (first, second) =>
+      second.data.publishDate.getTime() - first.data.publishDate.getTime()
   )
 ---
 
@@ -37,8 +38,7 @@ const posts = (await getCollection('blog'))
   title={title}
   description={description}
   keywords="blog,igorskyflyer,igor dimitrijević,posts,it,javascript,typescript,code,programming,developer"
-  featuredImage=""
->
+  featuredImage="">
   <section id="posts">
     <h1 id="posts--heading">All posts</h1>
     <br />
