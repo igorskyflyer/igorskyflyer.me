@@ -12,7 +12,8 @@ const posts = (await getCollection('blog'))
     return !post.data.draft
   })
   .sort(
-    (a, b) => Date.parse(b.data.publishDate) - Date.parse(a.data.publishDate)
+    (first, second) =>
+      second.data.publishDate.getTime() - first.data.publishDate.getTime()
   )
 
 export async function getStaticPaths() {
