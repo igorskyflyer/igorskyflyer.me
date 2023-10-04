@@ -1,12 +1,8 @@
 ---
 import imageAuthor from '@assets/author/igorskyflyer.png'
 import { postDate } from '@functions/posts'
-import PostExcerpt, {
-  PropHeadings,
-  PropRenderer,
-} from '@igor.dvlpr/astro-post-excerpt'
-import { Image } from 'astro:assets'
 import { Icon } from 'astro-icon'
+import { Image } from 'astro:assets'
 
 const { post } = Astro.props
 const { remarkPluginFrontmatter: data } = await post.render()
