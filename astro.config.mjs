@@ -7,15 +7,15 @@ export default defineConfig({
   site: 'https://igorskyflyer.me',
   vite: {
     ssr: {
-      noExternal: ['astro', '@igor.dvlpr/astro-post-excerpt'],
-    },
+      noExternal: ['astro', '@igor.dvlpr/astro-post-excerpt']
+    }
   },
   markdown: {
     remarkPlugins: [readingTime],
     shikiConfig: {
       theme: 'one-dark-pro',
-      wrap: true,
-    },
+      wrap: true
+    }
   },
   integrations: [
     compress({
@@ -29,13 +29,13 @@ export default defineConfig({
         removeTagWhitespace: false,
         keepClosingSlash: false,
         removeStyleLinkTypeAttributes: false,
-        removeScriptTypeAttributes: false,
+        removeScriptTypeAttributes: false
       },
       css: {
-        restructure: true,
-      },
+        restructure: true
+      }
     }),
     mdx(),
-    sitemap(),
-  ],
+    sitemap()
+  ]
 })
