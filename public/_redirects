@@ -1,0 +1,7 @@
+### Rewrites START
+
+https://blog.igorskyflyer.me/* https://igorskyflyer.netlify.app/blog/:splat 200!
+
+https://adbt.igorskyflyer.me/* https://gregarious-torte-4e532b.netlify.app/:splat 301!
+
+### Rewrites END
