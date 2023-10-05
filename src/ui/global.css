@@ -46,7 +46,21 @@ body {
   margin: 0;
   background: var(--main-bg);
   color: var(--main-text);
-  font-family: 'Poppins', sans-serif;
+  font-family:
+    'Poppins',
+    -apple-system,
+    BlinkMacSystemFont,
+    avenir next,
+    avenir,
+    segoe ui,
+    helvetica neue,
+    helvetica,
+    Cantarell,
+    Ubuntu,
+    roboto,
+    noto,
+    arial,
+    sans-serif;
 }
 
 body a,
