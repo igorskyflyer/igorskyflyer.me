@@ -5,6 +5,8 @@
   --main-text: #fff;
   --border-radius: 6px;
   --accent: #003599;
+
+  --link: #09f;
 }
 
 ::-webkit-scrollbar {
@@ -55,7 +57,7 @@ body {
 
 body a,
 body a:visited {
-  color: #9291f0;
+  color: var(--link);
   text-decoration: none;
 }
 
