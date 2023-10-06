@@ -4,7 +4,7 @@
   --main-bg: #120a2c;
   --main-text: #fff;
   --border-radius: 6px;
-  --accent: #4a3b77;
+  --accent: #003599;
 }
 
 ::-webkit-scrollbar {
@@ -55,7 +55,7 @@ body {
 
 body a,
 body a:visited {
-  color: #11bce2;
+  color: #9291f0;
   text-decoration: none;
 }
 
@@ -93,7 +93,7 @@ nav {
   right: 0;
   left: 0;
   bottom: 0;
-  z-index: 100;
+  z-index: 2;
   margin-bottom: 0;
   display: flex;
   flex-direction: column-reverse;
@@ -132,7 +132,7 @@ pre {
   height: 0;
   overflow: hidden;
   margin: 0 0 1.85rem 0;
-  z-index: 2;
+  z-index: 4;
   list-style-type: none;
   transition: height ease-in 0.15s;
 }
@@ -162,7 +162,7 @@ pre {
   align-items: center;
   justify-content: center;
   margin-left: auto;
-  z-index: 2;
+  z-index: 10;
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: var(--border-radius);
@@ -176,7 +176,7 @@ pre {
 }
 
 #hamburger-icon:hover {
-  background: rgb(93, 72, 154);
+  background: var(--accent);
   border: 2px solid rgba(255, 255, 255, 0.6);
 }
 
@@ -207,6 +207,7 @@ pre {
   right: 0;
   top: 100%;
   bottom: 0;
+  z-index: 3;
   background: linear-gradient(310deg, #000, rgba(34, 18, 84, 0.5));
   transition: top ease-in 0.15s;
 }
