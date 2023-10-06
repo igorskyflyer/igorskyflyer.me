@@ -1,7 +1,7 @@
 :root {
   color-scheme: dark light;
 
-  --main-bg: #0f062c;
+  --main-bg: #120a2c;
   --main-text: #fff;
   --border-radius: 6px;
   --accent: #4a3b77;
@@ -222,7 +222,7 @@ article h2 {
 footer {
   margin-top: 2rem;
   padding: 2rem 0.5rem 3.5rem 0.5rem;
-  background: #160c34;
+  background: linear-gradient(to bottom, var(--main-bg), #052664);
   text-align: center;
   font-size: 0.9rem;
 }
