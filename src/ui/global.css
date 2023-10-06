@@ -6,7 +6,7 @@
   --border-radius: 6px;
   --accent: #003599;
 
-  --link: #09f;
+  --link: rgb(14, 168, 255);
 }
 
 ::-webkit-scrollbar {
