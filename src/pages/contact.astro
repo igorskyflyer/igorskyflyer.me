@@ -8,26 +8,16 @@ import Page from '@components/Page.astro'
   keywords="contact,email,message,blog,igorskyflyer,igor dimitrijević,posts,it,javascript,typescript,code,programming,developer"
   featuredImage="">
   Contact
-  <br />
-  <form
-    name="contact"
-    method="POST"
-    data-netlify-recaptcha="true"
-    data-netlify="true">
-    <p>
-      <label>Name <input type="text" name="name" /></label>
-    </p>
-    <p>
-      <label>Email <input type="email" name="email" /></label>
-    </p>
-    <p>
-      <label>
-        Message: <textarea name="message"></textarea>
-      </label>
-    </p>
-    <div data-netlify-recaptcha="true"></div>
-    <p>
-      <button type="submit">Send</button>
-    </p>
-  </form>
+  <br />  
+<form action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="d692d221-3dfb-44e6-8454-aad7563b95f7">
+
+    <input type="text" name="name" required>
+    <input type="email" name="email" required>
+    <textarea name="message" required></textarea>
+    <div class="h-captcha" data-captcha="true"></div>
+    <button type="submit">Submit</button>
+</form>
+
+<script src="https://web3forms.com/client/script.js" async defer></script>
 </Page>
