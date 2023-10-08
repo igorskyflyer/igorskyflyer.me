@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /404/
 
 Sitemap: https://igorskyflyer.me/sitemap-index.xml
