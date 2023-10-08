@@ -9,7 +9,7 @@ const {
   title = '',
   description = '',
   featuredImage = '',
-  keywords = '',
+  keywords = ''
 } = Astro.props as PageProps
 ---
 
@@ -19,8 +19,9 @@ const {
     title={title}
     description={description}
     keywords={keywords}
-    featuredImage={featuredImage}
-  />
+    featuredImage={featuredImage}>
+    <slot name="head" />
+  </PageHead>
   <body>
     <PageHeader />
     <main>
