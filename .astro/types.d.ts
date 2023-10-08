@@ -227,6 +227,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".mdx"] };
+"why-i-moved-from-netlify-to-cloudflare.mdx": {
+	id: "why-i-moved-from-netlify-to-cloudflare.mdx";
+  slug: "why-i-moved-from-netlify-to-cloudflare";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".mdx"] };
 };
 
 	};
