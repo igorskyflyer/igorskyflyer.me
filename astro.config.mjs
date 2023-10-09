@@ -35,10 +35,14 @@ export default defineConfig({
         removeTagWhitespace: false,
         sortAttributes: false,
         sortClassName: true,
-        useShortDoctype: false
+        useShortDoctype: true
       },
       CSS: {
         restructure: true
+      },
+      JavaScript: {
+        compress: true,
+        format: { comments: false }
       }
     }),
     mdx(),
