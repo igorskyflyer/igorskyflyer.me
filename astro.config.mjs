@@ -21,6 +21,7 @@ export default defineConfig({
     compress({
       HTML: {
         caseSensitive: true,
+        collapseBooleanAttributes: true,
         collapseInlineTagWhitespace: false,
         collapseWhitespace: true,
         html5: true,
