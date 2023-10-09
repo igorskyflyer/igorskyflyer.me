@@ -10,7 +10,7 @@ const {
   description = '',
   featuredImage = '',
   keywords = '',
-  post,
+  post
 } = Astro.props as PageProps
 
 let datePublished = new Date(post.publishDate).toISOString()
@@ -29,20 +29,19 @@ const postSchema = {
     {
       '@type': 'Person',
       name: 'Igor Dimitrijević',
-      url: 'https://igorskyflyer.me/blog/author/igorskyflyer',
-    },
-  ],
+      url: 'https://igorskyflyer.me/blog/author/igorskyflyer'
+    }
+  ]
 }
 ---
 
 <!doctype html>
-<html lang="en" transition:animate="slide">
+<html lang="en">
   <PageHead
     title={title}
     description={description}
     keywords={keywords}
-    featuredImage={featuredImage}
-  >
+    featuredImage={featuredImage}>
     <script type="application/ld+json" set:html={JSON.stringify(postSchema)} />
   </PageHead>
   <body>
