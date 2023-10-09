@@ -1,8 +1,8 @@
-import { defineConfig } from 'astro/config'
-import compress from 'astro-compress'
-import { readingTime } from './src/functions/reading-time'
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
+import compress from 'astro-compress'
+import { defineConfig } from 'astro/config'
+import { readingTime } from './src/functions/reading-time'
 export default defineConfig({
   site: 'https://igorskyflyer.me',
   vite: {
@@ -46,7 +46,7 @@ export default defineConfig({
         format: { comments: false }
       }
     }),
-    mdx(),
+    mdx({ shikiConfig: { theme: 'one-dark-pro', wrap: true } }),
     sitemap()
   ]
 })
