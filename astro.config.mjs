@@ -19,19 +19,25 @@ export default defineConfig({
   },
   integrations: [
     compress({
-      html: {
+      HTML: {
+        caseSensitive: true,
+        collapseInlineTagWhitespace: false,
         collapseWhitespace: true,
-        minifyJS: true,
-        minifyCSS: true,
-        quoteCharacter: '"',
         html5: true,
-        removeAttributeQuotes: false,
-        removeTagWhitespace: false,
         keepClosingSlash: false,
-        removeStyleLinkTypeAttributes: false,
-        removeScriptTypeAttributes: false
+        minifyCSS: true,
+        minifyJS: true,
+        noNewlinesBeforeTagClose: true,
+        removeAttributeQuotes: false,
+        removeComments: true,
+        removeScriptTypeAttributes: false,
+        removeStyleLinkTypeAttributes: true,
+        removeTagWhitespace: false,
+        sortAttributes: false,
+        sortClassName: true,
+        useShortDoctype: false
       },
-      css: {
+      CSS: {
         restructure: true
       }
     }),
