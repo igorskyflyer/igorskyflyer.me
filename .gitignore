@@ -1,7 +1,7 @@
 # build output
 dist/
 .output/
-.remote/
+_remote/
 
 # dependencies
 node_modules/
