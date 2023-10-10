@@ -1,6 +1,8 @@
 ---
+import imageIgorSkyFlyer from '@assets/author/igorskyflyer.png'
 import Page from '@components/Page.astro'
 import { Content as IgorSkyFlyer } from '@remote/igorskyflyer.md'
+import { Image } from 'astro:assets'
 
 function getLastFetch() {
   return new Date().toLocaleString('en-uk', {
@@ -21,23 +23,32 @@ function getLastFetch() {
     color: #d4d4ff;
   }
 
-  main ol:not([data-no-restyle]),
-  main ul:not([data-no-restyle]) {
+  #author-image-wrap {
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+
+  #author-igorskyflyer {
+    border-radius: 50%;
+  }
+
+  #readme-renderer ol:not([data-no-restyle]),
+  #readme-renderer ul:not([data-no-restyle]) {
     margin: auto;
     list-style-position: inside;
     text-align: center;
   }
 
-  main ul:not([data-no-restyle]) {
+  #readme-renderer ul:not([data-no-restyle]) {
     list-style-type: none;
   }
 
-  main img {
+  #readme-renderer img {
     display: inline-block;
     margin: 0 2px;
   }
 
-  main code {
+  #readme-renderer code {
     background: #0d1117;
     box-shadow: 0 0 18px inset #000;
     padding: 0.3rem;
@@ -56,7 +67,7 @@ function getLastFetch() {
     font-style: italic;
   }
 
-  main h3 + p:not([data-no-restyle]) {
+  #readme-renderer h3 + p:not([data-no-restyle]) {
     text-align: center;
   }
 </style>
@@ -74,5 +85,18 @@ function getLastFetch() {
     >.
     <p>🚀 Last fetched: {getLastFetch()} 🚀</p>
   </div>
-  <IgorSkyFlyer />
+  <br />
+  <div id="author-image-wrap">
+    <Image
+      src={imageIgorSkyFlyer}
+      alt="Igor Dimitrijević (IgorSkyFlyer)'s photo"
+      loading="eager"
+      width="340"
+      height="340"
+      id="author-igorskyflyer"
+    />
+  </div>
+  <div id="readme-renderer">
+    <IgorSkyFlyer />
+  </div>
 </Page>
