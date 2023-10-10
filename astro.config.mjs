@@ -5,6 +5,7 @@ import { defineConfig } from 'astro/config'
 import { readingTime } from './src/functions/reading-time'
 export default defineConfig({
   site: 'https://igorskyflyer.me',
+  build: { inlineStylesheets: 'always' },
   vite: {
     ssr: {
       noExternal: ['astro', '@igor.dvlpr/astro-post-excerpt']
@@ -13,7 +14,7 @@ export default defineConfig({
   markdown: {
     remarkPlugins: [readingTime],
     shikiConfig: {
-      theme: 'one-dark-pro',
+      theme: 'dracula',
       wrap: true
     }
   },
