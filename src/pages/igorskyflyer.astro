@@ -2,10 +2,6 @@
 import Page from '@components/Page.astro'
 import { Content as IgorSkyFlyer } from '@remote/igorskyflyer.md'
 
-const title = 'IgorSkyFlyer | Igor Dimitrijević'
-const description = ''
-const featuredImage = 'https://igorskyflyer.github.io/assets/igorskyflyer.jpg'
-
 function getLastFetch() {
   return new Date().toLocaleString('en-uk', {
     day: '2-digit',
@@ -64,10 +60,10 @@ function getLastFetch() {
 </style>
 
 <Page
-  title={title}
-  description={description}
+  title="IgorSkyFlyer | Igor Dimitrijević"
+  description="Information about Igor Dimitrijević (IgorSkyFlyer), a Serbian software engineer specializing in full-stack Web, desktop and mobile development and the author of this website."
   keywords="igorskyflyer,igor dimitrijević,developer,development,astro,golang,web,software,software engineer,software engineering,hire,html,javascript,css"
-  featuredImage={featuredImage}>
+  featuredImage="">
   <div id="igorskyflyer-copy-notice">
     🧑🏼‍🚀 This page is a copy of my <a
       href="https://github.com/igorskyflyer"
