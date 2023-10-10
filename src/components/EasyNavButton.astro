@@ -72,41 +72,39 @@
 </div>
 
 <script is:inline>
-  document.addEventListener('astro:page-load', () => {
+  document.addEventListener('DOMContentLoaded', () => {
     const navButton = document.getElementById('easy-nav-button')
 
-    if (typeof window.easyNavHandleScroll === 'undefined') {
-      function easyNavHandleScroll() {
-        if (
-          document.documentElement.scrollTop >=
-          document.body.scrollHeight / 2
-        ) {
-          navButton.classList.add('nav-up')
-          navButton.title = 'Go to top'
-          navButton.onclick = () => {
-            window.scrollTo(1, 1)
-          }
-
-          navButton.classList.remove('animate')
-
-          const timeout = setTimeout(() => {
-            navButton.classList.add('animate')
-            clearTimeout(timeout)
-          }, 0)
-        } else {
-          navButton.classList.remove('nav-up')
-          navButton.title = 'Go to bottom'
-          navButton.onclick = () => {
-            window.scrollTo(0, document.body.scrollHeight)
-          }
-
-          navButton.classList.remove('animate')
-
-          const timeout = setTimeout(() => {
-            navButton.classList.add('animate')
-            clearTimeout(timeout)
-          }, 0)
+    function easyNavHandleScroll() {
+      if (
+        document.documentElement.scrollTop >=
+        document.body.scrollHeight / 2
+      ) {
+        navButton.classList.add('nav-up')
+        navButton.title = 'Go to top'
+        navButton.onclick = () => {
+          window.scrollTo(1, 1)
         }
+
+        navButton.classList.remove('animate')
+
+        const timeout = setTimeout(() => {
+          navButton.classList.add('animate')
+          clearTimeout(timeout)
+        }, 0)
+      } else {
+        navButton.classList.remove('nav-up')
+        navButton.title = 'Go to bottom'
+        navButton.onclick = () => {
+          window.scrollTo(0, document.body.scrollHeight)
+        }
+
+        navButton.classList.remove('animate')
+
+        const timeout = setTimeout(() => {
+          navButton.classList.add('animate')
+          clearTimeout(timeout)
+        }, 0)
       }
     }
 
