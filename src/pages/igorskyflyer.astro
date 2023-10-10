@@ -29,7 +29,7 @@ function getLastFetch() {
   }
 
   #author-image-wrap {
-    margin-bottom: 6rem;
+    margin-bottom: 2rem;
     text-align: center;
   }
 
@@ -77,8 +77,8 @@ function getLastFetch() {
   }
 
   @media screen and (min-width: 600px) {
-    #igorskyflyer-copy-notice {
-      margin: 6rem 0 3rem 0;
+    #author-image-wrap {
+      margin: 4rem 0 2rem 0;
     }
   }
 </style>
@@ -88,15 +88,6 @@ function getLastFetch() {
   description="Information about Igor Dimitrijević (IgorSkyFlyer), a Serbian software engineer specializing in full-stack Web, desktop and mobile development and the author of this website."
   keywords="igorskyflyer,igor dimitrijević,developer,development,astro,golang,web,software,software engineer,software engineering,hire,html,javascript,css"
   featuredImage="">
-  <div id="igorskyflyer-copy-notice">
-    This page is a copy of my <a
-      href="https://github.com/igorskyflyer"
-      rel="external"
-      target="_blank">GitHub's README</a
-    >.
-    <p>🚀 Last fetched: {getLastFetch()} 🚀</p>
-  </div>
-  <br />
   <div id="author-image-wrap">
     <figure>
       <Image
@@ -110,6 +101,15 @@ function getLastFetch() {
       <figcaption>Igor Dimitrijević - IgorSkyFlyer</figcaption>
     </figure>
   </div>
+  <div id="igorskyflyer-copy-notice">
+    This page is a copy of my <a
+      href="https://github.com/igorskyflyer"
+      rel="external"
+      target="_blank">GitHub's README</a
+    >.
+    <p>🚀 Last fetched: {getLastFetch()} 🚀</p>
+  </div>
+  <br />
   <div id="readme-renderer">
     <IgorSkyFlyer />
   </div>
