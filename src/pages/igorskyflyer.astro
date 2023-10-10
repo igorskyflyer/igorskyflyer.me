@@ -23,8 +23,13 @@ function getLastFetch() {
     color: #d4d4ff;
   }
 
+  figcaption {
+    font-size: 0.92rem;
+    font-style: italic;
+  }
+
   #author-image-wrap {
-    margin-bottom: 4rem;
+    margin-bottom: 6rem;
     text-align: center;
   }
 
@@ -87,14 +92,17 @@ function getLastFetch() {
   </div>
   <br />
   <div id="author-image-wrap">
-    <Image
-      src={imageIgorSkyFlyer}
-      alt="Igor Dimitrijević (IgorSkyFlyer)'s photo"
-      loading="eager"
-      width="340"
-      height="340"
-      id="author-igorskyflyer"
-    />
+    <figure>
+      <Image
+        src={imageIgorSkyFlyer}
+        alt="Igor Dimitrijević (IgorSkyFlyer)'s photo"
+        loading="eager"
+        width="270"
+        height="270"
+        id="author-igorskyflyer"
+      />
+      <figcaption>Igor Dimitrijević - IgorSkyFlyer</figcaption>
+    </figure>
   </div>
   <div id="readme-renderer">
     <IgorSkyFlyer />
