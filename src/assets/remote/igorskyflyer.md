@@ -160,17 +160,17 @@ Xamarin, Kotlin, [Dart + Flutter](https://github.com/igorskyflyer?tab=repositori
 
 <h3 align="center">🌟 SHOWCASE 🌟</h3>
 <div align="center">
-        <a href="https://github.com/igorskyflyer/npm-vscode-folderpicker"><img src="https://raw.githubusercontent.com/igorskyflyer/igorskyflyer/main/assets/cards/repo-card-1.png" alt="RecursiveReadDir" align="center" width="500px"></a>
+        <a href="https://github.com/igorskyflyer/npm-vscode-folderpicker"><img src="https://raw.githubusercontent.com/igorskyflyer/igorskyflyer/main/assets/cards/repo-card-1.png" alt="RecursiveReadDir" align="center" width="500px" height="150px"></a>
 	<br>
-	<a href="https://github.com/igorskyflyer/npm-astro-post-excerpt"><img src="https://raw.githubusercontent.com/igorskyflyer/igorskyflyer/main/assets/cards/repo-card-2.png" alt="Astro Post excerpt component" align="center" width="500px"></a>
+	<a href="https://github.com/igorskyflyer/npm-astro-post-excerpt"><img src="https://raw.githubusercontent.com/igorskyflyer/igorskyflyer/main/assets/cards/repo-card-2.png" alt="Astro Post excerpt component" align="center" width="500px" height="150px"></a>
 	<br>
-	<a href="https://github.com/igorskyflyer/npm-zep"><img src="https://raw.githubusercontent.com/igorskyflyer/igorskyflyer/main/assets/cards/repo-card-3.png" alt="Zep" align="center" width="500px"></a>
+	<a href="https://github.com/igorskyflyer/npm-zep"><img src="https://raw.githubusercontent.com/igorskyflyer/igorskyflyer/main/assets/cards/repo-card-3.png" alt="Zep" align="center" width="500px" height="150px"></a>
 	<br>
-	<a href="https://github.com/igorskyflyer/npm-windev"><img src="https://raw.githubusercontent.com/igorskyflyer/igorskyflyer/main/assets/cards/repo-card-4.png" alt="WinDev" align="center" width="500px"></a>
+	<a href="https://github.com/igorskyflyer/npm-windev"><img src="https://raw.githubusercontent.com/igorskyflyer/igorskyflyer/main/assets/cards/repo-card-4.png" alt="WinDev" align="center" width="500px" height="150px"></a>
 	<br>
-	<a href="https://github.com/igorskyflyer/npm-recursive-readdir"><img src="https://raw.githubusercontent.com/igorskyflyer/igorskyflyer/main/assets/cards/repo-card-5.png" alt="RecursiveReadDir" align="center" width="500px"></a>
+	<a href="https://github.com/igorskyflyer/npm-recursive-readdir"><img src="https://raw.githubusercontent.com/igorskyflyer/igorskyflyer/main/assets/cards/repo-card-5.png" alt="RecursiveReadDir" align="center" width="500px" height="150px"></a>
 	<br>
-	<a href="https://github.com/igorskyflyer/npm-valid-path"><img src="https://raw.githubusercontent.com/igorskyflyer/igorskyflyer/main/assets/cards/repo-card-6.png" alt="ValidPath" align="center" width="500px"></a>
+	<a href="https://github.com/igorskyflyer/npm-valid-path"><img src="https://raw.githubusercontent.com/igorskyflyer/igorskyflyer/main/assets/cards/repo-card-6.png" alt="ValidPath" align="center" width="500px" height="150px"></a>
 </div>
 
 <br>
@@ -251,7 +251,7 @@ Posts on my blog [igorskyflyer.me](https://igorskyflyer.me/blog):
 <h3>💝 SUPPORT 💝</h3>
 <p>If you in any case want to support my open-source work which takes my dedication and time, you can do so using my <a href="https://ko-fi.com/igorskyflyer"><strong>Ko-Fi</strong></a> page.</p>
 
-<a href="https://ko-fi.com/igorskyflyer" target="_blank"><img src="https://raw.githubusercontent.com/igorskyflyer/igorskyflyer/main/assets/ko-fi.png" alt="Donate to igorskyflyer" width="150"></a>
+<a href="https://ko-fi.com/igorskyflyer" target="_blank"><img src="https://raw.githubusercontent.com/igorskyflyer/igorskyflyer/main/assets/ko-fi.png" alt="Donate to igorskyflyer" width="150px" height="36px"></a>
 
 <br>
 
@@ -265,34 +265,34 @@ Any type of support is very much appreciated. 🙂
 
 <div align="center">
 <h3>🔥 STATISTICS 🔥</h3>
-  <img src="https://github-readme-stats-nu-ecru.vercel.app/api/top-langs/?username=igorskyflyer&layout=compact&theme=tokyonight&langs_count=20&hide_border=true&cache_seconds=14400&custom_title=Top%20Languages&disable_animations=true" alt="Igor&#39;s Top Languages Used" width="500px">
+  <img src="https://github-readme-stats-nu-ecru.vercel.app/api/top-langs/?username=igorskyflyer&layout=compact&theme=tokyonight&langs_count=20&hide_border=true&cache_seconds=14400&custom_title=Top%20Languages&disable_animations=true" alt="Igor&#39;s Top Languages Used" width="500px" height="567px">
   <br>
   <sub><em><strong>Metric that shows which languages are mostly used in my repositories</strong></em></sub>
   <br>
   <br>
-  <img src="https://github-readme-stats-nu-ecru.vercel.app/api?username=igorskyflyer&show_icons=true&theme=tokyonight&include_all_commits=true&hide_border=true&custom_title=Github%20Stats&rank_icon=percentile&show=reviews,discussions_started,discussions_answered,prs_merged&disable_animations=true&cache_seconds=14400" width="500px">
+  <img src="https://github-readme-stats-nu-ecru.vercel.app/api?username=igorskyflyer&show_icons=true&theme=tokyonight&include_all_commits=true&hide_border=true&custom_title=Github%20Stats&rank_icon=percentile&show=reviews,discussions_started,discussions_answered,prs_merged&disable_animations=true&cache_seconds=14400" width="500px" height="316px">
   <br>
   <sub><em><strong>My Github profile metrics</strong></em></sub>
   <br>
   <br>
-  <img src="https://github-readme-streak-stats-plum.vercel.app/?user=igorskyflyer&theme=tokyonight&hide_border=true&stroke=1a1b27&dates=8b949e&sideNums=59A5FA&sideLabels=59A5FA&currStreakNum=C9D1D2&ring=EF8065&fire=EF8065&currStreakLabel=EF8065" alt="GitHub Streak Stats" width="500px">
+  <img src="https://github-readme-streak-stats-plum.vercel.app/?user=igorskyflyer&theme=tokyonight&hide_border=true&stroke=1a1b27&dates=8b949e&sideNums=59A5FA&sideLabels=59A5FA&currStreakNum=C9D1D2&ring=EF8065&fire=EF8065&currStreakLabel=EF8065" alt="GitHub Streak Stats" width="500px" height="197px">
   <br>
   <sub><em><strong>Consistency is key</strong></em></sub>
   <br>
   <br>
-  <img src="https://github-readme-stats-nu-ecru.vercel.app/api/wakatime?username=igorskyflyer&layout=compact&range=last_7_days&hide=Text&theme=tokyonight&hide_border=true&custom_title=Past%20week%20activity&disable_animations=true&cache_seconds=14400" alt="WakaTime coding stats for the past week" width="500px">
+  <img src="https://github-readme-stats-nu-ecru.vercel.app/api/wakatime?username=igorskyflyer&layout=compact&range=last_7_days&hide=Text&theme=tokyonight&hide_border=true&custom_title=Past%20week%20activity&disable_animations=true&cache_seconds=14400" alt="WakaTime coding stats for the past week" width="500px" height="192px">
   <br>
   <sub><em><strong>My coding activity in the last 7 days</strong></em></sub>
   <br>
   <sub><em>(not in real-time, refreshes every ~6h)</em></sub>
   <br>
   <br>
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=igorskyflyer&bg_color=1A1B27&color=FFFFFF&point=EE7F64&line=58A4F9&hide_border=true&radius=6&custom_title=Contributions%20graph" width="500px">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=igorskyflyer&bg_color=1A1B27&color=FFFFFF&point=EE7F64&line=58A4F9&hide_border=true&radius=6&custom_title=Contributions%20graph" width="500px" height="175px">
   <br>
   <sub><em><strong>Commits statistics</strong></em></sub>
   <br>
   <br>
-  <img src="https://github-profile-trophy.vercel.app/?username=igorskyflyer&no-frame=true&theme=onestar&column=3&row=2&rank=-A" width="450px">
+  <img src="https://github-profile-trophy.vercel.app/?username=igorskyflyer&no-frame=true&theme=onestar&column=3&row=2&rank=-A" width="450px" height="300px">
   <br>
   <sub><em><strong>My GitHub trophies</strong></em></sub>
 </div>
@@ -302,9 +302,9 @@ Any type of support is very much appreciated. 🙂
 
 <!-- 📈 since 18 Jun 2021 -->
 <div align="center">
-  <img src="https://komarev.com/ghpvc/?username=igorskyflyer" width="140px">
+  <img src="https://komarev.com/ghpvc/?username=igorskyflyer" width="140px" height="21px">
 	<br>
-  <img src="https://github.com/igorskyflyer/igorskyflyer/actions/workflows/self-update.yml/badge.svg" alt="Self-update" width="140px">
+  <img src="https://github.com/igorskyflyer/igorskyflyer/actions/workflows/self-update.yml/badge.svg" alt="Self-update" width="140px" height="20px">
   <br>
-  <img alt="Made with 🔮" src="https://img.shields.io/badge/Made%20with-Magic-orange?style=flat&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNTEyIiB3aWR0aD0iNTEyIiB4bWxuczp2PSJodHRwczovL3ZlY3RhLmlvL25hbm8iPjxwYXRoIGQ9Im0zOTUuODIgMTgyLjYxNi0xODguNzIgMTg4LjcyLTEyLjkxIDEuNzItOS4zNSAyMC41NC0zNC4zMSAzNC4zMS0xMS4wMS0uNzMtMTEuMjUgMjIuOTktNTYuNDggNTYuNDhjLTIuOTMgMi45My02Ljc3IDQuMzktMTAuNjEgNC4zOXMtNy42OC0xLjQ2LTEwLjYxLTQuMzlsLTIyLjYyLTIyLjYyaC0uMDFsLTIyLjYyLTIyLjYzYy01Ljg2LTUuODYtNS44Ni0xNS4zNiAwLTIxLjIybDc3LjYzLTc3LjYzIDE2LjYtNy4wMyA1LjY2LTE1LjIzIDM0LjMxLTM0LjMxIDE0Ljg0LTQuOTIgNy40Mi0xNy4zNCAxNjcuNTctMTY3LjU3IDMzLjI0IDMzLjI0eiIgZmlsbD0iI2Y2NiIvPjxwYXRoIGQ9Im0zOTUuODIgMTE2LjE0NnY2Ni40N2wtMTg4LjcyIDE4OC43Mi0xMi45MSAxLjcyLTkuMzUgMjAuNTQtMzQuMzEgMzQuMzEtMTEuMDEtLjczLTExLjI1IDIyLjk5LTU2LjQ4IDU2LjQ4Yy0yLjkzIDIuOTMtNi43NyA0LjM5LTEwLjYxIDQuMzlzLTcuNjgtMS40Ni0xMC42MS00LjM5bC0yMi42Mi0yMi42MiAzMzQuNjQtMzM0LjY0eiIgZmlsbD0iI2U2MmU2YiIvPjxwYXRoIGQ9Ik01MDYuNjEgMjA5LjAwNmwtNjkuMTQtNjkuMTMgNDMuMDUtODguMzhjMi44LTUuNzUgMS42NS0xMi42NS0yLjg4LTE3LjE3LTQuNTItNC41My0xMS40Mi01LjY4LTE3LjE3LTIuODhsLTg4LjM4IDQzLjA1LTY5LjEzLTY5LjE0Yy00LjM1LTQuMzUtMTAuOTItNS42LTE2LjU2LTMuMTYtNS42NSAyLjQ1LTkuMjMgOC4wOS05LjA0IDE0LjI0bDIuODYgOTAuNDUtODUuMzcgNTcuODNjLTQuOTEgMy4zMi03LjQgOS4yMi02LjM2IDE1LjA0YTE1LjAxIDE1LjAxIDAgMCAwIDExLjE1IDExLjk0bDk2LjYyIDI0LjAxIDI0LjAxIDk2LjYyYTE1LjAxIDE1LjAxIDAgMCAwIDExLjk0IDExLjE1Yy44Ny4xNiAxLjc1LjIzIDIuNjIuMjMgNC45MiAwIDkuNi0yLjQyIDEyLjQyLTYuNTlsNTcuODMtODUuMzcgOTAuNDUgMi44NmM2LjE0LjE5IDExLjc5LTMuMzkgMTQuMjQtOS4wNCAyLjQ0LTUuNjQgMS4xOS0xMi4yMS0zLjE2LTE2LjU2eiIgZmlsbD0iI2ZhYmUyYyIvPjxwYXRoIGQ9Ik0yOTYuMjYgMjE1LjcwNmwyNC4wMSA5Ni42MmExNS4wMSAxNS4wMSAwIDAgMCAxMS45NCAxMS4xNWMuODcuMTYgMS43NS4yMyAyLjYyLjIzIDQuOTIgMCA5LjYtMi40MiAxMi40Mi02LjU5bDU3LjgzLTg1LjM3IDkwLjQ1IDIuODZjNi4xNC4xOSAxMS43OS0zLjM5IDE0LjI0LTkuMDQgMi40NC01LjY0IDEuMTktMTIuMjEtMy4xNi0xNi41NmwtNjkuMTQtNjkuMTMgNDMuMDUtODguMzhjMi44LTUuNzUgMS42NS0xMi42NS0yLjg4LTE3LjE3eiIgZmlsbD0iI2ZkOTAyNSIvPjxwYXRoIGQ9Im00NjUgNDE2Ljk2NmMtMjUuOTIgMC00NyAyMS4wOC00NyA0N3MyMS4wOCA0NyA0NyA0NyA0Ny0yMS4wOCA0Ny00Ny0yMS4wOC00Ny00Ny00N3oiIGZpbGw9IiNmYWJlMmMiLz48cGF0aCBkPSJNMTA0IDI4Ljk2Nkg5MXYtMTNjMC04LjI4NC02LjcxNi0xNS0xNS0xNXMtMTUgNi43MTYtMTUgMTV2MTNINDhjLTguMjg0IDAtMTUgNi43MTYtMTUgMTVzNi43MTYgMTUgMTUgMTVoMTN2MTNjMCA4LjI4NCA2LjcxNiAxNSAxNSAxNXMxNS02LjcxNiAxNS0xNXYtMTNoMTNjOC4yODQgMCAxNS02LjcxNiAxNS0xNXMtNi43MTYtMTUtMTUtMTV6bTEwMy4xIDM0Mi4zN2wtMjIuMjYgMjIuMjYtNDUuMzItODcuNjIgMjIuMjYtMjIuMjZ6IiBmaWxsPSIjZmVkODQzIi8+PHBhdGggZD0ibTE4NC44NCAzOTMuNTk2IDIyLjI2LTIyLjI2LTIyLjY2LTQzLjgxLTIyLjI2NSAyMi4yNjV6IiBmaWxsPSIjZmFiZTJjIi8+PHBhdGggZD0ibTE1MC41MyA0MjcuOTA2LTIyLjI2IDIyLjI2LTQ1LjMyLTg3LjYyIDIyLjI2LTIyLjI2eiIgZmlsbD0iI2ZlZDg0MyIvPjxwYXRoIGQ9Im0xMjguMjcgNDUwLjE2NiAyMi4yNi0yMi4yNi0yMi42NTUtNDMuODE1LTIyLjI2IDIyLjI2eiIgZmlsbD0iI2ZhYmUyYyIvPjxjaXJjbGUgY3g9IjE1IiBjeT0iMTE5Ljk2OSIgZmlsbD0iIzVlZDhkMyIgcj0iMTUiLz48Y2lyY2xlIGN4PSIxMjgiIGN5PSIxOTkuOTY5IiBmaWxsPSIjZDU5OWVkIiByPSIxNSIvPjxjaXJjbGUgY3g9IjE5MiIgY3k9IjYzLjk2NCIgZmlsbD0iI2Y2NiIgcj0iMTUiLz48Y2lyY2xlIGN4PSIzMjgiIGN5PSI0MTUuOTY3IiBmaWxsPSIjMzFiZWJlIiByPSIxNSIvPjxjaXJjbGUgY3g9IjQ0MCIgY3k9IjMyNy45NjciIGZpbGw9IiNhZDc3ZTMiIHI9IjE0Ljk5OSIvPjwvc3ZnPg==" width="140px">
+  <img alt="Made with 🔮" src="https://img.shields.io/badge/Made%20with-Magic-orange?style=flat&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNTEyIiB3aWR0aD0iNTEyIiB4bWxuczp2PSJodHRwczovL3ZlY3RhLmlvL25hbm8iPjxwYXRoIGQ9Im0zOTUuODIgMTgyLjYxNi0xODguNzIgMTg4LjcyLTEyLjkxIDEuNzItOS4zNSAyMC41NC0zNC4zMSAzNC4zMS0xMS4wMS0uNzMtMTEuMjUgMjIuOTktNTYuNDggNTYuNDhjLTIuOTMgMi45My02Ljc3IDQuMzktMTAuNjEgNC4zOXMtNy42OC0xLjQ2LTEwLjYxLTQuMzlsLTIyLjYyLTIyLjYyaC0uMDFsLTIyLjYyLTIyLjYzYy01Ljg2LTUuODYtNS44Ni0xNS4zNiAwLTIxLjIybDc3LjYzLTc3LjYzIDE2LjYtNy4wMyA1LjY2LTE1LjIzIDM0LjMxLTM0LjMxIDE0Ljg0LTQuOTIgNy40Mi0xNy4zNCAxNjcuNTctMTY3LjU3IDMzLjI0IDMzLjI0eiIgZmlsbD0iI2Y2NiIvPjxwYXRoIGQ9Im0zOTUuODIgMTE2LjE0NnY2Ni40N2wtMTg4LjcyIDE4OC43Mi0xMi45MSAxLjcyLTkuMzUgMjAuNTQtMzQuMzEgMzQuMzEtMTEuMDEtLjczLTExLjI1IDIyLjk5LTU2LjQ4IDU2LjQ4Yy0yLjkzIDIuOTMtNi43NyA0LjM5LTEwLjYxIDQuMzlzLTcuNjgtMS40Ni0xMC42MS00LjM5bC0yMi42Mi0yMi42MiAzMzQuNjQtMzM0LjY0eiIgZmlsbD0iI2U2MmU2YiIvPjxwYXRoIGQ9Ik01MDYuNjEgMjA5LjAwNmwtNjkuMTQtNjkuMTMgNDMuMDUtODguMzhjMi44LTUuNzUgMS42NS0xMi42NS0yLjg4LTE3LjE3LTQuNTItNC41My0xMS40Mi01LjY4LTE3LjE3LTIuODhsLTg4LjM4IDQzLjA1LTY5LjEzLTY5LjE0Yy00LjM1LTQuMzUtMTAuOTItNS42LTE2LjU2LTMuMTYtNS42NSAyLjQ1LTkuMjMgOC4wOS05LjA0IDE0LjI0bDIuODYgOTAuNDUtODUuMzcgNTcuODNjLTQuOTEgMy4zMi03LjQgOS4yMi02LjM2IDE1LjA0YTE1LjAxIDE1LjAxIDAgMCAwIDExLjE1IDExLjk0bDk2LjYyIDI0LjAxIDI0LjAxIDk2LjYyYTE1LjAxIDE1LjAxIDAgMCAwIDExLjk0IDExLjE1Yy44Ny4xNiAxLjc1LjIzIDIuNjIuMjMgNC45MiAwIDkuNi0yLjQyIDEyLjQyLTYuNTlsNTcuODMtODUuMzcgOTAuNDUgMi44NmM2LjE0LjE5IDExLjc5LTMuMzkgMTQuMjQtOS4wNCAyLjQ0LTUuNjQgMS4xOS0xMi4yMS0zLjE2LTE2LjU2eiIgZmlsbD0iI2ZhYmUyYyIvPjxwYXRoIGQ9Ik0yOTYuMjYgMjE1LjcwNmwyNC4wMSA5Ni42MmExNS4wMSAxNS4wMSAwIDAgMCAxMS45NCAxMS4xNWMuODcuMTYgMS43NS4yMyAyLjYyLjIzIDQuOTIgMCA5LjYtMi40MiAxMi40Mi02LjU5bDU3LjgzLTg1LjM3IDkwLjQ1IDIuODZjNi4xNC4xOSAxMS43OS0zLjM5IDE0LjI0LTkuMDQgMi40NC01LjY0IDEuMTktMTIuMjEtMy4xNi0xNi41NmwtNjkuMTQtNjkuMTMgNDMuMDUtODguMzhjMi44LTUuNzUgMS42NS0xMi42NS0yLjg4LTE3LjE3eiIgZmlsbD0iI2ZkOTAyNSIvPjxwYXRoIGQ9Im00NjUgNDE2Ljk2NmMtMjUuOTIgMC00NyAyMS4wOC00NyA0N3MyMS4wOCA0NyA0NyA0NyA0Ny0yMS4wOCA0Ny00Ny0yMS4wOC00Ny00Ny00N3oiIGZpbGw9IiNmYWJlMmMiLz48cGF0aCBkPSJNMTA0IDI4Ljk2Nkg5MXYtMTNjMC04LjI4NC02LjcxNi0xNS0xNS0xNXMtMTUgNi43MTYtMTUgMTV2MTNINDhjLTguMjg0IDAtMTUgNi43MTYtMTUgMTVzNi43MTYgMTUgMTUgMTVoMTN2MTNjMCA4LjI4NCA2LjcxNiAxNSAxNSAxNXMxNS02LjcxNiAxNS0xNXYtMTNoMTNjOC4yODQgMCAxNS02LjcxNiAxNS0xNXMtNi43MTYtMTUtMTUtMTV6bTEwMy4xIDM0Mi4zN2wtMjIuMjYgMjIuMjYtNDUuMzItODcuNjIgMjIuMjYtMjIuMjZ6IiBmaWxsPSIjZmVkODQzIi8+PHBhdGggZD0ibTE4NC44NCAzOTMuNTk2IDIyLjI2LTIyLjI2LTIyLjY2LTQzLjgxLTIyLjI2NSAyMi4yNjV6IiBmaWxsPSIjZmFiZTJjIi8+PHBhdGggZD0ibTE1MC41MyA0MjcuOTA2LTIyLjI2IDIyLjI2LTQ1LjMyLTg3LjYyIDIyLjI2LTIyLjI2eiIgZmlsbD0iI2ZlZDg0MyIvPjxwYXRoIGQ9Im0xMjguMjcgNDUwLjE2NiAyMi4yNi0yMi4yNi0yMi42NTUtNDMuODE1LTIyLjI2IDIyLjI2eiIgZmlsbD0iI2ZhYmUyYyIvPjxjaXJjbGUgY3g9IjE1IiBjeT0iMTE5Ljk2OSIgZmlsbD0iIzVlZDhkMyIgcj0iMTUiLz48Y2lyY2xlIGN4PSIxMjgiIGN5PSIxOTkuOTY5IiBmaWxsPSIjZDU5OWVkIiByPSIxNSIvPjxjaXJjbGUgY3g9IjE5MiIgY3k9IjYzLjk2NCIgZmlsbD0iI2Y2NiIgcj0iMTUiLz48Y2lyY2xlIGN4PSIzMjgiIGN5PSI0MTUuOTY3IiBmaWxsPSIjMzFiZWJlIiByPSIxNSIvPjxjaXJjbGUgY3g9IjQ0MCIgY3k9IjMyNy45NjciIGZpbGw9IiNhZDc3ZTMiIHI9IjE0Ljk5OSIvPjwvc3ZnPg==" width="140px" height="22px">
 </div>
