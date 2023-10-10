@@ -7,6 +7,6 @@ const response = await fetch(readmeUrl)
 const markdown = await response.text()
 
 const outFile = fileURLToPath(
-  new URL('../src/pages/igorskyflyer.md', import.meta.url)
+  new URL('../src/assets/remote/igorskyflyer.md', import.meta.url)
 )
 await writeFile(outFile, markdown)
