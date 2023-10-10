@@ -20,6 +20,9 @@
 			"@ui/*": [
 				"src/ui/*"
 			],
+			"@remote/*": [
+				".remote/*"
+			],
 		},
 		"target": "ESNext",
 		"module": "ESNext",
