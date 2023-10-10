@@ -31,5 +31,6 @@ Cross-Origin-Resource-Policy: cross-origin
 Cross-Origin-Opener-Policy: same-origin
 Cross-Origin-Embedder-Policy: credentialless
 X-Permitted-Cross-Domain-Policies: none
+Strict-Transport-Security: max-age=31536000; includeSubDomains
 
 ### Security END
