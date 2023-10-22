@@ -5,6 +5,7 @@ import { defineConfig } from 'astro/config'
 import { readingTime } from './src/functions/reading-time'
 export default defineConfig({
   site: 'https://igorskyflyer.me',
+  compressHTML: true,
   build: { inlineStylesheets: 'always' },
   vite: {
     ssr: {
