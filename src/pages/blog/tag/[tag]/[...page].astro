@@ -1,0 +1,106 @@
+---
+import Page from '@components/Page.astro'
+import PostsDisplay from '@components/PostsDisplay.astro'
+import { PostsPerPage, SiteName } from '@data/Site'
+import { Page as BlogPage } from 'astro'
+import { getCollection } from 'astro:content'
+
+export interface Props {
+  page: BlogPage
+}
+
+const { page } = Astro.props
+const { tag } = Astro.params
+
+console.log(Astro.params)
+const title = `Posts tagged with "${tag}" - Blog | ${SiteName}`
+const description = 'My own blog'
+
+export const getStaticPaths = async ({ paginate }) => {
+  const allPosts = await getCollection('blog')
+  const allTags: string[] = []
+
+  allPosts.forEach((post) => {
+    post.data.tags.forEach((tag: string) => {
+      allTags.push(tag)
+    })
+  })
+
+  const uniqueTags = [...new Set(allTags)]
+
+  return uniqueTags.flatMap((tag) => {
+    const filteredPosts = allPosts.filter((post) =>
+      post.data.tags.includes(tag)
+    )
+
+    const selectedPosts = filteredPosts.map((post) => {
+      return {
+        params: {
+          slug: post.slug
+        },
+        props: {
+          post
+        }
+      }
+    })
+
+    return paginate(selectedPosts, {
+      params: { tag },
+      pageSize: PostsPerPage
+    })
+  })
+}
+---
+
+<style>
+  #posts--heading {
+    font-size: 1.5rem;
+    margin-top: 0;
+    text-align: center;
+  }
+
+  #post--all-posts {
+    margin-left: -0.5rem;
+    font-size: 1.25rem;
+  }
+
+  #post--all-posts:before {
+    content: '\02770\20';
+  }
+
+  #blog-posts-navigation {
+    text-align: right;
+  }
+
+  #blog-posts-navigation a {
+    display: inline-block;
+    padding: 0 1rem;
+    font-size: 1.2rem;
+  }
+
+  @media screen and (min-width: 600px) {
+    #posts {
+      margin: auto;
+      width: 80%;
+    }
+  }
+</style>
+
+<Page title={title} description={description}>
+  <a href="/blog/" id="post--all-posts">Back to all posts</a>
+  <br />
+  <br />
+  <section id="posts">
+    <h1 id="posts--heading">
+      Posts tagged with "{tag}" - page {page.currentPage}
+    </h1>
+    <br />
+    <br />
+    <PostsDisplay posts={page.data} tag={tag} />
+  </section>
+
+  <nav id="blog-posts-navigation" role="navigation" aria-label="Pagination">
+    {page.url.prev ? <a href={page.url.prev}>👈🏼 Previous</a> : null}
+    {page.url.next ? <a href={page.url.next}>Next 👉🏼</a> : null}
+  </nav>
+</Page>
