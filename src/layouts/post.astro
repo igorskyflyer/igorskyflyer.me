@@ -1,6 +1,7 @@
 ---
 import imageAuthor from '@assets/author/igorskyflyer-mini.png'
 import PostPage from '@components/PostPage.astro'
+import { SiteName } from '@data/Site'
 import { postDate } from '@functions/posts'
 import { Icon } from 'astro-icon'
 import { Image } from 'astro:assets'
@@ -9,7 +10,7 @@ const { frontmatter } = Astro.props
 const { title, description, featuredImage, publishDate, minutesRead, tags } =
   frontmatter
 
-const pageTitle = `${title} - Blog | Igor Dimitrijević`
+const pageTitle = `${title} - Blog | ${SiteName}`
 const postPublishedDate = postDate(publishDate)
 ---
 
@@ -145,7 +146,7 @@ const postPublishedDate = postDate(publishDate)
               loading="eager"
               width="84"
               height="84"
-quality="max"
+              quality="max"
             /></a
           ></span
         >
