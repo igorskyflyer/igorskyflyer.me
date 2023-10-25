@@ -1,5 +1,6 @@
 ---
 import Page from '@components/Page.astro'
+import { SiteName } from '@data/Site'
 ---
 
 <style>
@@ -9,7 +10,7 @@ import Page from '@components/Page.astro'
 </style>
 
 <Page
-  title="Privacy Policy | Igor Dimitrijević"
+  title={`Privacy Policy | ${SiteName}`}
   description="Privacy"
   keywords="privacy,policy,blog,igorskyflyer,igor dimitrijević,posts,it,javascript,typescript,code,programming,developer"
   featuredImage="">
