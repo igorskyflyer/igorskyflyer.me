@@ -91,7 +91,7 @@ header {
   margin-bottom: 0;
 }
 
-nav {
+menu-navigation {
   text-align: right;
   overflow: hidden;
   position: fixed;
@@ -273,7 +273,7 @@ footer a {
     margin-bottom: 2rem;
   }
 
-  nav {
+  #menu-navigation {
     position: static;
     right: auto;
     left: auto;
