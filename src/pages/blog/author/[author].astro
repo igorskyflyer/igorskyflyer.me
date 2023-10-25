@@ -1,10 +1,11 @@
 ---
 import Page from '@components/Page.astro'
 import PostsDisplay from '@components/PostsDisplay.astro'
+import { SiteName } from '@data/Site'
 import { getCollection } from 'astro:content'
 
 const { author } = Astro.params
-const title = `Posts by ${author} - Blog | Igor Dimitrijević`
+const title = `Posts by ${author} - Blog | ${SiteName}`
 const description = 'My own blog'
 
 const posts = (await getCollection('blog'))
