@@ -1,0 +1,59 @@
+---
+import Page from '@components/Page.astro'
+import PostsDisplay from '@components/PostsDisplay.astro'
+import { SiteName } from '@data/Site'
+import { getCollection } from 'astro:content'
+
+const { author } = Astro.params
+const title = `Posts by ${author} - Blog | ${SiteName}`
+const description = 'My own blog'
+
+const posts = (await getCollection('blog'))
+  .filter((post) => {
+    return !post.data.draft
+  })
+  .sort(
+    (first, second) =>
+      second.data.publishDate.getTime() - first.data.publishDate.getTime()
+  )
+
+export async function getStaticPaths() {
+  return [{ params: { author: 'igorskyflyer' } }]
+}
+---
+
+<style>
+  #posts--heading {
+    font-size: 1.5rem;
+    margin-top: 0;
+    text-align: center;
+  }
+
+  #post--all-posts {
+    margin-left: -0.5rem;
+    font-size: 1.25rem;
+  }
+
+  #post--all-posts:before {
+    content: '\02770\20';
+  }
+
+  @media screen and (min-width: 600px) {
+    #posts {
+      margin: auto;
+      width: 80%;
+    }
+  }
+</style>
+
+<Page title={title} description={description}>
+  <a href="/blog/" id="post--all-posts">Back to all posts</a>
+  <br />
+  <br />
+  <section id="posts">
+    <h1 id="posts--heading">Posts by {author}</h1>
+    <br />
+    <br />
+    <PostsDisplay posts={posts} />
+  </section>
+</Page>
