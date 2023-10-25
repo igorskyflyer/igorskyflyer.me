@@ -1,10 +1,11 @@
 ---
 import Page from '@components/Page.astro'
 import PostsDisplay from '@components/PostsDisplay.astro'
+import { PostsPerPage, SiteName } from '@data/Site'
 import { Page as BlogPage } from 'astro'
 import { getCollection } from 'astro:content'
 
-const title: string = 'Blog | Igor Dimitrijević'
+const title: string = `Blog | ${SiteName}`
 const description: string = 'My own blog'
 
 export interface Props {
@@ -36,7 +37,7 @@ export async function getStaticPaths({ paginate }) {
     }
   })
 
-  return paginate(allPosts, { pageSize: 5 })
+  return paginate(allPosts, { pageSize: PostsPerPage })
 }
 ---
 
@@ -47,7 +48,13 @@ export async function getStaticPaths({ paginate }) {
     text-align: center;
   }
 
+  #blog-posts-navigation {
+    text-align: right;
+  }
+
   #blog-posts-navigation a {
+    display: inline-block;
+    padding: 0 1rem;
     font-size: 1.2rem;
   }
 
