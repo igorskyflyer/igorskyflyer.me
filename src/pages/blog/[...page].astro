@@ -1,0 +1,78 @@
+---
+import Page from '@components/Page.astro'
+import PostsDisplay from '@components/PostsDisplay.astro'
+import { Page as BlogPage } from 'astro'
+import { getCollection } from 'astro:content'
+
+const title: string = 'Blog | Igor Dimitrijević'
+const description: string = 'My own blog'
+
+export interface Props {
+  page: BlogPage
+}
+
+const { page } = Astro.props
+
+export async function getStaticPaths({ paginate }) {
+  const posts = (await getCollection('blog'))
+    .filter((post) => {
+      if (!post.data.draft) {
+        return post
+      }
+    })
+    .sort(
+      (first, second) =>
+        second.data.publishDate.getTime() - first.data.publishDate.getTime()
+    )
+
+  const allPosts = posts.map((post) => {
+    return {
+      params: {
+        slug: post.slug
+      },
+      props: {
+        post
+      }
+    }
+  })
+
+  return paginate(allPosts, { pageSize: 5 })
+}
+---
+
+<style>
+  #posts--heading {
+    font-size: 1.5rem;
+    margin-top: 0;
+    text-align: center;
+  }
+
+  #blog-posts-navigation a {
+    font-size: 1.2rem;
+  }
+
+  @media screen and (min-width: 600px) {
+    #posts {
+      margin: auto;
+      width: 80%;
+    }
+  }
+</style>
+
+<Page
+  title={title}
+  description={description}
+  keywords="blog,igorskyflyer,igor dimitrijević,posts,it,javascript,typescript,code,programming,developer"
+  featuredImage="">
+  <section id="posts">
+    <h1 id="posts--heading">All posts - page {page.currentPage}</h1>
+    <br />
+    <br />
+    <PostsDisplay posts={page.data} />
+  </section>
+
+  <nav id="blog-posts-navigation" role="navigation" aria-label="Pagination">
+    {page.url.prev ? <a href={page.url.prev}>👈🏼 Previous</a> : null}
+    {page.url.next ? <a href={page.url.next}>Next 👉🏼</a> : null}
+  </nav>
+</Page>
