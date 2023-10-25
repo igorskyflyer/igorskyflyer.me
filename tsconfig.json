@@ -20,6 +20,9 @@
 			"@ui/*": [
 				"src/ui/*"
 			],
+			"@data/*": [
+				"src/data/*"
+			],
 			"@remote/*": [
 				"_remote/*"
 			],
