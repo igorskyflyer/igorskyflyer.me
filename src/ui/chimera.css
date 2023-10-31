@@ -91,7 +91,7 @@ header {
   margin-bottom: 0;
 }
 
-menu-navigation {
+#menu-navigation {
   text-align: right;
   overflow: hidden;
   position: fixed;
