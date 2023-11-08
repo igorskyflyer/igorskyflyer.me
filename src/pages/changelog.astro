@@ -1,6 +1,7 @@
 ---
 import Page from '@components/Page.astro'
 import { SiteName } from '@data/Site'
+import { Content as ChangelogContent } from '../../CHANGELOG.md'
 ---
 
 <Page
@@ -8,5 +9,5 @@ import { SiteName } from '@data/Site'
   description="Changelog"
   keywords="changelog,changes,blog,igorskyflyer,igor dimitrijević,posts,it,javascript,typescript,code,programming,developer"
   featuredImage="">
-  Changelog
+  <ChangelogContent />
 </Page>
