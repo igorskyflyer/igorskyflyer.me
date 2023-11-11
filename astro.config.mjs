@@ -7,6 +7,9 @@ export default defineConfig({
   site: 'https://igorskyflyer.me',
   compressHTML: true,
   build: { inlineStylesheets: 'always' },
+  experimental: {
+    contentCollectionCache: true
+  },
   vite: {
     ssr: {
       noExternal: ['astro', '@igor.dvlpr/astro-post-excerpt']
