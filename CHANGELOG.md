@@ -4,6 +4,14 @@
 
 <br>
 
+## v1.0.3
+
+<p align="right"><em>11-Nov-2023</em></p>
+
+- **✅ fix**: add internal CSS for the Changelog page
+
+<br>
+
 ## v1.0.2
 
 <p align="right"><em>11-Nov-2023</em></p>
