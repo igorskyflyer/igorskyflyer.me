@@ -4,6 +4,14 @@
 
 <br>
 
+## v1.0.7
+
+<p align="right"><em>29-Nov-2023</em></p>
+
+- **💻 dev**: upgrade dependencies
+
+<br>
+
 ## v1.0.6
 
 <p align="right"><em>22-Nov-2023</em></p>
