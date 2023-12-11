@@ -4,11 +4,19 @@
 
 <br>
 
+## v1.0.12
+
+<p align="right"><em>09-Dec-2023</em></p>
+
+- **✅ fix**: fix content hiding on the [IgorSkyFlyer page](https://igorskyflyer.me/igorskyflyer)
+
+<br>
+
 ## v1.0.11
 
 <p align="right"><em>09-Dec-2023</em></p>
 
-- **🪅 feat**: add content hiding on [IgorSkyFlyer page](https://igorskyflyer.me/igorskyflyer)
+- **🪅 feat**: add content hiding on the [IgorSkyFlyer page](https://igorskyflyer.me/igorskyflyer)
 
 <br>
 
