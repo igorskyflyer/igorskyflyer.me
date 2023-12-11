@@ -4,6 +4,14 @@
 
 <br>
 
+## v1.0.13
+
+<p align="right"><em>10-Dec-2023</em></p>
+
+- **✅ fix**: apply content hiding only on *div*s on the [IgorSkyFlyer page](https://igorskyflyer.me/igorskyflyer)
+
+<br>
+
 ## v1.0.12
 
 <p align="right"><em>09-Dec-2023</em></p>
