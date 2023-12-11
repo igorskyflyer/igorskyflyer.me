@@ -4,6 +4,14 @@
 
 <br>
 
+## v1.0.11
+
+<p align="right"><em>09-Dec-2023</em></p>
+
+- **🪅 feat**: add content hiding on [IgorSkyFlyer page](https://igorskyflyer.me/igorskyflyer)
+
+<br>
+
 ## v1.0.10
 
 <p align="right"><em>08-Dec-2023</em></p>
