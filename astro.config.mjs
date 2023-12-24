@@ -24,6 +24,7 @@ export default defineConfig({
   },
   integrations: [
     compress({
+			Image: false,
       HTML: {
         caseSensitive: true,
         collapseBooleanAttributes: true,
