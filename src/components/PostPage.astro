@@ -3,6 +3,7 @@ import PageFooter from '@components/PageFooter.astro'
 import PageHead from '@components/PageHead.astro'
 import PageHeader from '@components/PageHeader.astro'
 import { PageProps } from '@interfaces/PageProps'
+import Comments from './Comments.astro'
 import EasyNavButton from './EasyNavButton.astro'
 
 const {
@@ -48,6 +49,7 @@ const postSchema = {
     <PageHeader />
     <main>
       <slot />
+      <Comments />
     </main>
     <EasyNavButton />
     <PageFooter />
