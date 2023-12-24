@@ -4,6 +4,15 @@
 
 <br>
 
+## v1.0.15
+
+<p align="right"><em>24-Dec-2023</em></p>
+
+- **✅ fix**: image compression error
+- **💻 dev**: upgrade dependencies
+
+<br>
+
 ## v1.0.14
 
 <p align="right"><em>15-Dec-2023</em></p>
