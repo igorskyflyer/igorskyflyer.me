@@ -4,6 +4,14 @@
 
 <br>
 
+## v1.0.16
+
+<p align="right"><em>24-Dec-2023</em></p>
+
+- **✅ fix**: CI error
+
+<br>
+
 ## v1.0.15
 
 <p align="right"><em>24-Dec-2023</em></p>
