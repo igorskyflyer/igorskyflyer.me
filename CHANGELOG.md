@@ -8,6 +8,7 @@
 
 <p align="right"><em>24-Dec-2023</em></p>
 
+- **🪅 feat**: add comments feature
 - **✅ fix**: image compression error
 - **💻 dev**: upgrade dependencies
 
