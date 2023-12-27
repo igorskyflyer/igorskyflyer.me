@@ -134,9 +134,10 @@ pre {
   display: flex;
   justify-content: end;
   flex-direction: column-reverse;
-  height: 0;
   overflow: hidden;
+  height: 0;
   margin: 0;
+  margin-bottom: 1rem;
   z-index: 4;
   list-style-type: none;
   transition: height ease-in 0.15s;
