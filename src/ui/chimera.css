@@ -233,8 +233,9 @@ footer {
   font-size: 0.9rem;
 }
 
-footer svg {
+footer [data-icon] {
   width: 36px;
+  height: 36px;
 }
 
 footer a {
@@ -322,8 +323,9 @@ footer a {
     font-size: 1.1rem;
   }
 
-  footer svg {
+  footer [data-icon] {
     width: 48px;
+    height: 48px;
   }
   .footer-link-icon {
     width: 48px;
