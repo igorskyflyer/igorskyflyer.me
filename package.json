@@ -1,6 +1,6 @@
 {
 	"name": "igorskyflyer.me",
-	"version": "1.0.16",
+	"version": "1.0.17",
 	"description": "🧠 The place where I like to express myself. 🦑",
 	"private": true,
 	"type": "module",
@@ -26,22 +26,22 @@
 	"devDependencies": {
 		"@biomejs/biome": "1.4.1",
 		"@igor.dvlpr/astro-post-excerpt": "^2.1.0",
-		"astro": "^4.0.7",
+		"astro": "^4.0.8",
 		"astro-compress": "^2.2.5",
 		"mdast-util-to-string": "^4.0.0",
 		"prettier": "^3.1.1",
-		"prettier-plugin-astro": "^0.12.2",
+		"prettier-plugin-astro": "^0.12.3",
 		"reading-time": "^1.5.0",
 		"svgo": "2.8.0"
 	},
 	"dependencies": {
-		"@astrojs/mdx": "^2.0.1",
+		"@astrojs/mdx": "^2.0.3",
 		"@astrojs/rss": "^4.0.1",
-		"@astrojs/sitemap": "^3.0.3",
-		"astro-icon": "^0.8.2",
-		"sharp": "^0.33.1"
-	},
-	"optionalDependencies": {
-		"@rollup/rollup-linux-x64-gnu": "^4.9.1"
+		"@astrojs/sitemap": "^3.0.4",
+		"@iconify-json/cib": "^1.1.8",
+		"@iconify-json/ic": "^1.1.17",
+		"@iconify-json/mdi": "^1.1.63",
+		"@iconify-json/ri": "^1.1.18",
+		"astro-icon": "^1.0.0"
 	}
 }
