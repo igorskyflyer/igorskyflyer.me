@@ -1,7 +1,7 @@
 ---
 import imageAuthor from '@assets/author/igorskyflyer-mini.png'
 import { postDate } from '@functions/posts'
-import { Icon } from 'astro-icon'
+import { Icon } from 'astro-icon/components'
 import { Image } from 'astro:assets'
 
 const { post } = Astro.props
@@ -121,7 +121,7 @@ const postPublishedDate = postDate(post.data.publishDate)
               loading="eager"
               width="84"
               height="84"
-quality="max"
+              quality="max"
             />
           </a>
         </span>
