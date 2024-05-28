@@ -3,6 +3,8 @@ import sitemap from '@astrojs/sitemap'
 import compress from 'astro-compress'
 import { defineConfig } from 'astro/config'
 import { readingTime } from './src/functions/reading-time'
+import Icon from "astro-icon";
+
 export default defineConfig({
   site: 'https://igorskyflyer.me',
   compressHTML: true,
@@ -23,8 +25,8 @@ export default defineConfig({
     }
   },
   integrations: [
+		Icon(),
     compress({
-			Image: false,
       HTML: {
         caseSensitive: true,
         collapseBooleanAttributes: true,
