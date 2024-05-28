@@ -4,6 +4,15 @@
 
 <br>
 
+## v1.1.0
+
+<p align="right"><em>28-May-2024</em></p>
+
+- **💻 dev**: add Person schema
+- **💻 dev**: upgrade dependencies
+
+<br>
+
 ## v1.0.18
 
 <p align="right"><em>16-Apr-2024</em></p>
