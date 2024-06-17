@@ -4,6 +4,22 @@
 
 <br>
 
+## v1.1.3
+
+<p align="right"><em>18-June-2024</em></p>
+
+- **💻 dev**: upgrade dependencies
+
+<br>
+
+## v1.1.2
+
+<p align="right"><em>14-June-2024</em></p>
+
+- **✅ fix**: update Google Play developer link
+
+<br>
+
 ## v1.1.1
 
 <p align="right"><em>03-June-2024</em></p>
