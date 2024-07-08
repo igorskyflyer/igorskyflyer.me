@@ -4,6 +4,15 @@
 
 <br>
 
+## v1.1.9
+
+<p align="right"><em>08-July-2024</em></p>
+
+- **💻 dev**: update JSON-LD data
+
+<br>
+<br>
+
 ## v1.1.8
 
 <p align="right"><em>07-July-2024</em></p>
@@ -19,7 +28,6 @@
 - **💻 dev**: upgrade dependencies
 
 <br>
-
 <br>
 
 ## v1.1.6
@@ -29,7 +37,6 @@
 - **💻 dev**: upgrade dependencies
 
 <br>
-
 <br>
 
 ## v1.1.5
