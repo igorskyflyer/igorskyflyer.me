@@ -4,6 +4,15 @@
 
 <br>
 
+## v1.1.11
+
+<p align="right"><em>08-July-2024</em></p>
+
+- **💻 dev**: update JSON-LD data
+
+<br>
+<br>
+
 ## v1.1.10
 
 <p align="right"><em>08-July-2024</em></p>
