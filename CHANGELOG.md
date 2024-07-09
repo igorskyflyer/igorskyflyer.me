@@ -2,6 +2,17 @@
 
 ### of [igorskyflyer.me](https://igorskyflyer.me/)
 
+<br>
+
+## v1.1.15
+
+<p align="right"><em>09-July-2024</em></p>
+
+- **✅ fix**: fix JSON-LD data
+
+<br>
+<br>
+
 ## v1.1.14
 
 <p align="right"><em>09-July-2024</em></p>
