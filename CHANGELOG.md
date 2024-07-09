@@ -2,6 +2,13 @@
 
 ### of [igorskyflyer.me](https://igorskyflyer.me/)
 
+## v1.1.14
+
+<p align="right"><em>09-July-2024</em></p>
+
+- **💻 dev**: refetch profile information
+
+<br>
 <br>
 
 ## v1.1.13
