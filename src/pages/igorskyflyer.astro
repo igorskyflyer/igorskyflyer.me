@@ -108,15 +108,18 @@ function getLastFetch() {
       "mainEntity": {
         "@type": "Person",
         "name": "Igor Dimitrijević",
-        "name": {
-          "@value": "Igor Dimitrijević",
-          "@language": "sr-Latn"
-        },
-        "name": {
-          "@value": "Игор Димитријевић",
-          "@language": "sr-Cyrl"
-        },
-        "alternateName": ["skyflyer", "igorskyflyer"],
+        "alternateName": [
+          "skyflyer",
+          "igorskyflyer",
+          {
+            "@value": "Igor Dimitrijević",
+            "@language": "sr-Latn"
+          },
+          {
+            "@value": "Игор Димитријевић",
+            "@language": "sr-Cyrl"
+          }
+        ],
         "jobTitle": "Software engineer",
         "height": "6 feet",
         "gender": "male",
