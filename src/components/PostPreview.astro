@@ -1,6 +1,7 @@
 ---
 import imageAuthor from '@assets/author/igorskyflyer-mini.png'
 import { postDate } from '@functions/posts'
+import PostExcerpt from '@igor.dvlpr/astro-post-excerpt'
 import { Icon } from 'astro-icon/components'
 import { Image } from 'astro:assets'
 
@@ -107,7 +108,9 @@ const postPublishedDate = postDate(post.data.publishDate)
 </style>
 
 <article>
-  <a href={`/blog/${post.slug}/`} class="post-link">
+  <a
+    href={`/blog/${post.slug}/`}
+    class="post-link">
     {post.data.title}
   </a>
   <div class="post--inner">
@@ -129,11 +132,17 @@ const postPublishedDate = postDate(post.data.publishDate)
           <a href="/igorskyflyer/">Igor Dimitrijević (igorskyflyer)</a>
           <div class="post-data">
             <div class="post-data-inner">
-              <Icon name="mdi:clock-outline" width="24" />&nbsp;
+              <Icon
+                name="mdi:clock-outline"
+                width={24}
+              />&nbsp;
               {postPublishedDate}
             </div>
             <div class="post-data-inner">
-              <Icon name="ic:baseline-menu-book" width="24" />&nbsp;
+              <Icon
+                name="ic:baseline-menu-book"
+                width={24}
+              />&nbsp;
               {minutesRead}
             </div>
           </div>
@@ -150,15 +159,12 @@ const postPublishedDate = postDate(post.data.publishDate)
       }
     </div>
     <p class="post-description">
-      <!-- <PostExcerpt
+      <PostExcerpt
         post={post}
         words={40}
         addEllipsis={true}
-        headings={PropHeadings.None}
-        renderer={PropRenderer.Hybrid}
         smartEllipsis={true}
-      /> -->
-      {post.data.description}
+      />
     </p>
   </div>
 </article>
