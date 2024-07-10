@@ -4,6 +4,15 @@
 
 <br>
 
+## v1.1.19
+
+<p align="right"><em>11-July-2024</em></p>
+
+- **💻 dev**: upgrade [@igor.dvlpr/astro-post-excerpt](https://www.npmjs.com/package/@igor.dvlpr/astro-post-excerpt)
+
+<br>
+<br>
+
 ## v1.1.18
 
 <p align="right"><em>11-July-2024</em></p>
