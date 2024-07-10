@@ -4,6 +4,15 @@
 
 <br>
 
+## v1.1.18
+
+<p align="right"><em>11-July-2024</em></p>
+
+- **💻 dev**: refetch profile information
+
+<br>
+<br>
+
 ## v1.1.17
 
 <p align="right"><em>11-July-2024</em></p>
