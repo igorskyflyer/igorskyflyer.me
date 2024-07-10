@@ -1,47 +1,47 @@
 {
-	"name": "igorskyflyer.me",
-	"version": "1.1.16",
-	"description": "🧠 The place where I like to express myself. 🦑",
-	"private": true,
-	"type": "module",
-	"scripts": {
-		"dev": "node scripts/readme.mjs && astro dev",
-		"start": "astro dev",
-		"build": "node scripts/readme.mjs && astro build",
-		"preview": "astro preview",
-		"astro": "astro"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/igorskyflyer/igorskyflyer.me.git"
-	},
-	"keywords": [],
-	"author": "Igor Dimitrijević <admin@igorskyflyer.me> (https://github.com/igorskyflyer)",
-	"license": "MIT",
-	"funding": "https://ko-fi.com/igorskyflyer",
-	"bugs": {
-		"url": "https://github.com/igorskyflyer/igorskyflyer.me/issues"
-	},
-	"homepage": "https://github.com/igorskyflyer/igorskyflyer.me#readme",
-	"devDependencies": {
-		"@biomejs/biome": "1.8.3",
-		"@igor.dvlpr/astro-post-excerpt": "^2.1.0",
-		"astro": "^4.11.5",
-		"astro-compress": "^2.2.28",
-		"mdast-util-to-string": "^4.0.0",
-		"prettier": "^3.3.2",
-		"prettier-plugin-astro": "^0.14.0",
-		"reading-time": "^1.5.0",
-		"svgo": "2.8.0"
-	},
-	"dependencies": {
-		"@astrojs/mdx": "^3.1.2",
-		"@astrojs/rss": "^4.0.7",
-		"@astrojs/sitemap": "^3.1.6",
-		"@iconify-json/cib": "^1.1.8",
-		"@iconify-json/ic": "^1.1.17",
-		"@iconify-json/mdi": "^1.1.67",
-		"@iconify-json/ri": "^1.1.21",
-		"astro-icon": "^1.1.0"
-	}
+  "name": "igorskyflyer.me",
+  "version": "1.1.17",
+  "description": "🧠 The place where I like to express myself. 🦑",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/readme.mjs && astro dev",
+    "start": "astro dev",
+    "build": "node scripts/readme.mjs && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/igorskyflyer/igorskyflyer.me.git"
+  },
+  "keywords": [],
+  "author": "Igor Dimitrijević <admin@igorskyflyer.me> (https://github.com/igorskyflyer)",
+  "license": "MIT",
+  "funding": "https://ko-fi.com/igorskyflyer",
+  "bugs": {
+    "url": "https://github.com/igorskyflyer/igorskyflyer.me/issues"
+  },
+  "homepage": "https://github.com/igorskyflyer/igorskyflyer.me#readme",
+  "devDependencies": {
+    "@biomejs/biome": "1.8.3",
+    "@igor.dvlpr/astro-post-excerpt": "^3.0.2",
+    "astro": "^4.11.5",
+    "astro-compress": "^2.2.28",
+    "mdast-util-to-string": "^4.0.0",
+    "prettier": "^3.3.2",
+    "prettier-plugin-astro": "^0.14.0",
+    "reading-time": "^1.5.0",
+    "svgo": "2.8.0"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^3.1.2",
+    "@astrojs/rss": "^4.0.7",
+    "@astrojs/sitemap": "^3.1.6",
+    "@iconify-json/cib": "^1.1.8",
+    "@iconify-json/ic": "^1.1.17",
+    "@iconify-json/mdi": "^1.1.67",
+    "@iconify-json/ri": "^1.1.21",
+    "astro-icon": "^1.1.0"
+  }
 }
