@@ -1,6 +1,6 @@
 {
   "name": "igorskyflyer.me",
-  "version": "1.1.18",
+  "version": "1.1.19",
   "description": "🧠 The place where I like to express myself. 🦑",
   "private": true,
   "type": "module",
@@ -25,7 +25,7 @@
   "homepage": "https://github.com/igorskyflyer/igorskyflyer.me#readme",
   "devDependencies": {
     "@biomejs/biome": "1.8.3",
-    "@igor.dvlpr/astro-post-excerpt": "^3.0.2",
+    "@igor.dvlpr/astro-post-excerpt": "^3.0.3",
     "astro": "^4.11.5",
     "astro-compress": "^2.2.28",
     "mdast-util-to-string": "^4.0.0",
