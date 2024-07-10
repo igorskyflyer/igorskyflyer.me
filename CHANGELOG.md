@@ -4,6 +4,15 @@
 
 <br>
 
+## v1.1.20
+
+<p align="right"><em>11-July-2024</em></p>
+
+- **✅ fix**: update PostPreview component
+
+<br>
+<br>
+
 ## v1.1.19
 
 <p align="right"><em>11-July-2024</em></p>
