@@ -4,6 +4,15 @@
 
 <br>
 
+## v1.2.0
+
+<p align="right"><em>12-July-2024</em></p>
+
+- **💻 dev**: add [@igor.dvlpr/astro-easynav-button](https://www.npmjs.com/package/@igor.dvlpr/astro-easynav-button)
+
+<br>
+<br>
+
 ## v1.1.21
 
 <p align="right"><em>11-July-2024</em></p>
