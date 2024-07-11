@@ -96,7 +96,6 @@ header {
   overflow: hidden;
   position: fixed;
   right: 0;
-  left: 0;
   bottom: 0;
   z-index: 2;
   margin-bottom: 0;
@@ -135,10 +134,15 @@ pre {
   justify-content: end;
   flex-direction: column-reverse;
   overflow: hidden;
+	position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   height: 0;
   margin: 0;
   margin-bottom: 1rem;
-  z-index: 4;
+  z-index: 999;
   list-style-type: none;
   transition: height ease-in 0.15s;
 }
@@ -184,6 +188,7 @@ pre {
 #hamburger-icon:hover {
   background: var(--accent);
   border: 2px solid rgba(255, 255, 255, 0.6);
+	cursor: pointer;
 }
 
 #menu-toggle {
@@ -213,7 +218,7 @@ pre {
   right: 0;
   top: 100%;
   bottom: 0;
-  z-index: 3;
+  z-index: 8;
   background: linear-gradient(310deg, #000, rgba(20, 73, 152, 0.5));
   transition: top ease-in 0.15s;
 }
@@ -292,6 +297,7 @@ footer a {
   }
 
   #menu {
+		position: static;
     flex-direction: row;
     justify-content: flex-end;
     height: auto;
