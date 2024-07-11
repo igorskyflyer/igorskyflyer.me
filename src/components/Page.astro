@@ -2,32 +2,40 @@
 import PageFooter from '@components/PageFooter.astro'
 import PageHead from '@components/PageHead.astro'
 import PageHeader from '@components/PageHeader.astro'
-import { PageProps } from '@interfaces/PageProps'
-import EasyNavButton from './EasyNavButton.astro'
+import EasyNavButton from '@igor.dvlpr/astro-easynav-button'
+import type { PageProps } from '@interfaces/PageProps'
 
 const {
-  title = '',
-  description = '',
-  featuredImage = '',
-  keywords = ''
+	title = '',
+	description = '',
+	featuredImage = '',
+	keywords = ''
 } = Astro.props as PageProps
 ---
 
 <!doctype html>
 <html lang="en">
-  <PageHead
-    title={title}
-    description={description}
-    keywords={keywords}
-    featuredImage={featuredImage}>
-    <slot name="head" />
-  </PageHead>
-  <body>
-    <PageHeader />
-    <main>
-      <slot />
-    </main>
-    <EasyNavButton />
-    <PageFooter />
-  </body>
+	<PageHead
+		title={title}
+		description={description}
+		keywords={keywords}
+		featuredImage={featuredImage}>
+		<slot name="head" />
+	</PageHead>
+	<body>
+		<PageHeader />
+		<main>
+			<slot />
+		</main>
+		<EasyNavButton
+			offset={20}
+			background="rgba(255, 255, 255, 0.3)"
+			color="#FFF"
+			position="left"
+			backgroundHover="#3869c2"
+			animationTime="180ms"
+			zIndex={1}
+		/>
+		<PageFooter />
+	</body>
 </html>
