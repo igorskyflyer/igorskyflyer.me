@@ -1,6 +1,6 @@
 {
 	"name": "igorskyflyer.me",
-	"version": "1.2.0",
+	"version": "1.2.1",
 	"description": "🧠 The place where I like to express myself. 🦑",
 	"private": true,
 	"type": "module",
@@ -42,7 +42,7 @@
 		"@iconify-json/ic": "^1.1.17",
 		"@iconify-json/mdi": "^1.1.67",
 		"@iconify-json/ri": "^1.1.21",
-		"@igor.dvlpr/astro-easynav-button": "^1.0.0",
+		"@igor.dvlpr/astro-easynav-button": "^1.1.0",
 		"astro-icon": "^1.1.0"
 	}
 }
