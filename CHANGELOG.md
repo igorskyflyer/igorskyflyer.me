@@ -4,6 +4,15 @@
 
 <br>
 
+## v1.2.3
+
+<p align="right"><em>12-July-2024</em></p>
+
+- **🪅 feat**: encapsulate [@igor.dvlpr/astro-easynav-button](https://www.npmjs.com/package/@igor.dvlpr/astro-easynav-button) as `NavBtn`
+
+<br>
+<br>
+
 ## v1.2.2
 
 <p align="right"><em>12-July-2024</em></p>
