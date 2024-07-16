@@ -208,8 +208,8 @@ pre {
 }
 
 #menu-toggle:checked ~ #menu {
-  height: 90vh;
-  height: 90dvh;
+  height: 88vh;
+  height: 88dvh;
   padding: 0;
 }
 
