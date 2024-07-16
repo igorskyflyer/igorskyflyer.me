@@ -208,8 +208,7 @@ pre {
 }
 
 #menu-toggle:checked ~ #menu {
-  height: 88vh;
-  height: 88dvh;
+  height: min(88dvh, 88vh);
   padding: 0;
 }
 
