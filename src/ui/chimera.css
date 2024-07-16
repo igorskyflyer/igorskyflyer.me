@@ -95,8 +95,8 @@ header {
   text-align: right;
   overflow: hidden;
   position: fixed;
-  right: 0;
-  bottom: 0;
+	right: 10px;
+	bottom: 10px;
   z-index: 2;
   margin-bottom: 0;
   display: flex;
@@ -133,7 +133,6 @@ pre {
   display: flex;
   justify-content: end;
   flex-direction: column-reverse;
-  overflow: hidden;
 	position: fixed;
   top: 0;
   left: 0;
@@ -145,6 +144,7 @@ pre {
   z-index: 999;
   list-style-type: none;
   transition: height ease-in 0.15s;
+	overflow: auto;
 }
 
 #menu li {
@@ -177,8 +177,6 @@ pre {
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: var(--border-radius);
   user-select: none;
-  margin-right: 0.8rem;
-  margin-bottom: 0.8rem;
   border: 2px solid rgba(255, 255, 255, 0);
   transition:
     background ease-out 0.2s,
@@ -306,6 +304,7 @@ footer a {
     justify-content: flex-end;
     height: auto;
     margin: 0 0.8rem 0 0;
+		overflow: hidden;
   }
 
   #menu li {
