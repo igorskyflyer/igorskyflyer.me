@@ -209,7 +209,7 @@ pre {
 
 #menu-toggle:checked ~ #menu {
   height: 86vh;
-  height: 86dvh;
+  height: 86svh;
   padding: 0;
 }
 
