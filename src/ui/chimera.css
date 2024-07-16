@@ -275,6 +275,10 @@ footer a {
   font-size: 1.4em;
 }
 
+.utterances {
+	max-width: 100%;
+}
+
 @media screen and (min-width: 600px) {
   header {
     margin-bottom: 2rem;
