@@ -95,8 +95,8 @@ header {
   text-align: right;
   overflow: hidden;
   position: fixed;
-	right: 10px;
-	bottom: 10px;
+  right: 10px;
+  bottom: 10px;
   z-index: 2;
   margin-bottom: 0;
   display: flex;
@@ -133,7 +133,7 @@ pre {
   display: flex;
   justify-content: end;
   flex-direction: column-reverse;
-	position: fixed;
+  position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
@@ -144,7 +144,7 @@ pre {
   z-index: 999;
   list-style-type: none;
   transition: height ease-in 0.15s;
-	overflow: auto;
+  /* overflow: auto; */
 }
 
 #menu li {
