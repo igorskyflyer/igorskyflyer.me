@@ -35,7 +35,7 @@ export default defineConfig({
 					collapseWhitespace: true,
 					html5: true,
 					keepClosingSlash: false,
-					minifyCSS: true,
+					minifyCSS: false,
 					minifyJS: false,
 					noNewlinesBeforeTagClose: true,
 					removeAttributeQuotes: false,
