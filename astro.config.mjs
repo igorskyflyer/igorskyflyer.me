@@ -36,7 +36,7 @@ export default defineConfig({
 					html5: true,
 					keepClosingSlash: false,
 					minifyCSS: true,
-					minifyJS: true,
+					minifyJS: false,
 					noNewlinesBeforeTagClose: true,
 					removeAttributeQuotes: false,
 					removeComments: true,
