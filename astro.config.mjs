@@ -26,34 +26,33 @@ export default defineConfig({
 	},
 	integrations: [
 		Icon(),
-		compress({
-			HTML: {
-				'html-minifier-terser': {
-					caseSensitive: true,
-					collapseBooleanAttributes: true,
-					collapseInlineTagWhitespace: false,
-					collapseWhitespace: false,
-					html5: true,
-					keepClosingSlash: false,
-					minifyCSS: false,
-					minifyJS: false,
-					noNewlinesBeforeTagClose: false,
-					removeAttributeQuotes: false,
-					removeComments: true,
-					removeScriptTypeAttributes: false,
-					removeStyleLinkTypeAttributes: true,
-					removeTagWhitespace: false,
-					sortAttributes: false,
-					sortClassName: true,
-					useShortDoctype: true
-				}
-			},
-			CSS: {
-				csso: {
-					restructure: true
-				}
-			}
-		}),
+		// compress({
+		// 	HTML: {
+		// 		'html-minifier-terser': {
+		// 			caseSensitive: true,
+		// 			collapseBooleanAttributes: true,
+		// 			collapseInlineTagWhitespace: false,
+		// 			collapseWhitespace: false,
+		// 			html5: true,
+		// 			keepClosingSlash: false,
+		// 			minifyCSS: false,
+		// 			minifyJS: false,
+		// 			noNewlinesBeforeTagClose: false,
+		// 			removeAttributeQuotes: false,
+		// 			removeComments: true,
+		// 			removeScriptTypeAttributes: false,
+		// 			removeStyleLinkTypeAttributes: true,
+		// 			removeTagWhitespace: false,
+		// 			sortAttributes: false,
+		// 			sortClassName: true,
+		// 			useShortDoctype: true
+		// 		}
+		// 	},
+		// 	CSS: {
+		// 		csso: {
+		// 			restructure: true
+		// 		}
+		// 	}
 		mdx({ shikiConfig: { theme: 'one-dark-pro', wrap: true } }),
 		sitemap()
 	]
