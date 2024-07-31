@@ -26,8 +26,8 @@
     "devDependencies": {
         "@biomejs/biome": "1.8.3",
         "@igor.dvlpr/astro-post-excerpt": "^3.0.4",
-        "@igor.dvlpr/biome-config-igorskyflyer": "^1.0.1",
-        "astro": "^4.12.2",
+        "@igor.dvlpr/biome-config-igorskyflyer": "^1.0.3",
+        "astro": "^4.12.3",
         "astro-compress": "^2.3.0",
         "mdast-util-to-string": "^4.0.0",
         "prettier": "^3.3.3",
