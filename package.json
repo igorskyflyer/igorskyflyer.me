@@ -27,7 +27,7 @@
         "@biomejs/biome": "1.8.3",
         "@igor.dvlpr/astro-post-excerpt": "^3.0.4",
         "@igor.dvlpr/biome-config-igorskyflyer": "^1.0.3",
-        "astro": "^4.13.3",
+        "astro": "^4.14.2",
         "astro-compress": "^2.3.1",
         "mdast-util-to-string": "^4.0.0",
         "prettier": "^3.3.3",
@@ -44,6 +44,6 @@
         "@iconify-json/mdi": "^1.1.68",
         "@iconify-json/ri": "^1.1.22",
         "@igor.dvlpr/astro-easynav-button": "^1.4.2",
-        "astro-icon": "^1.1.0"
+        "astro-icon": "^1.1.1"
     }
 }
