@@ -36,8 +36,9 @@ function getLastFetch() {
 		text-align: center;
 	}
 
-	#author-igorskyflyer {
-		border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+	#author-image-wrap svg {
+		max-width: 400px;
+		max-height: 400px;
 	}
 
 	[data-hide] {
@@ -175,7 +176,7 @@ function getLastFetch() {
 		<main>
 			<div id="author-image-wrap">
 				<figure>
-					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="400" height="400" id="blobSvg" style="opacity: 1;">
+					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%" id="blobSvg" style="opacity: 1;">
 						<image x="0" y="0" width="100%" height="100%" clip-path="url(#shape)" href={imageIgorSkyFlyer.src} preserveAspectRatio="none"></image>
 						<clipPath id="shape">
 							<path id="blob" d="M440.5,320.5Q418,391,355.5,442.5Q293,494,226,450.5Q159,407,99,367Q39,327,31.5,247.5Q24,168,89,125.5Q154,83,219.5,68Q285,53,335.5,94.5Q386,136,424.5,193Q463,250,440.5,320.5Z"></path>
