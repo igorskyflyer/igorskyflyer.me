@@ -27,7 +27,7 @@
         "@biomejs/biome": "1.9.2",
         "@igor.dvlpr/astro-post-excerpt": "^3.0.4",
         "@igor.dvlpr/biome-config-igorskyflyer": "^1.0.3",
-        "astro": "^4.15.8",
+        "astro": "^4.15.9",
         "astro-compress": "^2.3.1",
         "mdast-util-to-string": "^4.0.0",
         "prettier": "^3.3.3",
