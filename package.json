@@ -24,10 +24,10 @@
     },
     "homepage": "https://github.com/igorskyflyer/igorskyflyer.me#readme",
     "devDependencies": {
-        "@biomejs/biome": "1.9.3",
+        "@biomejs/biome": "1.9.4",
         "@igor.dvlpr/astro-post-excerpt": "^3.0.4",
         "@igor.dvlpr/biome-config-igorskyflyer": "^1.0.3",
-        "astro": "^4.15.12",
+        "astro": "^4.16.6",
         "astro-compress": "^2.3.3",
         "mdast-util-to-string": "^4.0.0",
         "prettier": "^3.3.3",
@@ -36,9 +36,9 @@
         "svgo": "2.8.0"
     },
     "dependencies": {
-        "@astrojs/mdx": "^3.1.7",
-        "@astrojs/rss": "^4.0.7",
-        "@astrojs/sitemap": "^3.2.0",
+        "@astrojs/mdx": "^3.1.8",
+        "@astrojs/rss": "^4.0.9",
+        "@astrojs/sitemap": "^3.2.1",
         "@iconify-json/cib": "^1.2.1",
         "@iconify-json/ic": "^1.2.1",
         "@iconify-json/mdi": "^1.2.1",
