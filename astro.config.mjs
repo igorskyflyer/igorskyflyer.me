@@ -11,7 +11,7 @@ export default defineConfig({
   build: { inlineStylesheets: 'always' },
   vite: {
     ssr: {
-      noExternal: ['astro', '@igor.dvlpr/astro-post-excerpt']
+      noExternal: ['@igor.dvlpr/astro-post-excerpt']
     }
   },
   markdown: {
