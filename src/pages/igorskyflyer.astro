@@ -8,247 +8,239 @@ import PageHead from '../components/PageHead.astro'
 import PageHeader from '../components/PageHeader.astro'
 
 function getLastFetch() {
-	return new Date().toLocaleString('en-uk', {
-		day: '2-digit',
-		month: 'short',
-		year: 'numeric',
-		hour: '2-digit',
-		minute: '2-digit',
-		hourCycle: 'h23',
-		timeZone: 'Europe/Belgrade',
-		timeZoneName: 'longOffset'
-	})
+  return new Date().toLocaleString('en-uk', {
+    day: '2-digit',
+    month: 'short',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    hourCycle: 'h23',
+    timeZone: 'Europe/Belgrade',
+    timeZoneName: 'longOffset'
+  })
 }
 
-function getLocalISODate() {
-	const date = new Date()
+function getLocalIsoTimestamp() {
+  const now = new Date()
+  const offsetMinutes = now.getTimezoneOffset()
+  const sign = offsetMinutes <= 0 ? '+' : '-'
+  const abs = Math.abs(offsetMinutes)
+  const hh = String(Math.floor(abs / 60)).padStart(2, '0')
+  const mm = String(abs % 60).padStart(2, '0')
 
-	const pad = (num: number) => String(num).padStart(2, '0')
+  const localTime = new Date(now.getTime() - offsetMinutes * 60 * 1000)
+    .toISOString()
+    .slice(0, 19) // "YYYY-MM-DDTHH:mm:ss"
 
-	const year = date.getFullYear()
-	const month = pad(date.getMonth() + 1)
-	const day = pad(date.getDate())
-	const hours = pad(date.getHours())
-	const minutes = pad(date.getMinutes())
-	const seconds = pad(date.getSeconds())
-
-	// Get timezone offset in minutes and convert to ±HH:mm
-	const tzOffsetMinutes = -date.getTimezoneOffset() // reverse sign to match ISO format
-	const sign = tzOffsetMinutes >= 0 ? '+' : '-'
-	const absOffset = Math.abs(tzOffsetMinutes)
-	const offsetHours = pad(Math.floor(absOffset / 60))
-	const offsetMinutes = pad(absOffset % 60)
-	const timezone = `${sign}${offsetHours}:${offsetMinutes}`
-
-	return `${year}-${month}-${day}T${hours}:${minutes}:${seconds}${timezone}`
+  return `${localTime}${sign}${hh}:${mm}`
 }
 
 const meta = {
-	'@context': 'https://schema.org',
-	'@type': 'ProfilePage',
-	dateCreated: '2024-07-08T02:00:22+02:00',
-	dateModified: getLocalISODate(),
-	mainEntity: {
-		'@type': 'Person',
-		name: 'Igor Dimitrijević',
-		alternateName: [
-			'skyflyer',
-			'igorskyflyer',
-			{
-				'@value': 'Igor Dimitrijević',
-				'@language': 'sr-Latn'
-			},
-			{
-				'@value': 'Игор Димитријевић',
-				'@language': 'sr-Cyrl'
-			}
-		],
-		jobTitle: 'Software engineer',
-		height: '6 feet',
-		gender: 'male',
-		honorificPrefix: 'Mr.',
-		address: {
-			'@type': 'PostalAddress',
-			addressCountry: 'Serbia'
-		},
-		birthDate: '1993-08-27T00:00:00+02:00',
-		birthPlace: 'Kraljevo, Serbia',
-		nationality: 'Serbian',
-		url: 'https://igorskyflyer.me/',
-		description: 'Software engineer',
-		image: 'https://avatars.githubusercontent.com/u/20957750',
-		sameAs: [
-			'https://github.com/igorskyflyer',
-			'https://instagram.com/igorskyflyer',
-			'https://developers.google.com/profile/u/igor-dev',
-			'https://app.pluralsight.com/profile/igor-dvlpr',
-			'https://stackoverflow.com/users/3864203/skyflyer',
-			'https://www.tiktok.com/@igorskyflyer',
-			'https://youtube.com/@igorskyflyer',
-			'https://dribbble.com/igordvlpr',
-			'https://www.threads.net/@igorskyflyer',
-			'https://www.linkedin.com/in/igor-dvlpr',
-			'https://twitter.com/igorskyflyer',
-			'https://orcid.org/0009-0002-6906-1621'
-		]
-	}
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  dateCreated: '2024-07-08T02:00:22+02:00',
+  dateModified: getLocalIsoTimestamp(),
+  mainEntity: {
+    '@type': 'Person',
+    name: 'Igor Dimitrijević',
+    alternateName: [
+      'skyflyer',
+      'igorskyflyer',
+      {
+        '@value': 'Igor Dimitrijević',
+        '@language': 'sr-Latn'
+      },
+      {
+        '@value': 'Игор Димитријевић',
+        '@language': 'sr-Cyrl'
+      }
+    ],
+    jobTitle: 'Software engineer',
+    height: '6 feet',
+    gender: 'male',
+    honorificPrefix: 'Mr.',
+    address: {
+      '@type': 'PostalAddress',
+      addressCountry: 'Serbia'
+    },
+    birthDate: '1993-08-27T00:00:00+02:00',
+    birthPlace: 'Kraljevo, Serbia',
+    nationality: 'Serbian',
+    url: 'https://igorskyflyer.me/',
+    description: 'Software engineer',
+    image: 'https://avatars.githubusercontent.com/u/20957750',
+    sameAs: [
+      'https://github.com/igorskyflyer',
+      'https://instagram.com/igorskyflyer',
+      'https://developers.google.com/profile/u/igor-dev',
+      'https://app.pluralsight.com/profile/igor-dvlpr',
+      'https://stackoverflow.com/users/3864203/skyflyer',
+      'https://www.tiktok.com/@igorskyflyer',
+      'https://youtube.com/@igorskyflyer',
+      'https://dribbble.com/igordvlpr',
+      'https://www.threads.net/@igorskyflyer',
+      'https://www.linkedin.com/in/igor-dvlpr',
+      'https://twitter.com/igorskyflyer',
+      'https://orcid.org/0009-0002-6906-1621'
+    ]
+  }
 }
 ---
 
 <style is:global>
-	body {
-		color: #d4d4ff;
-	}
+  body {
+    color: #d4d4ff;
+  }
 
-	figcaption {
-		font-size: 0.92rem;
-		font-style: italic;
-	}
+  figcaption {
+    font-size: 0.92rem;
+    font-style: italic;
+  }
 
-	#author-image-wrap {
-		margin-bottom: 2rem;
-		text-align: center;
-	}
+  #author-image-wrap {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
 
-	#author-image-wrap svg {
-		max-width: 400px;
-		max-height: 400px;
-	}
+  #author-image-wrap svg {
+    max-width: 400px;
+    max-height: 400px;
+  }
 
-	[data-hide] {
-		display: none;
-	}
+  [data-hide] {
+    display: none;
+  }
 
-	#readme-renderer ol:not([data-no-restyle]),
-	#readme-renderer ul:not([data-no-restyle]) {
-		margin: auto;
-		padding: 0;
-		list-style-position: inside;
-		text-align: center;
-	}
+  #readme-renderer ol:not([data-no-restyle]),
+  #readme-renderer ul:not([data-no-restyle]) {
+    margin: auto;
+    padding: 0;
+    list-style-position: inside;
+    text-align: center;
+  }
 
-	#readme-renderer ul:not([data-no-restyle]) {
-		list-style-type: none;
-	}
+  #readme-renderer ul:not([data-no-restyle]) {
+    list-style-type: none;
+  }
 
-	#readme-renderer img {
-		display: inline-block;
-		margin: 0 2px;
-	}
+  #readme-renderer img {
+    display: inline-block;
+    margin: 0 2px;
+  }
 
-	#readme-renderer code {
-		background: #0d1117;
-		box-shadow: 0 0 18px inset #000;
-		padding: 0.3rem;
-		border-radius: 4px;
-	}
+  #readme-renderer code {
+    background: #0d1117;
+    box-shadow: 0 0 18px inset #000;
+    padding: 0.3rem;
+    border-radius: 4px;
+  }
 
-	#igorskyflyer-copy-notice {
-		margin: 1rem 0 1rem 0;
-		font-size: 1.2rem;
-		text-align: center;
-	}
+  #igorskyflyer-copy-notice {
+    margin: 1rem 0 1rem 0;
+    font-size: 1.2rem;
+    text-align: center;
+  }
 
-	#igorskyflyer-copy-notice p {
-		opacity: 0.8;
-		font-size: 0.8rem;
-		font-style: italic;
-	}
+  #igorskyflyer-copy-notice p {
+    opacity: 0.8;
+    font-size: 0.8rem;
+    font-style: italic;
+  }
 
-	#readme-renderer h3 + p:not([data-no-restyle]) {
-		text-align: center;
-	}
+  #readme-renderer h3 + p:not([data-no-restyle]) {
+    text-align: center;
+  }
 
-	@keyframes blobMorph {
-		0%,
-		100% {
-			d: path(
-				'M449,316Q423,392,341,401.5Q259,411,191.5,358Q124,305,112.5,222.5Q101,140,177.5,95.5Q254,51,333,79.5Q412,108,449.5,174Q487,240,449,316Z'
-			);
-		}
-		33% {
-			d: path(
-				'M441.5,317.5Q414,395,333.5,402.5Q253,410,176.5,365.5Q100,321,105.5,232Q111,143,183,110Q255,77,328,95.5Q401,114,439,177Q477,240,441.5,317.5Z'
-			);
-		}
-		66% {
-			d: path(
-				'M431,323.5Q411,407,330.5,407Q250,407,186,361Q122,315,113.5,227Q105,139,172.5,101Q240,63,317,82Q394,101,426.5,170.5Q459,240,431,323.5Z'
-			);
-		}
-	}
+  @keyframes blobMorph {
+    0%,
+    100% {
+      d: path(
+        'M449,316Q423,392,341,401.5Q259,411,191.5,358Q124,305,112.5,222.5Q101,140,177.5,95.5Q254,51,333,79.5Q412,108,449.5,174Q487,240,449,316Z'
+      );
+    }
+    33% {
+      d: path(
+        'M441.5,317.5Q414,395,333.5,402.5Q253,410,176.5,365.5Q100,321,105.5,232Q111,143,183,110Q255,77,328,95.5Q401,114,439,177Q477,240,441.5,317.5Z'
+      );
+    }
+    66% {
+      d: path(
+        'M431,323.5Q411,407,330.5,407Q250,407,186,361Q122,315,113.5,227Q105,139,172.5,101Q240,63,317,82Q394,101,426.5,170.5Q459,240,431,323.5Z'
+      );
+    }
+  }
 
-	#blob {
-		animation: blobMorph 3s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
-	}
+  #blob {
+    animation: blobMorph 3s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
+  }
 
-	@media screen and (min-width: 600px) {
-		#author-image-wrap {
-			margin: 4rem 0 2rem 0;
-		}
-	}
+  @media screen and (min-width: 600px) {
+    #author-image-wrap {
+      margin: 4rem 0 2rem 0;
+    }
+  }
 </style>
 
 <html lang="en">
-	<PageHead
-		title={`IgorSkyFlyer | ${SiteName}`}
-		description="Information about Igor Dimitrijević (IgorSkyFlyer), a Serbian software engineer specializing in full-stack Web, desktop and mobile development and the author of this website."
-		keywords="igorskyflyer,igor dimitrijević,developer,development,astro,golang,web,software,software engineer,software engineering,hire,html,javascript,css"
-		featuredImage="">
-		<script
-			type="application/ld+json"
-			set:html={JSON.stringify(meta, null, 2)}
-			is:inline
-		/>
-	</PageHead>
-	<body>
-		<PageHeader />
-		<main>
-			<div id="author-image-wrap">
-				<figure>
-					<svg
-						version="1.1"
-						xmlns="http://www.w3.org/2000/svg"
-						viewBox="0 0 500 500"
-						width="100%"
-						height="100%"
-						id="blobSvg"
-						style="opacity: 1;">
-						<image
-							x="0"
-							y="0"
-							width="100%"
-							height="100%"
-							clip-path="url(#shape)"
-							href={imageIgorSkyFlyer.src}
-							preserveAspectRatio="none"
-						/>
-						<clipPath id="shape">
-							<path
-								id="blob"
-								d="M440.5,320.5Q418,391,355.5,442.5Q293,494,226,450.5Q159,407,99,367Q39,327,31.5,247.5Q24,168,89,125.5Q154,83,219.5,68Q285,53,335.5,94.5Q386,136,424.5,193Q463,250,440.5,320.5Z"
-							></path>
-						</clipPath>
-					</svg>
+  <PageHead
+    title={`IgorSkyFlyer | ${SiteName}`}
+    description="Information about Igor Dimitrijević (IgorSkyFlyer), a Serbian software engineer specializing in full-stack Web, desktop and mobile development and the author of this website."
+    keywords="igorskyflyer,igor dimitrijević,developer,development,astro,golang,web,software,software engineer,software engineering,hire,html,javascript,css"
+    featuredImage="">
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(meta, null, 2)}
+      is:inline
+    />
+  </PageHead>
+  <body>
+    <PageHeader />
+    <main>
+      <div id="author-image-wrap">
+        <figure>
+          <svg
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 500 500"
+            width="100%"
+            height="100%"
+            id="blobSvg"
+            style="opacity: 1;">
+            <image
+              x="0"
+              y="0"
+              width="100%"
+              height="100%"
+              clip-path="url(#shape)"
+              href={imageIgorSkyFlyer.src}
+              preserveAspectRatio="none"
+            />
+            <clipPath id="shape">
+              <path
+                id="blob"
+                d="M440.5,320.5Q418,391,355.5,442.5Q293,494,226,450.5Q159,407,99,367Q39,327,31.5,247.5Q24,168,89,125.5Q154,83,219.5,68Q285,53,335.5,94.5Q386,136,424.5,193Q463,250,440.5,320.5Z"
+              ></path>
+            </clipPath>
+          </svg>
 
-					<figcaption>Igor Dimitrijević - IgorSkyFlyer</figcaption>
-				</figure>
-			</div>
-			<div id="igorskyflyer-copy-notice">
-				This page is a 🔮 <strong>magical</strong> 🌟 copy of my <a
-					href="https://github.com/igorskyflyer"
-					rel="external"
-					target="_blank"
-					>GitHub's README</a
-				>.
-				<p>🚀&nbsp; Last fetched: {getLastFetch()} &nbsp;🚀</p>
-			</div>
-			<br />
-			<div id="readme-renderer">
-				<IgorSkyFlyer />
-			</div>
-		</main>
-		<NavBtn />
-		<PageFooter />
-	</body>
+          <figcaption>Igor Dimitrijević - IgorSkyFlyer</figcaption>
+        </figure>
+      </div>
+      <div id="igorskyflyer-copy-notice">
+        This page is a 🔮 <strong>magical</strong> 🌟 copy of my <a
+          href="https://github.com/igorskyflyer"
+          rel="external"
+          target="_blank"
+          >GitHub's README</a
+        >.
+        <p>🚀&nbsp; Last fetched: {getLastFetch()} &nbsp;🚀</p>
+      </div>
+      <br />
+      <div id="readme-renderer">
+        <IgorSkyFlyer />
+      </div>
+    </main>
+    <NavBtn />
+    <PageFooter />
+  </body>
 </html>
