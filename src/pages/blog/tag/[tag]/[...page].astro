@@ -1,9 +1,9 @@
 ---
+import { getCollection } from 'astro:content'
 import Page from '@components/Page.astro'
 import PostsDisplay from '@components/PostsDisplay.astro'
 import { PostsPerPage, SiteName } from '@data/Site'
 import { Page as BlogPage } from 'astro'
-import { getCollection } from 'astro:content'
 
 export interface Props {
   page: BlogPage
