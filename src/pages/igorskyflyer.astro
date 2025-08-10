@@ -1,5 +1,5 @@
 ---
-import imageIgorSkyFlyer from '@assets/author/igorskyflyer.png'
+import me from '@assets/author/igorskyflyer.png'
 import { SiteName } from '@data/Site'
 import { Content as IgorSkyFlyer } from '@remote/igorskyflyer.md'
 import NavBtn from '../components/NavBtn.astro'
@@ -98,13 +98,41 @@ const meta = {
   }
 
   #author-image-wrap {
-    margin-bottom: 2rem;
+    max-width: 350px;
+    max-height: 350px;
+    overflow: hidden;
+    margin: auto auto 2rem auto;
     text-align: center;
   }
 
-  #author-image-wrap svg {
-    max-width: 400px;
-    max-height: 400px;
+  @keyframes blobMorph {
+    0%,
+    100% {
+      border-radius: 40% 60% 70% 30% / 40% 40% 60% 50%;
+      transform: translate(0, 0);
+    }
+    34% {
+      border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%;
+      transform: translate(-10px, 20px);
+    }
+    67% {
+      border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
+      transform: translate(8px, -10px);
+    }
+  }
+
+  #author-image-wrap img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-bottom: 2rem;
+    border-radius: 80% 40% 20% 30% / 40% 50% 40% 50%;
+    border: 6px solid #0099ff66;
+    box-shadow:
+      0 0 15px #0099ff88,
+      0 0 30px #0099ff66 inset;
+    animation: blobMorph 5s linear infinite;
   }
 
   [data-hide] {
@@ -151,41 +179,9 @@ const meta = {
     text-align: center;
   }
 
-  @keyframes blobMorph {
-    0%,
-    100% {
-      d: path(
-        'M449,316Q423,392,341,401.5Q259,411,191.5,358Q124,305,112.5,222.5Q101,140,177.5,95.5Q254,51,333,79.5Q412,108,449.5,174Q487,240,449,316Z'
-      );
-      transform: translateY(-40px);
-    }
-    25% {
-      d: path(
-        'M470,300Q430,370,350,390Q270,410,190,370Q110,330,100,240Q90,150,170,100Q250,50,340,80Q430,110,470,200Q510,290,470,300Z'
-      );
-      transform: translateY(-60px);
-    }
-    50% {
-      d: path(
-        'M430,330Q410,410,320,420Q230,430,160,370Q90,310,90,220Q90,130,160,90Q230,50,310,80Q390,110,430,180Q470,250,430,330Z'
-      );
-      transform: translateY(-80px);
-    }
-    75% {
-      d: path(
-        'M410,310Q400,390,310,400Q220,410,150,360Q80,310,90,230Q100,150,160,110Q220,70,300,90Q380,110,410,170Q440,230,410,310Z'
-      );
-      transform: translateY(-40px);
-    }
-  }
-
-  #blob {
-    animation: blobMorph 2.2s linear infinite;
-  }
-
   @media screen and (min-width: 600px) {
     #author-image-wrap {
-      margin: 4rem 0 2rem 0;
+      margin-top: 4rem;
     }
   }
 </style>
@@ -207,31 +203,10 @@ const meta = {
     <main>
       <div id="author-image-wrap">
         <figure>
-          <svg
-            version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 500 500"
-            width="100%"
-            height="100%"
-            id="blobSvg"
-            style="opacity: 1;">
-            <image
-              x="0"
-              y="0"
-              width="100%"
-              height="100%"
-              clip-path="url(#shape)"
-              href={imageIgorSkyFlyer.src}
-              preserveAspectRatio="none"
-            />
-            <clipPath id="shape">
-              <path
-                id="blob"
-                d="M440.5,320.5Q418,391,355.5,442.5Q293,494,226,450.5Q159,407,99,367Q39,327,31.5,247.5Q24,168,89,125.5Q154,83,219.5,68Q285,53,335.5,94.5Q386,136,424.5,193Q463,250,440.5,320.5Z"
-              ></path>
-            </clipPath>
-          </svg>
-
+          <img
+            src={me.src}
+            alt="A photo of Igor Dimitrijević (igorskyflyer)"
+          />
           <figcaption>Igor Dimitrijević - IgorSkyFlyer</figcaption>
         </figure>
       </div>
