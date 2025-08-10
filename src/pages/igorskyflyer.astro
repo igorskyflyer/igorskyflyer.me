@@ -127,11 +127,20 @@ const meta = {
     border-radius: 80% 40% 20% 30% / 40% 50% 40% 50%;
     border: 4px solid rgba(58, 107, 175, 0.6);
     box-shadow:
-      0 0 20px #ffffffaa,
-      0 0 40px #00ccff88,
-      inset 0 0 20px #00ccff66,
-      inset 0 0 10px #ffffff44;
+      0 0 12px rgba(180, 220, 255, 0.4),
+      0 0 24px rgba(0, 204, 255, 0.3),
+      inset 0 0 12px rgba(0, 204, 255, 0.2),
+      inset 0 0 6px rgba(180, 220, 255, 0.15);
+    transition: box-shadow 0.3s ease;
     animation: blobMorph 3.6s ease-in-out infinite;
+}
+
+#author-image-wrap img:hover {
+ box-shadow:
+   0 0 16px rgba(180, 220, 255, 0.6),
+   0 0 32px rgba(0, 204, 255, 0.5),
+   inset 0 0 16px rgba(0, 204, 255, 0.3),
+   inset 0 0 8px rgba(180, 220, 255, 0.25);
 }
 
   [data-hide] {
