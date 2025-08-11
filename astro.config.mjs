@@ -42,7 +42,8 @@ export default defineConfig({
           removeTagWhitespace: false,
           sortAttributes: false,
           sortClassName: true,
-          useShortDoctype: true
+          useShortDoctype: true,
+          removeOptionalTags: false
         }
       },
       CSS: {
