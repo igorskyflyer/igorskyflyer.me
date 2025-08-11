@@ -6,28 +6,28 @@ import type { PageProps } from '@interfaces/PageProps'
 import NavBtn from './NavBtn.astro'
 
 const {
-	title = '',
-	description = '',
-	featuredImage = '',
-	keywords = ''
+  title = '',
+  description = '',
+  featuredImage = '',
+  keywords = ''
 } = Astro.props as PageProps
 ---
 
 <!doctype html>
 <html lang="en">
-	<PageHead
-		title={title}
-		description={description}
-		keywords={keywords}
-		featuredImage={featuredImage}>
-		<slot name="head" />
-	</PageHead>
-	<body>
-		<PageHeader />
-		<main>
-			<slot />
-		</main>
-		<NavBtn />
-		<PageFooter />
-	</body>
+  <PageHead
+    title={title}
+    description={description}
+    keywords={keywords}
+    featuredImage={featuredImage}>
+    <slot name="head" />
+  </PageHead>
+  <body>
+    <PageHeader />
+    <main>
+      <slot />
+    </main>
+    <NavBtn />
+    <PageFooter />
+  </body>
 </html>
