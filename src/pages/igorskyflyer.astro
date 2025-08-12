@@ -44,10 +44,191 @@ const meta = {
   description:
     'Profile page of software engineer Igor Dimitrijević (igorskyflyer): full-stack development, DX tooling, open-source.',
   inLanguage: 'en',
+  keywords: [
+    'Igor Dimitrijević',
+    'IgorSkyFlyer',
+    'Serbian software engineer',
+    'full-stack development',
+    'Web development',
+    'mobile development',
+    'desktop applications',
+    'developer tools',
+    'Aria',
+    'ADBT',
+    'AdVoid',
+    'Open in Browser extension',
+    'scrollend polyfill',
+    'Commoji',
+    'commit-tagging system',
+    'VS Code extensions',
+    'JavaScript polyfills',
+    'Adblock filters',
+    'semantic tooling',
+    'modular libraries',
+    'developer experience',
+    'software engineering',
+    'Visual Studio Code themes',
+    'open-source projects',
+    'tech innovation'
+  ],
   about: { '@id': 'https://igorskyflyer.me/igorskyflyer#igor' },
   sameAs: [
     'https://orcid.org/0009-0002-6906-1621',
     'https://github.com/igorskyflyer'
+  ],
+  hasPart: [
+    {
+      '@type': 'CreativeWork',
+      '@id': 'https://github.com/igorskyflyer/npm-adblock-aria-compiler',
+      name: 'Aria',
+      description:
+        'An Adblock templates compiler designed to parse and compile ADBT files into usable filter lists.',
+      creator: { '@id': 'https://igorskyflyer.me/igorskyflyer#igor' },
+      url: 'https://github.com/igorskyflyer/npm-adblock-aria-compiler',
+      keywords: ['Adblock', 'compiler', 'ADBT', 'filter lists', 'IgorSkyFlyer'],
+      inLanguage: 'en',
+      license: 'https://opensource.org/licenses/MIT'
+    },
+    {
+      '@type': 'CreativeWork',
+      '@id': 'https://github.com/adbt-lang',
+      name: 'ADBT',
+      description:
+        'A custom templating language and file format (.adbt) for writing Adblock templates, with complementary .adbm files and a VS Code extension.',
+      creator: { '@id': 'https://igorskyflyer.me/igorskyflyer#igor' },
+      url: 'https://github.com/adbt-lang',
+      keywords: [
+        'ADBT',
+        'Adblock',
+        'templating language',
+        'IgorSkyFlyer',
+        'filter lists'
+      ],
+      inLanguage: 'en',
+      license: 'https://opensource.org/licenses/MIT'
+    },
+    {
+      '@type': 'CreativeWork',
+      '@id': 'https://github.com/the-advoid',
+      name: 'AdVoid',
+      description:
+        'A curated set of efficient Adblock filter lists designed to block intrusive ads across platforms.',
+      creator: { '@id': 'https://igorskyflyer.me/igorskyflyer#igor' },
+      url: 'https://github.com/the-advoid',
+      keywords: [
+        'Adblock filters',
+        'privacy tools',
+        'content blocking',
+        'AdVoid',
+        'IgorSkyFlyer'
+      ],
+      inLanguage: 'en',
+      license: 'https://opensource.org/licenses/MIT'
+    },
+    {
+      '@type': 'CreativeWork',
+      '@id': 'https://github.com/igorskyflyer/commoji',
+      name: 'Commoji',
+      description:
+        'A compact and expressive commit-tagging system using emoji to convey intent and context in version control.',
+      creator: { '@id': 'https://igorskyflyer.me/igorskyflyer#igor' },
+      url: 'https://github.com/igorskyflyer/commoji',
+      keywords: ['emoji', 'commit tagging', 'Git', 'Commoji', 'IgorSkyFlyer'],
+      inLanguage: 'en',
+      license: 'https://opensource.org/licenses/MIT'
+    },
+    {
+      '@type': 'CreativeWork',
+      '@id': 'https://github.com/igorskyflyer/npm-scrollend-polyfill',
+      name: 'scrollend polyfill',
+      description:
+        'A performant and lightweight JavaScript polyfill for the scrollend event, enabling consistent behavior across browsers.',
+      creator: { '@id': 'https://igorskyflyer.me/igorskyflyer#igor' },
+      url: 'https://github.com/igorskyflyer/npm-scrollend-polyfill',
+      keywords: [
+        'JavaScript',
+        'polyfill',
+        'scrollend',
+        'event',
+        'IgorSkyFlyer'
+      ],
+      inLanguage: 'en',
+      license: 'https://opensource.org/licenses/MIT'
+    },
+    {
+      '@type': 'SoftwareApplication',
+      '@id':
+        'https://marketplace.visualstudio.com/items?itemName=igordvlpr.open-in-browser',
+      name: 'Open in Browser',
+      applicationCategory: 'DeveloperTool',
+      operatingSystem: 'Windows, macOS, Linux',
+      description:
+        'A popular Visual Studio Code extension that allows developers to open HTML files directly in their default browser with a single click. Over 305K downloads.',
+      creator: { '@id': 'https://igorskyflyer.me/igorskyflyer#igor' },
+      url: 'https://marketplace.visualstudio.com/items?itemName=igordvlpr.open-in-browser',
+      keywords: [
+        'VS Code',
+        'extension',
+        'Open in Browser',
+        'HTML',
+        'developer tools',
+        'IgorSkyFlyer'
+      ],
+      inLanguage: 'en',
+      license: 'https://opensource.org/licenses/MIT',
+      softwareVersion: 'latest',
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '4.4',
+        ratingCount: 10,
+        bestRating: '5',
+        worstRating: '1'
+      },
+      offers: {
+        '@type': 'Offer',
+        price: '0',
+        priceCurrency: 'USD',
+        url: 'https://marketplace.visualstudio.com/items?itemName=igordvlpr.open-in-browser',
+        availability: 'https://schema.org/InStock'
+      }
+    },
+    {
+      '@type': 'SoftwareApplication',
+      '@id':
+        'https://marketplace.visualstudio.com/items?itemName=igordvlpr.kai-theme',
+      name: 'Kai',
+      applicationCategory: 'DeveloperTool',
+      operatingSystem: 'Windows, macOS, Linux',
+      description:
+        'A sleek and minimal Visual Studio Code theme designed to reduce visual clutter and enhance focus. Available on the VS Code Marketplace.',
+      creator: { '@id': 'https://igorskyflyer.me/igorskyflyer#igor' },
+      url: 'https://marketplace.visualstudio.com/items?itemName=igordvlpr.kai-theme',
+      keywords: [
+        'VS Code',
+        'theme',
+        'Kai',
+        'developer experience',
+        'IgorSkyFlyer',
+        'minimal UI'
+      ],
+      inLanguage: 'en',
+      license: 'https://opensource.org/licenses/MIT',
+      softwareVersion: 'latest',
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '5',
+        ratingCount: 3,
+        bestRating: '5',
+        worstRating: '1'
+      },
+      offers: {
+        '@type': 'Offer',
+        price: '0',
+        priceCurrency: 'USD',
+        url: 'https://marketplace.visualstudio.com/items?itemName=igordvlpr.kai-theme',
+        availability: 'https://schema.org/InStock'
+      }
+    }
   ],
   primaryImageOfPage: 'https://igorskyflyer.me/assets/author/igorskyflyer.webp',
   mainEntity: {
@@ -135,33 +316,6 @@ const meta = {
       { '@type': 'Language', name: 'English', alternateName: 'en' },
       { '@type': 'Language', name: 'Spanish', alternateName: 'es' },
       { '@type': 'Language', name: 'French', alternateName: 'fr' }
-    ],
-    keywords: [
-      'Igor Dimitrijević',
-      'IgorSkyFlyer',
-      'Serbian software engineer',
-      'full-stack development',
-      'Web development',
-      'mobile development',
-      'desktop applications',
-      'developer tools',
-      'Aria',
-      'ADBT',
-      'AdVoid',
-      'Open in Browser extension',
-      'scrollend polyfill',
-      'Commoji',
-      'commit-tagging system',
-      'VS Code extensions',
-      'JavaScript polyfills',
-      'Adblock filters',
-      'semantic tooling',
-      'modular libraries',
-      'developer experience',
-      'software engineering',
-      'Visual Studio Code themes',
-      'open-source projects',
-      'tech innovation'
     ],
     brand: {
       '@type': 'Brand',
