@@ -9,42 +9,59 @@ tags:
   - front-end
 ---
 
-CSS transitions were added back in 2013 and they are a powerful way to add motion to your interface. But if you're using transition: all, you're likely hurting performance and introducing bugs. Here's why.
+Back in 2013, CSS transitions showed up and changed the game. They gave us a super simple way to add motion to our interfaces without diving into JavaScript. They’re great when used right. But if you’re writing transition: all, you’re asking for trouble.
+
+Let’s talk about why.
 
 <br />
 
-### What all Actually Does
+### What `all` Really Means
 
-When you write:
+When you do this:
 
 ```css
 transition: all 0.3s ease;
 ```
 
-the browser interprets this as: "Animate every property that changes." That includes layout-affecting properties like `width`, `height`, `margin`, and `padding`, as well as paint and composite properties like `color`, `box-shadow`, and `transform`.
+You’re basically telling the browser, _"Animate every property that changes."_
+That’s everything from big layout shifters like width and margin, to paint-heavy stuff like box-shadow and color, to smooth GPU-powered ones like transform and opacity.
 
-This sounds convenient, but it's a bad idea.
-
-1. Unpredictable Behavior
-   Using `all` means you’re not specifying which properties should animate. If a new property gets added later, it might animate unexpectedly. This can lead to visual glitches or broken layouts.
-
-2. Performance Hits
-   Not all CSS properties are cheap to animate. Some trigger layout recalculations or repainting, which are expensive operations. For example:
-
-- `width` and `height` can trigger layout
-- `color` and `box-shadow` can trigger paint
-- `transform` and `opacity` are GPU-accelerated and safe to animate
-
-When you use `all`, the browser has to check every property and decide how to animate it. This adds overhead and can slow down your page, especially on lower-end devices.
-
-3. Harder Debugging
-   If something animates and you didn’t expect it to, tracking down the cause is harder when `all` is used. You lose clarity. Explicit transitions make your code easier to read and maintain.
+Sounds handy, but it’s not.
 
 <br />
 
-### What to Do Instead
+### Why It’s a Bad Idea
 
-Be specific. Only animate properties that are safe and necessary.
+1. **Weird Surprises**
+   When you don’t list properties, you don’t control what animates. Add a new style later and it might start animating when you never planned it to. Suddenly your layout jumps or something flickers and you’re left wondering why.
+
+2. **Performance Hits**
+   Some CSS properties are expensive to animate. They force the browser to recalculate layouts or repaint big chunks of the page. That’s work the browser has to do over and over during the animation, which can make things choppy.
+
+<br />
+
+Here’s the deal:
+
+- `width`, `height`, `margin`, `padding` → layout recalculations
+- `color`, `box-shadow`, `background-color` → paint work
+- `transform`, `opacity` → smooth and GPU-friendly
+
+When you use `all`, the browser has to be ready to animate anything. That’s extra overhead you don’t need.
+
+3. **Harder to Debug**
+   If something animates and you didn’t mean it to, tracking down the cause is a pain when all is involved. Being specific makes it obvious what’s happening and why.
+
+<br />
+
+### The Better Way
+
+Instead of:
+
+```css
+transition: all 0.3s ease;
+```
+
+Be clear about what you want to animate:
 
 ```css
 transition:
@@ -52,10 +69,8 @@ transition:
   opacity 0.3s ease;
 ```
 
-This tells the browser exactly what to animate. It avoids layout thrashing and keeps your UI smooth.
+This way you’re only animating properties that are safe, smooth, and intentional. Your code stays readable, your UI stays snappy, and you avoid mystery glitches.
 
-<br />
+### Bottom Line
 
-### Summary
-
-Avoid `transition: all`. It’s vague, inefficient, and unpredictable. Use specific properties like transform and opacity instead. Your interface will feel faster and your code will be easier to manage.
+We all know that `transition: all` is tempting, but it’s vague, inefficient, and unpredictable. Pick the properties you want to animate and stick to GPU-friendly ones like transform and opacity. Your animations will look better, feel faster, and be much easier to maintain.
