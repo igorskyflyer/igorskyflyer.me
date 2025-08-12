@@ -87,143 +87,7 @@ const meta = {
 }
 ---
 
-<style is:global>
-  body {
-    color: #d4d4ff;
-  }
-
-  main {
-    width: 86%;
-    margin: auto;
-  }
-
-  figcaption {
-    font-size: 0.92rem;
-    font-style: italic;
-  }
-
-  #author-image-wrap {
-    max-width: 350px;
-    max-height: 350px;
-    overflow: hidden;
-    margin: auto auto 2rem auto;
-    text-align: center;
-  }
-
-  @keyframes blobMorph {
-    0%,
-    100% {
-      border-radius: 40% 60% 70% 30% / 40% 40% 60% 50%;
-    }
-    34% {
-      border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%;
-    }
-    67% {
-      border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
-    }
-  }
-
-  #author-image-wrap img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    margin-bottom: 2rem;
-    border-radius: 80% 40% 20% 30% / 40% 50% 40% 50%;
-    border: 4px solid rgba(58, 107, 175, 0.6);
-    box-shadow:
-      0 0 12px rgba(180, 220, 255, 0.4),
-      0 0 24px rgba(0, 204, 255, 0.3),
-      inset 0 0 12px rgba(0, 204, 255, 0.2),
-      inset 0 0 6px rgba(180, 220, 255, 0.15);
-    transition:
-      box-shadow 0.3s ease,
-      border-radius 0.2s ease-out;
-    animation: blobMorph 3.6s ease-in-out infinite;
-  }
-
-  #author-image-wrap img:hover {
-    box-shadow:
-      0 0 16px rgba(180, 220, 255, 0.6),
-      0 0 32px rgba(0, 204, 255, 0.5),
-      inset 0 0 16px rgba(0, 204, 255, 0.3),
-      inset 0 0 8px rgba(180, 220, 255, 0.25);
-    animation-duration: 1.2s;
-  }
-
-  [data-hide] {
-    display: none;
-  }
-
-  #readme-renderer ol:not([data-no-restyle]),
-  #readme-renderer ul:not([data-no-restyle]) {
-    margin: auto;
-    padding: 0;
-    list-style-position: inside;
-    text-align: center;
-  }
-
-  #readme-renderer ul:not([data-no-restyle]) {
-    list-style-type: none;
-  }
-
-  #readme-renderer img {
-    display: inline-block;
-    margin: 0 2px;
-  }
-
-  #readme-renderer code {
-    background: #0d1117;
-    box-shadow: 0 0 18px inset #000;
-    padding: 0.3rem;
-    border-radius: 4px;
-  }
-
-  #igorskyflyer-copy-notice {
-    margin: 1rem 0 1rem 0;
-    font-size: 1.2rem;
-    text-align: center;
-  }
-
-  #igorskyflyer-copy-notice p {
-    opacity: 0.8;
-    font-size: 0.8rem;
-    font-style: italic;
-  }
-
-  #readme-renderer h3 + p:not([data-no-restyle]) {
-    text-align: center;
-  }
-
-  #igorskyflyer-edit {
-    margin: auto;
-    text-align: center;
-  }
-
-  #igorskyflyer-edit a {
-    font-size: 1.2rem;
-  }
-
-  #igorskyflyer-edit a::before {
-    content: '';
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    margin-right: 8px;
-    background: var(--svg-external);
-  }
-
-  @media screen and (min-width: 600px) {
-    main {
-      width: 75%;
-    }
-
-    #author-image-wrap {
-      margin-top: 4rem;
-    }
-  }
-</style>
-
+<!doctype html>
 <html lang="en">
   <PageHead
     title={`IgorSkyFlyer | ${SiteName}`}
@@ -235,6 +99,142 @@ const meta = {
       set:html={JSON.stringify(meta, null, 2)}
       is:inline
     />
+    <style is:global>
+      body {
+        color: #d4d4ff;
+      }
+
+      main {
+        width: 86%;
+        margin: auto;
+      }
+
+      figcaption {
+        font-size: 0.92rem;
+        font-style: italic;
+      }
+
+      #author-image-wrap {
+        max-width: 350px;
+        max-height: 350px;
+        overflow: hidden;
+        margin: auto auto 2rem auto;
+        text-align: center;
+      }
+
+      @keyframes blobMorph {
+        0%,
+        100% {
+          border-radius: 40% 60% 70% 30% / 40% 40% 60% 50%;
+        }
+        34% {
+          border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%;
+        }
+        67% {
+          border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
+        }
+      }
+
+      #author-image-wrap img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        margin-bottom: 2rem;
+        border-radius: 80% 40% 20% 30% / 40% 50% 40% 50%;
+        border: 4px solid rgba(58, 107, 175, 0.6);
+        box-shadow:
+          0 0 12px rgba(180, 220, 255, 0.4),
+          0 0 24px rgba(0, 204, 255, 0.3),
+          inset 0 0 12px rgba(0, 204, 255, 0.2),
+          inset 0 0 6px rgba(180, 220, 255, 0.15);
+        transition:
+          box-shadow 0.3s ease,
+          border-radius 0.2s ease-out;
+        animation: blobMorph 3.6s ease-in-out infinite;
+      }
+
+      #author-image-wrap img:hover {
+        box-shadow:
+          0 0 16px rgba(180, 220, 255, 0.6),
+          0 0 32px rgba(0, 204, 255, 0.5),
+          inset 0 0 16px rgba(0, 204, 255, 0.3),
+          inset 0 0 8px rgba(180, 220, 255, 0.25);
+        animation-duration: 1.2s;
+      }
+
+      [data-hide] {
+        display: none;
+      }
+
+      #readme-renderer ol:not([data-no-restyle]),
+      #readme-renderer ul:not([data-no-restyle]) {
+        margin: auto;
+        padding: 0;
+        list-style-position: inside;
+        text-align: center;
+      }
+
+      #readme-renderer ul:not([data-no-restyle]) {
+        list-style-type: none;
+      }
+
+      #readme-renderer img {
+        display: inline-block;
+        margin: 0 2px;
+      }
+
+      #readme-renderer code {
+        background: #0d1117;
+        box-shadow: 0 0 18px inset #000;
+        padding: 0.3rem;
+        border-radius: 4px;
+      }
+
+      #igorskyflyer-copy-notice {
+        margin: 1rem 0 1rem 0;
+        font-size: 1.2rem;
+        text-align: center;
+      }
+
+      #igorskyflyer-copy-notice p {
+        opacity: 0.8;
+        font-size: 0.8rem;
+        font-style: italic;
+      }
+
+      #readme-renderer h3 + p:not([data-no-restyle]) {
+        text-align: center;
+      }
+
+      #igorskyflyer-edit {
+        margin: auto;
+        text-align: center;
+      }
+
+      #igorskyflyer-edit a {
+        font-size: 1.2rem;
+      }
+
+      #igorskyflyer-edit a::before {
+        content: '';
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        margin-right: 8px;
+        background: var(--svg-external);
+      }
+
+      @media screen and (min-width: 600px) {
+        main {
+          width: 75%;
+        }
+
+        #author-image-wrap {
+          margin-top: 4rem;
+        }
+      }
+    </style>
   </PageHead>
   <body>
     <PageHeader />
