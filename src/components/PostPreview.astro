@@ -1,5 +1,4 @@
 ---
-import imageAuthor from '@assets/author/igorskyflyer-mini.png'
 import { postDate } from '@functions/posts'
 import PostExcerpt from '@igor.dvlpr/astro-post-excerpt'
 import { Icon } from 'astro-icon/components'
@@ -126,7 +125,7 @@ const postPublishedDate = postDate(post.data.publishDate)
         <span class="post--author">
           <a href="/igorskyflyer/">
             <Image
-              src={imageAuthor}
+              src="/assets/author/igorskyflyer-mini.webp"
               alt="IgorSkyFlyer's profile photo"
               loading="eager"
               width="84"
