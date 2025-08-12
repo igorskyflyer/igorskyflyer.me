@@ -1,5 +1,4 @@
 ---
-import imageAuthor from '@assets/author/igorskyflyer-mini.png'
 import PostPage from '@components/PostPage.astro'
 import { SiteName } from '@data/Site'
 import { postDate } from '@functions/posts'
@@ -131,7 +130,11 @@ const postPublishedDate = postDate(publishDate)
   description={description}
   featuredImage={featuredImage}
   post={frontmatter}>
-  <a href="/blog/" id="post--all-posts">Back to all posts</a>
+  <a
+    href="/blog/"
+    id="post--all-posts"
+    >Back to all posts</a
+  >
   <br />
   <br />
   <article class="post">
@@ -141,7 +144,7 @@ const postPublishedDate = postDate(publishDate)
         <span class="post--author"
           ><a href="/igorskyflyer/"
             ><Image
-              src={imageAuthor}
+              src="/assets/author/igorskyflyer-mini.webp"
               alt="IgorSkyFlyer's profile photo"
               loading="eager"
               width="84"
@@ -154,11 +157,17 @@ const postPublishedDate = postDate(publishDate)
           <a href="/igorskyflyer/">Igor Dimitrijević (igorskyflyer)</a>
           <div class="post-data">
             <div class="post-data-inner">
-              <Icon name="mdi:clock-outline" width="24" />&nbsp;
+              <Icon
+                name="mdi:clock-outline"
+                width="24"
+              />&nbsp;
               {postPublishedDate}
             </div>
             <div class="post-data-inner">
-              <Icon name="ic:baseline-menu-book" width="24" />&nbsp;
+              <Icon
+                name="ic:baseline-menu-book"
+                width="24"
+              />&nbsp;
               {minutesRead}
             </div>
           </div>
