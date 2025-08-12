@@ -11,33 +11,39 @@ tags:
 
 CSS transitions were added back in 2013 and they are a powerful way to add motion to your interface. But if you're using transition: all, you're likely hurting performance and introducing bugs. Here's why.
 
-What all Actually Does
+<br>
+
+### What all Actually Does
+
 When you write:
 
 ```css
 transition: all 0.3s ease;
 ```
 
-the browser interprets this as: "Animate every property that changes." That includes layout-affecting properties like width, height, margin, and padding, as well as paint and composite properties like color, box-shadow, and transform.
+the browser interprets this as: "Animate every property that changes." That includes layout-affecting properties like `width`, `height`, `margin`, and `padding`, as well as paint and composite properties like `color`, `box-shadow`, and `transform`.
 
 This sounds convenient, but it's a bad idea.
 
 1. Unpredictable Behavior
-   Using all means you’re not specifying which properties should animate. If a new property gets added later, it might animate unexpectedly. This can lead to visual glitches or broken layouts.
+   Using `all` means you’re not specifying which properties should animate. If a new property gets added later, it might animate unexpectedly. This can lead to visual glitches or broken layouts.
 
 2. Performance Hits
    Not all CSS properties are cheap to animate. Some trigger layout recalculations or repainting, which are expensive operations. For example:
 
-- width and height can trigger layout
-- color and box-shadow can trigger paint
-- transform and opacity are GPU-accelerated and safe to animate
+- `width` and `height` can trigger layout
+- `color` and `box-shadow` can trigger paint
+- `transform` and `opacity` are GPU-accelerated and safe to animate
 
-When you use all, the browser has to check every property and decide how to animate it. This adds overhead and can slow down your page, especially on lower-end devices.
+When you use `all`, the browser has to check every property and decide how to animate it. This adds overhead and can slow down your page, especially on lower-end devices.
 
 3. Harder Debugging
-   If something animates and you didn’t expect it to, tracking down the cause is harder when all is used. You lose clarity. Explicit transitions make your code easier to read and maintain.
+   If something animates and you didn’t expect it to, tracking down the cause is harder when `all` is used. You lose clarity. Explicit transitions make your code easier to read and maintain.
 
-What to Do Instead
+<br>
+
+### What to Do Instead
+
 Be specific. Only animate properties that are safe and necessary.
 
 ```css
@@ -48,5 +54,8 @@ transition:
 
 This tells the browser exactly what to animate. It avoids layout thrashing and keeps your UI smooth.
 
-Summary
-Avoid transition: all. It’s vague, inefficient, and risky. Stick to animating GPU-friendly properties like transform and opacity. Your users—and your future self—will thank you.
+<br>
+
+### Summary
+
+Avoid `transition: all`. It’s vague, inefficient, and unpredictable. Use specific properties like transform and opacity instead. Your interface will feel faster and your code will be easier to manage.
