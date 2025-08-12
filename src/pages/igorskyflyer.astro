@@ -37,10 +37,23 @@ function getLocalIsoTimestamp() {
 const meta = {
   '@context': 'https://schema.org',
   '@type': 'ProfilePage',
+  '@id': 'https://igorskyflyer.me/igorskyflyer#profile',
   dateCreated: '2024-07-08T02:00:22+02:00',
   dateModified: getLocalIsoTimestamp(),
+  name: 'Igor Dimitrijević — Profile',
+  description:
+    'Profile page of software engineer Igor Dimitrijević (igorskyflyer): full-stack development, DX tooling, open-source.',
+  inLanguage: 'en',
+  about: { '@id': 'https://igorskyflyer.me/igorskyflyer#igor' },
+  sameAs: [
+    'https://orcid.org/0009-0002-6906-1621',
+    'https://github.com/igorskyflyer'
+  ],
+  primaryImageOfPage: 'https://igorskyflyer.me/assets/author/igorskyflyer.webp',
   mainEntity: {
+    '@id': 'https://igorskyflyer.me/igorskyflyer#igor',
     '@type': 'Person',
+    mainEntityOfPage: { '@id': 'https://igorskyflyer.me/igorskyflyer' },
     name: 'Igor Dimitrijević',
     alternateName: [
       'skyflyer',
@@ -55,19 +68,126 @@ const meta = {
       }
     ],
     jobTitle: 'Software engineer',
-    height: '6 feet',
-    gender: 'male',
+    height: { '@type': 'QuantitativeValue', value: 6, unitText: 'ft' },
+    gender: 'Male',
     honorificPrefix: 'Mr.',
     address: {
       '@type': 'PostalAddress',
-      addressCountry: 'Serbia'
+      addressCountry: { '@type': 'Country', name: 'Serbia' }
     },
-    birthDate: '1993-08-27T10:15:00+02:00',
-    birthPlace: 'Kraljevo, Serbia',
-    nationality: 'Serbian',
-    url: 'https://igorskyflyer.me/',
+    birthDate: '1993-08-27',
+    birthPlace: {
+      '@type': 'Place',
+      name: 'Kraljevo',
+      address: {
+        '@type': 'PostalAddress',
+        addressCountry: { '@type': 'Country', name: 'Serbia' }
+      }
+    },
+    nationality: { '@type': 'Country', name: 'Serbia' },
     description: 'Software engineer',
-    image: 'https://avatars.githubusercontent.com/u/20957750',
+    alumniOf: {
+      '@type': 'EducationalOrganization',
+      name: 'Faculty of Technical Sciences Čačak, University of Kragujevac',
+      url: 'https://www.ftn.kg.ac.rs',
+      description:
+        'Bachelor of Science in Information Technology (Honours), specializing in Software Engineering'
+    },
+    award: [
+      'XTGem XTBoard Contest — Winner (Best Website), awarded igordimitrijevic.com domain for skywap.xtgem.com (2009)'
+    ],
+    hasCredential: {
+      '@type': 'EducationalOccupationalCredential',
+      name: 'XTGem XTBoard Contest — Winner (Best Website)',
+      credentialCategory: 'Award',
+      description:
+        'XTGem XTBoard Contest — Winner (Best Website), awarded igordimitrijevic.com domain for skywap.xtgem.com (2009)',
+      recognizedBy: {
+        '@type': 'Organization',
+        name: 'XTGem'
+      },
+      url: 'https://web.archive.org/web/20091012000000*/skywap.xtgem.com'
+    },
+    knowsAbout: [
+      'front-end',
+      'back-end',
+      'development',
+      'engineering',
+      'programming',
+      'web',
+      'mobile',
+      'desktop',
+      'javascript',
+      'typescript',
+      'nodejs',
+      'c#',
+      'php',
+      'astro',
+      'react',
+      'html',
+      'css'
+    ],
+    knowsLanguage: [
+      { '@type': 'Language', name: 'Serbian', alternateName: 'sr' },
+      { '@type': 'Language', name: 'Croatian', alternateName: 'hr' },
+      { '@type': 'Language', name: 'Montenegrin', alternateName: 'cnr' },
+      { '@type': 'Language', name: 'Bosnian', alternateName: 'bs' },
+      { '@type': 'Language', name: 'English', alternateName: 'en' },
+      { '@type': 'Language', name: 'Spanish', alternateName: 'es' },
+      { '@type': 'Language', name: 'French', alternateName: 'fr' }
+    ],
+    keywords: [
+      'Igor Dimitrijević',
+      'IgorSkyFlyer',
+      'Serbian software engineer',
+      'full-stack development',
+      'Web development',
+      'mobile development',
+      'desktop applications',
+      'developer tools',
+      'Aria',
+      'ADBT',
+      'AdVoid',
+      'Open in Browser extension',
+      'scrollend polyfill',
+      'Commoji',
+      'commit-tagging system',
+      'VS Code extensions',
+      'JavaScript polyfills',
+      'Adblock filters',
+      'semantic tooling',
+      'modular libraries',
+      'developer experience',
+      'software engineering',
+      'Visual Studio Code themes',
+      'open-source projects',
+      'tech innovation'
+    ],
+    brand: {
+      '@type': 'Brand',
+      name: 'igorskyflyer',
+      logo: 'https://igorskyflyer.me/logo.png',
+      url: 'https://igorskyflyer.me'
+    },
+    worksFor: [
+      {
+        '@type': 'Organization',
+        name: 'SissiS',
+        url: 'https://sissis.com'
+      },
+      {
+        '@type': 'Organization',
+        name: 'Sensomed',
+        url: 'https://sensomed.eu'
+      },
+      {
+        '@type': 'Organization',
+        name: 'Independent / Self-employed',
+        url: 'https://igorskyflyer.me'
+      }
+    ],
+    url: 'https://igorskyflyer.me/',
+    image: 'https://igorskyflyer.me/assets/author/igorskyflyer.webp',
     sameAs: [
       'https://github.com/igorskyflyer',
       'https://instagram.com/igorskyflyer',
@@ -81,7 +201,40 @@ const meta = {
       'https://www.linkedin.com/in/igor-dvlpr',
       'https://twitter.com/igorskyflyer',
       'https://orcid.org/0009-0002-6906-1621'
-    ]
+    ],
+    identifier: [
+      {
+        '@type': 'PropertyValue',
+        propertyID: 'ORCID',
+        value: '0009-0002-6906-1621',
+        url: 'https://orcid.org/0009-0002-6906-1621'
+      },
+      {
+        '@type': 'PropertyValue',
+        propertyID: 'GitHub',
+        value: 'igorskyflyer',
+        url: 'https://github.com/igorskyflyer'
+      },
+      {
+        '@type': 'PropertyValue',
+        propertyID: 'npm',
+        value: 'igorskyflyer',
+        url: 'https://www.npmjs.com/~igorskyflyer'
+      },
+      {
+        '@type': 'PropertyValue',
+        propertyID: 'StackOverflow',
+        value: '3864203',
+        url: 'https://stackoverflow.com/users/3864203/skyflyer'
+      }
+    ],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'Business',
+      url: 'https://igorskyflyer.me/contact',
+      areaServed: 'Worldwide',
+      availableLanguage: ['en', 'sr', 'hr', 'bs', 'cnr', 'es']
+    }
   }
 }
 ---
