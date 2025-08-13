@@ -31,5 +31,6 @@ Access-Control-Allow-Origin: https://igorskyflyer.me
 Access-Control-Allow-Methods: GET, POST
 Access-Control-Allow-Headers: Content-Type
 Vary: Origin
+X-Author: Igor Dimitrijević (igorskyflyer)
 
 ### Security END
