@@ -1,4 +1,4 @@
 Contact: https://igorskyflyer.me/contact
 Expires: 2027-10-08T22:00:00.000Z
-Preferred-Languages: en, sr-Latn, sr-Cyrl, es
+Preferred-Languages: en, sr-Latn, sr-Cyrl, hr, bs, cnr-Latn, cnr-Cyrl, es
 Policy: https://igorskyflyer.me/privacy
