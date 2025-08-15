@@ -15,7 +15,7 @@ npm's registry and CLI allow dots in scope names, but PowerShell on Windows fail
 
 **The problem involves all present and future packages with a scope name that contains a dot - not just mine.**
 
-<br>  
+<br />  
 
 Taken from one of my package's [npm page](https://www.npmjs.com/package/@igor.dvlpr/astro-component):
 ```powershell
@@ -23,7 +23,7 @@ npm i @igor.dvlpr/astro-component   # ❌ Fails in PowerShell
 npm i '@igor.dvlpr/astro-component' # ✅ Works in PowerShell (and everywhere else)
 ```  
 
-<br>
+<br />
 
 To elaborate, following the [official npm documentation](https://docs.npmjs.com/creating-a-package-json-file#required-name-and-version-fields) which states:
 
@@ -35,7 +35,7 @@ To elaborate, following the [official npm documentation](https://docs.npmjs.com/
 
 The same rules apply to scope name; thus, it can contain dots, hyphens and underscores.  
 
-<br>
+<br />
 
 **Why it happens:**
 When the npm-provided command:
@@ -46,14 +46,14 @@ npm i @igor.dvlpr/astro-component   # ❌ Fails in PowerShell
 gets executed in PowerShell - which is the default command line for Windows10+ shell - it will throw an exception:
 `The splatting operator '@' cannot be used to reference variables in an expression. '@igor' can be used only as an argument to a command. To reference variables in an expression use '$igor'.` More info on the official [PowerShell splatting documentation](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_splatting?view=powershell-7.5).
 
-<br>
+<br />
 
 <div align="center">
   <img width="1243" height="509" alt="Screenshot by Igor Dimitrijević (igorskyflyer)" src="https://github.com/user-attachments/assets/a95ba0d6-334d-4a0e-9810-af3883c09007" />
   <em><strong>Figure 1.</strong> Screenshot of the PowerShell exception followed by a successful install</em>
 </div>
 
-<br>
-<br>
+<br />
+<br />
 
 The exception occurs because it tries to access a property, in this case, it tries to access the property `dvlpr/astro-component` of the variable `$igor`- neither of those exists, nor is valid. Also, notice the highlighting, in the first command `$igor` is indeed recognized/highlighted as a variable.
