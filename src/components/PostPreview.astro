@@ -166,9 +166,10 @@ const postPublishedDate = postDate(post.data.publishDate)
     <p class="post-description">
       <PostExcerpt
         post={post}
-        words={40}
+        words={32}
         addEllipsis={true}
         smartEllipsis={true}
+        useConstraints="all"
       />
     </p>
   </div>
