@@ -42,3 +42,21 @@ export function postDate(date: string) {
     months[postDate.getMonth()]
   } ${postDate.getDate()}, ${postDate.getFullYear()}, ${hours}:${minutes}`
 }
+
+export function getLocalIsoTimestamp(date?: Date) {
+  if (typeof date === 'undefined') {
+    date = new Date()
+  }
+
+  const offsetMinutes = date.getTimezoneOffset()
+  const sign = offsetMinutes <= 0 ? '+' : '-'
+  const abs = Math.abs(offsetMinutes)
+  const hh = String(Math.floor(abs / 60)).padStart(2, '0')
+  const mm = String(abs % 60).padStart(2, '0')
+
+  const localTime = new Date(date.getTime() - offsetMinutes * 60 * 1000)
+    .toISOString()
+    .slice(0, 19) // "YYYY-MM-DDTHH:mm:ss"
+
+  return `${localTime}${sign}${hh}:${mm}`
+}
