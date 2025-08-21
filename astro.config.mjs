@@ -2,7 +2,7 @@ import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
 import compress from 'astro-compress'
 import { defineConfig } from 'astro/config'
-import { readingTime } from './src/functions/reading-time.ts'
+import { readingTime } from './src/functions/reading-time'
 import Icon from 'astro-icon'
 
 export default defineConfig({
