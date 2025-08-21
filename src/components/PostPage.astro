@@ -5,6 +5,7 @@ import PageFooter from '@components/PageFooter.astro'
 import PageHead from '@components/PageHead.astro'
 import PageHeader from '@components/PageHeader.astro'
 import type { PageProps } from '@interfaces/PageProps'
+import { getLocalIsoTimestamp } from '../functions/posts'
 
 const {
   title = '',
@@ -14,10 +15,8 @@ const {
   post
 } = Astro.props as PageProps
 
-let datePublished = new Date(post.publishDate).toISOString()
-let dateModified = new Date().toISOString()
-datePublished = datePublished.substring(0, datePublished.length - 1)
-dateModified = dateModified.substring(0, dateModified.length - 1)
+const datePublished: string = getLocalIsoTimestamp(post.publishedDate)
+const dateModified: string = getLocalIsoTimestamp()
 
 const postSchema = {
   '@context': 'https://schema.org',
