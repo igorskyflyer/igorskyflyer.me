@@ -25,7 +25,7 @@
   "homepage": "https://github.com/igorskyflyer/igorskyflyer.me#readme",
   "devDependencies": {
     "@igor.dvlpr/astro-post-excerpt": "^4.1.0-alpha.0",
-    "astro": "^5.17.1",
+    "astro": "^5.17.2",
     "astro-compress": "^2.3.9",
     "mdast-util-to-string": "^4.0.0",
     "prettier": "^3.8.1",
@@ -40,7 +40,7 @@
     "@iconify-json/cib": "^1.2.3",
     "@iconify-json/ic": "^1.2.4",
     "@iconify-json/mdi": "^1.2.3",
-    "@iconify-json/ri": "^1.2.9",
+    "@iconify-json/ri": "^1.2.10",
     "@igor.dvlpr/astro-easynav-button": "^1.4.2",
     "astro-icon": "^1.1.5"
   }
