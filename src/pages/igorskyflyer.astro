@@ -28,52 +28,48 @@ const meta = {
   dateModified: getLocalIsoTimestamp(),
   name: 'Igor Dimitrijević — Profile',
   description:
-    'Profile page of a staff software engineer Igor Dimitrijević (igorskyflyer): full-stack development, DX tooling, open-source.',
+    'Official profile of Igor Dimitrijević (igorskyflyer), Staff Software Engineer specializing in compilers, DX tooling, and performance-first architecture.',
   inLanguage: 'en',
   keywords: [
     'Igor Dimitrijević',
-    'IgorSkyFlyer',
-    'Serbian software engineer',
-    'full-stack development',
-    'Web development',
-    'mobile development',
-    'desktop applications',
-    'developer tools',
-    'staff',
-    'senior',
-    'Aria',
-    'ADBT',
+    'igorskyflyer',
+    'Staff Software Engineer',
+    'compiler construction',
+    'Abstract Syntax Tree',
+    'Domain-Specific Language',
+    'Aria Adblock compiler',
+    'ADBT language',
     'AdVoid',
     'Open in Browser extension',
     'scrollend polyfill',
-    'Commoji',
-    'commit-tagging system',
-    'VS Code extensions',
+    'Commoji semantic tagging',
+    'VS Code extension development',
+    'Developer Experience (DX)',
+    'performance-first architecture',
     'JavaScript polyfills',
-    'Adblock filters',
-    'semantic tooling',
-    'modular libraries',
-    'developer experience',
-    'software engineering',
-    'Visual Studio Code themes',
-    'open-source projects',
-    'tech innovation'
+    'TypeScript',
+    'Node.js',
+    'Astro'
   ],
   about: { '@id': 'https://igorskyflyer.me/igorskyflyer#igor' },
+  primaryImageOfPage: 'https://igorskyflyer.me/assets/author/igorskyflyer.webp',
   sameAs: [
     'https://orcid.org/0009-0002-6906-1621',
     'https://github.com/igorskyflyer'
   ],
   hasPart: [
     {
-      '@type': 'CreativeWork',
-      '@id': 'https://github.com/igorskyflyer/npm-adblock-aria-compiler',
+      '@type': 'SoftwareSourceCode',
+      '@id': 'https://github.com/aria-toolkit/aria-cli',
       name: 'Aria',
       description:
         'An Adblock templates compiler designed to parse and compile ADBT files into usable filter lists.',
       creator: { '@id': 'https://igorskyflyer.me/igorskyflyer#igor' },
-      url: 'https://github.com/igorskyflyer/npm-adblock-aria-compiler',
-      keywords: ['Adblock', 'compiler', 'ADBT', 'filter lists', 'IgorSkyFlyer'],
+      url: 'https://github.com/aria-toolkit/aria-cli',
+      codeRepository: 'https://github.com/aria-toolkit/aria-cli',
+      programmingLanguage: 'TypeScript',
+      runtimePlatform: 'Node.js',
+      keywords: ['Adblock', 'compiler', 'ADBT', 'filter lists', 'igorskyflyer'],
       inLanguage: 'en',
       license: 'https://opensource.org/licenses/MIT'
     },
@@ -82,33 +78,35 @@ const meta = {
       '@id': 'https://github.com/adbt-lang',
       name: 'ADBT',
       description:
-        'A custom templating language and file format (.adbt) for writing Adblock templates, with complementary .adbm files and a VS Code extension.',
+        'A custom templating language and file format (.adbt) specification for writing Adblock templates.',
+      genre: 'Technical Specification',
       creator: { '@id': 'https://igorskyflyer.me/igorskyflyer#igor' },
       url: 'https://github.com/adbt-lang',
       keywords: [
         'ADBT',
         'Adblock',
         'templating language',
-        'IgorSkyFlyer',
-        'filter lists'
+        'specification',
+        'domain-specific language'
       ],
       inLanguage: 'en',
       license: 'https://opensource.org/licenses/MIT'
     },
     {
-      '@type': 'CreativeWork',
+      '@type': 'SoftwareSourceCode',
       '@id': 'https://github.com/the-advoid',
       name: 'AdVoid',
       description:
         'A curated set of efficient Adblock filter lists designed to block intrusive ads across platforms.',
       creator: { '@id': 'https://igorskyflyer.me/igorskyflyer#igor' },
       url: 'https://github.com/the-advoid',
+      codeRepository: 'https://github.com/the-advoid',
       keywords: [
         'Adblock filters',
         'privacy tools',
         'content blocking',
         'AdVoid',
-        'IgorSkyFlyer'
+        'igorskyflyer'
       ],
       inLanguage: 'en',
       license: 'https://opensource.org/licenses/MIT'
@@ -118,33 +116,36 @@ const meta = {
       '@id': 'https://github.com/igorskyflyer/commoji',
       name: 'Commoji',
       description:
-        'A compact and expressive commit-tagging system using emoji to convey intent and context in version control.',
+        'A semantic commit tagging system leveraging visual psychology to standardize developer intent and context.',
+      genre: 'Technical Specification',
       creator: { '@id': 'https://igorskyflyer.me/igorskyflyer#igor' },
       url: 'https://github.com/igorskyflyer/commoji',
-      keywords: ['emoji', 'commit tagging', 'Git', 'Commoji', 'IgorSkyFlyer'],
+      keywords: ['psychology', 'semantics', 'Git', 'convention'],
       inLanguage: 'en',
       license: 'https://opensource.org/licenses/MIT'
     },
     {
-      '@type': 'CreativeWork',
+      '@type': 'SoftwareSourceCode',
       '@id': 'https://github.com/igorskyflyer/npm-scrollend-polyfill',
       name: 'scrollend polyfill',
       description:
         'A performant and lightweight JavaScript polyfill for the scrollend event, enabling consistent behavior across browsers.',
       creator: { '@id': 'https://igorskyflyer.me/igorskyflyer#igor' },
       url: 'https://github.com/igorskyflyer/npm-scrollend-polyfill',
+      codeRepository: 'https://github.com/igorskyflyer/npm-scrollend-polyfill',
+      programmingLanguage: 'JavaScript',
       keywords: [
         'JavaScript',
         'polyfill',
         'scrollend',
         'event',
-        'IgorSkyFlyer'
+        'igorskyflyer'
       ],
       inLanguage: 'en',
       license: 'https://opensource.org/licenses/MIT'
     },
     {
-      '@type': 'CreativeWork',
+      '@type': 'SoftwareApplication',
       '@id':
         'https://marketplace.visualstudio.com/items?itemName=igordvlpr.open-in-browser',
       name: 'Open in Browser',
@@ -154,61 +155,65 @@ const meta = {
         'A popular Visual Studio Code extension that allows developers to open HTML files directly in their default browser with a single click. Over 305K downloads.',
       creator: { '@id': 'https://igorskyflyer.me/igorskyflyer#igor' },
       url: 'https://marketplace.visualstudio.com/items?itemName=igordvlpr.open-in-browser',
+      softwareVersion: 'latest',
       keywords: [
         'VS Code',
         'extension',
         'Open in Browser',
         'HTML',
         'developer tools',
-        'IgorSkyFlyer'
+        'igorskyflyer'
       ],
       inLanguage: 'en',
-      license: 'https://opensource.org/licenses/MIT',
-      softwareVersion: 'latest'
+      license: 'https://opensource.org/licenses/MIT'
     },
     {
-      '@type': 'CreativeWork',
+      '@type': 'SoftwareApplication',
       '@id':
         'https://marketplace.visualstudio.com/items?itemName=igordvlpr.kai-theme',
       name: 'Kai',
       applicationCategory: 'DeveloperTool',
       operatingSystem: 'Windows, macOS, Linux',
       description:
-        'A sleek and minimal Visual Studio Code theme designed to reduce visual clutter and enhance focus. Available on the VS Code Marketplace.',
+        'A sleek and minimal Visual Studio Code theme designed to reduce visual clutter and enhance focus.',
       creator: { '@id': 'https://igorskyflyer.me/igorskyflyer#igor' },
       url: 'https://marketplace.visualstudio.com/items?itemName=igordvlpr.kai-theme',
+      softwareVersion: 'latest',
       keywords: [
         'VS Code',
         'theme',
         'Kai',
         'developer experience',
-        'IgorSkyFlyer',
+        'igorskyflyer',
         'minimal UI'
       ],
       inLanguage: 'en',
-      license: 'https://opensource.org/licenses/MIT',
-      softwareVersion: 'latest'
+      license: 'https://opensource.org/licenses/MIT'
+    },
+    {
+      '@type': 'Book',
+      name: 'Technical Book (In progress)',
+      creativeWorkStatus: 'In development',
+      description:
+        'Authoring a comprehensive guide on systemic software architecture and developer experience.',
+      author: { '@id': 'https://igorskyflyer.me/igorskyflyer#igor' }
     }
   ],
-  primaryImageOfPage: 'https://igorskyflyer.me/assets/author/igorskyflyer.webp',
   mainEntity: {
     '@id': 'https://igorskyflyer.me/igorskyflyer#igor',
     '@type': 'Person',
     mainEntityOfPage: { '@id': 'https://igorskyflyer.me/igorskyflyer' },
     name: 'Igor Dimitrijević',
+    givenName: 'Igor',
+    familyName: 'Dimitrijević',
+    additionalName: 'igorskyflyer',
     alternateName: [
-      'skyflyer',
       'igorskyflyer',
-      {
-        '@value': 'Igor Dimitrijević',
-        '@language': 'sr-Latn'
-      },
-      {
-        '@value': 'Игор Димитријевић',
-        '@language': 'sr-Cyrl'
-      }
+      'skyflyer',
+      { '@value': 'Igor Dimitrijević', '@language': 'sr-Latn' },
+      { '@value': 'Игор Димитријевић', '@language': 'sr-Cyrl' }
     ],
-    jobTitle: 'Software engineer',
+    jobTitle: 'Staff Software Engineer',
     height: { '@type': 'QuantitativeValue', value: 6, unitText: 'ft' },
     gender: 'Male',
     honorificPrefix: 'Mr.',
@@ -226,7 +231,10 @@ const meta = {
       }
     },
     nationality: { '@type': 'Country', name: 'Serbia' },
-    description: 'Software engineer',
+    disambiguatingDescription:
+      'Staff Software Engineer and open-source maintainer specializing in compilers and DX tooling; not the Serbian athlete.',
+    description:
+      'Staff Software Engineer with 18+ years of experience in full-stack development and systems architecture. Specializing in compiler construction, AST engines, and developer tools. Proven track record in delivering high-performance solutions for global clients and contributing to large-scale open-source ecosystems.',
     alumniOf: {
       '@type': 'EducationalOrganization',
       name: 'Faculty of Technical Sciences Čačak, University of Kragujevac',
@@ -243,30 +251,60 @@ const meta = {
       credentialCategory: 'Award',
       description:
         'XTGem XTBoard Contest — Winner (Best Website), awarded igordimitrijevic.com domain for skywap.xtgem.com (2009)',
-      recognizedBy: {
-        '@type': 'Organization',
-        name: 'XTGem'
-      },
+      recognizedBy: { '@type': 'Organization', name: 'XTGem' },
       url: 'https://web.archive.org/web/20091012000000*/skywap.xtgem.com'
     },
     knowsAbout: [
-      'front-end',
-      'back-end',
-      'development',
-      'engineering',
-      'programming',
-      'web',
-      'mobile',
-      'desktop',
-      'javascript',
-      'typescript',
-      'nodejs',
-      'c#',
-      'php',
-      'astro',
-      'react',
-      'html',
-      'css'
+      {
+        '@type': 'Thing',
+        name: 'Abstract Syntax Tree',
+        sameAs: 'https://en.wikipedia.org/wiki/Abstract_syntax_tree'
+      },
+      {
+        '@type': 'Thing',
+        name: 'Compiler Construction',
+        sameAs: 'https://en.wikipedia.org/wiki/Compiler'
+      },
+      {
+        '@type': 'Thing',
+        name: 'Domain-Specific Language',
+        sameAs: 'https://en.wikipedia.org/wiki/Domain-specific_language'
+      },
+      {
+        '@type': 'Thing',
+        name: 'Software Architecture',
+        sameAs: 'https://en.wikipedia.org/wiki/Software_architecture'
+      },
+      {
+        '@type': 'Thing',
+        name: 'Astro (web framework)',
+        sameAs: 'https://en.wikipedia.org/wiki/Astro_(web_framework)'
+      },
+      {
+        '@type': 'Thing',
+        name: 'TypeScript',
+        sameAs: 'https://en.wikipedia.org/wiki/TypeScript'
+      },
+      {
+        '@type': 'Thing',
+        name: 'Node.js',
+        sameAs: 'https://en.wikipedia.org/wiki/Node.js'
+      },
+      {
+        '@type': 'Thing',
+        name: 'Full-stack development',
+        sameAs: 'https://en.wikipedia.org/wiki/Full-stack_development'
+      },
+      {
+        '@type': 'Thing',
+        name: 'Developer Experience',
+        sameAs: 'https://en.wikipedia.org/wiki/Developer_experience'
+      },
+      {
+        '@type': 'Thing',
+        name: 'Polyfill (programming)',
+        sameAs: 'https://en.wikipedia.org/wiki/Polyfill_(programming)'
+      }
     ],
     knowsLanguage: [
       { '@type': 'Language', name: 'Serbian', alternateName: 'sr' },
@@ -284,16 +322,8 @@ const meta = {
       url: 'https://igorskyflyer.me'
     },
     worksFor: [
-      {
-        '@type': 'Organization',
-        name: 'SissiS',
-        url: 'https://sissis.com'
-      },
-      {
-        '@type': 'Organization',
-        name: 'Sensomed',
-        url: 'https://sensomed.eu'
-      },
+      { '@type': 'Organization', name: 'SissiS', url: 'https://sissis.com' },
+      { '@type': 'Organization', name: 'Sensomed', url: 'https://sensomed.eu' },
       {
         '@type': 'Organization',
         name: 'Independent / Self-employed',
