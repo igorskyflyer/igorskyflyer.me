@@ -25,7 +25,7 @@
   "homepage": "https://github.com/igorskyflyer/igorskyflyer.me#readme",
   "devDependencies": {
     "@igor.dvlpr/astro-post-excerpt": "^4.1.0-alpha.0",
-    "astro": "^5.17.2",
+    "astro": "^5.17.3",
     "astro-compress": "^2.3.9",
     "mdast-util-to-string": "^4.0.0",
     "prettier": "^3.8.1",
