@@ -23,7 +23,7 @@ function getLastFetch() {
 const meta = {
   '@context': 'https://schema.org',
   '@type': 'ProfilePage',
-  '@id': 'https://igorskyflyer.me/igorskyflyer#profile',
+  '@id': 'https://igorskyflyer.me/igorskyflyer/#profile',
   dateCreated: '2024-07-08T02:00:22+02:00',
   dateModified: getLocalIsoTimestamp(),
   name: 'Igor Dimitrijević — Profile',
@@ -51,7 +51,7 @@ const meta = {
     'Node.js',
     'Astro'
   ],
-  about: { '@id': 'https://igorskyflyer.me/igorskyflyer#igor' },
+  about: { '@id': 'https://igorskyflyer.me/igorskyflyer/#igor' },
   primaryImageOfPage: 'https://igorskyflyer.me/assets/author/igorskyflyer.webp',
   sameAs: [
     'https://orcid.org/0009-0002-6906-1621',
@@ -67,7 +67,7 @@ const meta = {
       applicationCategory: 'DeveloperTool',
       operatingSystem: 'Windows, macOS, Linux',
       softwareVersion: 'latest',
-      creator: { '@id': 'https://igorskyflyer.me/igorskyflyer#igor' },
+      creator: { '@id': 'https://igorskyflyer.me/igorskyflyer/#igor' },
       url: 'https://github.com/aria-toolkit/aria-cli',
       programmingLanguage: {
         '@type': 'ComputerLanguage',
@@ -96,7 +96,7 @@ const meta = {
       description:
         'A custom templating language and file format (.adbt) specification for writing ad-block templates.',
       genre: 'Technical Specification',
-      creator: { '@id': 'https://igorskyflyer.me/igorskyflyer#igor' },
+      creator: { '@id': 'https://igorskyflyer.me/igorskyflyer/#igor' },
       url: 'https://github.com/adbt-lang',
       keywords: [
         'ADBT',
@@ -114,7 +114,7 @@ const meta = {
       name: 'AdVoid',
       description:
         'A curated set of efficient ad-block filter lists designed to block intrusive ads across platforms.',
-      creator: { '@id': 'https://igorskyflyer.me/igorskyflyer#igor' },
+      creator: { '@id': 'https://igorskyflyer.me/igorskyflyer/#igor' },
       url: 'https://github.com/the-advoid',
       codeRepository: 'https://github.com/the-advoid',
       keywords: [
@@ -134,7 +134,7 @@ const meta = {
       description:
         'A semantic commit tagging system leveraging visual psychology to standardize developer intent and context.',
       genre: 'Technical Specification',
-      creator: { '@id': 'https://igorskyflyer.me/igorskyflyer#igor' },
+      creator: { '@id': 'https://igorskyflyer.me/igorskyflyer/#igor' },
       url: 'https://github.com/igorskyflyer/commoji',
       keywords: ['psychology', 'semantics', 'Git', 'convention'],
       inLanguage: 'en',
@@ -146,7 +146,7 @@ const meta = {
       name: 'Scrollend Polyfill',
       description:
         'A performant and lightweight JavaScript polyfill for the scrollend event, enabling consistent behavior across browsers.',
-      creator: { '@id': 'https://igorskyflyer.me/igorskyflyer#igor' },
+      creator: { '@id': 'https://igorskyflyer.me/igorskyflyer/#igor' },
       url: 'https://github.com/igorskyflyer/npm-scrollend-polyfill',
       codeRepository: 'https://github.com/igorskyflyer/npm-scrollend-polyfill',
       programmingLanguage: {
@@ -181,7 +181,7 @@ const meta = {
       operatingSystem: 'Windows, macOS, Linux',
       description:
         'A popular Visual Studio Code extension that allows developers to open HTML files directly in their default browser with a single click.',
-      creator: { '@id': 'https://igorskyflyer.me/igorskyflyer#igor' },
+      creator: { '@id': 'https://igorskyflyer.me/igorskyflyer/#igor' },
       url: 'https://marketplace.visualstudio.com/items?itemName=igordvlpr.open-in-browser',
       softwareVersion: 'latest',
       keywords: [
@@ -219,7 +219,7 @@ const meta = {
       operatingSystem: 'Windows, macOS, Linux',
       description:
         'A sleek and minimal Visual Studio Code theme designed to reduce visual clutter and enhance focus.',
-      creator: { '@id': 'https://igorskyflyer.me/igorskyflyer#igor' },
+      creator: { '@id': 'https://igorskyflyer.me/igorskyflyer/#igor' },
       url: 'https://marketplace.visualstudio.com/items?itemName=igordvlpr.kai-theme',
       softwareVersion: 'latest',
       keywords: [
@@ -249,13 +249,15 @@ const meta = {
       creativeWorkStatus: 'In development',
       description:
         'Authoring a comprehensive guide on systemic software architecture and developer experience.',
-      author: { '@id': 'https://igorskyflyer.me/igorskyflyer#igor' }
+      author: { '@id': 'https://igorskyflyer.me/igorskyflyer/#igor' }
     }
   ],
   mainEntity: {
-    '@id': 'https://igorskyflyer.me/igorskyflyer#igor',
+    '@id': 'https://igorskyflyer.me/igorskyflyer/#igor',
     '@type': 'Person',
-    mainEntityOfPage: { '@id': 'https://igorskyflyer.me/igorskyflyer#profile' },
+    mainEntityOfPage: {
+      '@id': 'https://igorskyflyer.me/igorskyflyer/#profile'
+    },
     name: 'Igor Dimitrijević',
     givenName: 'Igor',
     familyName: 'Dimitrijević',
