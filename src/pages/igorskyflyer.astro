@@ -37,7 +37,7 @@ const meta = {
     'compiler construction',
     'Abstract Syntax Tree',
     'Domain-Specific Language',
-    'Aria Adblock compiler',
+    'Aria ad-block compiler',
     'ADBT language',
     'AdVoid',
     'Open in Browser extension',
@@ -59,32 +59,43 @@ const meta = {
   ],
   hasPart: [
     {
-      '@type': 'SoftwareSourceCode',
+      '@type': 'SoftwareApplication',
       '@id': 'https://github.com/aria-toolkit/aria-cli',
       name: 'Aria',
       description:
-        'An Adblock templates compiler designed to parse and compile ADBT files into usable filter lists.',
+        'An ad-block templates compiler designed to parse and compile ADBT files into usable filter lists using a custom AST engine.',
+      applicationCategory: 'DeveloperTool',
+      operatingSystem: 'Windows, macOS, Linux',
+      softwareVersion: 'latest',
       creator: { '@id': 'https://igorskyflyer.me/igorskyflyer#igor' },
       url: 'https://github.com/aria-toolkit/aria-cli',
-      codeRepository: 'https://github.com/aria-toolkit/aria-cli',
-      programmingLanguage: 'TypeScript',
+      programmingLanguage: {
+        '@type': 'ComputerLanguage',
+        name: 'TypeScript',
+        url: 'https://www.typescriptlang.org/'
+      },
       runtimePlatform: 'Node.js',
-      keywords: ['Adblock', 'compiler', 'ADBT', 'filter lists', 'igorskyflyer'],
+      keywords: ['ad-block', 'compiler', 'ADBT', 'filter lists', 'AST engine'],
       inLanguage: 'en',
-      license: 'https://opensource.org/licenses/MIT'
+      license: 'https://opensource.org/licenses/MIT',
+      offers: {
+        '@type': 'Offer',
+        price: '0',
+        priceCurrency: 'USD'
+      }
     },
     {
       '@type': 'CreativeWork',
       '@id': 'https://github.com/adbt-lang',
       name: 'ADBT',
       description:
-        'A custom templating language and file format (.adbt) specification for writing Adblock templates.',
+        'A custom templating language and file format (.adbt) specification for writing ad-block templates.',
       genre: 'Technical Specification',
       creator: { '@id': 'https://igorskyflyer.me/igorskyflyer#igor' },
       url: 'https://github.com/adbt-lang',
       keywords: [
         'ADBT',
-        'Adblock',
+        'ad-block',
         'templating language',
         'specification',
         'domain-specific language'
@@ -97,12 +108,12 @@ const meta = {
       '@id': 'https://github.com/the-advoid',
       name: 'AdVoid',
       description:
-        'A curated set of efficient Adblock filter lists designed to block intrusive ads across platforms.',
+        'A curated set of efficient ad-block filter lists designed to block intrusive ads across platforms.',
       creator: { '@id': 'https://igorskyflyer.me/igorskyflyer#igor' },
       url: 'https://github.com/the-advoid',
       codeRepository: 'https://github.com/the-advoid',
       keywords: [
-        'Adblock filters',
+        'ad-block filters',
         'privacy tools',
         'content blocking',
         'AdVoid',
@@ -141,6 +152,17 @@ const meta = {
         'event',
         'igorskyflyer'
       ],
+      targetProduct: {
+        '@type': 'SoftwareApplication',
+        name: 'Web Browser',
+        operatingSystem: 'All'
+      },
+      interactionStatistic: {
+        '@type': 'InteractionCounter',
+        interactionType: 'https://schema.org/UseAction',
+        userInteractionCount: 962000,
+        name: 'Monthly requests'
+      },
       inLanguage: 'en',
       license: 'https://opensource.org/licenses/MIT'
     },
@@ -152,7 +174,7 @@ const meta = {
       applicationCategory: 'DeveloperTool',
       operatingSystem: 'Windows, macOS, Linux',
       description:
-        'A popular Visual Studio Code extension that allows developers to open HTML files directly in their default browser with a single click. Over 325K downloads.',
+        'A popular Visual Studio Code extension that allows developers to open HTML files directly in their default browser with a single click.',
       creator: { '@id': 'https://igorskyflyer.me/igorskyflyer#igor' },
       url: 'https://marketplace.visualstudio.com/items?itemName=igordvlpr.open-in-browser',
       softwareVersion: 'latest',
@@ -164,6 +186,11 @@ const meta = {
         'developer tools',
         'igorskyflyer'
       ],
+      interactionStatistic: {
+        '@type': 'InteractionCounter',
+        interactionType: 'https://schema.org/DownloadAction',
+        userInteractionCount: 325000
+      },
       inLanguage: 'en',
       license: 'https://opensource.org/licenses/MIT'
     },
@@ -202,14 +229,14 @@ const meta = {
   mainEntity: {
     '@id': 'https://igorskyflyer.me/igorskyflyer#igor',
     '@type': 'Person',
-    mainEntityOfPage: { '@id': 'https://igorskyflyer.me/igorskyflyer' },
+    mainEntityOfPage: { '@id': 'https://igorskyflyer.me/igorskyflyer#profile' },
     name: 'Igor Dimitrijević',
     givenName: 'Igor',
     familyName: 'Dimitrijević',
     additionalName: 'igorskyflyer',
     alternateName: [
-      'igorskyflyer',
-      'skyflyer',
+      { '@value': 'igorskyflyer', '@language': 'en' },
+      { '@value': 'skyflyer', '@language': 'en' },
       { '@value': 'Igor Dimitrijević', '@language': 'sr-Latn' },
       { '@value': 'Игор Димитријевић', '@language': 'sr-Cyrl' }
     ],
@@ -232,7 +259,7 @@ const meta = {
     },
     nationality: { '@type': 'Country', name: 'Serbia' },
     disambiguatingDescription:
-      'Staff Software Engineer and open-source maintainer specializing in compilers and DX tooling; not the Serbian athlete.',
+      'Staff Software Engineer and open-source maintainer specializing in compilers and DX tooling; not the Serbian footballer.',
     description:
       'Staff Software Engineer with 18+ years of experience in full-stack development and systems architecture. Specializing in compiler construction, AST engines, and developer tools. Proven track record in delivering high-performance solutions for global clients and contributing to large-scale open-source ecosystems.',
     alumniOf: {
@@ -331,7 +358,12 @@ const meta = {
       }
     ],
     url: 'https://igorskyflyer.me/',
-    image: 'https://igorskyflyer.me/assets/author/igorskyflyer.webp',
+    image: {
+      '@type': 'ImageObject',
+      url: 'https://igorskyflyer.me/assets/author/igorskyflyer.webp',
+      width: 270,
+      height: 270
+    },
     sameAs: [
       'https://github.com/igorskyflyer',
       'https://instagram.com/igorskyflyer',
