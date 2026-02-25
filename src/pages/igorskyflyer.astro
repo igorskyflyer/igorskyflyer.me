@@ -54,10 +54,6 @@ const meta = {
   ],
   about: { '@id': 'https://igorskyflyer.me/igorskyflyer/#igor' },
   primaryImageOfPage: 'https://igorskyflyer.me/assets/author/igorskyflyer.webp',
-  sameAs: [
-    'https://orcid.org/0009-0002-6906-1621',
-    'https://github.com/igorskyflyer'
-  ],
   hasPart: [
     {
       '@type': 'SoftwareApplication',
@@ -247,7 +243,8 @@ const meta = {
     {
       '@type': 'Book',
       name: 'Technical Book (In progress)',
-      creativeWorkStatus: 'In development',
+      creativeWorkStatus: 'https://schema.org/InDevelopment',
+      inLanguage: 'en',
       description:
         'Authoring a comprehensive guide on systemic software architecture and developer experience.',
       author: { '@id': 'https://igorskyflyer.me/igorskyflyer/#igor' }
@@ -264,14 +261,13 @@ const meta = {
     familyName: 'Dimitrijević',
     additionalName: 'igorskyflyer',
     alternateName: [
-      { '@value': 'igorskyflyer', '@language': 'en' },
-      { '@value': 'skyflyer', '@language': 'en' },
-      { '@value': 'Igor Dimitrijević', '@language': 'sr-Latn' },
-      { '@value': 'Игор Димитријевић', '@language': 'sr-Cyrl' }
+      'igorskyflyer',
+      'skyflyer',
+      'Igor Dimitrijević',
+      'Игор Димитријевић'
     ],
     jobTitle: 'Staff Software Engineer',
-    height: { '@type': 'QuantitativeValue', value: 6, unitText: 'ft' },
-    gender: 'Male',
+    gender: 'https://schema.org/Male',
     honorificPrefix: 'Mr.',
     address: {
       '@type': 'PostalAddress',
@@ -299,17 +295,14 @@ const meta = {
         'Bachelor of Science in Information Technology (Honours), specializing in Software Engineering'
     },
     award: [
-      'XTGem XTBoard Contest — Winner (Best Website), awarded igordimitrijevic.com domain for skywap.xtgem.com (2009)'
+      {
+        '@type': 'Award',
+        name: 'XTGem XTBoard Contest — Winner (Best Website)',
+        description: 'Awarded igordimitrijevic.com domain for skywap.xtgem.com',
+        url: 'https://web.archive.org/web/20091012000000*/skywap.xtgem.com',
+        datePublished: '2009'
+      }
     ],
-    hasCredential: {
-      '@type': 'EducationalOccupationalCredential',
-      name: 'XTGem XTBoard Contest — Winner (Best Website)',
-      credentialCategory: 'Award',
-      description:
-        'XTGem XTBoard Contest — Winner (Best Website), awarded igordimitrijevic.com domain for skywap.xtgem.com (2009)',
-      recognizedBy: { '@type': 'Organization', name: 'XTGem' },
-      url: 'https://web.archive.org/web/20091012000000*/skywap.xtgem.com'
-    },
     knowsAbout: [
       {
         '@type': 'Thing',
