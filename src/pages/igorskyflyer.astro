@@ -144,7 +144,12 @@ const meta = {
       creator: { '@id': 'https://igorskyflyer.me/igorskyflyer#igor' },
       url: 'https://github.com/igorskyflyer/npm-scrollend-polyfill',
       codeRepository: 'https://github.com/igorskyflyer/npm-scrollend-polyfill',
-      programmingLanguage: 'JavaScript',
+      programmingLanguage: {
+        '@type': 'ComputerLanguage',
+        name: 'JavaScript',
+        url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript'
+      },
+      runtimePlatform: 'Web Browser',
       keywords: [
         'JavaScript',
         'polyfill',
@@ -152,11 +157,6 @@ const meta = {
         'event',
         'igorskyflyer'
       ],
-      targetProduct: {
-        '@type': 'SoftwareApplication',
-        name: 'Web Browser',
-        operatingSystem: 'All'
-      },
       interactionStatistic: {
         '@type': 'InteractionCounter',
         interactionType: 'https://schema.org/UseAction',
