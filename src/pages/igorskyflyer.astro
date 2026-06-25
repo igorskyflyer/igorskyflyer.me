@@ -3,8 +3,8 @@ import NavBtn from '@components/NavBtn.astro'
 import PageFooter from '@components/PageFooter.astro'
 import PageHead from '@components/PageHead.astro'
 import PageHeader from '@components/PageHeader.astro'
-import { SiteName } from '@data/Site'
-import { getLocalIsoTimestamp } from '@functions/posts'
+import { SiteName } from '@data/Site.ts'
+import { getLocalIsoTimestamp } from '@functions/posts.ts'
 import { Content as IgorSkyFlyer } from '@remote/igorskyflyer.md'
 
 function getLastFetch() {
@@ -393,6 +393,7 @@ const meta = {
       'https://orcid.org/0009-0002-6906-1621',
       'https://www.npmjs.com/~igorskyflyer',
       'https://instagram.com/igorskyflyer',
+      'https://www.wikidata.org/wiki/Q140356947',
       'https://g.dev/igorskyflyer',
       'https://app.pluralsight.com/profile/igorskyflyer',
       'https://stackoverflow.com/users/3864203/igorskyflyer',
@@ -451,12 +452,12 @@ const meta = {
         value: '3864203',
         url: 'https://stackoverflow.com/users/3864203/igorskyflyer'
       },
-     {
-       '@type': 'PropertyValue',
-       propertyID: 'Grokipedia',
-       value: 'Igor_Dimitrijevi%C4%87_software_engineer',
-       url: 'https://grokipedia.com/page/Igor_Dimitrijevi%C4%87_software_engineer'
-    }
+      {
+        '@type': 'PropertyValue',
+        propertyID: 'Grokipedia',
+        value: 'Igor_Dimitrijevi%C4%87_software_engineer',
+        url: 'https://grokipedia.com/page/Igor_Dimitrijevi%C4%87_software_engineer'
+      }
     ],
     contactPoint: {
       '@type': 'ContactPoint',
