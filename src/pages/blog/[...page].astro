@@ -1,8 +1,8 @@
 ---
 import Page from '@components/Page.astro'
 import PostsDisplay from '@components/PostsDisplay.astro'
-import { PostsPerPage, SiteName } from '@data/Site'
-import { Page as BlogPage } from 'astro'
+import { PostsPerPage, SiteName } from '@data/Site.ts'
+import { Page as BlogPage, GetStaticPaths } from 'astro'
 import { getCollection } from 'astro:content'
 
 const title: string = `Blog | ${SiteName}`
@@ -14,30 +14,19 @@ export interface Props {
 
 const { page } = Astro.props
 
-export async function getStaticPaths({ paginate }) {
-  const posts = (await getCollection('blog'))
-    .filter((post) => {
-      if (!post.data.draft) {
-        return post
-      }
-    })
+export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
+  const posts = await getCollection('blog')
+
+  const activePosts = posts
+    .filter((post: { data: { draft: any } }) => !post.data.draft)
     .sort(
-      (first, second) =>
-        second.data.publishDate.getTime() - first.data.publishDate.getTime()
+      (
+        a: { data: { publishDate: { getTime: () => number } } },
+        b: { data: { publishDate: { getTime: () => number } } }
+      ) => b.data.publishDate.getTime() - a.data.publishDate.getTime()
     )
 
-  const allPosts = posts.map((post) => {
-    return {
-      params: {
-        slug: post.slug
-      },
-      props: {
-        post
-      }
-    }
-  })
-
-  return paginate(allPosts, { pageSize: PostsPerPage })
+  return paginate(activePosts, { pageSize: PostsPerPage })
 }
 ---
 
@@ -78,7 +67,10 @@ export async function getStaticPaths({ paginate }) {
     <PostsDisplay posts={page.data} />
   </section>
 
-  <nav id="blog-posts-navigation" role="navigation" aria-label="Pagination">
+  <nav
+    id="blog-posts-navigation"
+    role="navigation"
+    aria-label="Pagination">
     {page.url.prev ? <a href={page.url.prev}>👈🏼 Previous</a> : null}
     {page.url.next ? <a href={page.url.next}>Next 👉🏼</a> : null}
   </nav>
