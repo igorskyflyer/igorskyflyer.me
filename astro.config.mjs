@@ -4,6 +4,7 @@ import compress from 'astro-compress'
 import { defineConfig } from 'astro/config'
 import { readingTime } from './src/functions/reading-time'
 import Icon from 'astro-icon'
+import {unified  } from "@astrojs/markdown-remark";
 
 export default defineConfig({
   site: 'https://igorskyflyer.me',
@@ -14,12 +15,14 @@ export default defineConfig({
       noExternal: ['@igor.dvlpr/astro-post-excerpt']
     }
   },
-  markdown: {
-    remarkPlugins: [readingTime],
+ markdown: {
     shikiConfig: {
       theme: 'dracula',
       wrap: true
-    }
+    },
+    processor: unified({
+      remarkPlugins: [readingTime],
+    })
   },
   integrations: [
     Icon(),
