@@ -7,7 +7,7 @@ const { posts } = Astro.props
 {
   posts.map((postData: any) => (
     <>
-      <PostPreview post={postData.props.post} />
+      <PostPreview post={postData} />
       <br />
     </>
   ))
