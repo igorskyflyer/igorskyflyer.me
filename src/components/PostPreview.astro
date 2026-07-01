@@ -1,11 +1,12 @@
 ---
-import { postDate } from '@functions/posts'
+import { postDate } from '@functions/posts.ts'
 import PostExcerpt from '@igor.dvlpr/astro-post-excerpt'
 import { Icon } from 'astro-icon/components'
 import { Image } from 'astro:assets'
+import { render } from 'astro:content'
 
 const { post } = Astro.props
-const { remarkPluginFrontmatter: data } = await post.render()
+const { remarkPluginFrontmatter: data } = await render(post)
 
 const minutesRead = data.minutesRead
 const tags = post.data.tags
@@ -114,7 +115,7 @@ const postPublishedDate = postDate(post.data.publishDate)
 
 <article>
   <a
-    href={`/blog/${post.slug}/`}
+    href={`/blog/${post.id}/`}
     class="post-link">
     {post.data.title}
   </a>
