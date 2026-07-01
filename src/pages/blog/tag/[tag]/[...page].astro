@@ -1,9 +1,10 @@
 ---
-import { getCollection } from 'astro:content'
 import Page from '@components/Page.astro'
 import PostsDisplay from '@components/PostsDisplay.astro'
-import { PostsPerPage, SiteName } from '@data/Site'
+import { PostsPerPage, SiteName } from '@data/Site.ts'
+import type { GetStaticPaths } from 'astro'
 import { Page as BlogPage } from 'astro'
+import { getCollection } from 'astro:content'
 
 export interface Props {
   page: BlogPage
@@ -12,15 +13,14 @@ export interface Props {
 const { page } = Astro.props
 const { tag } = Astro.params
 
-console.log(Astro.params)
 const title = `Posts tagged with "${tag}" - Blog | ${SiteName}`
 const description = 'My own blog'
 
-export const getStaticPaths = async ({ paginate }) => {
+export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
   const allPosts = await getCollection('blog')
   const allTags: string[] = []
 
-  allPosts.forEach((post) => {
+  allPosts.forEach((post: { data: { tags: string[] } }) => {
     post.data.tags.forEach((tag: string) => {
       allTags.push(tag)
     })
@@ -29,11 +29,12 @@ export const getStaticPaths = async ({ paginate }) => {
   const uniqueTags = [...new Set(allTags)]
 
   return uniqueTags.flatMap((tag) => {
-    const filteredPosts = allPosts.filter((post) =>
-      post.data.tags.includes(tag)
+    const filteredPosts = allPosts.filter(
+      (post: { data: { tags: string | string[] } }) =>
+        post.data.tags.includes(tag)
     )
 
-    const selectedPosts = filteredPosts.map((post) => {
+    const selectedPosts = filteredPosts.map((post: { slug: any }) => {
       return {
         params: {
           slug: post.slug
@@ -86,8 +87,14 @@ export const getStaticPaths = async ({ paginate }) => {
   }
 </style>
 
-<Page title={title} description={description}>
-  <a href="/blog/" id="post--all-posts">Back to all posts</a>
+<Page
+  title={title}
+  description={description}>
+  <a
+    href="/blog/"
+    id="post--all-posts"
+    >Back to all posts</a
+  >
   <br />
   <br />
   <section id="posts">
@@ -96,10 +103,16 @@ export const getStaticPaths = async ({ paginate }) => {
     </h1>
     <br />
     <br />
-    <PostsDisplay posts={page.data} tag={tag} />
+    <PostsDisplay
+      posts={page.data}
+      tag={tag}
+    />
   </section>
 
-  <nav id="blog-posts-navigation" role="navigation" aria-label="Pagination">
+  <nav
+    id="blog-posts-navigation"
+    role="navigation"
+    aria-label="Pagination">
     {page.url.prev ? <a href={page.url.prev}>👈🏼 Previous</a> : null}
     {page.url.next ? <a href={page.url.next}>Next 👉🏼</a> : null}
   </nav>
