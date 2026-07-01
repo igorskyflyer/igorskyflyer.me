@@ -1,40 +1,22 @@
 {
-	"compilerOptions": {
-		"baseUrl": ".",
-		"paths": {
-			"@root/*": [
-				"./*"
-			],
-			"@components/*": [
-				"src/components/*"
-			],
-			"@layouts/*": [
-				"src/layouts/*"
-			],
-			"@assets/*": [
-				"src/assets/*"
-			],
-			"@functions/*": [
-				"src/functions/*"
-			],
-			"@interfaces/*": [
-				"src/interfaces/*"
-			],
-			"@ui/*": [
-				"src/ui/*"
-			],
-			"@data/*": [
-				"src/data/*"
-			],
-			"@remote/*": [
-				"_remote/*"
-			],
-		},
-		"target": "ESNext",
-		"module": "nodenext",
-		"moduleResolution": "nodenext",
-		"resolveJsonModule": true,
-		"isolatedModules": true,
-		"noEmit": true
-	}
+  "compilerOptions": {
+    "paths": {
+      "@root/*": ["./*"],
+      "@components/*": ["./src/components/*"],
+      "@layouts/*": ["./src/layouts/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@functions/*": ["./src/functions/*"],
+      "@interfaces/*": ["./src/interfaces/*"],
+      "@ui/*": ["./src/ui/*"],
+      "@data/*": ["./src/data/*"],
+      "@remote/*": ["./_remote/*"]
+    },
+    "target": "ESNext",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "allowImportingTsExtensions": true
+  }
 }
