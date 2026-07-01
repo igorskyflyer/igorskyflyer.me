@@ -1,17 +1,19 @@
 ---
-import { CollectionEntry, getCollection } from 'astro:content'
+import { CollectionEntry, getCollection, render } from 'astro:content'
 
 export async function getStaticPaths() {
-  const posts = (await getCollection('blog')).filter((post) => {
-    if (!post.data.draft) {
-      return post
+  const posts = (await getCollection('blog')).filter(
+    (post: { data: { draft: any } }) => {
+      if (!post.data.draft) {
+        return post
+      }
     }
-  })
+  )
 
-  return posts.map((post) => {
+  return posts.map((post: { id: string }) => {
     return {
       params: {
-        slug: post.slug
+        slug: post.id
       },
       props: {
         post
@@ -25,7 +27,7 @@ interface Props {
 }
 
 const { post } = Astro.props
-const { Content } = await post.render()
+const { Content } = await render(post)
 ---
 
 <Content />
