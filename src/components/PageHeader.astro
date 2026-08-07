@@ -1,12 +1,29 @@
+---
+import Brand from './Brand.astro'
+---
+
 <header>
-  <nav id="menu-navigation" role="navigation" aria-label="Site's menu">
-    <input type="checkbox" id="menu-toggle" />
+  <Brand />
+  <nav
+    id="menu-navigation"
+    role="navigation"
+    aria-label="Site's menu">
+    <input
+      type="checkbox"
+      id="menu-toggle"
+    />
     <label
       id="hamburger-icon"
       aria-label="Open navigation menu"
       for="menu-toggle"
-      ><svg viewBox="0 0 10 8" width="36" height="36"
-        ><path d="M1 1h8M3 4h6M1 7h8" stroke="#fff" stroke-linecap="round"
+      ><svg
+        viewBox="0 0 10 8"
+        width="36"
+        height="36"
+        ><path
+          d="M1 1h8M3 4h6M1 7h8"
+          stroke="#fff"
+          stroke-linecap="round"
         ></path></svg
       >
     </label>
@@ -21,7 +38,8 @@
         <a
           href="https://github.com/igorskyflyer"
           target="_blank"
-          rel="noopener noreferrer">GitHub</a
+          rel="noopener noreferrer"
+          >GitHub</a
         >
       </li>
       <li><a href="/contact/#">Contact</a></li>
@@ -29,11 +47,19 @@
         <a
           href="https://ko-fi.com/igorskyflyer"
           target="_blank"
-          rel="noopener noreferrer">Support me</a
+          rel="noopener noreferrer"
+          >Support me</a
         >
       </li>
       <li><a href="/privacy/#">Privacy</a></li>
       <li><a href="/about/#">About</a></li>
     </ul>
   </nav>
+  <div>
+    <a
+      href="#connect"
+      class="btn-cta btn-primary"
+      >Connect</a
+    >
+  </div>
 </header>
