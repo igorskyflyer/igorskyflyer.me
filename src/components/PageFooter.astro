@@ -3,72 +3,246 @@ import { getYear } from '@functions/utilities.ts'
 import { Icon } from 'astro-icon/components'
 
 const year = getYear()
+
+const socialLinks = [
+  { href: '/rss.xml', label: 'RSS Feed', icon: 'mdi:rss', external: false },
+  {
+    href: 'https://github.com/igorskyflyer',
+    label: 'GitHub Profile',
+    icon: 'mdi:github',
+    external: true
+  },
+  {
+    href: '/contact/',
+    label: 'Contact Me',
+    icon: 'ic:outline-email',
+    external: false
+  },
+  {
+    href: 'https://ko-fi.com/igorskyflyer',
+    label: 'Support on Ko-fi',
+    icon: 'cib:ko-fi',
+    external: true
+  },
+  {
+    href: 'https://www.linkedin.com/in/igorskyflyer',
+    label: 'LinkedIn Profile',
+    icon: 'mdi:linkedin',
+    external: true
+  },
+  {
+    href: 'https://www.instagram.com/igorskyflyer',
+    label: 'Instagram Profile',
+    icon: 'mdi:instagram',
+    external: true
+  },
+  {
+    href: 'https://youtube.com/@igorskyflyer',
+    label: 'YouTube Channel',
+    icon: 'ri:youtube-fill',
+    external: true
+  }
+]
 ---
 
-<footer>
-  <a
-    href="/rss.xml"
-    rel="alternate"
-    target="_blank"
-    title="Read igorskyflyer.me's RSS Feed"
-    class="footer-link-icon"
-    ><Icon name="mdi:rss" /></a
-  >
-  <a
-    href="https://github.com/igorskyflyer"
-    rel="external"
-    target="_blank"
-    title="Check my GitHub profile"
-    class="footer-link-icon"
-    ><Icon name="mdi:github" /></a
-  >
-  <a
-    href="http://igorskyflyer.me/contact/"
-    target="_blank"
-    title="Contact me via email"
-    class="footer-link-icon"
-    ><Icon name="ic:outline-email" /></a
-  >
-  <a
-    href="https://ko-fi.com/igorskyflyer"
-    target="_blank"
-    rel="external"
-    title="Support my work"
-    class="footer-link-icon"
-    ><Icon name="cib:ko-fi" /></a
-  >
-  <a
-    href="https://www.linkedin.com/in/igorskyflyer"
-    rel="external"
-    target="_blank"
-    title="Contact me on LinkedIn"
-    class="footer-link-icon"
-    ><Icon name="mdi:linkedin" /></a
-  >
-  <a
-    href="https://www.instagram.com/igorskyflyer"
-    rel="external"
-    target="_blank"
-    title="Check my daily update on Instagram"
-    class="footer-link-icon"
-    ><Icon name="mdi:instagram" /></a
-  >
-  <a
-    href="https://youtube.com/@igorskyflyer"
-    rel="external"
-    target="_blank"
-    title="Watch my latest videos on YouTube"
-    class="footer-link-icon"
-    ><Icon name="ri:youtube-fill" /></a
-  >
-  <br />
-  <br />
+<footer class="site-footer">
+  <div class="footer-container">
+    <nav
+      class="social-nav"
+      aria-label="Social Links">
+      {
+        socialLinks.map((item) => (
+          <a
+            href={item.href}
+            rel={item.external ? 'external noopener noreferrer' : undefined}
+            target={item.external ? '_blank' : undefined}
+            aria-label={item.label}
+            title={item.label}
+            class="social-icon-link">
+            <Icon
+              name={item.icon}
+              class="social-icon"
+            />
+          </a>
+        ))
+      }
+    </nav>
 
-  Built with <span id="footer-heart">&hearts;</span> and 🚀 Astro by <a
-    href="/igorskyflyer/"
-    id="footer-author"
-    >Igor Dimitrijević</a
-  >.
-  <br />
-  &copy; {year}, all rights reserved.
+    <div class="footer-divider"></div>
+
+    <div class="footer-content">
+      <nav
+        class="footer-links"
+        aria-label="Footer Navigation">
+        <a href="/about/">About</a>
+        <span class="dot-separator">•</span>
+        <a href="/privacy/">Privacy</a>
+        <span class="dot-separator">•</span>
+        <a href="/rss.xml">RSS Feed</a>
+      </nav>
+
+      <p class="footer-meta">
+        Built with <span
+          class="footer-heart"
+          aria-label="love"
+          >&hearts;</span
+        > and
+        <a
+          href="https://astro.build"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="astro-link"
+          >🚀 Astro</a
+        > by
+        <a
+          href="/igorskyflyer/"
+          class="footer-author"
+          >Igor Dimitrijević</a
+        >
+      </p>
+
+      <p class="footer-copyright">
+        &copy; {year} Igor Dimitrijević. All rights reserved.
+      </p>
+    </div>
+  </div>
 </footer>
+
+<style>
+  .site-footer {
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 4rem;
+    padding: 3rem 1rem 2.5rem 1rem;
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(11, 15, 23, 0.8) 20%,
+      rgba(5, 12, 28, 0.95) 100%
+    );
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .footer-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .social-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .social-icon-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #94a3b8;
+    transition:
+      color 200ms ease,
+      background-color 200ms ease,
+      border-color 200ms ease,
+      transform 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .social-icon-link:hover {
+    color: #fff;
+    background-color: var(--primary, #002f9c);
+    border-color: var(--link, #0ea8ff);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 16px rgba(14, 168, 255, 0.25);
+  }
+
+  .social-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .footer-divider {
+    width: 100%;
+    max-width: 200px;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.15),
+      transparent
+    );
+  }
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    text-align: center;
+  }
+
+  .footer-links {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.875rem;
+  }
+
+  .footer-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    transition: color 150ms ease;
+  }
+
+  .footer-links a:hover {
+    color: var(--link, #0ea8ff);
+  }
+
+  .dot-separator {
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 0.75rem;
+  }
+
+  .footer-meta {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #cbd5e1;
+  }
+
+  .footer-heart {
+    color: #ff4d4d;
+    font-size: 1.1em;
+    display: inline-block;
+  }
+
+  .astro-link,
+  .footer-author {
+    color: #e2e8f0;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 150ms ease;
+  }
+
+  .footer-author {
+    color: var(--link, #0ea8ff);
+  }
+
+  .astro-link:hover,
+  .footer-author:hover {
+    text-decoration: underline;
+  }
+
+  .footer-copyright {
+    margin: 0;
+    font-size: 0.775rem;
+    color: #64748b;
+  }
+</style>
