@@ -1,6 +1,9 @@
 ---
+import Hero from '@components/Hero.astro'
+import Me from '@components/Me.astro'
 import Page from '@components/Page.astro'
-import { SiteName } from '@data/Site'
+import Stats from '@components/Stats.astro'
+import { SiteName } from '@data/Site.ts'
 ---
 
 <Page
@@ -8,11 +11,7 @@ import { SiteName } from '@data/Site'
   description="Homepage"
   keywords="homepage,blog,igorskyflyer,igor dimitrijević,posts,it,javascript,typescript,code,programming,developer"
   featuredImage="">
-  Homepage
-
-  <div id="work">Work</div>
-
-  <br />
-
-  <div id="portfolio">Portfolio</div>
+  <Hero />
+  <Stats />
+  <Me />
 </Page>
