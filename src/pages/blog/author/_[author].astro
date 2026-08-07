@@ -1,7 +1,7 @@
 ---
 import Page from '@components/Page.astro'
 import PostsDisplay from '@components/PostsDisplay.astro'
-import { SiteName } from '@data/Site'
+import { SiteName } from '@data/Site.ts'
 import { getCollection } from 'astro:content'
 
 const { author } = Astro.params
@@ -9,12 +9,14 @@ const title = `Posts by ${author} - Blog | ${SiteName}`
 const description = 'My own blog'
 
 const posts = (await getCollection('blog'))
-  .filter((post) => {
+  .filter((post: { data: { draft: any } }) => {
     return !post.data.draft
   })
   .sort(
-    (first, second) =>
-      second.data.publishDate.getTime() - first.data.publishDate.getTime()
+    (
+      first: { data: { publishDate: { getTime: () => number } } },
+      second: { data: { publishDate: { getTime: () => number } } }
+    ) => second.data.publishDate.getTime() - first.data.publishDate.getTime()
   )
 
 export async function getStaticPaths() {
@@ -46,8 +48,14 @@ export async function getStaticPaths() {
   }
 </style>
 
-<Page title={title} description={description}>
-  <a href="/blog/" id="post--all-posts">Back to all posts</a>
+<Page
+  title={title}
+  description={description}>
+  <a
+    href="/blog/"
+    id="post--all-posts"
+    >Back to all posts</a
+  >
   <br />
   <br />
   <section id="posts">
