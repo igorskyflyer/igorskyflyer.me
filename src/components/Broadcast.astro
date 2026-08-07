@@ -1,0 +1,314 @@
+---
+export interface ActivityDetail {
+  text: string
+  link?: string
+  postText?: string
+  links?: Array<{ text: string; url: string }>
+}
+
+export interface ActivityItem {
+  category: 'npm' | 'git' | 'entity' | 'pr' | 'release' | 'media'
+  title: string
+  titleLink?: string
+  details?: ActivityDetail[]
+  date?: string
+}
+
+interface Props {
+  activities: ActivityItem[]
+  title?: string
+}
+
+const { activities, title = 'Recent Activity' } = Astro.props
+
+const categoryBadges: Record<
+  ActivityItem['category'],
+  { label: string; class: string }
+> = {
+  git: { label: 'GitHub', class: 'badge-git' },
+  npm: { label: 'npm', class: 'badge-npm' },
+  entity: { label: 'Verified', class: 'badge-entity' },
+  pr: { label: 'Contribution', class: 'badge-pr' },
+  release: { label: 'Release', class: 'badge-release' },
+  media: { label: 'Media', class: 'badge-media' }
+}
+---
+
+<section class="broadcast-container">
+  <div class="broadcast-header">
+    <div class="header-title">
+      <span class="broadcast-icon">📋</span>
+      <h3>{title}</h3>
+    </div>
+    <div class="broadcast-status">
+      <span class="status-dot"></span>
+      <span class="status-text">LIVE FEED</span>
+    </div>
+  </div>
+
+  <div class="broadcast-feed">
+    {
+      activities.map((item) => (
+        <article class="feed-item">
+          <div class="item-meta">
+            <span class={`badge ${categoryBadges[item.category].class}`}>
+              {categoryBadges[item.category].label}
+            </span>
+            {item.date && <time class="item-date">{item.date}</time>}
+          </div>
+
+          <div class="item-content">
+            <p class="item-title">
+              {item.titleLink ? (
+                <a
+                  href={item.titleLink}
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  {item.title}
+                </a>
+              ) : (
+                item.title
+              )}
+            </p>
+
+            {item.details && item.details.length > 0 && (
+              <ul class="item-details">
+                {item.details.map((detail) => (
+                  <li>
+                    {detail.link ? (
+                      <a
+                        href={detail.link}
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        {detail.text}
+                      </a>
+                    ) : (
+                      detail.text
+                    )}
+
+                    {detail.postText && ` ${detail.postText}`}
+
+                    {detail.links && detail.links.length > 0 && (
+                      <span class="detail-inline-links">
+                        {' ('}
+                        {detail.links.map((lnk, idx) => (
+                          <>
+                            <a
+                              href={lnk.url}
+                              target="_blank"
+                              rel="noopener noreferrer">
+                              {lnk.text}
+                            </a>
+                            {idx < detail.links!.length - 1 && ', '}
+                          </>
+                        ))}
+                        {')'}
+                      </span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .broadcast-container {
+    width: 100%;
+    background: rgba(13, 17, 23, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius, 8px);
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+  }
+
+  .broadcast-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.85rem 1.25rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .header-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .header-title h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .broadcast-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #94a3b8;
+  }
+
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #1fe066;
+    box-shadow: 0 0 8px #1fe066;
+    animation: pulse 2s infinite;
+  }
+
+  .broadcast-feed {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 0;
+  }
+
+  .feed-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 0.85rem 1.25rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    transition: background-color 150ms ease;
+  }
+
+  .feed-item:last-child {
+    border-bottom: none;
+  }
+
+  .feed-item:hover {
+    background-color: rgba(255, 255, 255, 0.02);
+  }
+
+  .item-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .badge {
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .badge-git {
+    background: rgba(56, 189, 248, 0.15);
+    color: #38bdd8;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+  }
+
+  .badge-npm {
+    background: rgba(204, 53, 52, 0.15);
+    color: #ff6b6b;
+    border: 1px solid rgba(204, 53, 52, 0.3);
+  }
+
+  .badge-entity {
+    background: rgba(234, 179, 8, 0.15);
+    color: #facc15;
+    border: 1px solid rgba(234, 179, 8, 0.3);
+  }
+
+  .badge-pr {
+    background: rgba(168, 85, 247, 0.15);
+    color: #c084fc;
+    border: 1px solid rgba(168, 85, 247, 0.3);
+  }
+
+  .badge-release {
+    background: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+    border: 1px solid rgba(34, 197, 94, 0.3);
+  }
+
+  .badge-media {
+    background: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+  }
+
+  .item-date {
+    font-size: 0.75rem;
+    color: #64748b;
+  }
+
+  .item-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .item-title {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #e2e8f0;
+  }
+
+  .item-title a,
+  .item-details a {
+    color: var(--link, #0ea8ff);
+    text-decoration: none;
+  }
+
+  .item-title a:hover,
+  .item-details a:hover {
+    text-decoration: underline;
+  }
+
+  .item-details {
+    margin: 0.35rem 0 0 0;
+    padding-left: 1.2rem;
+    font-size: 0.825rem;
+    color: #94a3b8;
+    line-height: 1.5;
+  }
+
+  .item-details li {
+    margin-bottom: 0.2rem;
+  }
+
+  .detail-inline-links {
+    color: #64748b;
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.3;
+    }
+  }
+
+  @media (min-width: 640px) {
+    .feed-item {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .item-meta {
+      min-width: 110px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.25rem;
+      padding-top: 0.1rem;
+    }
+  }
+</style>
