@@ -1,0 +1,45 @@
+---
+import HireStatus from './HireStatus.astro'
+import Spacer from './Spacer.astro'
+---
+
+<section
+  id="hero"
+  class="reveal">
+  <div id="hero-name">
+    <p id="hero-intro">Hi, I am</p>
+    <h1>Igor Dimitrijević</h1>
+    <p id="hero-description">
+      Senior Full-Stack Software Engineer & DX Specialist with 20+ years of
+      experience engineering solutions for clients across 10 countries. Known
+      online as IgorSkyFlyer, author of open-source DSLs, compilers, and npm
+      packages. BSc (Hons) in Software Engineering.
+    </p>
+    <br />
+    <div id="group-cta">
+      <a
+        class="btn-cta btn-primary"
+        href="#work"
+        >View My Work</a
+      >
+      <a
+        class="btn-cta btn-secondary"
+        href="#connect"
+        >Connect with Me</a
+      >
+    </div>
+  </div>
+  <div id="hero-photo">
+    <figure class="photo-wrapper">
+      <img
+        alt="A photo of Igor Dimitrijević (igorskyflyer), a freelance senior full-stack engineer."
+        loading="eager"
+        src="./assets/author/igorskyflyer.webp"
+        width="350"
+        height="350"
+      />
+    </figure>
+    <Spacer size="sm" />
+    <HireStatus />
+  </div>
+</section>
