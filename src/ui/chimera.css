@@ -132,7 +132,7 @@ body {
 main {
   display: flex;
   flex-direction: column;
-  gap: clamp(3rem, 8vw, 7rem);
+  gap: clamp(4rem, 10vw, 8.5rem);
   margin: 1.5rem auto;
   width: 92%;
 }
