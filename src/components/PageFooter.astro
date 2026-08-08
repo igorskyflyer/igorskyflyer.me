@@ -103,7 +103,7 @@ const socialLinks = [
       <p class="footer-copyright">
         &copy; {year} Igor Dimitrijević. All rights reserved.
         <br />
-        <em>Debug: <strong>{getLocalDate()}</strong></em>
+        <em>Version: <strong>{getLocalDate()}</strong></em>
       </p>
     </div>
   </div>
@@ -137,11 +137,7 @@ const socialLinks = [
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: clamp(
-      0.25rem,
-      2vw,
-      0.75rem
-    ); /* Scales gap down to 4px on small screens */
+    gap: clamp(0.25rem, 2vw, 0.75rem);
   }
 
   .social-icon-link {
