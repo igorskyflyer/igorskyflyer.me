@@ -1,5 +1,4 @@
 ---
-import HireStatus from './HireStatus.astro'
 import Spacer from './Spacer.astro'
 ---
 
@@ -33,13 +32,16 @@ import Spacer from './Spacer.astro'
     <figure class="photo-wrapper">
       <img
         alt="A photo of Igor Dimitrijević (igorskyflyer), a freelance senior full-stack software engineer."
-        loading="eager" fetchpriority="high"
+        loading="eager"
+        fetchpriority="high"
         src="https://igorskyflyer.me/assets/author/igorskyflyer.webp"
         width="350"
         height="350"
       />
     </figure>
     <Spacer size="sm" />
-    <HireStatus />
+    <div id="hire-status">
+      <span id="hire-availability">Available for hire</span>
+    </div>
   </div>
 </section>
