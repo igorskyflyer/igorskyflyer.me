@@ -10,6 +10,7 @@ import Brand from './Brand.astro'
     aria-label="Site's menu">
     <button
       id="hamburger-icon"
+      class="no-select"
       type="button"
       popovertarget="menu-dialog"
       aria-label="Toggle navigation menu">
@@ -73,8 +74,14 @@ import Brand from './Brand.astro'
   <div>
     <a
       href="#connect"
-      class="btn-cta btn-primary"
+      class="btn-cta btn-primary btn-header"
       >Get in Touch</a
     >
   </div>
 </header>
+
+<style>
+  .btn-header {
+    padding: 0.6rem 1.2rem;
+  }
+</style>
