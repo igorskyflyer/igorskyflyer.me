@@ -651,7 +651,7 @@ pre {
   }
 
   #menu-dialog {
-    display: block !important;
+    display: block;
     position: static;
     margin: 0;
     border: none;
