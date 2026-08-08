@@ -15,7 +15,20 @@
     "type": "git",
     "url": "git+https://github.com/igorskyflyer/igorskyflyer.me.git"
   },
-  "keywords": [],
+  "keywords": [
+    "igorskyflyer",
+    "igor dimitrijević",
+    "full stack engineer",
+    "freelance",
+    "software engineer",
+    "typescript",
+    "javascript",
+    "astro",
+    "open source",
+    "dx tooling",
+    "web architecture",
+    "blog"
+  ],
   "author": "Igor Dimitrijević <admin@igorskyflyer.me> (https://github.com/igorskyflyer)",
   "license": "MIT",
   "funding": "https://ko-fi.com/igorskyflyer",
