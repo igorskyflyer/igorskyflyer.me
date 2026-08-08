@@ -177,31 +177,32 @@ const activities: ActivityItem[] = [
 ]
 ---
 
-<section class="broadcast-container">
-  <div class="broadcast-header">
+<section class="feed-container">
+  <div class="feed-header">
     <div class="header-title">
-      <span class="broadcast-icon">📋</span>
+      <span class="feed-icon">📋</span>
       <h2>{title}</h2>
     </div>
-    <div class="broadcast-status">
+    <div class="feed-status">
       <span class="status-dot"></span>
       <span class="status-text">LIVE FEED</span>
     </div>
   </div>
 
-  <div class="broadcast-feed">
+  <div class="feed">
     {
-      activities.map((item) => (
-        <article class="feed-item">
-          <div class="item-meta">
-            <span class={`badge ${categoryBadges[item.category].class}`}>
-              {categoryBadges[item.category].label}
-            </span>
-            {item.date && <time class="item-date">{item.date}</time>}
-          </div>
+      activities.map((item) => {
+        const hasDetails = item.details && item.details.length > 0
 
-          <div class="item-content">
-            <p class="item-title">
+        const Row = (
+          <>
+            <span class="item-meta">
+              <span class={`badge ${categoryBadges[item.category].class}`}>
+                {categoryBadges[item.category].label}
+              </span>
+              {item.date && <time class="item-date">{item.date}</time>}
+            </span>
+            <span class="item-title">
               {item.titleLink ? (
                 <a
                   href={item.titleLink}
@@ -212,55 +213,63 @@ const activities: ActivityItem[] = [
               ) : (
                 item.title
               )}
-            </p>
+            </span>
+          </>
+        )
 
-            {item.details && item.details.length > 0 && (
-              <ul class="item-details">
-                {item.details.map((detail) => (
-                  <li>
-                    {detail.link ? (
-                      <a
-                        href={detail.link}
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        {detail.text}
-                      </a>
-                    ) : (
-                      detail.text
-                    )}
+        return hasDetails ? (
+          <details class="feed-item">
+            <summary class="item-row item-summary">{Row}</summary>
 
-                    {detail.postText && ` ${detail.postText}`}
+            <ul class="item-details">
+              {item.details!.map((detail) => (
+                <li>
+                  {detail.link ? (
+                    <a
+                      href={detail.link}
+                      target="_blank"
+                      rel="noopener noreferrer">
+                      {detail.text}
+                    </a>
+                  ) : (
+                    detail.text
+                  )}
 
-                    {detail.links && detail.links.length > 0 && (
-                      <span class="detail-inline-links">
-                        {' ('}
-                        {detail.links.map((lnk, idx) => (
-                          <>
-                            <a
-                              href={lnk.url}
-                              target="_blank"
-                              rel="noopener noreferrer">
-                              {lnk.text}
-                            </a>
-                            {idx < detail.links!.length - 1 && ', '}
-                          </>
-                        ))}
-                        {')'}
-                      </span>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
-        </article>
-      ))
+                  {detail.postText && ` ${detail.postText}`}
+
+                  {detail.links && detail.links.length > 0 && (
+                    <span class="detail-inline-links">
+                      {' ('}
+                      {detail.links.map((lnk, idx) => (
+                        <>
+                          <a
+                            href={lnk.url}
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            {lnk.text}
+                          </a>
+                          {idx < detail.links!.length - 1 && ', '}
+                        </>
+                      ))}
+                      {')'}
+                    </span>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </details>
+        ) : (
+          <article class="feed-item feed-item--flat">
+            <div class="item-row">{Row}</div>
+          </article>
+        )
+      })
     }
   </div>
 </section>
 
 <style>
-  .broadcast-container {
+  .feed-container {
     width: 100%;
     background: rgba(13, 17, 23, 0.7);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -269,7 +278,7 @@ const activities: ActivityItem[] = [
     backdrop-filter: blur(12px);
   }
 
-  .broadcast-header {
+  .feed-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -284,14 +293,14 @@ const activities: ActivityItem[] = [
     gap: 0.5rem;
   }
 
-  .header-title h3 {
+  .header-title h2 {
     margin: 0;
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 600;
     color: #fff;
   }
 
-  .broadcast-status {
+  .feed-status {
     display: flex;
     align-items: center;
     gap: 6px;
@@ -310,7 +319,7 @@ const activities: ActivityItem[] = [
     animation: pulse 2s infinite;
   }
 
-  .broadcast-feed {
+  .feed {
     display: flex;
     flex-direction: column;
     padding: 0.5rem 0;
@@ -331,6 +340,41 @@ const activities: ActivityItem[] = [
 
   .feed-item:hover {
     background-color: rgba(255, 255, 255, 0.02);
+  }
+
+  .item-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .item-summary {
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .item-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .item-summary::after {
+    content: '›';
+    align-self: flex-start;
+    margin-left: auto;
+    color: #64748b;
+    font-size: 1rem;
+    line-height: 1;
+    transition: transform 150ms ease;
+  }
+
+  .feed-item[open] > .item-summary::after {
+    transform: rotate(90deg);
+  }
+
+  .item-summary:focus-visible {
+    outline: 2px solid var(--link, #0ea8ff);
+    outline-offset: 3px;
+    border-radius: 4px;
   }
 
   .item-meta {
@@ -389,12 +433,6 @@ const activities: ActivityItem[] = [
     color: #64748b;
   }
 
-  .item-content {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-  }
-
   .item-title {
     margin: 0;
     font-size: 0.9rem;
@@ -439,8 +477,19 @@ const activities: ActivityItem[] = [
     }
   }
 
-  @media (min-width: 640px) {
+  @media (prefers-reduced-motion: reduce) {
+    .status-dot {
+      animation: none;
+    }
+
+    .item-summary::after,
     .feed-item {
+      transition: none;
+    }
+  }
+
+  @media (min-width: 640px) {
+    .item-row {
       flex-direction: row;
       align-items: flex-start;
       gap: 1rem;
@@ -452,6 +501,10 @@ const activities: ActivityItem[] = [
       align-items: flex-start;
       gap: 0.25rem;
       padding-top: 0.1rem;
+    }
+
+    .item-summary::after {
+      align-self: center;
     }
   }
 </style>
