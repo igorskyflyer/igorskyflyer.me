@@ -1,11 +1,9 @@
 ---
+import Feed from '@components/Feed.astro'
 import Hero from '@components/Hero.astro'
-import Me from '@components/Me.astro'
 import Page from '@components/Page.astro'
 import Stats from '@components/Stats.astro'
 import { SiteName } from '@data/Site.ts'
-import Broadcast from '../components/Broadcast.astro'
-import Spacer from '../components/Spacer.astro'
 ---
 
 <Page
@@ -13,9 +11,17 @@ import Spacer from '../components/Spacer.astro'
   description="Portfolio and technical blog of Igor Dimitrijević (igorskyflyer), Senior Full-Stack Software Engineer specializing in TypeScript, DX tooling, and performance-first architectures."
   keywords="igorskyflyer, igor dimitrijević, full stack engineer, software engineer, typescript, javascript, astro, open source, dx tooling, web architecture, blog"
   featuredImage="https://igorskyflyer.me/assets/author/igorskyflyer.webp">
-  <Hero />
-  <Stats />
-  <Spacer size="xl" />
-  <Broadcast />
-  <Me />
+  <div class="fold-group">
+    <Hero />
+    <Stats />
+  </div>
+  <Feed />
 </Page>
+
+<style>
+  .fold-group {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1rem, 3vw, 2rem);
+  }
+</style>
