@@ -5,20 +5,8 @@ import PageHead from '@components/PageHead.astro'
 import PageHeader from '@components/PageHeader.astro'
 import { SiteName } from '@data/Site.ts'
 import { getLocalIsoTimestamp } from '@functions/posts.ts'
+import { getLocalDate } from '@functions/utilities.ts'
 import { Content as IgorSkyFlyer } from '@remote/igorskyflyer.md'
-
-function getLastFetch() {
-  return new Date().toLocaleString('en-uk', {
-    day: '2-digit',
-    month: 'short',
-    year: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit',
-    hourCycle: 'h23',
-    timeZone: 'Europe/Belgrade',
-    timeZoneName: 'longOffset'
-  })
-}
 
 const meta = {
   '@context': 'https://schema.org',
@@ -659,7 +647,7 @@ const meta = {
           target="_blank"
           >GitHub's README</a
         >.
-        <p>Last updated: {getLastFetch()}</p>
+        <p>Last updated: {getLocalDate()}</p>
       </div>
       <br />
       <div id="igorskyflyer-edit">
