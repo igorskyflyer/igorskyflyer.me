@@ -8,50 +8,67 @@ import Brand from './Brand.astro'
     id="menu-navigation"
     role="navigation"
     aria-label="Site's menu">
-    <input
-      type="checkbox"
-      id="menu-toggle"
-    />
-    <label
+    <button
       id="hamburger-icon"
-      aria-label="Open navigation menu"
-      for="menu-toggle"
-      ><svg
+      type="button"
+      popovertarget="menu-dialog"
+      aria-label="Toggle navigation menu">
+      <svg
         viewBox="0 0 10 8"
         width="36"
-        height="36"
-        ><path
+        height="36">
+        <path
           d="M1 1h8M3 4h6M1 7h8"
           stroke="#fff"
           stroke-linecap="round"
-        ></path></svg
-      >
-    </label>
+        ></path>
+      </svg>
+    </button>
 
-    <div id="menu-blur"></div>
-
-    <ul id="menu">
-      <li><a href="/#">Home</a></li>
-      <li><a href="/blog/#">Blog</a></li>
-      <li><a href="/portfolio/#">Portfolio</a></li>
-      <li>
-        <a
-          href="https://github.com/igorskyflyer"
-          target="_blank"
-          rel="noopener noreferrer"
-          >GitHub</a
-        >
-      </li>
-      <li><a href="/contact/#">Contact</a></li>
-      <li>
-        <a
-          href="https://ko-fi.com/igorskyflyer"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Support me</a
-        >
-      </li>
-    </ul>
+    <div
+      id="menu-dialog"
+      popover="auto">
+      <button
+        id="menu-close"
+        type="button"
+        popovertarget="menu-dialog"
+        popovertargetaction="hide"
+        aria-label="Close navigation menu">
+        <svg
+          viewBox="0 0 16 16"
+          width="20"
+          height="20">
+          <path
+            d="M1 1l14 14M15 1L1 15"
+            stroke="#fff"
+            stroke-width="1.5"
+            stroke-linecap="round"
+          ></path>
+        </svg>
+      </button>
+      <ul id="menu">
+        <li><a href="/#">Home</a></li>
+        <li><a href="/blog/#">Blog</a></li>
+        <li><a href="/portfolio/#">Portfolio</a></li>
+        <li>
+          <a
+            href="https://github.com/igorskyflyer"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+        </li>
+        <li><a href="/contact/#">Contact</a></li>
+        <li>
+          <a
+            href="https://ko-fi.com/igorskyflyer"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Support me</a
+          >
+        </li>
+      </ul>
+    </div>
   </nav>
   <div>
     <a
