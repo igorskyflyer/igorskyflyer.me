@@ -1,5 +1,5 @@
 ---
-import Spacer from './Spacer.astro'
+import { Icon } from 'astro-icon/components'
 ---
 
 <section
@@ -9,23 +9,72 @@ import Spacer from './Spacer.astro'
     <p id="hero-intro">Hi, I am</p>
     <h1>Igor Dimitrijević</h1>
     <p id="hero-description">
-      Senior Full-Stack Software Engineer & DX Specialist with 20+ years of
-      experience engineering solutions for clients across 10 countries. Known
-      online as IgorSkyFlyer, author of open-source DSLs, compilers, and npm
-      packages. BSc (Hons) in Software Engineering.
+      Senior Full-Stack Software Engineer & DX Specialist, known online as
+      IgorSkyFlyer. Author of open-source DSLs, compilers, and npm packages. BSc
+      (Hons) in Software Engineering.
     </p>
     <br />
     <div id="group-cta">
       <a
         class="btn-cta btn-primary"
         href="#work"
-        >View My Work</a
+        >View my Work</a
       >
       <a
         class="btn-cta btn-secondary"
         href="#blog"
         >View my Blog</a
       >
+    </div>
+    <div id="hero-social">
+      <a
+        href="https://github.com/igorskyflyer"
+        rel="external noopener noreferrer"
+        target="_blank"
+        aria-label="igorskyflyer's GitHub profile"
+        title="igorskyflyer's GitHub profile"
+        class="social-icon-link">
+        <Icon
+          name="mdi:github"
+          class="social-icon"
+        />
+      </a>
+      <a
+        href="https://www.linkedin.com/in/igorskyflyer/"
+        rel="external noopener noreferrer"
+        target="_blank"
+        aria-label="igorskyflyer's LinkedIn profile"
+        title="igorskyflyer's LinkedIn profile"
+        class="social-icon-link">
+        <Icon
+          name="mdi:linkedin"
+          class="social-icon"
+        />
+      </a>
+      <a
+        href="https://npmjs.com/~igorskyflyer"
+        rel="external noopener noreferrer"
+        target="_blank"
+        aria-label="igorskyflyer's npm profile"
+        title="igorskyflyer's npm profile"
+        class="social-icon-link">
+        <Icon
+          name="mdi:npm"
+          class="social-icon"
+        />
+      </a>
+      <a
+        href="mailto:connect@igorskyflyer.me"
+        rel="external noopener noreferrer"
+        target="_blank"
+        aria-label="Contact igorskyflyer via email"
+        title="Contact igorskyflyer via email"
+        class="social-icon-link">
+        <Icon
+          name="mdi:email"
+          class="social-icon"
+        />
+      </a>
     </div>
   </div>
   <div id="hero-photo">
@@ -39,9 +88,48 @@ import Spacer from './Spacer.astro'
         height="350"
       />
     </figure>
-    <Spacer size="sm" />
-    <div id="hire-status">
-      <span id="hire-availability">Available for hire</span>
+    <div
+      id="hire-status"
+      class="no-select">
+      <span id="hire-availability">Available for Hire</span>
     </div>
   </div>
 </section>
+
+<style>
+  #hero-social {
+    display: inline-flex;
+    gap: 24px;
+    margin-top: 2rem;
+  }
+
+  .social-icon-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #94a3b8;
+    transition:
+      color 200ms ease,
+      background-color 200ms ease,
+      border-color 200ms ease,
+      transform 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .social-icon-link:hover {
+    color: #fff;
+    background-color: var(--primary, #002f9c);
+    border-color: var(--link, #0ea8ff);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 16px rgba(14, 168, 255, 0.25);
+  }
+
+  .social-icon {
+    width: 32px;
+    height: 32px;
+  }
+</style>
