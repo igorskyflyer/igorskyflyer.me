@@ -1,5 +1,5 @@
 ---
-import { getYear } from '@functions/utilities.ts'
+import { getLocalDate, getYear } from '@functions/utilities.ts'
 import { Icon } from 'astro-icon/components'
 
 const year = getYear()
@@ -102,6 +102,8 @@ const socialLinks = [
 
       <p class="footer-copyright">
         &copy; {year} Igor Dimitrijević. All rights reserved.
+        <br />
+        ({getLocalDate()})
       </p>
     </div>
   </div>
