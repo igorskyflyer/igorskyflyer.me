@@ -206,7 +206,7 @@ header {
   align-items: center;
   gap: 1.5rem;
   margin: auto;
-  padding: 1.5rem 0;
+  padding-top: 1.5rem;
   width: 100%;
 }
 
@@ -382,7 +382,6 @@ header {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin-top: 1rem;
   width: 100%;
 }
 
