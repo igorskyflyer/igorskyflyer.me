@@ -15,11 +15,10 @@ export interface ActivityItem {
 }
 
 interface Props {
-  activities: ActivityItem[]
   title?: string
 }
 
-const { activities, title = 'Recent Activity' } = Astro.props
+const { title = 'Recent Activity' } = Astro.props
 
 const categoryBadges: Record<
   ActivityItem['category'],
@@ -32,6 +31,150 @@ const categoryBadges: Record<
   release: { label: 'Release', class: 'badge-release' },
   media: { label: 'Media', class: 'badge-media' }
 }
+
+const activities: ActivityItem[] = [
+  {
+    category: 'git',
+    title: 'Published a new UserScript: Unmute Images on GitHub',
+    titleLink:
+      'https://github.com/igorskyflyer/userscript-github-unmute-images',
+    details: [
+      { text: 'Removes the muted background color from images on GitHub.' }
+    ]
+  },
+  {
+    category: 'npm',
+    title: 'Published new releases of npm packages:',
+    details: [
+      {
+        text: 'Biome config - v3.0.3',
+        link: 'https://github.com/igorskyflyer/npm-biome-config/releases/tag/v3.0.3'
+      },
+      {
+        text: 'TSConfig - v2.0.1',
+        link: 'https://github.com/igorskyflyer/npm-tsconfig/releases/tag/v2.0.1'
+      },
+      {
+        text: 'astro-component - v1.1.1',
+        link: 'https://github.com/igorskyflyer/npm-astro-component/releases/tag/v1.1.1'
+      },
+      {
+        text: 'astro-render-component - v2.0.2',
+        link: 'https://github.com/igorskyflyer/npm-astro-render-component/releases/tag/v2.0.2'
+      }
+    ]
+  },
+  {
+    category: 'entity',
+    title: 'Became a Verified Entity on Google /g/11kc3sl0nv',
+    titleLink: 'https://www.google.com/search?kgmid=/g/11kc3sl0nv'
+  },
+  {
+    category: 'pr',
+    title: 'Worked on UniGetUI',
+    titleLink: 'https://github.com/Devolutions/UniGetUI',
+    details: [
+      {
+        text: 'Fixed a bug with scoped npm packages containing a dot symbol',
+        links: [
+          {
+            text: '#4007',
+            url: 'https://github.com/Devolutions/UniGetUI/issues/4007'
+          }
+        ]
+      },
+      {
+        text: 'Fixed UI ⇔ state mismatch for upgradable packages in Avalonia/legacy modes',
+        links: [
+          {
+            text: '#4793',
+            url: 'https://github.com/Devolutions/UniGetUI/issues/4793'
+          },
+          {
+            text: '#4009',
+            url: 'https://github.com/Devolutions/UniGetUI/issues/4009'
+          }
+        ]
+      },
+      {
+        text: 'Revised and fixed the Serbian translation',
+        links: [
+          {
+            text: '#4590',
+            url: 'https://github.com/Devolutions/UniGetUI/issues/4590'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    category: 'git',
+    title: 'Created repository: igorskyflyer/dotfiles',
+    titleLink: 'https://github.com/igorskyflyer/dotfiles',
+    details: [
+      {
+        text: 'A curated index of all published @igorskyflyer configuration packages; crafted for a seamless DX.',
+        links: [
+          {
+            text: '@igorskyflyer',
+            url: 'https://www.npmjs.com/~igorskyflyer'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    category: 'release',
+    title: 'Released v3.0.0 of Commoji',
+    titleLink: 'https://github.com/igorskyflyer/commoji/',
+    details: [
+      {
+        text: 'A psychology-based emoji commit convention that reduces cognitive load and turns Git history into a visually scannable log.',
+        links: [
+          {
+            text: 'v3.0.0 release notes',
+            url: 'https://github.com/igorskyflyer/commoji/releases/tag/v3.0.0'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    category: 'npm',
+    title: 'Executing scope-migration',
+    details: [
+      {
+        text: 'Migrating packages from @igor.dvlpr to @igorskyflyer and adapting all npm packages to security requirements.',
+        links: [
+          {
+            text: '@igor.dvlpr',
+            url: 'https://www.npmjs.com/~igor.dvlpr'
+          },
+          {
+            text: '@igorskyflyer',
+            url: 'https://www.npmjs.com/~igorskyflyer'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    category: 'media',
+    title:
+      'Uploaded YouTube Video: PZE 2026 | My Top 14 - Before the Show | Eurovision 2026, Serbia',
+    titleLink: 'https://www.youtube.com/watch?v=EBPn_vsG11Q'
+  },
+  {
+    category: 'media',
+    title: 'Uploaded YouTube Video: My Top 16 | DORA 2026 [After the Show]',
+    titleLink: 'https://youtu.be/1luA8GfMolo'
+  },
+  {
+    category: 'media',
+    title: 'Uploaded YouTube Video: My Top 24 | DORA 2026 [Before the Show]',
+    titleLink: 'https://www.youtube.com/watch?v=2QlV8xUasok'
+  }
+]
 ---
 
 <section class="broadcast-container">
