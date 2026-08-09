@@ -11,11 +11,13 @@ import { SiteName } from '@data/Site.ts'
   description="Portfolio and technical blog of Igor Dimitrijević (igorskyflyer), Senior Full-Stack Software Engineer specializing in TypeScript, DX tooling, and performance-first architectures."
   keywords="igorskyflyer, igor dimitrijević, full stack engineer, software engineer, typescript, javascript, astro, open source, dx tooling, web architecture, blog"
   featuredImage="https://igorskyflyer.me/assets/author/igorskyflyer.webp">
-  <div class="fold-group">
-    <Hero />
-    <Stats />
-  </div>
-  <Feed />
+  <Fragment slot="body">
+    <div class="fold-group">
+      <Hero />
+      <Stats />
+    </div>
+    <Feed />
+  </Fragment>
 </Page>
 
 <style>
