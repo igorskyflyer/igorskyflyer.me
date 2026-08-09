@@ -9,9 +9,9 @@ import { Icon } from 'astro-icon/components'
     <p id="hero-intro">Hi, I am</p>
     <h1>Igor Dimitrijević</h1>
     <p id="hero-description">
-      Senior Full-Stack Software Engineer & DX Specialist, known online as
-      IgorSkyFlyer. Author of open-source DSLs, compilers, and npm packages. BSc
-      (Hons) in Software Engineering.
+      Senior full-stack software engineer & DX specialist, known online as
+      <strong>IgorSkyFlyer</strong>. Author of an open-source DSL, compiler, and
+      an ecosystem of npm packages. BSc (Hons) in IT & Software Engineering.
     </p>
     <br />
     <div id="group-cta">
@@ -78,12 +78,12 @@ import { Icon } from 'astro-icon/components'
     </div>
   </div>
   <div id="hero-photo">
-    <figure class="photo-wrapper">
+    <figure class="photo-wrapper no-interactivity">
       <img
         alt="A photo of Igor Dimitrijević (igorskyflyer), a freelance senior full-stack software engineer."
         loading="eager"
         fetchpriority="high"
-        src="https://igorskyflyer.me/assets/author/igorskyflyer.webp"
+        src="/assets/author/igorskyflyer.webp"
         width="350"
         height="350"
       />
@@ -97,6 +97,209 @@ import { Icon } from 'astro-icon/components'
 </section>
 
 <style>
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.1;
+    }
+  }
+
+  #hero {
+    display: flex;
+    position: relative;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    margin: auto;
+    padding-top: 1.5rem;
+    width: 90%;
+  }
+
+  #hero::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    filter: blur(40px);
+    background: radial-gradient(
+      ellipse at center,
+      rgba(14, 168, 255, 0.12) 0%,
+      rgba(0, 47, 156, 0.08) 45%,
+      transparent 70%
+    );
+    width: 100%;
+    max-width: 600px;
+    height: 100%;
+    max-height: 400px;
+    pointer-events: none;
+    content: '';
+  }
+
+  #hero-name {
+    width: 100%;
+    text-align: center;
+  }
+
+  #hero-photo {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;
+    text-align: center;
+  }
+
+  #hire-status {
+    display: inline-flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    z-index: 2;
+    backdrop-filter: blur(8px);
+    margin-top: -3rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: var(--btn-radius);
+    background: rgba(13, 17, 23, 0.85);
+    padding: 0.5rem 0.85rem;
+    width: auto;
+    max-width: 100%;
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    background: rgba(0, 128, 266, 0.3);
+    pointer-events: auto;
+    color: #e2e8f0;
+    font-size: 0.8rem;
+  }
+
+  #hire-availability {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+  }
+
+  #hire-availability::before {
+    flex-shrink: 0;
+    animation: pulse 2s ease-in-out infinite;
+    box-shadow: 0 0 8px #1fe066;
+    border-radius: 50%;
+    background: #1fe066;
+    width: 8px;
+    height: 8px;
+    content: '';
+  }
+
+  #hero-name h1 {
+    margin: 0 0 0.5rem 0;
+    font-size: 2.25rem;
+    line-height: 1.1;
+  }
+
+  #hero-photo .photo-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 0;
+    border-radius: var(--radius, 8px);
+    overflow: hidden;
+  }
+
+  #hero-photo .photo-wrapper img {
+    display: block;
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 12%,
+      black 88%,
+      transparent 100%
+    );
+    width: 100%;
+    height: auto;
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 12%,
+      black 88%,
+      transparent 100%
+    );
+  }
+
+  #hero-intro {
+    opacity: 0.65;
+    font-size: 0.85rem;
+  }
+
+  #hero-description {
+    opacity: 0.8;
+    line-height: 1.5;
+  }
+
+  #group-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  @media screen and (min-width: 1024px) {
+    #hire-status {
+      margin-top: -3rem;
+    }
+
+    #hero-name h1 {
+      font-size: 4rem;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    #hero {
+      width: 100%;
+    }
+
+    #hero-photo {
+      max-width: 350px;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    #hero {
+      flex-direction: row;
+      gap: 2rem;
+    }
+
+    #hero-name {
+      text-align: left;
+    }
+
+    #hero-photo {
+      position: relative;
+    }
+
+    #hero-name h1 {
+      font-size: 3.5rem;
+    }
+
+    #group-cta {
+      flex-direction: row;
+      width: auto;
+    }
+
+    #hire-status {
+      position: absolute;
+      bottom: 0.75rem;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-top: 0;
+    }
+  }
+
   #hero-social {
     display: inline-flex;
     gap: 24px;
