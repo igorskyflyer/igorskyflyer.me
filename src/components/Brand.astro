@@ -2,9 +2,29 @@
   id="header-brand"
   href="https://igorskyflyer.me">
   <img
-    src="https://igorskyflyer.me/logo.png"
+    src="/logo.png"
     width="48"
     height="48"
     alt=""
   />igorskyflyer.me</a
 >
+
+<style>
+  #header-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    view-transition-name: site-header;
+    color: var(--main-text);
+    text-decoration: none;
+  }
+
+  #header-brand img {
+    filter: saturate(40%);
+    transition: filter ease-in 140ms;
+  }
+
+  #header-brand:hover img {
+    filter: saturate(100%);
+  }
+</style>
