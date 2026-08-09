@@ -1,12 +1,70 @@
 ---
 import Page from '@components/Page.astro'
-import { SiteName } from '@data/Site.ts'
+
+const pageTitle = `Software Engineering Portfolio & CV | Igor Dimitrijević`
+const pageDescription =
+  'Official portfolio and CV of Igor Dimitrijević (igorskyflyer), Senior Full-Stack Software Engineer. Technical stack, engineering timeline, and downloadable PDF resume.'
+const pageKeywords =
+  'portfolio, cv, resume, full stack engineer, igor dimitrijević, igorskyflyer, software engineering, typescript, developer experience, open source'
+
+const cvPdfPath = '/docs/Igor-Dimitrijevic-CV.pdf'
+
+const schemaData = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  name: pageTitle,
+  description: pageDescription,
+  mainEntity: {
+    '@type': 'Person',
+    name: 'Igor Dimitrijević',
+    alternateName: 'igorskyflyer',
+    jobTitle: 'Senior Full-Stack Software Engineer',
+    knowsAbout: [
+      'Full-Stack Software Engineering',
+      'TypeScript',
+      'JavaScript',
+      'AST Compilers',
+      'Domain-Specific Languages',
+      'Developer Experience'
+    ],
+    hasCredential: [
+      {
+        '@type': 'EducationalOccupationalCredential',
+        credentialCategory: 'degree',
+        name: 'BSc (Hons) in IT & Software Engineering (360 ECTS)'
+      }
+    ]
+  }
+}
 ---
 
 <Page
-  title={`Portfolio | ${SiteName}`}
-  description="Portfolio"
-  keywords="portfolio,work,hire,blog,igorskyflyer,igor dimitrijević,posts,it,javascript,typescript,code,programming,developer"
-  featuredImage="">
-  <Fragment slot="body"> Portfolio </Fragment>
+  title={pageTitle}
+  description={pageDescription}
+  keywords={pageKeywords}>
+  <script
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify(schemaData)}
+    slot="head"
+  />
+  <link
+    rel="alternate"
+    type="application/pdf"
+    href={cvPdfPath}
+    title="Igor Dimitrijević - CV (PDF)"
+    slot="head"
+  />
+
+  <Fragment slot="body">
+    <section class="portfolio-header">
+      <h1>Portfolio & Curriculum Vitae</h1>
+      <a
+        href={cvPdfPath}
+        rel="noopener noreferrer"
+        class="btn-cta btn-primary">
+        Download CV
+      </a>
+    </section>
+  </Fragment>
 </Page>
