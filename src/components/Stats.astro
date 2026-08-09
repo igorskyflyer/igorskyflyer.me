@@ -1,5 +1,5 @@
 <section
-  id="hero-stats"
+  id="stats"
   class="reveal">
   <div class="stat-card no-select">
     <p class="stat-value">20+</p>
@@ -36,6 +36,15 @@
 </section>
 
 <style>
+  #stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+  }
+
   .stat-value {
     font-size: 3rem;
     font-weight: bold;
@@ -48,5 +57,66 @@
 
   .stat-label {
     margin-top: 0.5rem;
+  }
+
+  .stat-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0.98);
+    opacity: 0.85;
+    transition:
+      background ease-in-out 100ms,
+      transform ease-in 100ms,
+      opacity ease-out 200ms;
+    border: 2px solid transparent;
+    border-radius: var(--radius);
+    background: rgba(0, 0, 0, 0.2);
+    padding: 0.85rem 0.5rem;
+  }
+
+  .stat-card:hover {
+    transform: scale(1);
+    opacity: 1;
+    border: 2px solid #fff;
+    background: var(--accent);
+  }
+
+  .stat-desc {
+    margin-top: 0.25rem;
+    max-width: 28ch;
+    font-style: italic;
+    font-size: 0.8rem;
+    line-height: 1.25;
+  }
+
+  .stat-label {
+    font-weight: bold;
+    font-size: 0.95rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    #stats {
+      display: flex;
+      justify-content: space-evenly;
+      width: 85%;
+    }
+
+    .stat-card {
+      flex: 1;
+      transform: scale(0.9);
+      opacity: 0.6;
+      padding: 1rem;
+      width: 0;
+    }
+
+    .stat-card h1 {
+      font-size: 3rem;
+    }
+
+    .stat-desc {
+      font-size: 0.9rem;
+    }
   }
 </style>
