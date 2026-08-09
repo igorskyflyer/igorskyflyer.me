@@ -1,14 +1,273 @@
 ---
 import Page from '@components/Page.astro'
-import { SiteName } from '@data/Site'
+import { SiteName } from '@data/Site.ts'
 ---
 
 <Page
-  title={`Not Found | ${SiteName}`}
-  description="Not Found"
-  keywords="404,error,not-found,blog,igorskyflyer,igor dimitrijević,posts,it,javascript,typescript,code,programming,developer"
-  featuredImage="">
-  <meta name="robots" content="noindex" slot="head" />
+  title={`404: Page Not Found | ${SiteName}`}
+  description="The page you requested does not exist or has been moved.">
+  <meta
+    name="robots"
+    content="noindex, follow"
+    slot="head"
+  />
 
-   Not found
+  <section
+    class="not-found-wrapper"
+    slot="body">
+    <div class="not-found-card">
+      <div class="illustration-container">
+        <img
+          src="/assets/images/404.png"
+          alt="404 Illustration"
+          class="illustration"
+          fetchpriority="high"
+          loading="eager"
+          width="360"
+          height="240"
+        />
+      </div>
+
+      <div class="status-badge">
+        <span class="status-dot"></span>
+        <code>HTTP 404: NOT_FOUND</code>
+      </div>
+
+      <h1 class="title">Destination Void</h1>
+      <p class="description">
+        The route you are trying to access does not exist, was renamed, or has
+        been purged from cache.
+      </p>
+
+      <div class="actions">
+        <a
+          href="/"
+          class="btn btn-primary">
+          Back to Home
+        </a>
+        <button
+          type="button"
+          onclick="history.back()"
+          class="btn btn-secondary">
+          Previous Page
+        </button>
+      </div>
+    </div>
+  </section>
 </Page>
+
+<style>
+  .not-found-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .not-found-wrapper::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      radial-gradient(1.5px 1.5px at 25px 30px, #ffffff, transparent),
+      radial-gradient(2px 2px at 150px 80px, #ffffff, transparent),
+      radial-gradient(
+        1px 1px at 280px 120px,
+        rgba(255, 255, 255, 0.8),
+        transparent
+      ),
+      radial-gradient(2.5px 2.5px at 400px 200px, #ffffff, transparent),
+      radial-gradient(
+        1px 1px at 500px 50px,
+        rgba(255, 255, 255, 0.6),
+        transparent
+      ),
+      radial-gradient(2px 2px at 650px 300px, #ffffff, transparent),
+      radial-gradient(
+        1px 1px at 720px 180px,
+        rgba(255, 255, 255, 0.7),
+        transparent
+      );
+    background-repeat: repeat;
+    background-size: 500px 500px;
+    animation: twinkle 4s ease-in-out infinite alternate;
+  }
+
+  .not-found-wrapper::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      radial-gradient(1px 1px at 80px 140px, #ffffff, transparent),
+      radial-gradient(1px 1px at 220px 290px, #ffffff, transparent),
+      radial-gradient(
+        1.5px 1.5px at 340px 60px,
+        rgba(255, 255, 255, 0.9),
+        transparent
+      ),
+      radial-gradient(1px 1px at 450px 380px, #ffffff, transparent),
+      radial-gradient(
+        1.5px 1.5px at 600px 120px,
+        rgba(255, 255, 255, 0.8),
+        transparent
+      );
+    background-repeat: repeat;
+    background-size: 600px 600px;
+    animation: twinkle 7s ease-in-out infinite alternate-reverse;
+  }
+
+  .illustration {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    animation: float 6s ease-in-out infinite;
+    will-change: transform;
+    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.5));
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-18px) rotate(4deg);
+    }
+  }
+
+  @keyframes twinkle {
+    0% {
+      opacity: 0.2;
+    }
+    100% {
+      opacity: 0.8;
+    }
+  }
+
+  .not-found-card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 3rem 2rem;
+    backdrop-filter: blur(12px);
+  }
+
+  .illustration-container {
+    width: 100%;
+    max-width: 360px;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .illustration {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.85rem;
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.25);
+    border-radius: 2rem;
+    color: #f87171;
+    font-size: 0.825rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #ef4444;
+    box-shadow: 0 0 8px #ef4444;
+  }
+
+  .title {
+    margin: 0 0 0.75rem 0;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: #f8fafc;
+    letter-spacing: -0.025em;
+  }
+
+  .description {
+    margin: 0 0 2rem 0;
+    font-size: 1rem;
+    color: #94a3b8;
+    line-height: 1.6;
+    max-width: 440px;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.925rem;
+    font-weight: 600;
+    border-radius: 0.75rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 180ms ease;
+    border: none;
+  }
+
+  .btn-primary {
+    background: var(--primary, #002f9c);
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(0, 47, 156, 0.35);
+  }
+
+  .btn-primary:hover {
+    background: #003ebd;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 47, 156, 0.5);
+  }
+
+  .btn-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    color: #cbd5e1;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 480px) {
+    .not-found-card {
+      padding: 2rem 1.25rem;
+    }
+
+    .actions {
+      flex-direction: column;
+    }
+
+    .btn {
+      width: 100%;
+    }
+  }
+</style>

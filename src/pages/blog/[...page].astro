@@ -30,7 +30,34 @@ export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
 }
 ---
 
+<Page
+  title={title}
+  description={description}
+  keywords="blog,igorskyflyer,igor dimitrijević,posts,it,javascript,typescript,code,programming,developer"
+  featuredImage="">
+  <section
+    id="posts"
+    slot="body">
+    <h1 id="posts--heading">All posts - page {page.currentPage}</h1>
+    <br />
+    <br />
+    <PostsDisplay posts={page.data} />
+  </section>
+
+  <nav
+    id="blog-posts-navigation"
+    role="navigation"
+    aria-label="Pagination">
+    {page.url.prev ? <a href={page.url.prev}>👈🏼 Previous</a> : null}
+    {page.url.next ? <a href={page.url.next}>Next 👉🏼</a> : null}
+  </nav>
+</Page>
+
 <style>
+  code {
+    font-size: 0.95rem;
+  }
+
   #posts--heading {
     font-size: 1.5rem;
     margin-top: 0;
@@ -47,6 +74,45 @@ export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
     font-size: 1.2rem;
   }
 
+  :not(pre) > code,
+  pre {
+    box-shadow: 0 0 18px inset #000;
+    background: #0d1117;
+  }
+
+  :not(pre) > code {
+    border-radius: 4px;
+    padding: 0.3rem;
+  }
+
+  pre {
+    border-radius: var(--radius);
+    padding: 1rem;
+    overflow-x: auto;
+    text-align: left;
+  }
+
+  blockquote {
+    margin: 0;
+  }
+
+  .block--center {
+    margin: auto;
+    text-align: center;
+  }
+
+  article h2 {
+    color: #ddd;
+  }
+
+  .post--content {
+    padding: 1.5rem 0 0 0;
+  }
+
+  .utterances {
+    max-width: 100%;
+  }
+
   @media screen and (min-width: 600px) {
     #posts {
       margin: auto;
@@ -54,24 +120,3 @@ export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
     }
   }
 </style>
-
-<Page
-  title={title}
-  description={description}
-  keywords="blog,igorskyflyer,igor dimitrijević,posts,it,javascript,typescript,code,programming,developer"
-  featuredImage="">
-  <section id="posts">
-    <h1 id="posts--heading">All posts - page {page.currentPage}</h1>
-    <br />
-    <br />
-    <PostsDisplay posts={page.data} />
-  </section>
-
-  <nav
-    id="blog-posts-navigation"
-    role="navigation"
-    aria-label="Pagination">
-    {page.url.prev ? <a href={page.url.prev}>👈🏼 Previous</a> : null}
-    {page.url.next ? <a href={page.url.next}>Next 👉🏼</a> : null}
-  </nav>
-</Page>
