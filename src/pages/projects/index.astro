@@ -1,0 +1,36 @@
+---
+import Page from '@components/Page.astro'
+import { SiteName } from '@data/Site.ts'
+
+const pageTitle = `Open Source Projects & Developer Tools | ${SiteName}`
+const pageDescription =
+  'Explore open-source software, custom DSLs, compilers, and developer tools built by Igor Dimitrijević (igorskyflyer). Lightweight, high-performance utilities.'
+const pageKeywords =
+  'open source, developer tools, npm packages, custom DSLs, AST compilers, vs code extensions, typescript, javascript, igor dimitrijević, igorskyflyer'
+
+const schemaData = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: pageTitle,
+  description: pageDescription,
+  author: {
+    '@type': 'Person',
+    name: 'Igor Dimitrijević',
+    alternateName: 'igorskyflyer',
+    jobTitle: 'Senior Full-Stack Software Engineer'
+  }
+}
+---
+
+<Page
+  title={pageTitle}
+  description={pageDescription}
+  keywords={pageKeywords}>
+  <script
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify(schemaData)}
+    slot="head"
+  />
+  <Fragment slot="body"></Fragment>
+</Page>
