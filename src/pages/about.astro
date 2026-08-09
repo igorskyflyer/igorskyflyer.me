@@ -1,12 +1,43 @@
 ---
 import Page from '@components/Page.astro'
 import { SiteName } from '@data/Site.ts'
+
+const pageTitle = `About This Site & Architecture | ${SiteName}`
+const pageDescription =
+  'Technical architecture, build stack, and design principles behind this site. Built with Astro, static HTML output, and zero unnecessary client JS overhead.'
+const pageKeywords =
+  'about site, website architecture, tech stack, astro, web performance, static site generator, chimera theme, igorskyflyer, igor dimitrijević'
+
+const schemaData = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  name: pageTitle,
+  description: pageDescription,
+  mainEntity: {
+    '@type': 'WebSite',
+    name: SiteName,
+    description: 'Personal technical platform, blog, and software showcase.',
+    publisher: {
+      '@type': 'Person',
+      name: 'Igor Dimitrijević',
+      alternateName: 'igorskyflyer'
+    }
+  }
+}
 ---
 
 <Page
-  title={`About | ${SiteName}`}
-  description="About"
-  keywords="about,blog,igorskyflyer,igor dimitrijević,posts,it,javascript,typescript,code,programming,developer"
-  featuredImage="">
-  <Fragment slot="body"> About </Fragment>
+  title={pageTitle}
+  description={pageDescription}
+  keywords={pageKeywords}>
+  <script
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify(schemaData)}
+    slot="head"
+  />
+
+  <Fragment slot="body">
+    <h1>About This Site</h1>
+  </Fragment>
 </Page>
