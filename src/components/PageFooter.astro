@@ -133,6 +133,37 @@ const socialLinks = [
     max-width: 900px;
   }
 
+  footer {
+    margin-top: 2rem;
+    background: linear-gradient(to bottom, var(--bg-color), #052664);
+    padding: 2rem 0.5rem 3.5rem 0.5rem;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  footer [data-icon] {
+    width: 36px;
+    height: 36px;
+  }
+
+  footer a {
+    color: #fff;
+  }
+
+  #footer-author {
+    transition: font-weight cubic-bezier(0.55, 0.055, 0.675, 0.19) 100ms;
+    color: var(--link);
+  }
+
+  #footer-author:hover {
+    font-weight: bold;
+  }
+
+  #footer-heart {
+    color: #f00;
+    font-size: 1.4em;
+  }
+
   .social-nav {
     display: flex;
     flex-wrap: wrap;
@@ -245,5 +276,16 @@ const socialLinks = [
     margin: 0;
     color: #64748b;
     font-size: 0.775rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    footer {
+      font-size: 1.1rem;
+    }
+
+    footer [data-icon] {
+      width: 48px;
+      height: 48px;
+    }
   }
 </style>
