@@ -1,6 +1,6 @@
 ---
 import Page from '@components/Page.astro'
-import { SiteName } from '@data/Site'
+import { SiteName } from '@data/Site.ts'
 ---
 
 <Page
@@ -8,7 +8,5 @@ import { SiteName } from '@data/Site'
   description="About"
   keywords="about,blog,igorskyflyer,igor dimitrijević,posts,it,javascript,typescript,code,programming,developer"
   featuredImage="">
-  About
-  <br />
-  <a href="/changelog/">Changelog</a>
+  <Fragment slot="body"> About </Fragment>
 </Page>
