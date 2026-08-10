@@ -16,28 +16,28 @@ const { color = '#ffffff', size = '14px' } = Astro.props
 
 <style define:vars={{ color, size }}>
   .scroll-container {
-    background: none;
-    border: none;
-    cursor: pointer;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    padding: 10px;
+    align-items: center;
     gap: 4px;
-    outline: none;
+    cursor: pointer;
     margin: 0 auto;
+    outline: none;
+    border: none;
+    background: none;
+    padding: 10px;
   }
 
   .arrow-down {
     display: block;
+    transform: rotate(45deg);
+    animation: arrow-loop 2s infinite;
+    margin: -4px 0;
+    border-right: 3px solid var(--color);
+    border-bottom: 3px solid var(--color);
     width: var(--size);
     height: var(--size);
-    border-bottom: 3px solid var(--color);
-    border-right: 3px solid var(--color);
-    transform: rotate(45deg);
-    margin: -4px 0;
-    animation: arrow-loop 2s infinite;
   }
 
   .arrow-down:nth-child(2) {
@@ -46,15 +46,15 @@ const { color = '#ffffff', size = '14px' } = Astro.props
 
   @keyframes arrow-loop {
     0% {
-      opacity: 0;
       transform: rotate(45deg) translate(-5px, -5px);
+      opacity: 0;
     }
     50% {
       opacity: 1;
     }
     100% {
-      opacity: 0;
       transform: rotate(45deg) translate(5px, 5px);
+      opacity: 0;
     }
   }
 </style>
