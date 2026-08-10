@@ -1,4 +1,6 @@
 ---
+import SafeResource from '@igor.dvlpr/astro-saferesource'
+
 interface Props {
   color?: string
   size?: string
@@ -59,27 +61,32 @@ const { color = '#ffffff', size = '14px' } = Astro.props
   }
 </style>
 
-<script>
-  const setupScrollButton = () => {
-    const btn = document.querySelector('.scroll-container')
+<SafeResource>
+  <script>
+    const setupScrollButton = () => {
+      const btn = document.querySelector('.scroll-container')
 
-    if (btn) {
-      if (btn.hasAttribute('data-bound')) return
-      btn.setAttribute('data-bound', 'true')
+      if (btn) {
+        if (btn.hasAttribute('data-bound')) return
+        btn.setAttribute('data-bound', 'true')
 
-      btn.addEventListener('click', () => {
-        const targetElement = document.querySelector('[data-target]')
+        btn.addEventListener('click', () => {
+          const targetElement = document.querySelector('[data-target]')
 
-        if (targetElement) {
-          targetElement.scrollIntoView({ behavior: 'smooth' })
-        } else {
-          window.scrollBy({ top: window.innerHeight * 0.8, behavior: 'smooth' })
-        }
-      })
+          if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' })
+          } else {
+            window.scrollBy({
+              top: window.innerHeight * 0.8,
+              behavior: 'smooth'
+            })
+          }
+        })
+      }
     }
-  }
 
-  setupScrollButton()
+    setupScrollButton()
 
-  document.addEventListener('astro:after-swap', setupScrollButton)
-</script>
+    document.addEventListener('astro:after-swap', setupScrollButton)
+  </script>
+</SafeResource>
