@@ -19,7 +19,6 @@ export async function GET(context: APIContext) {
     description:
       'Technical insights on TypeScript, AST compilers, custom DSLs, open-source tooling, and modern full-stack development by Igor Dimitrijević (igorskyflyer).',
     site: siteUrl,
-    stylesheet: '/rss-styles.xsl',
     xmlns: {
       atom: 'http://www.w3.org/2005/Atom',
       dc: 'http://purl.org/dc/elements/1.1/'
