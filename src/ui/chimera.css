@@ -82,7 +82,7 @@ body {
   padding: 0;
   width: 100%;
   scroll-behavior: smooth;
-  scroll-padding-top: 64px;
+  scroll-padding-top: 72px;
   scroll-padding-bottom: 5rem;
   color: var(--main-text);
   font-family:
