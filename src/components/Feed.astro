@@ -253,26 +253,64 @@ activities.sort((a, b) => b.date.localeCompare(a.date))
 
             <div class="details-wrapper">
               <div class="details-content">
-                <ul class="item-details">
-                  {item.details!.map((detail) => (
-                    <li>
-                      {detail.link ? (
-                        <a
-                          href={detail.link}
-                          target="_blank"
-                          rel="noopener noreferrer">
-                          {detail.text}
-                        </a>
-                      ) : (
-                        detail.text
-                      )}
+                {item.details!.length > 1 ? (
+                  <ul class="item-details">
+                    {item.details!.map((detail) => (
+                      <li>
+                        {detail.link ? (
+                          <a
+                            href={detail.link}
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            {detail.text}
+                          </a>
+                        ) : (
+                          detail.text
+                        )}
 
-                      {detail.postText && ` ${detail.postText}`}
+                        {detail.postText && ` ${detail.postText}`}
 
-                      {detail.links && detail.links.length > 0 && (
+                        {detail.links && detail.links.length > 0 && (
+                          <span class="detail-inline-links">
+                            {' ('}
+                            {detail.links.map((lnk, idx) => (
+                              <>
+                                <a
+                                  href={lnk.url}
+                                  target="_blank"
+                                  rel="noopener noreferrer">
+                                  {lnk.text}
+                                </a>
+                                {idx < detail.links!.length - 1 && ', '}
+                              </>
+                            ))}
+                            {')'}
+                          </span>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p class="item-details">
+                    {item.details![0].link ? (
+                      <a
+                        href={item.details![0].link}
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        {item.details![0].text}
+                      </a>
+                    ) : (
+                      item.details![0].text
+                    )}
+
+                    {item.details![0].postText &&
+                      ` ${item.details![0].postText}`}
+
+                    {item.details![0].links &&
+                      item.details![0].links.length > 0 && (
                         <span class="detail-inline-links">
                           {' ('}
-                          {detail.links.map((lnk, idx) => (
+                          {item.details![0].links.map((lnk, idx) => (
                             <>
                               <a
                                 href={lnk.url}
@@ -280,15 +318,14 @@ activities.sort((a, b) => b.date.localeCompare(a.date))
                                 rel="noopener noreferrer">
                                 {lnk.text}
                               </a>
-                              {idx < detail.links!.length - 1 && ', '}
+                              {idx < item.details![0].links!.length - 1 && ', '}
                             </>
                           ))}
                           {')'}
                         </span>
                       )}
-                    </li>
-                  ))}
-                </ul>
+                  </p>
+                )}
 
                 {item.titleLink && !hasDetailLinks && (
                   <div class="details-main-link">
@@ -590,16 +627,22 @@ activities.sort((a, b) => b.date.localeCompare(a.date))
 
   .details-main-link {
     margin-top: 0.6rem;
-    padding-left: 1.2rem;
     font-size: clamp(0.85rem, 2vw, 0.95rem);
   }
 
   .item-details {
     margin: 0.4rem 0 0 0;
-    padding-left: 1.2rem;
     color: #94a3b8;
     font-size: clamp(0.85rem, 2vw, 0.95rem);
     line-height: 1.5;
+  }
+
+  ul.item-details {
+    padding-left: 1.2rem;
+  }
+
+  p.item-details {
+    padding-left: 0;
   }
 
   .item-details li {
