@@ -198,17 +198,6 @@ img {
   background-color: rgba(14, 168, 255, 0.12);
 }
 
-@media screen and (min-width: 768px) {
-  main {
-    margin: 0 auto 2.5rem auto;
-    width: 85%;
-  }
-
-  .btn-cta {
-    padding: 1rem 2rem;
-  }
-}
-
 .no-select {
   user-select: none;
 }
@@ -220,4 +209,21 @@ img {
 .no-interactivity {
   user-select: none;
   pointer-events: none;
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    margin: 0 auto 2.5rem auto;
+    width: 85%;
+  }
+
+  .btn-cta {
+    padding: 1rem 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    scroll-padding-top: 16px;
+  }
 }
