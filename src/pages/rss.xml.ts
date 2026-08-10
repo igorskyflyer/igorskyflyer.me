@@ -29,15 +29,14 @@ export async function GET(context: APIContext) {
     ].join(''),
     items: posts.map((post) => ({
       title: post.data.title,
-      link: `/blog/${post.id}/`,
+      link: `${siteUrl}/blog/${post.id}/`,
       categories: post.data.tags ?? [],
       pubDate: new Date(post.data.publishDate),
       // description: post.data.description,
       customData: [
-        '<dc:creator>Igor Dimitrijević (igorskyflyer)</dc:creator>',
-        post.data.featuredImage
-          ? `<enclosure url="${new URL(post.data.featuredImage, siteUrl)}" type="image/png" length="0" />`
-          : ''
+       '<dc:creator>Igor Dimitrijević (igorskyflyer)</dc:creator>',
+       '<atom:author><atom:name>Igor Dimitrijević (igorskyflyer)</atom:name><atom:uri>https://igorskyflyer.me/igorskyflyer</atom:uri></atom:author>',
+       post.data.featuredImage ? `<enclosure url="${new URL(post.data.featuredImage, siteUrl)}" type="image/png" length="0" />` : ''
       ].join('')
     }))
   })
