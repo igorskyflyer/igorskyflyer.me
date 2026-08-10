@@ -193,6 +193,11 @@ const activities: ActivityItem[] = [
     {
       activities.map((item) => {
         const hasDetails = item.details && item.details.length > 0
+        const hasDetailLinks = item.details?.some(
+          (detail) =>
+            Boolean(detail.link) ||
+            Boolean(detail.links && detail.links.length > 0)
+        )
 
         return hasDetails ? (
           <details class="feed-item">
@@ -214,16 +219,6 @@ const activities: ActivityItem[] = [
 
             <div class="details-wrapper">
               <div class="details-content">
-                {item.titleLink && (
-                  <div class="details-main-link">
-                    <a
-                      href={item.titleLink}
-                      target="_blank"
-                      rel="noopener noreferrer">
-                      Open link ↗
-                    </a>
-                  </div>
-                )}
                 <ul class="item-details">
                   {item.details!.map((detail) => (
                     <li>
@@ -260,6 +255,17 @@ const activities: ActivityItem[] = [
                     </li>
                   ))}
                 </ul>
+
+                {item.titleLink && !hasDetailLinks && (
+                  <div class="details-main-link">
+                    <a
+                      href={item.titleLink}
+                      target="_blank"
+                      rel="noopener noreferrer">
+                      Open link ↗
+                    </a>
+                  </div>
+                )}
               </div>
             </div>
           </details>
