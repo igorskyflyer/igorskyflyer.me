@@ -219,44 +219,54 @@ const activities: ActivityItem[] = [
 
         return hasDetails ? (
           <details class="feed-item">
-            <summary class="item-row item-summary">{Row}</summary>
+            <summary class="item-summary">
+              <div class="item-row">{Row}</div>
+              <span
+                class="toggle-icon"
+                aria-hidden="true"
+              />
+            </summary>
 
-            <ul class="item-details">
-              {item.details!.map((detail) => (
-                <li>
-                  {detail.link ? (
-                    <a
-                      href={detail.link}
-                      target="_blank"
-                      rel="noopener noreferrer">
-                      {detail.text}
-                    </a>
-                  ) : (
-                    detail.text
-                  )}
+            <div class="details-wrapper">
+              <div class="details-content">
+                <ul class="item-details">
+                  {item.details!.map((detail) => (
+                    <li>
+                      {detail.link ? (
+                        <a
+                          href={detail.link}
+                          target="_blank"
+                          rel="noopener noreferrer">
+                          {detail.text}
+                        </a>
+                      ) : (
+                        detail.text
+                      )}
 
-                  {detail.postText && ` ${detail.postText}`}
+                      {detail.postText && ` ${detail.postText}`}
 
-                  {detail.links && detail.links.length > 0 && (
-                    <span class="detail-inline-links">
-                      {' ('}
-                      {detail.links.map((lnk, idx) => (
-                        <>
-                          <a
-                            href={lnk.url}
-                            target="_blank"
-                            rel="noopener noreferrer">
-                            {lnk.text}
-                          </a>
-                          {idx < detail.links!.length - 1 && ', '}
-                        </>
-                      ))}
-                      {')'}
-                    </span>
-                  )}
-                </li>
-              ))}
-            </ul>
+                      {detail.links && detail.links.length > 0 && (
+                        <span class="detail-inline-links">
+                          {' ('}
+                          {detail.links.map((lnk, idx) => (
+                            <>
+                              <a
+                                href={lnk.url}
+                                target="_blank"
+                                rel="noopener noreferrer">
+                                {lnk.text}
+                              </a>
+                              {idx < detail.links!.length - 1 && ', '}
+                            </>
+                          ))}
+                          {')'}
+                        </span>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </details>
         ) : (
           <article class="feed-item feed-item--flat">
@@ -270,21 +280,21 @@ const activities: ActivityItem[] = [
 
 <style>
   .feed-container {
-    width: 100%;
-    background: rgba(13, 17, 23, 0.7);
+    backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: var(--radius, 8px);
+    background: rgba(13, 17, 23, 0.7);
+    width: 100%;
     overflow: hidden;
-    backdrop-filter: blur(12px);
   }
 
   .feed-header {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 0.85rem 1.25rem;
-    background: rgba(0, 0, 0, 0.3);
+    align-items: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0.85rem 1.25rem;
   }
 
   .header-title {
@@ -295,28 +305,28 @@ const activities: ActivityItem[] = [
 
   .header-title h2 {
     margin: 0;
-    font-size: 1.5rem;
-    font-weight: 600;
     color: #fff;
+    font-weight: 600;
+    font-size: 1.5rem;
   }
 
   .feed-status {
     display: flex;
     align-items: center;
     gap: 6px;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
     color: #94a3b8;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
   }
 
   .status-dot {
-    width: 8px;
-    height: 8px;
+    animation: pulse 2s infinite;
+    box-shadow: 0 0 8px #1fe066;
     border-radius: 50%;
     background-color: #1fe066;
-    box-shadow: 0 0 8px #1fe066;
-    animation: pulse 2s infinite;
+    width: 8px;
+    height: 8px;
   }
 
   .feed {
@@ -329,9 +339,9 @@ const activities: ActivityItem[] = [
     display: flex;
     flex-direction: column;
     gap: 0.35rem;
-    padding: 0.85rem 1.25rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
     transition: background-color 150ms ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 0.85rem 1.25rem;
   }
 
   .feed-item:last-child {
@@ -344,31 +354,24 @@ const activities: ActivityItem[] = [
 
   .item-row {
     display: flex;
+    flex: 1;
     flex-direction: column;
     gap: 0.35rem;
+    min-width: 0;
   }
 
   .item-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
     cursor: pointer;
-    list-style: none;
+    width: 100%;
+    list-style: none !important;
   }
 
   .item-summary::-webkit-details-marker {
-    display: none;
-  }
-
-  .item-summary::after {
-    content: '›';
-    align-self: flex-start;
-    margin-left: auto;
-    color: #64748b;
-    font-size: 1rem;
-    line-height: 1;
-    transition: transform 150ms ease;
-  }
-
-  .feed-item[open] > .item-summary::after {
-    transform: rotate(90deg);
+    display: none !important;
   }
 
   .item-summary:focus-visible {
@@ -377,67 +380,134 @@ const activities: ActivityItem[] = [
     border-radius: 4px;
   }
 
+  /* Plus/Minus icon using hardware-accelerated transforms */
+  .toggle-icon {
+    position: relative;
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+    width: 14px;
+    height: 14px;
+  }
+
+  .toggle-icon::before,
+  .toggle-icon::after {
+    position: absolute;
+    transition:
+      transform 150ms ease,
+      opacity 180ms ease;
+    border-radius: 1px;
+    background-color: #4f52f4;
+    content: '';
+  }
+
+  /* Horizontal line */
+  .toggle-icon::before {
+    top: 6px;
+    left: 0;
+    width: 14px;
+    height: 2px;
+  }
+
+  /* Vertical line */
+  .toggle-icon::after {
+    top: 0;
+    left: 6px;
+    width: 2px;
+    height: 14px;
+  }
+
+  /* Icon morph when details is open */
+  .feed-item[open] .toggle-icon::after {
+    transform: rotate(90deg) scale(0);
+    opacity: 0;
+  }
+
+  .feed-item[open] .toggle-icon::before {
+    transform: rotate(180deg);
+  }
+
+  /* Smooth height accordion animation via CSS Grid */
+  .details-wrapper {
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    transition:
+      grid-template-rows 150ms ease,
+      opacity 180ms ease;
+  }
+
+  .details-content {
+    overflow: hidden;
+  }
+
+  .feed-item[open] .details-wrapper {
+    grid-template-rows: 1fr;
+    opacity: 1;
+  }
+
   .item-meta {
     display: flex;
+    flex-shrink: 0;
     align-items: center;
     gap: 0.75rem;
   }
 
   .badge {
-    padding: 0.15rem 0.5rem;
     border-radius: 4px;
-    font-size: 0.7rem;
+    padding: 0.15rem 0.5rem;
     font-weight: 600;
-    text-transform: uppercase;
+    font-size: 0.7rem;
     letter-spacing: 0.03em;
+    text-transform: uppercase;
   }
 
   .badge-git {
+    border: 1px solid rgba(56, 189, 248, 0.3);
     background: rgba(56, 189, 248, 0.15);
     color: #38bdd8;
-    border: 1px solid rgba(56, 189, 248, 0.3);
   }
 
   .badge-npm {
+    border: 1px solid rgba(204, 53, 52, 0.3);
     background: rgba(204, 53, 52, 0.15);
     color: #ff6b6b;
-    border: 1px solid rgba(204, 53, 52, 0.3);
   }
 
   .badge-entity {
+    border: 1px solid rgba(234, 179, 8, 0.3);
     background: rgba(234, 179, 8, 0.15);
     color: #facc15;
-    border: 1px solid rgba(234, 179, 8, 0.3);
   }
 
   .badge-pr {
+    border: 1px solid rgba(168, 85, 247, 0.3);
     background: rgba(168, 85, 247, 0.15);
     color: #c084fc;
-    border: 1px solid rgba(168, 85, 247, 0.3);
   }
 
   .badge-release {
+    border: 1px solid rgba(34, 197, 94, 0.3);
     background: rgba(34, 197, 94, 0.15);
     color: #4ade80;
-    border: 1px solid rgba(34, 197, 94, 0.3);
   }
 
   .badge-media {
+    border: 1px solid rgba(239, 68, 68, 0.3);
     background: rgba(239, 68, 68, 0.15);
     color: #f87171;
-    border: 1px solid rgba(239, 68, 68, 0.3);
   }
 
   .item-date {
-    font-size: 0.75rem;
     color: #64748b;
+    font-size: 0.75rem;
   }
 
   .item-title {
     margin: 0;
+    color: #e2e8f0;
     font-size: 0.9rem;
     line-height: 1.4;
-    color: #e2e8f0;
+    word-break: break-word;
   }
 
   .item-title a,
@@ -452,10 +522,10 @@ const activities: ActivityItem[] = [
   }
 
   .item-details {
-    margin: 0.35rem 0 0 0;
+    margin: 0.75rem 0 0 0;
     padding-left: 1.2rem;
-    font-size: 0.825rem;
     color: #94a3b8;
+    font-size: 0.825rem;
     line-height: 1.5;
   }
 
@@ -482,7 +552,9 @@ const activities: ActivityItem[] = [
       animation: none;
     }
 
-    .item-summary::after,
+    .toggle-icon::before,
+    .toggle-icon::after,
+    .details-wrapper,
     .feed-item {
       transition: none;
     }
@@ -496,15 +568,16 @@ const activities: ActivityItem[] = [
     }
 
     .item-meta {
-      min-width: 110px;
       flex-direction: column;
       align-items: flex-start;
       gap: 0.25rem;
       padding-top: 0.1rem;
+      min-width: 110px;
     }
 
-    .item-summary::after {
+    .toggle-icon {
       align-self: center;
+      margin-top: 0;
     }
   }
 </style>
