@@ -1,4 +1,13 @@
 ---
+interface Props {
+  title?: string
+}
+
+const { title = 'Recent Activity' } = Astro.props
+
+type ActivityCategory =
+  'cert' | 'entity' | 'general' | 'git' | 'media' | 'npm' | 'pr' | 'release'
+
 export interface ActivityDetail {
   text: string
   link?: string
@@ -7,29 +16,25 @@ export interface ActivityDetail {
 }
 
 export interface ActivityItem {
-  category: 'npm' | 'git' | 'entity' | 'pr' | 'release' | 'media'
+  category: ActivityCategory
   title: string
   date: string
   titleLink?: string
   details?: ActivityDetail[]
 }
 
-interface Props {
-  title?: string
-}
-
-const { title = 'Recent Activity' } = Astro.props
-
 const categoryBadges: Record<
-  ActivityItem['category'],
+  ActivityCategory,
   { label: string; class: string }
 > = {
-  git: { label: 'GitHub', class: 'badge-git' },
-  npm: { label: 'npm', class: 'badge-npm' },
+  cert: { label: 'Certification', class: 'badge-cert' },
   entity: { label: 'Verified', class: 'badge-entity' },
+  general: { label: 'General', class: 'badge-general' },
+  git: { label: 'GitHub', class: 'badge-git' },
+  media: { label: 'Media', class: 'badge-media' },
+  npm: { label: 'npm', class: 'badge-npm' },
   pr: { label: 'Contribution', class: 'badge-pr' },
-  release: { label: 'Release', class: 'badge-release' },
-  media: { label: 'Media', class: 'badge-media' }
+  release: { label: 'Release', class: 'badge-release' }
 }
 
 const formatDate = (isoDate: string) =>
@@ -41,6 +46,13 @@ const formatDate = (isoDate: string) =>
   })
 
 const activities: ActivityItem[] = [
+  {
+    category: 'cert',
+    date: '2026-08-01',
+    title: 'Earned Cisco Introduction to Cybersecurity Certification.',
+    titleLink:
+      'https://www.credly.com/badges/055328d9-6684-47ec-9c87-ee037ab89948'
+  },
   {
     category: 'git',
     date: '2026-07-04',
@@ -496,37 +508,50 @@ activities.sort((a, b) => b.date.localeCompare(a.date))
   .badge-git {
     border: 1px solid rgba(56, 189, 248, 0.3);
     background: rgba(56, 189, 248, 0.15);
-    color: #38bdd8;
+    color: #38bdf8;
   }
 
+  /* npm - Red */
   .badge-npm {
-    border: 1px solid rgba(204, 53, 52, 0.3);
-    background: rgba(204, 53, 52, 0.15);
-    color: #ff6b6b;
+    border: 1px solid rgba(248, 113, 113, 0.3);
+    background: rgba(248, 113, 113, 0.15);
+    color: #f87171;
   }
 
   .badge-entity {
-    border: 1px solid rgba(234, 179, 8, 0.3);
-    background: rgba(234, 179, 8, 0.15);
+    border: 1px solid rgba(250, 204, 21, 0.3);
+    background: rgba(250, 204, 21, 0.15);
     color: #facc15;
   }
 
   .badge-pr {
-    border: 1px solid rgba(168, 85, 247, 0.3);
-    background: rgba(168, 85, 247, 0.15);
+    border: 1px solid rgba(192, 132, 252, 0.3);
+    background: rgba(192, 132, 252, 0.15);
     color: #c084fc;
   }
 
   .badge-release {
-    border: 1px solid rgba(34, 197, 94, 0.3);
-    background: rgba(34, 197, 94, 0.15);
+    border: 1px solid rgba(74, 222, 128, 0.3);
+    background: rgba(74, 222, 128, 0.15);
     color: #4ade80;
   }
 
   .badge-media {
-    border: 1px solid rgba(239, 68, 171, 0.3);
-    background: rgba(229, 51, 235, 0.15);
-    color: #e533eb;
+    border: 1px solid rgba(244, 114, 182, 0.3);
+    background: rgba(244, 114, 182, 0.15);
+    color: #f472b6;
+  }
+
+  .badge-cert {
+    border: 1px solid rgba(45, 212, 191, 0.3);
+    background: rgba(45, 212, 191, 0.15);
+    color: #2dd4bf;
+  }
+
+  .badge-general {
+    border: 1px solid rgba(148, 163, 184, 0.3);
+    background: rgba(148, 163, 184, 0.15);
+    color: #94a3b8;
   }
 
   .item-date {
@@ -535,6 +560,9 @@ activities.sort((a, b) => b.date.localeCompare(a.date))
   }
 
   .item-title {
+    flex: 1;
+    min-width: 0;
+    max-width: 64ch;
     margin: 0;
     color: #e2e8f0;
     font-size: clamp(0.95rem, 2.5vw, 1.125rem);
