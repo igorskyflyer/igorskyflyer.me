@@ -29,7 +29,7 @@ export async function GET(context: APIContext) {
     ].join(''),
     items: posts.map((post) => ({
       title: post.data.title,
-      link: `${siteUrl}/blog/${post.id}/`,
+      link: new URL(`/blog/${post.id}/`, siteUrl).href,
       categories: post.data.tags ?? [],
       pubDate: new Date(post.data.publishDate),
       // description: post.data.description,
