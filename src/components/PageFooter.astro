@@ -109,7 +109,13 @@ const socialLinks = [
       <p class="footer-copyright">
         &copy; {year} Igor Dimitrijević. All rights reserved.
         <br />
-        <em>Version: <strong>{getLocalDate()}</strong></em>
+        {
+          import.meta.env.PROD && (
+            <em>
+              Version: <strong>{getLocalDate()}</strong>
+            </em>
+          )
+        }
       </p>
     </div>
   </div>
