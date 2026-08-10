@@ -1,0 +1,85 @@
+---
+interface Props {
+  color?: string
+  size?: string
+}
+
+const { color = '#ffffff', size = '14px' } = Astro.props
+---
+
+<button
+  class="scroll-container"
+  aria-label="Scroll down">
+  <span class="arrow-down"></span>
+  <span class="arrow-down"></span>
+</button>
+
+<style define:vars={{ color, size }}>
+  .scroll-container {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    gap: 4px;
+    outline: none;
+    margin: 0 auto;
+  }
+
+  .arrow-down {
+    display: block;
+    width: var(--size);
+    height: var(--size);
+    border-bottom: 3px solid var(--color);
+    border-right: 3px solid var(--color);
+    transform: rotate(45deg);
+    margin: -4px 0;
+    animation: arrow-loop 2s infinite;
+  }
+
+  .arrow-down:nth-child(2) {
+    animation-delay: -0.2s;
+  }
+
+  @keyframes arrow-loop {
+    0% {
+      opacity: 0;
+      transform: rotate(45deg) translate(-5px, -5px);
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+  }
+</style>
+
+<script>
+  const setupScrollButton = () => {
+    const btn = document.querySelector('.scroll-container')
+
+    if (btn) {
+      if (btn.hasAttribute('data-bound')) return
+      btn.setAttribute('data-bound', 'true')
+
+      btn.addEventListener('click', () => {
+        const targetElement = document.querySelector('[data-target]')
+
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' })
+        } else {
+          window.scrollBy({ top: window.innerHeight * 0.8, behavior: 'smooth' })
+        }
+      })
+    }
+  }
+
+  setupScrollButton()
+
+  document.addEventListener('astro:after-swap', setupScrollButton)
+</script>
