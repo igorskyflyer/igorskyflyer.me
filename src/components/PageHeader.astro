@@ -169,6 +169,12 @@ import Brand from './Brand.astro'
     padding: 0.6rem 1.2rem;
   }
 
+  @media screen and (max-width: 768px) {
+    header {
+      padding: 0.5rem 2.5% 0;
+    }
+  }
+
   @media screen and (max-width: 1023px) {
     body:has(#menu-dialog:popover-open) {
       overflow: hidden;
