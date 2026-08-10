@@ -62,7 +62,7 @@ const { color = '#ffffff', size = '14px' } = Astro.props
 </style>
 
 <SafeResource>
-  <script>
+  <script is:inline>
     const setupScrollButton = () => {
       const btn = document.querySelector('.scroll-container')
 
