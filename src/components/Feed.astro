@@ -380,7 +380,6 @@ const activities: ActivityItem[] = [
     border-radius: 4px;
   }
 
-  /* Plus/Minus icon using hardware-accelerated transforms */
   .toggle-icon {
     position: relative;
     flex-shrink: 0;
@@ -396,11 +395,10 @@ const activities: ActivityItem[] = [
       transform 150ms ease,
       opacity 180ms ease;
     border-radius: 1px;
-    background-color: #4f52f4;
+    background-color: var(--accent);
     content: '';
   }
 
-  /* Horizontal line */
   .toggle-icon::before {
     top: 6px;
     left: 0;
@@ -408,7 +406,6 @@ const activities: ActivityItem[] = [
     height: 2px;
   }
 
-  /* Vertical line */
   .toggle-icon::after {
     top: 0;
     left: 6px;
@@ -416,7 +413,6 @@ const activities: ActivityItem[] = [
     height: 14px;
   }
 
-  /* Icon morph when details is open */
   .feed-item[open] .toggle-icon::after {
     transform: rotate(90deg) scale(0);
     opacity: 0;
@@ -426,7 +422,6 @@ const activities: ActivityItem[] = [
     transform: rotate(180deg);
   }
 
-  /* Smooth height accordion animation via CSS Grid */
   .details-wrapper {
     display: grid;
     grid-template-rows: 0fr;
