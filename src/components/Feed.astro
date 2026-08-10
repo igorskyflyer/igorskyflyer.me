@@ -9,9 +9,9 @@ export interface ActivityDetail {
 export interface ActivityItem {
   category: 'npm' | 'git' | 'entity' | 'pr' | 'release' | 'media'
   title: string
+  date: string
   titleLink?: string
   details?: ActivityDetail[]
-  date?: string
 }
 
 interface Props {
@@ -32,9 +32,18 @@ const categoryBadges: Record<
   media: { label: 'Media', class: 'badge-media' }
 }
 
+const formatDate = (isoDate: string) =>
+  new Date(isoDate).toLocaleDateString('en-US', {
+    month: 'short',
+    day: '2-digit',
+    year: 'numeric',
+    timeZone: 'UTC'
+  })
+
 const activities: ActivityItem[] = [
   {
     category: 'git',
+    date: '2026-07-04',
     title: 'Published a new UserScript: Unmute Images on GitHub',
     titleLink:
       'https://github.com/igorskyflyer/userscript-github-unmute-images',
@@ -44,7 +53,8 @@ const activities: ActivityItem[] = [
   },
   {
     category: 'npm',
-    title: 'Published new releases of npm packages:',
+    date: '2026-07-28',
+    title: 'Published new releases of npm packages',
     details: [
       {
         text: 'Biome config - v3.0.3',
@@ -66,11 +76,13 @@ const activities: ActivityItem[] = [
   },
   {
     category: 'entity',
+    date: '2026-07-04',
     title: 'Became a Verified Entity on Google /g/11kc3sl0nv',
     titleLink: 'https://www.google.com/search?kgmid=/g/11kc3sl0nv'
   },
   {
     category: 'pr',
+    date: '2026-05-16',
     title: 'Worked on UniGetUI',
     details: [
       {
@@ -108,6 +120,7 @@ const activities: ActivityItem[] = [
   },
   {
     category: 'git',
+    date: '2026-03-26',
     title: 'Created repository: igorskyflyer/dotfiles',
     details: [
       {
@@ -123,6 +136,7 @@ const activities: ActivityItem[] = [
   },
   {
     category: 'release',
+    date: '2026-03-19',
     title: 'Released v3.0.0 of Commoji',
     details: [
       {
@@ -138,6 +152,7 @@ const activities: ActivityItem[] = [
   },
   {
     category: 'npm',
+    date: '2025-08-21',
     title: 'Executing scope-migration',
     details: [
       {
@@ -157,21 +172,26 @@ const activities: ActivityItem[] = [
   },
   {
     category: 'media',
+    date: '2026-02-28',
     title:
       'Uploaded YouTube Video: PZE 2026 | My Top 14 - Before the Show | Eurovision 2026, Serbia',
     titleLink: 'https://www.youtube.com/watch?v=EBPn_vsG11Q'
   },
   {
     category: 'media',
+    date: '2026-02-15',
     title: 'Uploaded YouTube Video: My Top 16 | DORA 2026 [After the Show]',
     titleLink: 'https://youtu.be/1luA8GfMolo'
   },
   {
     category: 'media',
+    date: '2026-02-12',
     title: 'Uploaded YouTube Video: My Top 24 | DORA 2026 [Before the Show]',
     titleLink: 'https://www.youtube.com/watch?v=2QlV8xUasok'
   }
 ]
+
+activities.sort((a, b) => b.date.localeCompare(a.date))
 ---
 
 <section class="feed-container">
@@ -204,7 +224,7 @@ const activities: ActivityItem[] = [
                   <span class={`badge ${categoryBadges[item.category].class}`}>
                     {categoryBadges[item.category].label}
                   </span>
-                  {item.date && <time class="item-date">{item.date}</time>}
+                  <time class="item-date">{formatDate(item.date)}</time>
                 </span>
                 <span class="item-title">{item.title}</span>
               </div>
@@ -273,7 +293,7 @@ const activities: ActivityItem[] = [
                 <span class={`badge ${categoryBadges[item.category].class}`}>
                   {categoryBadges[item.category].label}
                 </span>
-                {item.date && <time class="item-date">{item.date}</time>}
+                <time class="item-date">{formatDate(item.date)}</time>
               </span>
               <span class="item-title">
                 {item.titleLink ? (
