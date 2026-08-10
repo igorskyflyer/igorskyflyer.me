@@ -132,7 +132,7 @@ This file is in BETA. Please test and contribute to the discussion:
 							<p>
 								by <a target="_blank">
                   <xsl:attribute name="href">
-                    <xsl:value-of select="'/blog/author/igorskyflyer'"/>
+                    <xsl:value-of select="'/igorskyflyer'"/>
                   </xsl:attribute>
                   <xsl:value-of select="dc:creator"/>
                 </a>
