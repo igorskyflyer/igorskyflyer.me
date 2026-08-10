@@ -1,11 +1,386 @@
-<section>
-  <h2>About me</h2>
-
-  Engineering for Performance. Building for Endurance.
+<section
+  class="about-section"
+  data-target>
+  <h4>About me</h4>
+  <h2>Engineering for Performance. Building for Endurance.</h2>
 
   <div class="me-card">
+    <div class="card-column col-bio">
+      <p class="bio-lead">
+        I'm Igor Dimitrijević (igorskyflyer) - a senior full-stack software
+        engineer, freelance developer, and DX specialist with 20+ years of
+        hands-on coding experience.
+      </p>
 
-	</div>
+      <p class="bio-text">
+        My engineering focus centers on dependency-conscious architecture,
+        high-performance Web systems, custom desktop applications, and
+        compiler/DSL tooling built to minimize cognitive load and maximize
+        execution speed.
+      </p>
+
+      <p class="bio-text">
+        Whether architecting bespoke e-commerce engines, engineering custom
+        management suites, or publishing verified developer tools, I build
+        software designed for long-term maintainability.
+      </p>
+
+      <div class="badge-group">
+        <span class="badge">Full-Stack Development</span>
+        <span class="badge">DX & Tooling</span>
+        <span class="badge">Performance-First Systems</span>
+        <span class="badge">DSLs & Compilers</span>
+      </div>
+
+      <div class="meta-info">
+        <span>📍 Serbia • Remote, Worldwide</span>
+        <span
+          >✉️ <a href="mailto:connect@igorskyflyer.me"
+            >connect@igorskyflyer.me</a
+          ></span
+        >
+      </div>
+
+      <div class="action-group">
+        <a
+          href="https://igorskyflyer.me/contact/"
+          class="btn-primary"
+          >Reach Out</a
+        >
+        <a
+          href="/portfolio"
+          class="btn-secondary"
+          >Past Work Details</a
+        >
+      </div>
+    </div>
+
+    <div class="card-column col-details">
+      <div class="status-box">
+        <span class="status-dot"></span>
+        <div>
+          <strong>Available for Senior / Staff Engagements</strong>
+          <p>
+            Open to select freelance contracts, full-stack systems, and
+            developer experience roles.
+          </p>
+        </div>
+      </div>
+
+      <div class="credentials-list">
+        <div class="cred-item">
+          <span class="cred-icon">🎓</span>
+          <div>
+            <strong>BSc (Hons) IT & Software Engineering</strong>
+            <span>Faculty of Technical Sciences</span>
+          </div>
+        </div>
+        <div class="cred-item">
+          <span class="cred-icon">⚡</span>
+          <div>
+            <strong>Verified VS Code Publisher</strong>
+            <span>Publisher profile & verified tooling ecosystem</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="domains-section">
+        <h5>ENGINEERING DOMAINS</h5>
+        <div class="domains-grid">
+          <div class="domain-box">
+            <strong>Web & E-Commerce</strong>
+            <span
+              >Bespoke WordPress/WooCommerce engines & automated fulfillment
+              pipelines.</span
+            >
+          </div>
+          <div class="domain-box">
+            <strong>Desktop & Systems</strong>
+            <span
+              >Custom C#/WPF management suites, MVVM architecture & GDI engines.</span
+            >
+          </div>
+          <div class="domain-box">
+            <strong>Dev Tooling & DSLs</strong>
+            <span
+              >Aria compiler, ADBT language, VS Code extensions & esbuild/Vite
+              tools.</span
+            >
+          </div>
+          <div class="domain-box">
+            <strong>npm Ecosystem</strong>
+            <span
+              >Lightweight TypeScript libraries, native polyfills, and utility
+              engines.</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="focus-list">
+        <h5>CURRENT FOCUS</h5>
+        <ul>
+          <li>
+            🎯 Maintaining and publishing the @igorskyflyer open-source
+            ecosystem
+          </li>
+          <li>
+            🎯 Building performance-critical TypeScript tools and compiler
+            utilities
+          </li>
+          <li>
+            🎯 Delivering high-integrity solutions for recurring international
+            clients
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </section>
 
-<style></style>
+<style>
+  .about-section {
+    width: 100%;
+  }
+
+  h4 {
+    opacity: 0.6;
+    margin: 0 0 0.5rem 0;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  h2 {
+    margin: 0 0 2rem 0;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    line-height: 1.2;
+    color: #fff;
+  }
+
+  .me-card {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: left;
+  }
+
+  @media (min-width: 900px) {
+    .me-card {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+  }
+
+  .card-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    width: 100%;
+  }
+
+  .bio-lead {
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #f1f5f9;
+    margin: 0;
+  }
+
+  .bio-text {
+    font-size: 0.925rem;
+    line-height: 1.6;
+    color: #94a3b8;
+    margin: 0;
+  }
+
+  .badge-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+  }
+
+  .badge {
+    padding: 0.35rem 0.7rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #e2e8f0;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--btn-radius, 9999px);
+  }
+
+  .meta-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-top: 0.25rem;
+  }
+
+  .meta-info a {
+    color: var(--link, #0ea8ff);
+    text-decoration: none;
+  }
+
+  .action-group {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: var(--btn-radius, 9999px);
+    text-decoration: none;
+    transition:
+      transform 200ms ease,
+      background-color 200ms ease,
+      border-color 200ms ease;
+  }
+
+  .btn-primary {
+    background: var(--primary, #002f9c);
+    color: #fff;
+  }
+
+  .btn-primary:hover {
+    background: var(--accent, #3869c2);
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #e2e8f0;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--link, #0ea8ff);
+    background: rgba(14, 168, 255, 0.08);
+    transform: translateY(-2px);
+  }
+
+  .status-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.85rem 1rem;
+    background: rgba(31, 224, 102, 0.05);
+    border: 1px solid rgba(31, 224, 102, 0.2);
+    border-radius: var(--radius, 8px);
+  }
+
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    margin-top: 0.35rem;
+    border-radius: 50%;
+    background-color: #1fe066;
+    box-shadow: 0 0 8px #1fe066;
+    flex-shrink: 0;
+  }
+
+  .status-box strong {
+    font-size: 0.85rem;
+    color: #f8fafc;
+    display: block;
+  }
+
+  .status-box p {
+    margin: 0.2rem 0 0 0;
+    font-size: 0.8rem;
+    color: #94a3b8;
+  }
+
+  .credentials-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .cred-item {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.75rem 0.85rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius, 8px);
+  }
+
+  .cred-icon {
+    font-size: 1.15rem;
+  }
+
+  .cred-item strong {
+    font-size: 0.85rem;
+    color: #f1f5f9;
+    display: block;
+  }
+
+  .cred-item span {
+    font-size: 0.75rem;
+    color: #64748b;
+  }
+
+  .domains-section h5,
+  .focus-list h5 {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #64748b;
+    margin: 0 0 0.75rem 0;
+  }
+
+  .domains-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.65rem;
+  }
+
+  .domain-box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.75rem;
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius, 8px);
+  }
+
+  .domain-box strong {
+    font-size: 0.825rem;
+    color: #e2e8f0;
+  }
+
+  .domain-box span {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    line-height: 1.35;
+  }
+
+  .focus-list ul {
+    margin: 0;
+    padding-left: 1.2rem;
+    font-size: 0.825rem;
+    color: #94a3b8;
+    line-height: 1.6;
+    list-style: none;
+  }
+
+  .focus-list li {
+    margin-bottom: 0.25rem;
+  }
+
+  @media (max-width: 640px) {
+    .domains-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
