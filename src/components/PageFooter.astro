@@ -9,36 +9,42 @@ const socialLinks = [
     href: 'https://github.com/igorskyflyer',
     label: 'GitHub Profile',
     icon: 'mdi:github',
-    external: true
-  },
-  {
-    href: '/contact/',
-    label: 'Contact Me',
-    icon: 'ic:outline-email',
-    external: false
-  },
-  {
-    href: 'https://ko-fi.com/igorskyflyer',
-    label: 'Support on Ko-fi',
-    icon: 'cib:ko-fi',
-    external: true
-  },
-  {
-    href: 'https://www.linkedin.com/in/igorskyflyer',
-    label: 'LinkedIn Profile',
-    icon: 'mdi:linkedin',
-    external: true
-  },
-  {
-    href: 'https://www.instagram.com/igorskyflyer',
-    label: 'Instagram Profile',
-    icon: 'mdi:instagram',
+    className: 'github',
     external: true
   },
   {
     href: 'https://youtube.com/@igorskyflyer',
     label: 'YouTube Channel',
     icon: 'ri:youtube-fill',
+    className: 'youtube',
+    external: true
+  },
+  {
+    href: 'https://linkedin.com/in/igorskyflyer',
+    label: 'LinkedIn Profile',
+    icon: 'mdi:linkedin',
+    className: 'linkedin',
+    external: true
+  },
+  {
+    href: 'https://ko-fi.com/igorskyflyer',
+    label: 'Support on Ko-fi',
+    icon: 'cib:ko-fi',
+    className: 'kofi',
+    external: true
+  },
+  {
+    href: '/contact/',
+    label: 'Contact Me',
+    icon: 'ic:outline-email',
+    className: 'email',
+    external: false
+  },
+  {
+    href: 'https://instagram.com/igorskyflyer',
+    label: 'Instagram Profile',
+    icon: 'mdi:instagram',
+    className: 'instagram',
     external: true
   }
 ]
@@ -57,7 +63,7 @@ const socialLinks = [
             target={item.external ? '_blank' : undefined}
             aria-label={item.label}
             title={item.label}
-            class="social-icon-link">
+            class={`social-icon-link social-${item.className}`}>
             <Icon
               name={item.icon}
               class="social-icon"
@@ -276,6 +282,41 @@ const socialLinks = [
     margin: 0;
     color: #64748b;
     font-size: 0.775rem;
+  }
+
+  .social-github:hover {
+    border-color: #6a737d;
+    background-color: #24292e;
+  }
+
+  .social-linkedin:hover {
+    border-color: #70b5ff;
+    background-color: #0a66c2;
+  }
+
+  .social-npm:hover {
+    border-color: #ff8b8a;
+    background-color: #cb3837;
+  }
+
+  .social-email:hover {
+    border-color: #ffb380;
+    background-color: #ff6600;
+  }
+
+  .social-kofi:hover {
+    border-color: #ff9eaf;
+    background-color: #ff5e5b;
+  }
+
+  .social-instagram:hover {
+    border-color: #ff76ad;
+    background-color: #e1306c;
+  }
+
+  .social-youtube:hover {
+    border-color: #ff6666;
+    background-color: #ff0000;
   }
 
   @media screen and (min-width: 768px) {
