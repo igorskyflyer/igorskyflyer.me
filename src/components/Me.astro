@@ -82,6 +82,42 @@
             <span>Publisher profile & verified tooling ecosystem</span>
           </div>
         </div>
+
+        <div class="cred-item">
+          <span class="cred-icon">📜</span>
+          <div>
+            <strong>
+              <a href="/portfolio#certifications">
+                30+ Verified Certifications
+              </a>
+            </strong>
+            <span>Cisco, Oracle, TestDome (Top 10%), Pluralsight & more</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="badge-gallery">
+        <a
+          href="https://www.credly.com/badges/055328d9-6684-47ec-9c87-ee037ab89948"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="gallery-badge"
+          title="Cisco: Introduction to Cybersecurity">
+          <img
+            src="/assets/images/introduction-to-cybersecurity.png"
+            alt="Cisco Introduction to Cybersecurity Badge"
+            width="96"
+            height="96"
+          />
+        </a>
+      </div>
+
+      <div class="certs-footer">
+        <a
+          href="/portfolio#certifications"
+          class="certs-link">
+          📜 View complete certification list on Portfolio ↗
+        </a>
       </div>
 
       <div class="domains-section">
@@ -324,9 +360,68 @@
     font-size: 0.85rem;
   }
 
+  .cred-item strong a {
+    color: #f1f5f9;
+    text-decoration: none;
+  }
+
+  .cred-item strong a:hover {
+    color: var(--link, #0ea8ff);
+    text-decoration: underline;
+  }
+
   .cred-item span {
     color: #64748b;
     font-size: 0.9rem;
+  }
+
+  .badge-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: -0.25rem;
+  }
+
+  .gallery-badge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition:
+      transform 180ms ease,
+      border-color 180ms ease,
+      background-color 180ms ease;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius, 8px);
+    background: rgba(255, 255, 255, 0.02);
+    padding: 0.5rem;
+  }
+
+  .gallery-badge img {
+    width: 96px;
+    height: 96px;
+    object-fit: contain;
+  }
+
+  .gallery-badge:hover {
+    transform: translateY(-2px);
+    border-color: rgba(45, 212, 191, 0.4);
+    background: rgba(45, 212, 191, 0.06);
+  }
+
+  .certs-footer {
+    margin-top: -0.25rem;
+    padding-left: 0.25rem;
+  }
+
+  .certs-link {
+    color: var(--link, #0ea8ff);
+    font-size: 0.825rem;
+    text-decoration: none;
+  }
+
+  .certs-link:hover {
+    text-decoration: underline;
   }
 
   .domains-section h5,
@@ -377,15 +472,18 @@
     margin-bottom: 0.25rem;
   }
 
+  .domains-section,
+  .focus-list {
+    margin-top: 2rem;
+  }
+
   @media (max-width: 640px) {
-    .action-group {
-      justify-content: center;
+    .col-details {
+      margin-top: 2rem;
     }
 
-    .col-details,
-    .domains-section,
-    .focus-list {
-      margin-top: 2rem;
+    .action-group {
+      justify-content: center;
     }
 
     .domains-grid {
