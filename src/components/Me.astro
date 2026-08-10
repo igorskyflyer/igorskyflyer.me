@@ -147,15 +147,15 @@
     opacity: 0.6;
     margin: 0 0 0.5rem 0;
     font-size: 0.85rem;
-    text-transform: uppercase;
     letter-spacing: 0.05em;
+    text-transform: uppercase;
   }
 
   h2 {
     margin: 0 0 2rem 0;
+    color: #fff;
     font-size: clamp(1.75rem, 3vw, 2.5rem);
     line-height: 1.2;
-    color: #fff;
   }
 
   .me-card {
@@ -173,26 +173,26 @@
   }
 
   .card-column {
-    flex: 1;
     display: flex;
+    flex: 1;
     flex-direction: column;
     gap: 1.25rem;
     width: 100%;
   }
 
   .bio-lead {
-    font-size: 1.1rem;
-    font-weight: 500;
-    line-height: 1.5;
-    color: #f1f5f9;
     margin: 0;
+    color: #f1f5f9;
+    font-weight: 500;
+    font-size: 1.1rem;
+    line-height: 1.5;
   }
 
   .bio-text {
+    margin: 0;
+    color: #94a3b8;
     font-size: 0.925rem;
     line-height: 1.6;
-    color: #94a3b8;
-    margin: 0;
   }
 
   .badge-group {
@@ -203,22 +203,22 @@
   }
 
   .badge {
-    padding: 0.35rem 0.7rem;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: #e2e8f0;
-    background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: var(--btn-radius, 9999px);
+    background: rgba(255, 255, 255, 0.04);
+    padding: 0.35rem 0.7rem;
+    color: #e2e8f0;
+    font-weight: 600;
+    font-size: 0.75rem;
   }
 
   .meta-info {
     display: flex;
     flex-wrap: wrap;
     gap: 1.25rem;
-    font-size: 0.85rem;
-    color: #64748b;
     margin-top: 0.25rem;
+    color: #64748b;
+    font-size: 0.85rem;
   }
 
   .meta-info a {
@@ -234,15 +234,15 @@
 
   .btn-primary,
   .btn-secondary {
-    padding: 0.75rem 1.25rem;
-    font-size: 0.875rem;
-    font-weight: 600;
-    border-radius: var(--btn-radius, 9999px);
-    text-decoration: none;
     transition:
       transform 200ms ease,
       background-color 200ms ease,
       border-color 200ms ease;
+    border-radius: var(--btn-radius, 9999px);
+    padding: 0.75rem 1.25rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-decoration: none;
   }
 
   .btn-primary {
@@ -251,8 +251,8 @@
   }
 
   .btn-primary:hover {
-    background: var(--accent, #3869c2);
     transform: translateY(-2px);
+    background: var(--accent, #3869c2);
   }
 
   .btn-secondary {
@@ -261,41 +261,41 @@
   }
 
   .btn-secondary:hover {
+    transform: translateY(-2px);
     border-color: var(--link, #0ea8ff);
     background: rgba(14, 168, 255, 0.08);
-    transform: translateY(-2px);
   }
 
   .status-box {
     display: flex;
     align-items: flex-start;
     gap: 0.75rem;
-    padding: 0.85rem 1rem;
-    background: rgba(31, 224, 102, 0.05);
     border: 1px solid rgba(31, 224, 102, 0.2);
     border-radius: var(--radius, 8px);
+    background: rgba(31, 224, 102, 0.05);
+    padding: 0.85rem 1rem;
   }
 
   .status-dot {
-    width: 8px;
-    height: 8px;
+    flex-shrink: 0;
     margin-top: 0.35rem;
+    box-shadow: 0 0 8px #1fe066;
     border-radius: 50%;
     background-color: #1fe066;
-    box-shadow: 0 0 8px #1fe066;
-    flex-shrink: 0;
+    width: 8px;
+    height: 8px;
   }
 
   .status-box strong {
-    font-size: 0.85rem;
-    color: #f8fafc;
     display: block;
+    color: #f8fafc;
+    font-size: 0.85rem;
   }
 
   .status-box p {
     margin: 0.2rem 0 0 0;
-    font-size: 0.8rem;
     color: #94a3b8;
+    font-size: 0.8rem;
   }
 
   .credentials-list {
@@ -308,10 +308,10 @@
     display: flex;
     align-items: center;
     gap: 0.85rem;
-    padding: 0.75rem 0.85rem;
-    background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: var(--radius, 8px);
+    background: rgba(255, 255, 255, 0.02);
+    padding: 0.75rem 0.85rem;
   }
 
   .cred-icon {
@@ -319,23 +319,23 @@
   }
 
   .cred-item strong {
-    font-size: 0.85rem;
-    color: #f1f5f9;
     display: block;
+    color: #f1f5f9;
+    font-size: 0.85rem;
   }
 
   .cred-item span {
-    font-size: 0.75rem;
     color: #64748b;
+    font-size: 0.75rem;
   }
 
   .domains-section h5,
   .focus-list h5 {
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    color: #64748b;
     margin: 0 0 0.75rem 0;
+    color: #64748b;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
   }
 
   .domains-grid {
@@ -348,28 +348,28 @@
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
-    padding: 0.75rem;
-    background: rgba(0, 0, 0, 0.25);
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: var(--radius, 8px);
+    background: rgba(0, 0, 0, 0.25);
+    padding: 0.75rem;
   }
 
   .domain-box strong {
-    font-size: 0.825rem;
     color: #e2e8f0;
+    font-size: 0.825rem;
   }
 
   .domain-box span {
-    font-size: 0.75rem;
     color: #94a3b8;
+    font-size: 0.75rem;
     line-height: 1.35;
   }
 
   .focus-list ul {
     margin: 0;
     padding-left: 1.2rem;
-    font-size: 0.825rem;
     color: #94a3b8;
+    font-size: 0.825rem;
     line-height: 1.6;
     list-style: none;
   }
@@ -379,6 +379,16 @@
   }
 
   @media (max-width: 640px) {
+    .action-group {
+      justify-content: center;
+    }
+
+    .col-details,
+    .domains-section,
+    .focus-list {
+      margin-top: 2rem;
+    }
+
     .domains-grid {
       grid-template-columns: 1fr;
     }
