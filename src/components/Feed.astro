@@ -307,7 +307,7 @@ const activities: ActivityItem[] = [
     margin: 0;
     color: #fff;
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: clamp(1.15rem, 3.5vw, 1.5rem);
   }
 
   .feed-status {
@@ -315,8 +315,8 @@ const activities: ActivityItem[] = [
     align-items: center;
     gap: 6px;
     color: #94a3b8;
-    font-weight: 700;
-    font-size: 0.7rem;
+    font-weight: bolder;
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
     letter-spacing: 0.05em;
   }
 
@@ -444,14 +444,14 @@ const activities: ActivityItem[] = [
     display: flex;
     flex-shrink: 0;
     align-items: center;
-    gap: 0.75rem;
+    gap: 0.5rem;
   }
 
   .badge {
     border-radius: 4px;
     padding: 0.15rem 0.5rem;
     font-weight: 600;
-    font-size: 0.7rem;
+    font-size: clamp(0.7rem, 1.8vw, 0.8rem);
     letter-spacing: 0.03em;
     text-transform: uppercase;
   }
@@ -494,13 +494,13 @@ const activities: ActivityItem[] = [
 
   .item-date {
     color: #64748b;
-    font-size: 0.75rem;
+    font-size: clamp(0.7rem, 1.5vw, 0.75rem);
   }
 
   .item-title {
     margin: 0;
     color: #e2e8f0;
-    font-size: 0.9rem;
+    font-size: clamp(0.95rem, 2.5vw, 1.125rem);
     line-height: 1.4;
     word-break: break-word;
   }
@@ -517,10 +517,10 @@ const activities: ActivityItem[] = [
   }
 
   .item-details {
-    margin: 0.75rem 0 0 0;
+    margin: 0.6rem 0 0 0;
     padding-left: 1.2rem;
     color: #94a3b8;
-    font-size: 0.825rem;
+    font-size: clamp(0.85rem, 2vw, 0.95rem);
     line-height: 1.5;
   }
 
