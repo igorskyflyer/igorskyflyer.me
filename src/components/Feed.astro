@@ -194,33 +194,18 @@ const activities: ActivityItem[] = [
       activities.map((item) => {
         const hasDetails = item.details && item.details.length > 0
 
-        const Row = (
-          <>
-            <span class="item-meta">
-              <span class={`badge ${categoryBadges[item.category].class}`}>
-                {categoryBadges[item.category].label}
-              </span>
-              {item.date && <time class="item-date">{item.date}</time>}
-            </span>
-            <span class="item-title">
-              {item.titleLink ? (
-                <a
-                  href={item.titleLink}
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  {item.title}
-                </a>
-              ) : (
-                item.title
-              )}
-            </span>
-          </>
-        )
-
         return hasDetails ? (
           <details class="feed-item">
             <summary class="item-summary">
-              <div class="item-row">{Row}</div>
+              <div class="item-row">
+                <span class="item-meta">
+                  <span class={`badge ${categoryBadges[item.category].class}`}>
+                    {categoryBadges[item.category].label}
+                  </span>
+                  {item.date && <time class="item-date">{item.date}</time>}
+                </span>
+                <span class="item-title">{item.title}</span>
+              </div>
               <span
                 class="toggle-icon"
                 aria-hidden="true"
@@ -229,6 +214,16 @@ const activities: ActivityItem[] = [
 
             <div class="details-wrapper">
               <div class="details-content">
+                {item.titleLink && (
+                  <div class="details-main-link">
+                    <a
+                      href={item.titleLink}
+                      target="_blank"
+                      rel="noopener noreferrer">
+                      Open link ↗
+                    </a>
+                  </div>
+                )}
                 <ul class="item-details">
                   {item.details!.map((detail) => (
                     <li>
@@ -270,7 +265,26 @@ const activities: ActivityItem[] = [
           </details>
         ) : (
           <article class="feed-item feed-item--flat">
-            <div class="item-row">{Row}</div>
+            <div class="item-row">
+              <span class="item-meta">
+                <span class={`badge ${categoryBadges[item.category].class}`}>
+                  {categoryBadges[item.category].label}
+                </span>
+                {item.date && <time class="item-date">{item.date}</time>}
+              </span>
+              <span class="item-title">
+                {item.titleLink ? (
+                  <a
+                    href={item.titleLink}
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    {item.title}
+                  </a>
+                ) : (
+                  item.title
+                )}
+              </span>
+            </div>
           </article>
         )
       })
@@ -506,18 +520,26 @@ const activities: ActivityItem[] = [
   }
 
   .item-title a,
-  .item-details a {
+  .item-details a,
+  .details-main-link a {
     color: var(--link, #0ea8ff);
     text-decoration: none;
   }
 
   .item-title a:hover,
-  .item-details a:hover {
+  .item-details a:hover,
+  .details-main-link a:hover {
     text-decoration: underline;
   }
 
+  .details-main-link {
+    margin-top: 0.6rem;
+    padding-left: 1.2rem;
+    font-size: clamp(0.85rem, 2vw, 0.95rem);
+  }
+
   .item-details {
-    margin: 0.6rem 0 0 0;
+    margin: 0.4rem 0 0 0;
     padding-left: 1.2rem;
     color: #94a3b8;
     font-size: clamp(0.85rem, 2vw, 0.95rem);
