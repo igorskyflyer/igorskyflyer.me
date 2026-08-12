@@ -54,7 +54,7 @@ const activities: ActivityItem[] = [
       'https://www.credly.com/badges/055328d9-6684-47ec-9c87-ee037ab89948',
     details: [
       {
-        text: "This introductory course takes you inside the world of cybersecurity. You will learn cybersecurity basics to protect your personal digital life and gain insights into the biggest security challenges companies, governments, and educational institutions face today."
+        text: 'This introductory course takes you inside the world of cybersecurity. You will learn cybersecurity basics to protect your personal digital life and gain insights into the biggest security challenges companies, governments, and educational institutions face today.'
       }
     ]
   },
@@ -366,6 +366,65 @@ activities.sort((a, b) => b.date.localeCompare(a.date))
         )
       })
     }
+
+    <div id="feed-timeline">
+      <div>
+        <svg
+          width="24"
+          height="48"
+          viewBox="0 0 24 48"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <defs>
+            <filter
+              id="node-glow"
+              x="-50%"
+              y="-50%"
+              width="200%"
+              height="200%">
+              <feDropShadow
+                dx="0"
+                dy="0"
+                stdDeviation="3"
+                flood-color="#3abfc7"
+                flood-opacity="0.8"
+              ></feDropShadow>
+            </filter>
+          </defs>
+
+          <line
+            x1="12"
+            y1="0"
+            x2="12"
+            y2="16"
+            stroke="#3abfc7"
+            stroke-width="2.5"
+            stroke-opacity="0.6"
+          ></line>
+
+          <circle
+            cx="12"
+            cy="24"
+            r="6"
+            fill="#3abfc7"
+            filter="url(#node-glow)"
+          ></circle>
+
+          <line
+            x1="12"
+            y1="32"
+            x2="12"
+            y2="48"
+            stroke="#3abfc7"
+            stroke-width="2.5"
+            stroke-opacity="0.6"
+          ></line>
+        </svg>
+        <a href="/timeline">Explore full historical timeline &#x2794;</a>
+      </div>
+      <p>150+ more events</p>
+    </div>
   </div>
 </section>
 
@@ -383,8 +442,11 @@ activities.sort((a, b) => b.date.localeCompare(a.date))
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    background: rgba(0, 0, 0, 0.3);
+    background: linear-gradient(
+      to bottom,
+      rgba(58, 191, 199, 0.08),
+      var(--bg-color)
+    );
     padding: 0.85rem 1.25rem;
   }
 
@@ -423,7 +485,7 @@ activities.sort((a, b) => b.date.localeCompare(a.date))
   .feed {
     display: flex;
     flex-direction: column;
-    padding: 0.5rem 0;
+    padding-top: 0.5rem;
   }
 
   .feed-item {
@@ -553,7 +615,6 @@ activities.sort((a, b) => b.date.localeCompare(a.date))
     color: #38bdf8;
   }
 
-  /* npm - Red */
   .badge-npm {
     border: 1px solid rgba(248, 113, 113, 0.3);
     background: rgba(248, 113, 113, 0.15);
@@ -603,9 +664,9 @@ activities.sort((a, b) => b.date.localeCompare(a.date))
 
   .item-title {
     flex: 1;
+    margin: 0;
     min-width: 0;
     max-width: 64ch;
-    margin: 0;
     color: #e2e8f0;
     font-size: clamp(0.95rem, 2.5vw, 1.125rem);
     line-height: 1.4;
@@ -651,6 +712,37 @@ activities.sort((a, b) => b.date.localeCompare(a.date))
 
   .detail-inline-links {
     color: #64748b;
+  }
+
+  #feed-timeline {
+    border-bottom-right-radius: var(--radius);
+    border-bottom-left-radius: var(--radius);
+    background: linear-gradient(
+      to bottom,
+      var(--bg-color),
+      rgba(58, 191, 199, 0.08)
+    );
+    padding: 0.4rem 0;
+    color: #3abfc7;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  #feed-timeline div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+  }
+
+  #feed-timeline a {
+    font-weight: bolder;
+    font-size: clamp(1rem, 0.8rem + 0.75vw, 1.5rem);
+  }
+
+  #feed-timeline p {
+    font-size: 0.8rem;
+    font-style: italic;
   }
 
   @keyframes pulse {
