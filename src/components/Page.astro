@@ -9,7 +9,8 @@ const {
   title = '',
   description = '',
   featuredImage = '',
-  keywords = ''
+  keywords = '',
+  isHome = false
 } = Astro.props as PageProps
 ---
 
@@ -24,10 +25,36 @@ const {
   </PageHead>
   <body>
     <PageHeader />
-    <main>
+    <main class:list={[{ hero: isHome }]}>
       <slot name="body" />
     </main>
     <NavBtn />
     <PageFooter />
   </body>
 </html>
+
+<style>
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(4rem, 10vw, 8.5rem);
+    margin: 3rem auto;
+    width: 92%;
+  }
+
+  main a,
+  main a:visited {
+    color: var(--link);
+    text-decoration: none;
+  }
+
+  main.hero {
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: 768px) {
+    main {
+      width: 88%;
+    }
+  }
+</style>
