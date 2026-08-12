@@ -736,8 +736,14 @@ activities.sort((a, b) => b.date.localeCompare(a.date))
   }
 
   #feed-timeline a {
+    padding: 0.3rem 1rem;
     font-weight: bolder;
-    font-size: clamp(1rem, 0.8rem + 0.75vw, 1.5rem);
+    font-size: clamp(0.9rem, 0.9rem + 0.75vw, 1.5rem);
+  }
+
+  #feed-timeline a:hover {
+    background-color: #132e3b;
+    border-color: #2b6271;
   }
 
   #feed-timeline p {
