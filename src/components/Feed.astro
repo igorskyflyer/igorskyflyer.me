@@ -773,8 +773,15 @@ activities.sort((a, b) => b.date.localeCompare(a.date))
       border-color 120ms ease-in;
     background-color: rgba(19, 46, 59, 0);
     padding: 0.3rem;
+    color: var(--link);
     font-weight: bolder;
     font-size: clamp(0.8rem, 0.7rem + 0.75vw, 1.5rem);
+    text-decoration: none;
+  }
+
+  #feed-timeline a:visited {
+    color: var(--link);
+    text-decoration: none;
   }
 
   #feed-timeline a:hover {
