@@ -116,20 +116,6 @@ body {
   color: #e2e8f0;
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(4rem, 10vw, 8.5rem);
-  margin: 1.5rem auto;
-  width: 92%;
-}
-
-main a,
-main a:visited {
-  color: var(--link);
-  text-decoration: none;
-}
-
 img {
   max-width: 100%;
   height: auto;
@@ -212,11 +198,6 @@ img {
 }
 
 @media screen and (min-width: 768px) {
-  main {
-    margin: 0 auto 2.5rem auto;
-    width: 85%;
-  }
-
   .btn-cta {
     padding: 1rem 2rem;
   }
