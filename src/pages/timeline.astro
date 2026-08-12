@@ -857,9 +857,7 @@ const data: DecadeBlock[] = [
     set:html={JSON.stringify(schemaData)}
     slot="head"
   />
-  <section
-    class="timeline-wrapper"
-    slot="body">
+  <section slot="body">
     <header class="timeline-header">
       <h4>Timeline</h4>
       <h2>Chronological Evolution</h2>
@@ -885,9 +883,10 @@ const data: DecadeBlock[] = [
 </Page>
 
 <style>
-  .timeline-wrapper {
+  section {
     margin: auto;
     min-width: 100%;
+    max-width: 100%;
   }
 
   .photo {
