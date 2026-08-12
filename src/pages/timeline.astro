@@ -1,0 +1,42 @@
+---
+import Page from '@components/Page.astro'
+import { SiteName } from '@data/Site.ts'
+
+const pageTitle = `Timeline & Technical Archive | ${SiteName}`
+const pageDescription =
+  'Comprehensive chronological log of open-source releases, software milestones, security contributions, certifications, and career history since 2006.'
+const pageKeywords =
+  'timeline, software milestones, open source achievements, certifications, release history, igorskyflyer, igor dimitrijević, development log'
+
+const schemaData = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: pageTitle,
+  description: pageDescription,
+  mainEntity: {
+    '@type': 'Person',
+    name: 'Igor Dimitrijević',
+    alternateName: 'igorskyflyer',
+    sameAs: [
+      'https://github.com/igorskyflyer',
+      'https://www.linkedin.com/in/igorskyflyer'
+    ]
+  }
+}
+---
+
+<Page
+  title={pageTitle}
+  description={pageDescription}
+  keywords={pageKeywords}>
+  <script
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify(schemaData)}
+    slot="head"
+  />
+
+  <Fragment slot="body">
+    <h1>Timeline & Technical Archive</h1>
+  </Fragment>
+</Page>
