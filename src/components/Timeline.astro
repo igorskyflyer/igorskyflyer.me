@@ -115,19 +115,19 @@ const { activities = [] } = Astro.props
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: border-radius 90ms ease;
     cursor: pointer;
     border-radius: var(--radius);
     background: rgba(255, 255, 255, 0.03);
     padding: 0.85rem 1.25rem;
     list-style: none;
     user-select: none;
-    transition: border-radius 90ms ease;
   }
 
   .decade-card[open] summary {
+    border-color: rgba(255, 255, 255, 0.1);
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
-    border-color: rgba(255, 255, 255, 0.1);
   }
 
   .decade-summary::-webkit-details-marker {
@@ -207,6 +207,7 @@ const { activities = [] } = Astro.props
     position: relative;
     flex-direction: column;
     gap: 0.35rem;
+    margin-top: 1rem;
   }
 
   .node-marker {
