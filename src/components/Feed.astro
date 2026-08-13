@@ -435,6 +435,7 @@ activities.sort((a, b) => b.date.localeCompare(a.date))
           ></line>
 
           <circle
+            class="node-pulse"
             cx="12"
             cy="24"
             r="6"
@@ -460,6 +461,27 @@ activities.sort((a, b) => b.date.localeCompare(a.date))
 </section>
 
 <style>
+  .node-pulse {
+    transform-origin: 12px 24px;
+    animation: bob 2.4s ease-in-out infinite;
+  }
+
+  @keyframes bob {
+    0%,
+    100% {
+      transform: translateY(-3px);
+    }
+    50% {
+      transform: translateY(3px);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .node-pulse {
+      animation: none;
+    }
+  }
+
   .feed-container {
     backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.1);
