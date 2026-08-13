@@ -1,6 +1,6 @@
 // Author: Igor Dimitrijević (@igorskyflyer)
 
-import { IActivityItem } from '@root/src/interfaces/activities/IActivityItem.ts'
+import { IActivityItem } from '@interfaces/activities/IActivityItem.ts'
 
 export const activities: IActivityItem[] = [
   {
