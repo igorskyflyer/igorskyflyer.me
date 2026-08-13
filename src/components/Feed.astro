@@ -1,41 +1,14 @@
 ---
+import { type IActivityItem } from '@interfaces/activities/IActivityItem.ts'
+import { CategoryBadge } from '@my-types/activities/CategoryBadge.ts'
+import '@ui/timeline-badges.css'
+
 interface Props {
   title?: string
+  activities?: IActivityItem[]
 }
 
-const { title = 'Recent Activity' } = Astro.props
-
-type ActivityCategory =
-  'cert' | 'entity' | 'general' | 'git' | 'media' | 'npm' | 'pr' | 'release'
-
-export interface ActivityDetail {
-  text: string
-  link?: string
-  postText?: string
-  links?: Array<{ text: string; url: string }>
-}
-
-export interface ActivityItem {
-  category: ActivityCategory
-  title: string
-  date: string
-  titleLink?: string
-  details?: ActivityDetail[]
-}
-
-const categoryBadges: Record<
-  ActivityCategory,
-  { label: string; class: string }
-> = {
-  cert: { label: 'Certification', class: 'badge-cert' },
-  entity: { label: 'Verified', class: 'badge-entity' },
-  general: { label: 'General', class: 'badge-general' },
-  git: { label: 'GitHub', class: 'badge-git' },
-  media: { label: 'Media', class: 'badge-media' },
-  npm: { label: 'npm', class: 'badge-npm' },
-  pr: { label: 'Contribution', class: 'badge-pr' },
-  release: { label: 'Release', class: 'badge-release' }
-}
+const { title = 'Recent Activity', activities = [] } = Astro.props
 
 const formatDate = (isoDate: string) =>
   new Date(isoDate).toLocaleDateString('en-US', {
@@ -44,200 +17,6 @@ const formatDate = (isoDate: string) =>
     year: 'numeric',
     timeZone: 'UTC'
   })
-
-const activities: ActivityItem[] = [
-  {
-    category: 'cert',
-    date: '2026-08-01',
-    title: 'Earned Cisco Introduction to Cybersecurity Certification',
-    titleLink:
-      'https://www.credly.com/badges/055328d9-6684-47ec-9c87-ee037ab89948',
-    details: [
-      {
-        text: 'This introductory course takes you inside the world of cybersecurity. You will learn cybersecurity basics to protect your personal digital life and gain insights into the biggest security challenges companies, governments, and educational institutions face today.'
-      }
-    ]
-  },
-  {
-    category: 'git',
-    date: '2026-07-04',
-    title: 'Published a new UserScript: Unmute Images on GitHub',
-    titleLink:
-      'https://github.com/igorskyflyer/userscript-github-unmute-images',
-    details: [
-      { text: 'Removes the muted background color from images on GitHub.' }
-    ]
-  },
-  {
-    category: 'npm',
-    date: '2026-07-28',
-    title: 'Published new releases of npm packages',
-    details: [
-      {
-        text: 'Biome config - v3.0.3',
-        link: 'https://github.com/igorskyflyer/npm-biome-config/releases/tag/v3.0.3'
-      },
-      {
-        text: 'TSConfig - v2.0.1',
-        link: 'https://github.com/igorskyflyer/npm-tsconfig/releases/tag/v2.0.1'
-      },
-      {
-        text: 'astro-component - v1.1.1',
-        link: 'https://github.com/igorskyflyer/npm-astro-component/releases/tag/v1.1.1'
-      },
-      {
-        text: 'astro-render-component - v2.0.2',
-        link: 'https://github.com/igorskyflyer/npm-astro-render-component/releases/tag/v2.0.2'
-      }
-    ]
-  },
-  {
-    category: 'entity',
-    date: '2026-07-04',
-    title: 'Became a Verified Entity on Google /g/11kc3sl0nv',
-    titleLink: 'https://www.google.com/search?kgmid=/g/11kc3sl0nv'
-  },
-  {
-    category: 'pr',
-    date: '2026-05-16',
-    title: 'Worked on UniGetUI',
-    details: [
-      {
-        text: 'Fixed a bug with scoped npm packages containing a dot symbol',
-        links: [
-          {
-            text: '#4007',
-            url: 'https://github.com/Devolutions/UniGetUI/issues/4007'
-          }
-        ]
-      },
-      {
-        text: 'Fixed UI ⇔ state mismatch for upgradable packages in Avalonia/legacy modes',
-        links: [
-          {
-            text: '#4793',
-            url: 'https://github.com/Devolutions/UniGetUI/issues/4793'
-          },
-          {
-            text: '#4009',
-            url: 'https://github.com/Devolutions/UniGetUI/issues/4009'
-          }
-        ]
-      },
-      {
-        text: 'Revised and fixed the Serbian translation',
-        links: [
-          {
-            text: '#4590',
-            url: 'https://github.com/Devolutions/UniGetUI/issues/4590'
-          }
-        ]
-      }
-    ]
-  },
-  {
-    category: 'git',
-    date: '2026-03-26',
-    title: 'Created repository: igorskyflyer/dotfiles',
-    details: [
-      {
-        text: 'A curated index of all published @igorskyflyer configuration packages; crafted for a seamless DX',
-        links: [
-          {
-            text: '@igorskyflyer/dotfiles',
-            url: 'https://github.com/igorskyflyer/dotfiles'
-          }
-        ]
-      }
-    ]
-  },
-  {
-    category: 'release',
-    date: '2026-03-19',
-    title: 'Released v3.0.0 of Commoji',
-    details: [
-      {
-        text: 'A psychology-based emoji commit convention that reduces cognitive load and turns Git history into a visually scannable log',
-        links: [
-          {
-            text: 'v3.0.0 release notes',
-            url: 'https://github.com/igorskyflyer/commoji/releases/tag/v3.0.0'
-          }
-        ]
-      }
-    ]
-  },
-  {
-    category: 'npm',
-    date: '2025-08-21',
-    title: 'Executing scope-migration',
-    details: [
-      {
-        text: 'Migrating packages from @igor.dvlpr to @igorskyflyer and adapting all npm packages to security requirements',
-        links: [
-          {
-            text: '@igor.dvlpr',
-            url: 'https://www.npmjs.com/~igor.dvlpr'
-          },
-          {
-            text: '@igorskyflyer',
-            url: 'https://www.npmjs.com/~igorskyflyer'
-          }
-        ]
-      }
-    ]
-  },
-  {
-    category: 'git',
-    date: '2026-07-16',
-    title: 'VS Code shipped native ESM support for extensions',
-    titleLink: 'https://github.com/microsoft/vscode/milestone/435',
-    details: [
-      {
-        text: 'Early advocacy and highly-upvoted proposal from Aug 2021 came to fruition as Microsoft officially migrated to and shipped native ESM support for extensions in VS Code v1.129.0',
-        links: [
-          {
-            text: 'v1.129.0 milestone',
-            url: 'https://github.com/microsoft/vscode/milestone/435'
-          }
-        ]
-      }
-    ]
-  },
-  {
-    category: 'pr',
-    date: '2026-07-14',
-    title: 'Contributed Spanish translation to npmx.dev',
-    titleLink: 'https://github.com/npmx-dev/npmx.dev/pull/3040',
-    details: [
-      {
-        text: 'Completed and fixed the Spanish translation of the platform, released in v0.17.1',
-        links: [
-          {
-            text: 'PR #3040',
-            url: 'https://github.com/npmx-dev/npmx.dev/pull/3040'
-          },
-          {
-            text: 'v0.17.1 release',
-            url: 'https://github.com/npmx-dev/npmx.dev/releases/tag/v0.17.1'
-          }
-        ]
-      }
-    ]
-  },
-  {
-    category: 'media',
-    date: '2026-07-14',
-    title: 'Published LinkedIn article on pnpm v11.12.0 self-update issue',
-    titleLink:
-      'https://www.linkedin.com/pulse/pnpm-11120-self-update-crash-cannot-use-operator-fix-dimitrijevi%25C4%2587-wpchf/',
-    details: [
-      {
-        text: 'Documented and provided a fix for a pnpm v11.12.0 self-update crash'
-      }
-    ]
-  }
-]
 
 activities.sort((a, b) => b.date.localeCompare(a.date))
 ---
@@ -269,8 +48,8 @@ activities.sort((a, b) => b.date.localeCompare(a.date))
             <summary class="item-summary">
               <div class="item-row">
                 <span class="item-meta">
-                  <span class={`badge ${categoryBadges[item.category].class}`}>
-                    {categoryBadges[item.category].label}
+                  <span class={`badge ${CategoryBadge[item.category].class}`}>
+                    {CategoryBadge[item.category].label}
                   </span>
                   <time class="item-date">{formatDate(item.date)}</time>
                 </span>
@@ -375,8 +154,8 @@ activities.sort((a, b) => b.date.localeCompare(a.date))
           <article class="feed-item feed-item--flat">
             <div class="item-row">
               <span class="item-meta">
-                <span class={`badge ${categoryBadges[item.category].class}`}>
-                  {categoryBadges[item.category].label}
+                <span class={`badge ${CategoryBadge[item.category].class}`}>
+                  {CategoryBadge[item.category].label}
                 </span>
                 <time class="item-date">{formatDate(item.date)}</time>
               </span>
@@ -486,7 +265,7 @@ activities.sort((a, b) => b.date.localeCompare(a.date))
     backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: var(--radius, 8px);
-    background: rgba(13, 17, 23, 0.7);
+    background: #3abfc714;
     width: 100%;
     overflow: hidden;
   }
@@ -495,11 +274,7 @@ activities.sort((a, b) => b.date.localeCompare(a.date))
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(
-      to bottom,
-      rgba(58, 191, 199, 0.08),
-      var(--bg-color)
-    );
+    background: rgba(13, 17, 23, 0.5);
     padding: 0.85rem 1.25rem;
   }
 
@@ -546,6 +321,7 @@ activities.sort((a, b) => b.date.localeCompare(a.date))
     flex-direction: column;
     gap: 0.35rem;
     transition: background-color 150ms ease;
+    transition: background-color 80ms ease-out;
     border-bottom: 1px solid rgba(255, 255, 255, 0.04);
     padding: 0.85rem 1.25rem;
   }
@@ -555,7 +331,7 @@ activities.sort((a, b) => b.date.localeCompare(a.date))
   }
 
   .feed-item:hover {
-    background-color: rgba(255, 255, 255, 0.02);
+    background-color: rgba(0, 0, 0, 0.2);
   }
 
   .item-row {
@@ -653,64 +429,6 @@ activities.sort((a, b) => b.date.localeCompare(a.date))
     gap: 0.5rem;
   }
 
-  .badge {
-    border-radius: 4px;
-    padding: 0.15rem 0.5rem;
-    font-weight: 600;
-    font-size: clamp(0.7rem, 1.8vw, 0.8rem);
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-  }
-
-  .badge-git {
-    border: 1px solid rgba(56, 189, 248, 0.3);
-    background: rgba(56, 189, 248, 0.15);
-    color: #38bdf8;
-  }
-
-  .badge-npm {
-    border: 1px solid rgba(248, 113, 113, 0.3);
-    background: rgba(248, 113, 113, 0.15);
-    color: #f87171;
-  }
-
-  .badge-entity {
-    border: 1px solid rgba(250, 204, 21, 0.3);
-    background: rgba(250, 204, 21, 0.15);
-    color: #facc15;
-  }
-
-  .badge-pr {
-    border: 1px solid rgba(192, 132, 252, 0.3);
-    background: rgba(192, 132, 252, 0.15);
-    color: #c084fc;
-  }
-
-  .badge-release {
-    border: 1px solid rgba(74, 222, 128, 0.3);
-    background: rgba(74, 222, 128, 0.15);
-    color: #4ade80;
-  }
-
-  .badge-media {
-    border: 1px solid rgba(244, 114, 182, 0.3);
-    background: rgba(244, 114, 182, 0.15);
-    color: #f472b6;
-  }
-
-  .badge-cert {
-    border: 1px solid rgba(45, 212, 191, 0.3);
-    background: rgba(45, 212, 191, 0.15);
-    color: #2dd4bf;
-  }
-
-  .badge-general {
-    border: 1px solid rgba(148, 163, 184, 0.3);
-    background: rgba(148, 163, 184, 0.15);
-    color: #94a3b8;
-  }
-
   .item-date {
     color: #64748b;
     font-size: clamp(0.7rem, 1.5vw, 0.75rem);
@@ -771,11 +489,6 @@ activities.sort((a, b) => b.date.localeCompare(a.date))
   #feed-timeline {
     border-bottom-right-radius: var(--radius);
     border-bottom-left-radius: var(--radius);
-    background: linear-gradient(
-      to bottom,
-      var(--bg-color),
-      rgba(58, 191, 199, 0.08)
-    );
     padding: 0.4rem 0;
     color: #3abfc7;
     text-align: center;
