@@ -7,6 +7,7 @@
       "@assets/*": ["./src/assets/*"],
       "@functions/*": ["./src/functions/*"],
       "@interfaces/*": ["./src/interfaces/*"],
+      "@my-types/*": ["./src/types/*"],
       "@ui/*": ["./src/ui/*"],
       "@data/*": ["./src/data/*"],
       "@remote/*": ["./_remote/*"]
