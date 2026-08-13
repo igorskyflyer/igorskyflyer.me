@@ -5,7 +5,8 @@ import Me from '@components/Me.astro'
 import Page from '@components/Page.astro'
 import ScrollDown from '@components/ScrollDown.astro'
 import Stats from '@components/Stats.astro'
-import { SiteName } from '@data/Site.ts'
+import { activities } from '@data/feed-activities.ts'
+import { SiteName } from '@data/site.ts'
 ---
 
 <Page
@@ -24,7 +25,7 @@ import { SiteName } from '@data/Site.ts'
       />
     </div>
     <Me />
-    <Feed />
+    <Feed activities={activities} />
   </Fragment>
 </Page>
 
