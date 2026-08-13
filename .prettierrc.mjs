@@ -1,3 +1,5 @@
+// Author: Igor Dimitrijević (@igorskyflyer)
+
 /** @type {import("prettier").Config} */
 export default {
   plugins: ['prettier-plugin-astro'],
