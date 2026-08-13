@@ -1,3 +1,5 @@
+// Author: Igor Dimitrijević (@igorskyflyer)
+
 import { CollectionEntry } from 'astro:content'
 
 export interface PageProps {
