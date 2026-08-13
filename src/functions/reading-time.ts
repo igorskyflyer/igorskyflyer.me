@@ -1,3 +1,5 @@
+// Author: Igor Dimitrijević (@igorskyflyer)
+
 import { toString } from 'mdast-util-to-string'
 import getReadingTime, { ReadTimeResults } from 'reading-time'
 
