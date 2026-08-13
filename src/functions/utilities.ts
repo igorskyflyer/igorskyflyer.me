@@ -1,3 +1,5 @@
+// Author: Igor Dimitrijević (@igorskyflyer)
+
 export function getYear() {
   return new Date().getFullYear()
 }
