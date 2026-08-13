@@ -1,5 +1,7 @@
+// Author: Igor Dimitrijević (@igorskyflyer)
+
 import rss from '@astrojs/rss'
-import { SiteName } from '@data/Site.ts'
+import { SiteName } from '@data/site.ts'
 import type { APIContext } from 'astro'
 import { getCollection } from 'astro:content'
 
@@ -34,9 +36,11 @@ export async function GET(context: APIContext) {
       pubDate: new Date(post.data.publishDate),
       // description: post.data.description,
       customData: [
-       '<dc:creator>Igor Dimitrijević (igorskyflyer)</dc:creator>',
-       '<atom:author><atom:name>Igor Dimitrijević (igorskyflyer)</atom:name><atom:uri>https://igorskyflyer.me/igorskyflyer</atom:uri></atom:author>',
-       post.data.featuredImage ? `<enclosure url="${new URL(post.data.featuredImage, siteUrl)}" type="image/png" length="0" />` : ''
+        '<dc:creator>Igor Dimitrijević (igorskyflyer)</dc:creator>',
+        '<atom:author><atom:name>Igor Dimitrijević (igorskyflyer)</atom:name><atom:uri>https://igorskyflyer.me/igorskyflyer</atom:uri></atom:author>',
+        post.data.featuredImage
+          ? `<enclosure url="${new URL(post.data.featuredImage, siteUrl)}" type="image/png" length="0" />`
+          : ''
       ].join('')
     }))
   })
