@@ -29,7 +29,7 @@ const { activities = [] } = Astro.props
           </summary>
 
           <div class="decade-body">
-            {decadeGroup.years.map((yearGroup) => (
+            {decadeGroup.years.map((yearGroup, yearIndex) => (
               <div class="year-section">
                 <div class="year-header">
                   <code>{yearGroup.year}</code>
@@ -55,6 +55,12 @@ const { activities = [] } = Astro.props
                     </article>
                   ))}
                 </div>
+                {yearIndex < decadeGroup.years.length - 1 && (
+                  <div
+                    class="separator"
+                    aria-hidden="true"
+                  />
+                )}
               </div>
             ))}
           </div>
@@ -274,6 +280,18 @@ const { activities = [] } = Astro.props
   .timeline-entry :global(a:visited) {
     color: var(--link);
     font-weight: bold;
+  }
+
+  .separator {
+    height: 1px;
+    width: 70%;
+    margin: 2rem auto;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(55, 100, 251, 0.8),
+      transparent
+    );
   }
 
   @media (max-width: 640px) {
