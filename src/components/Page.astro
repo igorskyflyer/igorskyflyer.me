@@ -12,10 +12,16 @@ const {
   keywords = '',
   isHome = false
 } = Astro.props as PageProps
+
+if (isHome) {
+  await import('@ui/home.css')
+}
 ---
 
 <!doctype html>
-<html lang="en">
+<html
+  lang="en"
+  dir="ltr">
   <PageHead
     title={title}
     description={description}
@@ -46,16 +52,6 @@ const {
   main a:visited {
     color: var(--link);
     text-decoration: none;
-  }
-
-  main.hero {
-    margin: 0 auto;
-  }
-
-  @media screen and (max-width: 768px) {
-    main.hero {
-      margin-top: 1rem;
-    }
   }
 
   @media screen and (min-width: 768px) {
