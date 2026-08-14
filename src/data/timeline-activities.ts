@@ -399,7 +399,7 @@ export const activities: IDecadeBlock[] = [
           {
             category: 'contribution',
             date: 'Aug 8',
-            html: 'Igor opened a highly-upvoted <a href="https://github.com/microsoft/vscode/issues/130367" target="_blank" rel="noopener noreferrer">issue</a> (320+ 👍🏼, 300+ comments and 30+ ❤️ reactions) at <code>microsoft/vscode</code> advocating for Visual Studio Code extension development to adopt ESM to improve DX, speed up build times, and reduce resource consumption.'
+            html: 'Igor opened a highly-upvoted <a href="https://github.com/microsoft/vscode/issues/130367" target="_blank" rel="noopener noreferrer">issue</a> (320+ 👍🏼, 300+ comments, and 30+ ❤️ reactions) at <code>microsoft/vscode</code> advocating for Visual Studio Code extension development to adopt ESM to improve DX, speed up build times, and reduce resource consumption.'
           },
           {
             category: 'contribution',
