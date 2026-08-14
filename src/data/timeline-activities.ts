@@ -119,7 +119,7 @@ export const activities: IDecadeBlock[] = [
           {
             category: 'milestone',
             date: 'ongoing',
-            html: 'Igor consistently ranks in the <strong>Top 3</strong> most active GitHub users in Serbia by total, public, and commit contributions, tracked across <a href="https://github.com/gayanvoice/top-github-users" target="_blank">gayanvoice/top-github-users</a>, <a href="https://github.com/isyuricunha/top-github-users" target="_blank">isyuricunha/top-github-users</a>, and <a href="https://github.com/fbiego/commits-board" target="_blank">fbiego/commits-board</a>.'
+            html: 'Igor consistently ranks in the <strong>Top 3</strong> most active GitHub users in Serbia by total, public, and commit contributions, tracked across <a href="https://github.com/gayanvoice/top-github-users/blob/main/markdown/public_contributions/serbia.md" target="_blank">gayanvoice/top-github-users</a>, <a href="https://github.com/isyuricunha/top-github-users/blob/main/markdown/public_contributions/serbia.md" target="_blank">isyuricunha/top-github-users</a>, and <a href="https://fbiego.com/commits-board/serbia/" target="_blank">fbiego/commits-board</a>.'
           }
         ]
       },
@@ -194,7 +194,7 @@ export const activities: IDecadeBlock[] = [
           {
             category: 'contribution',
             date: 'Feb 10',
-            html: 'Igor fixed a confidential security vulnerability in <a href="https://brave.com" target="_blank">Brave Browser</a> via <a href="https://hackerone.com" target="_blank">HackerOne</a>.'
+            html: 'Igor fixed a confidential security vulnerability in <a href="https://brave.com" target="_blank">Brave Browser</a> via <a href="https://hackerone.com/igorskyflyer?type=user" target="_blank">HackerOne</a>.'
           }
         ]
       },
