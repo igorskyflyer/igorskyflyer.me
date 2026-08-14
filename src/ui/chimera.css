@@ -82,8 +82,8 @@ body {
   padding: 0;
   width: 100%;
   scroll-behavior: smooth;
-  scroll-padding-top: 72px;
   scroll-padding-bottom: 5rem;
+  scroll-padding-top: 72px;
   color: var(--main-text);
   font-family:
     'Poppins',
@@ -112,6 +112,7 @@ body {
   background-size:
     100% 100%,
     24px 24px;
+  background-attachment: fixed, fixed;
   background-color: var(--bg-color);
   color: #e2e8f0;
 }
@@ -193,8 +194,8 @@ img {
 }
 
 .no-interactivity {
-  user-select: none;
   pointer-events: none;
+  user-select: none;
 }
 
 @media screen and (min-width: 768px) {
