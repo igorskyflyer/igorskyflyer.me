@@ -787,13 +787,18 @@ export const activities: IDecadeBlock[] = [
           },
           {
             category: 'milestone',
-            date: 'Sep',
+            date: 'Oct',
             html: 'After 2 years of learning how to code, seeing programming and the logic it conveys as a universal language, Igor started viewing abstract mathematical concepts as deterministic and atomic code pathways.'
           },
           {
             category: 'education',
+            date: 'Sep',
+            html: 'Igor started the general course curriculum at Gymnasium; the equivalent of a British grammar school, offering a highly academic, selective four-year curriculum designed exclusively to prepare students for university rather than a trade.'
+          },
+          {
+            category: 'education',
             date: 'Jun',
-            html: 'Igor completed primary education in Serbia.'
+            html: 'Igor completed his primary education in Serbia.'
           }
         ]
       },
@@ -814,6 +819,16 @@ export const activities: IDecadeBlock[] = [
             category: 'milestone',
             date: 'Aug',
             html: 'Igor began learning programming, devoting <code>~8h/day</code> to self-study under strict hardware and connectivity constraints.'
+          }
+        ]
+      },
+      {
+        year: '2000',
+        entries: [
+          {
+            category: 'education',
+            date: 'Sep',
+            html: 'Igor started his primary education.'
           }
         ]
       }
