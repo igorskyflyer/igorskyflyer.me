@@ -123,11 +123,9 @@ const { activities = [] } = Astro.props
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transform: translateZ(0);
     transition:
       border-radius 90ms ease,
       background-color 90ms ease;
-    will-change: border-radius;
     cursor: pointer;
     border-radius: var(--radius);
     background: rgba(255, 255, 255, 0.03);
