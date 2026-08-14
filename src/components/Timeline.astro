@@ -268,27 +268,27 @@ const { activities = [] } = Astro.props
   }
 
   .timeline-entry :global(code) {
+    font-weight: bold;
+  }
+
+  .timeline-entry :global(a),
+  .timeline-entry :global(a:visited) {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(14, 168, 255, 0.3);
     border-radius: 6px;
     background: rgba(14, 168, 255, 0.12);
     padding: 0.2rem 0.5rem;
-    color: var(--link, #0ea8ff);
+    color: var(--link);
+    font-weight: bold;
     font-size: 1rem;
     white-space: nowrap;
   }
 
-  .timeline-entry :global(a),
-  .timeline-entry :global(a:visited) {
-    color: var(--link);
-    font-weight: bold;
-  }
-
   .separator {
-    height: 1px;
-    width: 70%;
     margin: 2rem auto;
     background: linear-gradient(to right, transparent, #0e87ffaa, transparent);
+    width: 90%;
+    height: 1px;
   }
 
   @media (max-width: 640px) {
