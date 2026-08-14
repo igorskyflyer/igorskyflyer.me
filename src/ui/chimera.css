@@ -189,10 +189,6 @@ img {
   user-select: none;
 }
 
-.no-click {
-  pointer-events: none;
-}
-
 .no-interactivity {
   pointer-events: none;
   user-select: none;
