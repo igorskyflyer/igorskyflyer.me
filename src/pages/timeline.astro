@@ -92,22 +92,23 @@ const schemaData = {
   }
 
   :global(.description) {
-    padding: 1.25rem;
-    background: rgba(255, 255, 255, 0.015);
+    margin-top: 1rem;
     border: 1px solid var(--border-color);
     border-left: 3px solid var(--accent, #3abfc7);
     border-radius: 8px;
-    text-align: left;
+    background: rgba(255, 255, 255, 0.015);
+    padding: 1.25rem;
     font-size: 0.95rem;
     line-height: 1.6;
+    text-align: left;
   }
 
   @media (max-width: 768px) {
     :global(.description) {
-      padding: 2.25rem;
       border-left: 1px solid var(--border-color);
-      text-align: center;
+      padding: 2.25rem;
       font-size: 1.05rem;
+      text-align: center;
     }
   }
 </style>
