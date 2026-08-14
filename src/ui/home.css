@@ -1,0 +1,9 @@
+main.hero {
+  margin: 1rem auto 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  main.hero {
+    margin-top: 2rem;
+  }
+}
