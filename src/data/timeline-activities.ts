@@ -29,7 +29,7 @@ export const activities: IDecadeBlock[] = [
           {
             category: 'contribution',
             date: 'Jul 28',
-            html: 'Igor opened an <a href="https://gitlab.com/versionlens/vscode-versionlens/-/work_items/421" target="_blank" rel="noopener noreferrer">issue</a> at <code>versionlens/vscode-versionlens</code> noting that the extension does not support the <a href="https://docs.npmjs.com/cli/v11/configuring-npm/package-json#devengines" target="_blank" rel="noopener noreferrer"><code>devEngines</code></a> field, only the legacy <code>packageManager</code> field.'
+            html: 'Igor opened an <a href="https://gitlab.com/versionlens/vscode-versionlens/-/work_items/421" target="_blank" rel="noopener noreferrer">issue</a> at <code>versionlens/vscode-versionlens</code> noting that the extension does not support the <a href="https://docs.npmjs.com/cli/v11/configuring-npm/package-json#devengines" target="_blank" rel="noopener noreferrer">devEngines</a> field, only the legacy <code>packageManager</code> field.'
           },
           {
             category: 'contribution',
@@ -274,7 +274,7 @@ export const activities: IDecadeBlock[] = [
           {
             category: 'contribution',
             date: 'Nov 8',
-            html: 'Igor opened an <a href="https://github.com/nodejs/node/issues/50619" target="_blank" rel="noopener noreferrer">issue</a> at <code>nodejs/node</code> noting that the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString" target="_blank" rel="noopener noreferrer"><code>Date.toLocaleString()</code></a> function produces an incorrect 24h output (<code>24:50</code> instead of <code>00:50</code>).'
+            html: 'Igor opened an <a href="https://github.com/nodejs/node/issues/50619" target="_blank" rel="noopener noreferrer">issue</a> at <code>nodejs/node</code> noting that the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString" target="_blank" rel="noopener noreferrer">Date.toLocaleString()</a> function produces an incorrect 24h output (<code>24:50</code> instead of <code>00:50</code>).'
           },
           {
             category: 'contribution',
