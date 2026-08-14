@@ -31,7 +31,9 @@ const { activities = [] } = Astro.props
           <div class="decade-body">
             {decadeGroup.years.map((yearGroup, yearIndex) => (
               <div class="year-section">
-                <div class="year-header">
+                <div
+                  class="year-header"
+                  id={yearGroup.year.toString()}>
                   <code>{yearGroup.year}</code>
                 </div>
 
