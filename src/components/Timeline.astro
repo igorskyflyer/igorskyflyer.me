@@ -123,7 +123,11 @@ const { activities = [] } = Astro.props
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: border-radius 90ms ease;
+    transform: translateZ(0);
+    transition:
+      border-radius 90ms ease,
+      background-color 90ms ease;
+    will-change: border-radius;
     cursor: pointer;
     border-radius: var(--radius);
     background: rgba(255, 255, 255, 0.03);
@@ -132,7 +136,7 @@ const { activities = [] } = Astro.props
     user-select: none;
   }
 
-  .decade-card[open] summary {
+  .decade-card[open] .decade-summary {
     border-color: rgba(255, 255, 255, 0.1);
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
