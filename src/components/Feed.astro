@@ -151,7 +151,7 @@ activities.sort((a, b) => b.date.localeCompare(a.date))
             </div>
           </details>
         ) : (
-          <article class="feed-item feed-item--flat">
+          <article class="feed-item">
             <div class="item-row">
               <span class="item-meta">
                 <span class={`badge ${CategoryBadge[item.category].class}`}>
@@ -477,6 +477,10 @@ activities.sort((a, b) => b.date.localeCompare(a.date))
   }
 
   #feed-timeline {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     border-bottom-right-radius: var(--radius);
     border-bottom-left-radius: var(--radius);
     padding: 0.4rem 0;
