@@ -1,12 +1,18 @@
 ---
 import Page from '@components/Page.astro'
 import { SiteName } from '@data/site.ts'
+
+const title: string = `Contact | ${SiteName}`
+const description: string =
+  'Get in touch with Igor Dimitrijević for software engineering inquiries, collaborations, or professional contact.'
+const keywords =
+  'contact, email, message, software engineer, full-stack, developer, igorskyflyer, igor dimitrijević'
 ---
 
 <Page
-  title={`Contact | ${SiteName}`}
-  description="Contact"
-  keywords="contact,email,message,blog,igorskyflyer,igor dimitrijević,posts,it,javascript,typescript,code,programming,developer"
+  title={title}
+  description={description}
+  keywords={keywords}
   featuredImage="">
   <Fragment slot="body">
     Contact
