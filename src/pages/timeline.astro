@@ -40,12 +40,12 @@ const schemaData = {
   />
   <section slot="body">
     <header class="timeline-header">
-      <h4>Timeline</h4>
-      <h5 class="description no-select">
+      <h1>Timeline</h1>
+      <h2 class="description no-select">
         This document serves as an archive of events over the years regarding
         Igor Dimitrijević's (igorskyflyer) technical journey, education,
         open-source commitment, and contributions.
-      </h5>
+      </h2>
     </header>
 
     <Timeline activities={activities} />
@@ -72,11 +72,11 @@ const schemaData = {
     margin-bottom: 2rem;
   }
 
-  header h4 {
+  header h1 {
     margin: 0 auto 0.5rem auto;
   }
 
-  header h5.description {
+  header h2.description {
     margin-top: 2rem;
     border: 1px solid var(--border-color);
     border-left: 3px solid var(--accent, #3abfc7);
@@ -104,7 +104,7 @@ const schemaData = {
   }
 
   @media (max-width: 768px) {
-    header h5.description {
+    header h2.description {
       border-left: 1px solid var(--border-color);
       padding: 2.25rem;
       text-align: center;
