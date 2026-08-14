@@ -123,17 +123,13 @@ const { activities = [] } = Astro.props
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition:
-      border-radius 90ms ease,
-      background-color 90ms ease;
+    transition: background-color 90ms ease;
     cursor: pointer;
     border-radius: var(--radius);
     background: rgba(255, 255, 255, 0.03);
     padding: 0.85rem 1.25rem;
     list-style: none;
     user-select: none;
-    transform: translateZ(0);
-    overflow: hidden;
   }
 
   .decade-card[open] .decade-summary {
