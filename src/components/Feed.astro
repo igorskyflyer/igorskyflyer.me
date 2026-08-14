@@ -180,48 +180,48 @@ activities.sort((a, b) => b.date.localeCompare(a.date))
     <div id="feed-timeline">
       <div>
         <svg
-  width="24"
-  height="48"
-  viewBox="0 0 24 48"
-  fill="none"
-  xmlns="http://www.w3.org/2000/svg"
-  aria-hidden="true">
-  <defs>
-    <filter
-      id="node-glow"
-      x="-50%"
-      y="-50%"
-      width="200%"
-      height="200%">
-      <feDropShadow
-        dx="0"
-        dy="0"
-        stdDeviation="3"
-        flood-color="#3abfc7"
-        flood-opacity="0.8"
-      ></feDropShadow>
-    </filter>
-  </defs>
+          width="24"
+          height="48"
+          viewBox="0 0 24 48"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <defs>
+            <filter
+              id="node-glow"
+              x="-50%"
+              y="-50%"
+              width="200%"
+              height="200%">
+              <feDropShadow
+                dx="0"
+                dy="0"
+                stdDeviation="3"
+                flood-color="#3abfc7"
+                flood-opacity="0.8"
+              ></feDropShadow>
+            </filter>
+          </defs>
 
-  <line
-    x1="12"
-    y1="0"
-    x2="12"
-    y2="48"
-    stroke="#3abfc7"
-    stroke-width="2.5"
-    stroke-opacity="0.6"
-  ></line>
+          <line
+            x1="12"
+            y1="0"
+            x2="12"
+            y2="48"
+            stroke="#3abfc7"
+            stroke-width="2.5"
+            stroke-opacity="0.6"
+          ></line>
 
-  <circle
-    class="node-pulse"
-    cx="12"
-    cy="24"
-    r="6"
-    fill="#3abfc7"
-    filter="url(#node-glow)"
-  ></circle>
-</svg>
+          <circle
+            class="node-pulse"
+            cx="12"
+            cy="24"
+            r="6"
+            fill="#3abfc7"
+            filter="url(#node-glow)"
+          ></circle>
+        </svg>
         <a href="/timeline">View full timeline &#x2794;</a>
       </div>
       <p>150+ more events</p>
@@ -497,8 +497,9 @@ activities.sort((a, b) => b.date.localeCompare(a.date))
     transition:
       background-color 120ms ease-in,
       border-color 120ms ease-in;
+    border-radius: var(--radius);
     background-color: rgba(19, 46, 59, 0);
-    padding: 0.3rem;
+    padding: 0.3rem 0.8rem;
     color: var(--link);
     font-weight: bolder;
     font-size: clamp(1rem, 0.8rem + 0.75vw, 1.3rem);
