@@ -5,8 +5,11 @@ import { PostsPerPage, SiteName } from '@data/site.ts'
 import { Page as BlogPage, GetStaticPaths } from 'astro'
 import { getCollection } from 'astro:content'
 
-const title: string = `Blog | ${SiteName}`
-const description: string = 'My own blog'
+const title = `Blog | ${SiteName}`
+const description =
+  'Read technical articles, software engineering insights, tutorials, and development updates written by Igor Dimitrijević (igorskyflyer).'
+const keywords =
+  'software engineering, web development, full-stack, blog, programming, JavaScript, TypeScript, Astro, technical articles, igor dimitrijević, igorskyflyer'
 
 export interface Props {
   page: BlogPage
@@ -33,7 +36,7 @@ export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
 <Page
   title={title}
   description={description}
-  keywords="blog,igorskyflyer,igor dimitrijević,posts,it,javascript,typescript,code,programming,developer"
+  keywords={keywords}
   featuredImage="">
   <section
     id="posts"
