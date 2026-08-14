@@ -269,13 +269,17 @@ const { activities = [] } = Astro.props
 
   .timeline-entry :global(code) {
     border-radius: var(--radius);
-    background: #00aaff33;
+    background: #00aaff22;
     padding: 0.4rem;
     font-weight: bold;
   }
 
   .timeline-entry :global(a),
   .timeline-entry :global(a:visited) {
+    transition:
+      background 100ms ease-in-out,
+      border-color 100ms ease-in-out,
+      box-shadow 100ms ease-in-out;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(14, 168, 255, 0.3);
     border-radius: 6px;
@@ -285,6 +289,12 @@ const { activities = [] } = Astro.props
     font-weight: bold;
     font-size: 1rem;
     white-space: nowrap;
+  }
+
+  .timeline-entry :global(a):hover {
+    box-shadow: 0 6px 12px rgba(14, 168, 255, 0.2);
+    border-color: rgba(14, 168, 255, 0.6);
+    background: rgba(14, 168, 255, 0.25);
   }
 
   .separator {
