@@ -251,19 +251,19 @@ const { activities = [] } = Astro.props
   }
 
   .timeline-entry {
-    font-size: clamp(1rem, 0.75rem + 0.25vw, 1.8rem);
+    font-size: clamp(1rem, 0.75rem + 0.25vw, 2rem);
     line-height: 2;
     overflow-wrap: break-word;
   }
 
   .timeline-entry :global(code) {
+    box-decoration-break: clone;
     border-radius: var(--radius);
     background: #00aaff33;
     padding: 0.15rem 0.3rem;
     font-weight: bold;
-    font-size: 0.75rem;
+    font-size: clamp(0.75em, 0.75em + 0.25vw, 1em);
     white-space: nowrap;
-    box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
   }
 
@@ -280,7 +280,7 @@ const { activities = [] } = Astro.props
     padding: 0.15rem 0.3rem;
     color: var(--link);
     font-weight: bold;
-    font-size: 0.9rem;
+    font-size: clamp(0.85em, 0.85em + 0.25vw, 1.2em);
     white-space: nowrap;
   }
 
