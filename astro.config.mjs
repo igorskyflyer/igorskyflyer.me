@@ -8,7 +8,7 @@ import { unified } from '@astrojs/markdown-remark'
 
 export default defineConfig({
   site: 'https://igorskyflyer.me',
-  trailingSlash: 'never',
+  trailingSlash: 'always',
   compressHTML: true,
   build: { inlineStylesheets: 'always' },
   vite: {
