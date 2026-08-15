@@ -1501,8 +1501,8 @@ const pageKeywords =
 
 <style>
   div#intro {
-    max-width: 90%;
     margin: auto;
+    max-width: 90%;
   }
 
   .bio-intro {
@@ -1639,10 +1639,11 @@ const pageKeywords =
   }
 
   .intro-quote {
+    opacity: 0.8;
     margin: 0 0 2rem 0;
     border-left: none;
     padding: 0;
-    font-style: normal;
+    font-style: italic;
     font-weight: 600;
     font-size: 1.1rem;
   }
@@ -1930,24 +1931,24 @@ const pageKeywords =
     display: flex;
     flex-direction: column;
     gap: 0.35rem;
-    background: var(--card-bg, rgba(128, 128, 128, 0.04));
-    border: 1px solid var(--card-border, rgba(128, 128, 128, 0.1));
-    border-radius: 10px;
-    padding: 1rem 1.1rem;
-    text-decoration: none;
-    color: inherit;
     transition:
       transform 0.25s ease,
       box-shadow 0.25s ease,
       background 0.25s ease,
       border-color 0.25s ease;
+    border: 1px solid var(--card-border, rgba(128, 128, 128, 0.1));
+    border-radius: 10px;
+    background: var(--card-bg, rgba(128, 128, 128, 0.04));
+    padding: 1rem 1.1rem;
+    color: inherit;
+    text-decoration: none;
   }
 
   a.activity-tile:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-    background: var(--card-bg-hover, rgba(128, 128, 128, 0.08));
     border-color: var(--color-primary, #4a90e2);
+    background: var(--card-bg-hover, rgba(128, 128, 128, 0.08));
   }
 
   .activity-tile.no-link {
@@ -1956,8 +1957,8 @@ const pageKeywords =
 
   .activity-tile-head {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     min-height: 1.3rem;
   }
 
@@ -1967,23 +1968,23 @@ const pageKeywords =
   }
 
   .activity-count {
-    font-family: monospace;
-    font-size: 0.7rem;
-    font-weight: 700;
-    color: var(--color-primary, #4a90e2);
-    background: rgba(74, 144, 226, 0.1);
     border-radius: 999px;
+    background: rgba(74, 144, 226, 0.1);
     padding: 0.15rem 0.5rem;
+    color: var(--color-primary, #4a90e2);
+    font-weight: 700;
+    font-size: 0.7rem;
+    font-family: monospace;
   }
 
   .activity-name {
-    font-size: 0.95rem;
     font-weight: 600;
+    font-size: 0.95rem;
   }
 
   .activity-tagline {
-    font-size: 0.8rem;
     opacity: 0.7;
+    font-size: 0.8rem;
     line-height: 1.5;
   }
 
@@ -1995,11 +1996,11 @@ const pageKeywords =
   }
 
   .activity-tile.multi-link .activity-links a {
-    font-size: 0.78rem;
-    font-weight: 600;
-    color: var(--color-primary, #4a90e2);
-    text-decoration: none;
     border-bottom: 1px solid rgba(74, 144, 226, 0.3);
+    color: var(--color-primary, #4a90e2);
+    font-weight: 600;
+    font-size: 0.78rem;
+    text-decoration: none;
   }
 
   .activity-tile.multi-link .activity-links a:hover {
@@ -2035,31 +2036,31 @@ const pageKeywords =
     flex-direction: column;
     align-items: center;
     gap: 0.65rem;
-    text-decoration: none;
     color: inherit;
     text-align: center;
+    text-decoration: none;
   }
 
   .connect-icon {
     display: flex;
-    align-items: center;
     justify-content: center;
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    background: var(--card-bg, rgba(128, 128, 128, 0.04));
-    border: 1px solid var(--card-border, rgba(128, 128, 128, 0.1));
+    align-items: center;
     transition:
       transform 0.25s ease,
       box-shadow 0.25s ease,
       border-color 0.25s ease,
       background 0.25s ease;
+    border: 1px solid var(--card-border, rgba(128, 128, 128, 0.1));
+    border-radius: 50%;
+    background: var(--card-bg, rgba(128, 128, 128, 0.04));
+    width: 64px;
+    height: 64px;
   }
 
   .connect-icon img {
+    border-radius: 4px;
     width: 32px;
     height: 32px;
-    border-radius: 4px;
   }
 
   .connect-node:hover .connect-icon {
@@ -2070,12 +2071,12 @@ const pageKeywords =
   }
 
   .connect-label {
-    font-size: 0.78rem;
-    font-weight: 600;
     opacity: 0.75;
     transition:
       opacity 0.25s ease,
       color 0.25s ease;
+    font-weight: 600;
+    font-size: 0.78rem;
   }
 
   .connect-node:hover .connect-label {
