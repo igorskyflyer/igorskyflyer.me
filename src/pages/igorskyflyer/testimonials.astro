@@ -1,0 +1,19 @@
+---
+import Page from '@components/Page.astro'
+import { SiteName } from '@data/site.ts'
+
+const pageTitle = `Client Testimonials & Success Stories | ${SiteName}`
+const pageDescription =
+  'Read verified client testimonials, success stories, and reviews from global partners and companies who collaborated with Igor Dimitrijević on software engineering and open-source solutions.'
+const pageKeywords =
+  'Igor Dimitrijević reviews, client testimonials, software engineer feedback, freelance full-stack developer recommendations, success stories'
+---
+
+<Page
+  title={pageTitle}
+  description={pageDescription}
+  keywords={pageKeywords}>
+  <Fragment slot="body">
+    <h1>Client Testimonials</h1>
+  </Fragment>
+</Page>
