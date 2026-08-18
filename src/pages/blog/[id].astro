@@ -1,0 +1,29 @@
+---
+import PostPage from '@components/PostPage.astro'
+import { getCollection, render } from 'astro:content'
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog')
+  return posts.map((post) => ({
+    params: { id: post.id },
+    props: { post }
+  }))
+}
+
+const { post } = Astro.props
+const { Content } = await render(post)
+
+const postProps = {
+  title: post.data.title,
+  // description: post.data.description,
+  featuredImage: post.data.featuredImage,
+  // keywords: post.data.keywords,
+  publishDate: post.data.publishDate,
+  // minutesRead: post.data.minutesRead,
+  tags: post.data.tags
+}
+---
+
+<PostPage post={postProps}>
+  <Content />
+</PostPage>
