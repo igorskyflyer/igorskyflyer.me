@@ -10,12 +10,15 @@ const blog = defineCollection({
     base: './src/data/blog'
   }),
   schema: z.object({
-    title: z.string(),
+    title: z.string().max(50).default(''),
     featuredImage: z.string().optional(),
-    publishDate: z.coerce.date(),
+    publishDate: z.coerce.date().default(new Date()),
     tags: z.array(z.string()).default([]),
     draft: z.boolean().default(false),
-    excerpt: z.string().optional()
+    excerpt: z.string().optional().default(''),
+    description: z.string().max(120).default(''),
+    keywords: z.string().max(120).default(''),
+    minutesRead: z.string().optional().default('')
   })
 })
 
