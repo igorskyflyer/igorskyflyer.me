@@ -12,10 +12,6 @@ const {
   keywords = '',
   isHome = false
 } = Astro.props as PageProps
-
-if (isHome) {
-  await import('@ui/home.css')
-}
 ---
 
 <!doctype html>
@@ -28,6 +24,20 @@ if (isHome) {
     keywords={keywords}
     featuredImage={featuredImage}>
     <slot name="head" />
+		{isHome && (
+      <style is:inline>
+        body main.hero {
+          margin-top: 0.5rem;
+          margin-bottom: 0;
+        }
+
+        @media screen and (min-width: 768px) {
+          body main.hero {
+            margin-top: 1rem;
+          }
+        }
+      </style>
+    )}
   </PageHead>
   <body>
     <PageHeader />
