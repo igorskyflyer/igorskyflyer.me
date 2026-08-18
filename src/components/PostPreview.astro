@@ -128,7 +128,6 @@ const postPublishedDate = postDate(post.data.publishDate)
     text-decoration: none;
   }
 
-  /* Make the card's main area clickable via pseudo-element */
   .post-title-link::after {
     position: absolute;
     z-index: 1;
@@ -149,7 +148,6 @@ const postPublishedDate = postDate(post.data.publishDate)
     color: #58a6ff;
   }
 
-  /* Target both raw text and any paragraphs rendered by PostExcerpt */
   .post-excerpt-wrapper {
     margin-bottom: 1.25rem;
     color: #8b949e;
@@ -162,7 +160,6 @@ const postPublishedDate = postDate(post.data.publishDate)
     color: #8b949e;
   }
 
-  /* Keep inner links accessible above the cover link */
   .tag-list,
   .post-footer {
     position: relative;
