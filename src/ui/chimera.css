@@ -152,10 +152,13 @@ img {
   border-radius: var(--btn-radius);
   padding: 0.85rem 1.5rem;
   color: #e2e8f0;
-  font-weight: 500;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   text-align: center;
   text-decoration: none;
+}
+
+.btn-cta:hover {
+  font-weight: bold;
 }
 
 .btn-cta:visited {
@@ -211,7 +214,7 @@ img {
 
 @media screen and (min-width: 768px) {
   .btn-cta {
-    padding: 1rem 2rem;
+    padding: 0.6rem 1.2rem;
   }
 }
 
