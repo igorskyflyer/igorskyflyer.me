@@ -1,0 +1,129 @@
+---
+import { Icon } from 'astro-icon/components'
+
+export interface Props {
+  href: string
+  label: string
+  variant:
+    'github' | 'linkedin' | 'npm' | 'email' | 'youtube' | 'kofi' | 'instagram'
+  inbound?: boolean
+  size?: 'fixed' | 'clamp'
+}
+
+const { href, label, inbound, variant, size = 'fixed' } = Astro.props
+
+const rel = ['noopener', 'noreferrer']
+const icons = {
+  github: 'mdi:github',
+  linkedin: 'mdi:linkedin',
+  npm: 'mdi:npm',
+  email: 'ic:outline-email',
+  youtube: 'ri:youtube-fill',
+  kofi: 'cib:ko-fi',
+  instagram: 'mdi:instagram'
+}
+
+if (inbound === false) {
+  rel.push('external')
+}
+
+const relAttribute = rel.join(' ')
+---
+
+<a
+  href={href}
+  rel={relAttribute}
+  target={inbound ? '_self' : '_blank'}
+  aria-label={label}
+  title={label}
+  class={`social-icon-link social-${variant} size-${size}`}>
+  <Icon
+    name={icons[variant]}
+    class="social-icon"
+  />
+</a>
+
+<style>
+  .social-icon-link.size-fixed {
+    width: 48px;
+    height: 48px;
+  }
+
+  .social-icon-link.size-fixed .social-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .social-icon-link.size-clamp {
+    width: clamp(44px, 12vw, 64px);
+    height: clamp(44px, 12vw, 64px);
+  }
+
+  .social-icon-link.size-clamp .social-icon {
+    width: clamp(28px, 8vw, 40px);
+    height: clamp(28px, 8vw, 40px);
+  }
+
+  .social-icon-link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition:
+      color 120ms ease,
+      background-color 120ms ease,
+      border-color 120ms ease,
+      box-shadow 120ms ease,
+      transform 120ms cubic-bezier(0.16, 1, 0.3, 1);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.03);
+    color: #94a3b8;
+  }
+
+  .social-icon-link:hover {
+    transform: translateY(-3px);
+    color: #fff;
+  }
+
+  .social-github:hover {
+    box-shadow: 0 0 20px 4px rgba(106, 115, 125, 0.7);
+    border-color: #6a737d;
+    background-color: #24292e;
+  }
+
+  .social-linkedin:hover {
+    box-shadow: 0 0 20px 4px rgba(112, 181, 255, 0.7);
+    border-color: #70b5ff;
+    background-color: #0a66c2;
+  }
+
+  .social-npm:hover {
+    box-shadow: 0 0 20px 4px rgba(255, 139, 138, 0.7);
+    border-color: #ff8b8a;
+    background-color: #cb3837;
+  }
+
+  .social-email:hover {
+    box-shadow: 0 0 20px 4px rgba(255, 179, 128, 0.7);
+    border-color: #ffb380;
+    background-color: #ff6600;
+  }
+
+  .social-kofi:hover {
+    box-shadow: 0 0 20px 4px rgba(255, 158, 175, 0.7);
+    border-color: #ff9eaf;
+    background-color: #ff5e5b;
+  }
+
+  .social-instagram:hover {
+    box-shadow: 0 0 20px 4px rgba(255, 118, 173, 0.7);
+    border-color: #ff76ad;
+    background-color: #e1306c;
+  }
+
+  .social-youtube:hover {
+    box-shadow: 0 0 20px 4px rgba(255, 102, 102, 0.7);
+    border-color: #ff6666;
+    background-color: #ff0000;
+  }
+</style>
