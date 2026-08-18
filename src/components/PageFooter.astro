@@ -1,53 +1,6 @@
 ---
+import SocialIcon from '@components/SocialIcon.astro'
 import { getLocalDate, getYear } from '@functions/utilities.ts'
-import { Icon } from 'astro-icon/components'
-
-const year = getYear()
-
-const socialLinks = [
-  {
-    href: 'https://github.com/igorskyflyer',
-    label: 'GitHub Profile',
-    icon: 'mdi:github',
-    className: 'github',
-    external: true
-  },
-  {
-    href: 'https://youtube.com/@igorskyflyer',
-    label: 'YouTube Channel',
-    icon: 'ri:youtube-fill',
-    className: 'youtube',
-    external: true
-  },
-  {
-    href: 'https://linkedin.com/in/igorskyflyer',
-    label: 'LinkedIn Profile',
-    icon: 'mdi:linkedin',
-    className: 'linkedin',
-    external: true
-  },
-  {
-    href: 'https://ko-fi.com/igorskyflyer',
-    label: 'Support on Ko-fi',
-    icon: 'cib:ko-fi',
-    className: 'kofi',
-    external: true
-  },
-  {
-    href: '/contact/',
-    label: 'Contact Me',
-    icon: 'ic:outline-email',
-    className: 'email',
-    external: false
-  },
-  {
-    href: 'https://instagram.com/igorskyflyer',
-    label: 'Instagram Profile',
-    icon: 'mdi:instagram',
-    className: 'instagram',
-    external: true
-  }
-]
 ---
 
 <footer class="site-footer">
@@ -55,22 +8,42 @@ const socialLinks = [
     <nav
       class="social-nav"
       aria-label="Social Links">
-      {
-        socialLinks.map((item) => (
-          <a
-            href={item.href}
-            rel={item.external ? 'external noopener noreferrer' : undefined}
-            target={item.external ? '_blank' : undefined}
-            aria-label={item.label}
-            title={item.label}
-            class={`social-icon-link social-${item.className}`}>
-            <Icon
-              name={item.icon}
-              class="social-icon"
-            />
-          </a>
-        ))
-      }
+      <SocialIcon
+        href="https://github.com/igorskyflyer"
+        label="igorskyflyer's GitHub profile"
+        variant="github"
+        size="clamp"
+      />
+      <SocialIcon
+        href="https://youtube.com/@igorskyflyer"
+        label="igorskyflyer's YouTube channel"
+        variant="youtube"
+        size="clamp"
+      />
+      <SocialIcon
+        href="https://www.linkedin.com/in/igorskyflyer/"
+        label="igorskyflyer's LinkedIn profile"
+        variant="linkedin"
+        size="clamp"
+      />
+      <SocialIcon
+        href="https://ko-fi.com/igorskyflyer"
+        label="Support on Ko-fi"
+        variant="kofi"
+        size="clamp"
+      />
+      <SocialIcon
+        href="/contact"
+        label="Contact igorskyflyer via email"
+        variant="email"
+        size="clamp"
+      />
+      <SocialIcon
+        href="https://instagram.com/igorskyflyer"
+        label="igorskyflyer's Instagram profile"
+        variant="instagram"
+        size="clamp"
+      />
     </nav>
 
     <div class="footer-divider"></div>
@@ -107,7 +80,7 @@ const socialLinks = [
       </p>
 
       <p class="footer-copyright">
-        &copy; {year} Igor Dimitrijević. All rights reserved.
+        &copy; {getYear()} Igor Dimitrijević. All rights reserved.
         <br />
         {
           import.meta.env.PROD && (
@@ -181,36 +154,6 @@ const socialLinks = [
     flex-wrap: wrap;
     justify-content: center;
     gap: clamp(0.25rem, 2vw, 0.75rem);
-  }
-
-  .social-icon-link {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    transition:
-      color 200ms ease,
-      background-color 200ms ease,
-      border-color 200ms ease,
-      transform 200ms cubic-bezier(0.16, 1, 0.3, 1);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.03);
-    width: clamp(44px, 12vw, 64px);
-    height: clamp(44px, 12vw, 64px);
-    color: #94a3b8;
-  }
-
-  .social-icon-link:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 16px rgba(14, 168, 255, 0.25);
-    border-color: var(--link, #0ea8ff);
-    background-color: var(--primary, #002f9c);
-    color: #fff;
-  }
-
-  .social-icon {
-    width: clamp(28px, 8vw, 44px);
-    height: clamp(28px, 8vw, 44px);
   }
 
   .footer-divider {
@@ -288,68 +231,6 @@ const socialLinks = [
     margin: 0;
     color: #64748b;
     font-size: 0.775rem;
-  }
-
-  .social-github:hover {
-    border-color: #6a737d;
-    background-color: #24292e;
-  }
-
-  .social-linkedin:hover {
-    border-color: #70b5ff;
-    background-color: #0a66c2;
-  }
-
-  .social-npm:hover {
-    border-color: #ff8b8a;
-    background-color: #cb3837;
-  }
-
-  .social-email:hover {
-    border-color: #ffb380;
-    background-color: #ff6600;
-  }
-
-  .social-github:hover {
-    box-shadow: 0 0 20px 4px rgba(106, 115, 125, 0.7);
-    border-color: #6a737d;
-    background-color: #24292e;
-  }
-
-  .social-linkedin:hover {
-    box-shadow: 0 0 20px 4px rgba(112, 181, 255, 0.7);
-    border-color: #70b5ff;
-    background-color: #0a66c2;
-  }
-
-  .social-npm:hover {
-    box-shadow: 0 0 20px 4px rgba(255, 139, 138, 0.7);
-    border-color: #ff8b8a;
-    background-color: #cb3837;
-  }
-
-  .social-email:hover {
-    box-shadow: 0 0 20px 4px rgba(255, 179, 128, 0.7);
-    border-color: #ffb380;
-    background-color: #ff6600;
-  }
-
-  .social-kofi:hover {
-    box-shadow: 0 0 20px 4px rgba(255, 158, 175, 0.7);
-    border-color: #ff9eaf;
-    background-color: #ff5e5b;
-  }
-
-  .social-instagram:hover {
-    box-shadow: 0 0 20px 4px rgba(255, 118, 173, 0.7);
-    border-color: #ff76ad;
-    background-color: #e1306c;
-  }
-
-  .social-youtube:hover {
-    box-shadow: 0 0 20px 4px rgba(255, 102, 102, 0.7);
-    border-color: #ff6666;
-    background-color: #ff0000;
   }
 
   @media screen and (min-width: 768px) {
