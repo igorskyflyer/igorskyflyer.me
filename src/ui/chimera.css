@@ -3,33 +3,51 @@
 :root {
   color-scheme: dark light;
 
-  --primary: #002f9c;
-  --accent: #3869c2;
-  --main-text: #fff;
+  --primary: #1d4ed8;
+  --accent: #2563eb;
+  --accent-glow: #2563eb59;
+
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --btn-text: #ffffff;
+  --link: #0ea8ff;
+
+  --bg-color: #0a0f1a;
   --radius: 8px;
   --btn-radius: 9999px;
+}
 
-  --bg-color: #0b0f17;
-  --grid-color: rgba(255, 255, 255, 0.05);
-  --accent-glow: rgba(56, 189, 248, 0.08);
+html,
+body {
+  color: var(--text-secondary);
+}
 
-  --link: rgb(14, 168, 255);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-primary);
+}
 
-  --svg-external: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z'/%3E%3Cpath fill-rule='evenodd' d='M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z'/%3E%3C/svg%3E");
+.text-muted {
+  color: var(--text-muted);
 }
 
 @media (prefers-reduced-motion: no-preference) {
   ::view-transition-group(root) {
-    animation-duration: 320ms;
+    animation-duration: 160ms;
     animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   ::view-transition-old(root) {
-    animation: chimera-slide-out 280ms cubic-bezier(0.4, 0, 1, 1) both;
+    animation: chimera-slide-out 160ms cubic-bezier(0.4, 0, 1, 1) both;
   }
 
   ::view-transition-new(root) {
-    animation: chimera-slide-in 280ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation: chimera-slide-in 160ms cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 
   @keyframes chimera-slide-out {
@@ -45,7 +63,7 @@
   }
 
   ::view-transition-group(site-header) {
-    animation-duration: 200ms;
+    animation-duration: 120ms;
   }
 }
 
@@ -103,10 +121,14 @@ body {
 }
 
 body {
-  background-color: #0a0f1a;
-  background-image: radial-gradient(circle at 50% 0%, rgba(14, 168, 255, 0.15) 0%, transparent 60vh);
+  background-image: radial-gradient(
+    circle at 50% 0%,
+    rgba(14, 168, 255, 0.15) 0%,
+    transparent 60vh
+  );
   background-repeat: no-repeat;
   background-attachment: scroll;
+  background-color: #0a0f1a;
   color: #e2e8f0;
 }
 
@@ -120,11 +142,11 @@ img {
   justify-content: center;
   align-items: center;
   transition:
-    color 200ms ease,
-    background-color 200ms ease,
-    border-color 200ms ease,
-    transform 200ms cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 200ms ease;
+    color 130ms ease,
+    background-color 130ms ease,
+    border-color 130ms ease,
+    transform 130ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 130ms ease;
   will-change: transform;
   border: 2px solid transparent;
   border-radius: var(--btn-radius);
