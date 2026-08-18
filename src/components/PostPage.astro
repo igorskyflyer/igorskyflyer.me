@@ -1,59 +1,279 @@
 ---
-import Comments from '@components/Comments.astro'
-import NavBtn from '@components/NavBtn.astro'
-import PageFooter from '@components/PageFooter.astro'
-import PageHead from '@components/PageHead.astro'
-import PageHeader from '@components/PageHeader.astro'
+import Page from '@components/Page.astro'
+import { SiteName } from '@data/site.ts'
+import { postDate } from '@functions/posts.ts'
 import type { PageProps } from '@interfaces/PageProps.ts'
-import { getLocalIsoTimestamp } from '../functions/posts.ts'
+import { Icon } from 'astro-icon/components'
+import { Image } from 'astro:assets'
 
 const {
-  title = '',
-  description = '',
-  featuredImage = '',
+  title,
+  description,
+  featuredImage,
   keywords = '',
   post
 } = Astro.props as PageProps
 
-const datePublished: string = getLocalIsoTimestamp(post.publishedDate)
-const dateModified: string = getLocalIsoTimestamp()
+const publishDate = post?.publishDate || new Date()
+const minutesRead = post?.minutesRead || ''
+const tags = post?.tags || []
 
-const postSchema = {
+const pageTitle = `${title} - Blog | ${SiteName}`
+const postPublishedDate = postDate(publishDate)
+
+const schema = {
   '@context': 'https://schema.org',
-  '@type': 'BlogPosting',
+  '@type': 'TechArticle',
   headline: title,
-  image: [featuredImage],
-  datePublished: datePublished,
-  dateModified: dateModified,
-  author: [
-    {
-      '@type': 'Person',
-      name: 'Igor Dimitrijević',
-      url: 'https://igorskyflyer.me/blog/author/igorskyflyer'
-    }
-  ]
+  description: description,
+  image: featuredImage
+    ? new URL(featuredImage, Astro.site || Astro.url).toString()
+    : undefined,
+  author: {
+    '@type': 'Person',
+    name: 'Igor Dimitrijević',
+    url: new URL('/igorskyflyer/', Astro.site || Astro.url).toString()
+  },
+  datePublished: new Date(publishDate).toISOString(),
+  publisher: {
+    '@type': 'Organization',
+    name: SiteName
+  }
 }
 ---
 
-<!doctype html>
-<html lang="en">
-  <PageHead
-    title={title}
-    description={description}
-    keywords={keywords}
-    featuredImage={featuredImage}>
-    <script
-      type="application/ld+json"
-      set:html={JSON.stringify(postSchema)}
-    />
-  </PageHead>
-  <body>
-    <PageHeader />
-    <main>
-      <slot />
-      <Comments />
-    </main>
-    <NavBtn />
-    <PageFooter />
-  </body>
-</html>
+<Page
+  title={pageTitle}
+  description={description}
+  keywords={keywords}
+  featuredImage={featuredImage}>
+  <script
+    type="application/ld+json"
+    slot="head"
+    set:html={JSON.stringify(schema)}
+  />
+
+  <div
+    class="post-layout"
+    slot="body">
+    <a
+      href="/blog/"
+      class="back-link"
+      aria-label="Back to all posts">
+      <span aria-hidden="true">&larr;</span> Back to all posts
+    </a>
+
+    <article class="post-article">
+      <header class="post-header">
+        <h1 class="post-title">{title}</h1>
+
+        <div class="post-meta-bar">
+          <a
+            href="/igorskyflyer/"
+            class="author-link"
+            title="Igor Dimitrijević">
+            <Image
+              src="/assets/author/igorskyflyer-mini.webp"
+              alt="Igor Dimitrijević"
+              loading="eager"
+              width="56"
+              height="56"
+              quality="max"
+              class="author-avatar"
+            />
+            <span class="author-name">Igor Dimitrijević</span>
+          </a>
+
+          <div class="meta-details">
+            <span class="meta-item">
+              <Icon
+                name="mdi:clock-outline"
+                class="meta-icon"
+              />
+              <time datetime={new Date(publishDate).toISOString()}
+                >{postPublishedDate}</time
+              >
+            </span>
+            <span
+              class="meta-dot"
+              aria-hidden="true"
+              >•</span
+            >
+            <span class="meta-item">
+              <Icon
+                name="ic:baseline-menu-book"
+                class="meta-icon"
+              />
+              {minutesRead}
+            </span>
+          </div>
+        </div>
+
+        {
+          tags.length > 0 && (
+            <ul
+              class="tag-list"
+              aria-label="Post tags">
+              {tags.map((tagName: string) => (
+                <li>
+                  <a
+                    href={`/blog/tag/${tagName}/`}
+                    class="tag-badge">
+                    #{tagName}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )
+        }
+      </header>
+
+      <section class="post-content">
+        <slot />
+      </section>
+    </article>
+  </div>
+</Page>
+
+<style>
+  .post-layout {
+    margin: 0 auto;
+    padding: clamp(1rem, 3vw, 2rem) 0;
+    max-width: 860px;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition:
+      color 150ms ease,
+      transform 150ms ease;
+    margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+    color: #8b949e;
+    font-weight: 500;
+    font-size: 1.05rem;
+    text-decoration: none;
+  }
+
+  .back-link:hover {
+    transform: translateX(-4px);
+    color: #58a6ff;
+  }
+
+  .post-article {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .post-header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: clamp(2rem, 5vw, 3.5rem);
+    border-bottom: 1px solid #30363d;
+    padding-bottom: clamp(1.5rem, 4vw, 2.5rem);
+  }
+
+  .post-title {
+    margin: 0 0 clamp(1.5rem, 3vw, 2rem) 0;
+    color: #f0f6fc;
+    font-weight: 800;
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  .post-meta-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: clamp(1rem, 3vw, 2rem);
+    margin-bottom: 1.5rem;
+  }
+
+  .author-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #c9d1d9;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+  }
+
+  .author-link:hover .author-name {
+    color: #58a6ff;
+    text-decoration: underline;
+  }
+
+  .author-avatar {
+    border: 1px solid #30363d;
+    border-radius: 50%;
+    width: clamp(48px, 8vw, 56px);
+    height: clamp(48px, 8vw, 56px);
+    object-fit: cover;
+  }
+
+  .meta-details {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #8b949e;
+    font-size: 0.95rem;
+  }
+
+  .meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    white-space: nowrap;
+  }
+
+  .meta-icon {
+    width: 18px;
+    height: 18px;
+    color: #8b949e;
+  }
+
+  .meta-dot {
+    opacity: 0.5;
+  }
+
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .tag-badge {
+    display: inline-block;
+    transition:
+      background-color 150ms ease,
+      border-color 150ms ease,
+      color 150ms ease;
+    border: 1px solid rgba(56, 139, 253, 0.25);
+    border-radius: 20px;
+    background-color: rgba(56, 139, 253, 0.1);
+    padding: 0.25rem 0.75rem;
+    color: #58a6ff;
+    font-weight: 500;
+    font-size: 0.85rem;
+    text-decoration: none;
+  }
+
+  .tag-badge:hover {
+    border-color: #58a6ff;
+    background-color: #1f6beb;
+    color: #ffffff;
+  }
+
+  .post-content {
+    color: #c9d1d9;
+    font-size: clamp(1.05rem, 2vw, 1.15rem);
+    line-height: 1.7;
+  }
+</style>
