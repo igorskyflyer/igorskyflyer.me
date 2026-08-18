@@ -4,6 +4,6 @@ main.hero {
 
 @media screen and (max-width: 768px) {
   main.hero {
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
 }
