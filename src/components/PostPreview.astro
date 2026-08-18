@@ -64,7 +64,10 @@ const postPublishedDate = postDate(post.data.publishDate)
         height="44"
         class="author-avatar"
       />
-      <span class="author-name">Igor Dimitrijević (igorskyflyer)</span>
+      <div>
+        <span class="author-name">Igor Dimitrijević (igorskyflyer)</span>
+        <p class="author-occupation">Senior Full-Stack Software Engineer</p>
+      </div>
     </a>
 
     <div class="meta-details">
@@ -223,6 +226,12 @@ const postPublishedDate = postDate(post.data.publishDate)
     text-decoration: underline;
   }
 
+  .author-occupation {
+    opacity: 0.8;
+    font-style: italic;
+    font-size: 0.8rem;
+  }
+
   .author-avatar {
     border: 1px solid #30363d;
     border-radius: 50%;
@@ -255,8 +264,8 @@ const postPublishedDate = postDate(post.data.publishDate)
   }
 
   @media screen and (max-width: 480px) {
-   .tag-badge {
-     margin-top: 0.7rem;
-   }
+    .tag-badge {
+      margin-top: 0.7rem;
+    }
   }
 </style>
