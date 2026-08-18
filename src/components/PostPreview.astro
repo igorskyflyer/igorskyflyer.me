@@ -9,162 +9,21 @@ const { post } = Astro.props
 const { remarkPluginFrontmatter: data } = await render(post)
 
 const minutesRead = data.minutesRead
-const tags = post.data.tags
+const tags = post.data.tags || []
 const postPublishedDate = postDate(post.data.publishDate)
 ---
 
-<style>
-  article {
-    background: #020222;
-    border-radius: 8px;
-    padding: 1rem;
-    margin-bottom: 0.5rem;
-    color: #d4d4ff;
-  }
+<article class="post-card">
+  <div class="post-body">
+    <header class="post-header">
+      <a
+        href={`/blog/${post.id}/`}
+        class="post-title-link">
+        <h2 class="post-title">{post.data.title}</h2>
+      </a>
+    </header>
 
-  .post-link {
-    display: block;
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: var(--link);
-    text-align: left;
-  }
-
-  .post-info {
-    color: #9e9ece;
-    font-size: 0.93rem;
-  }
-
-  .post-description {
-    margin-top: 0.5rem;
-    font-size: 1.05rem;
-    line-height: 1.6;
-    color: #d4d4ff;
-    text-align: left;
-    overflow-wrap: break-word;
-    word-break: break-word;
-    text-wrap: balance;
-  }
-
-  .post--inner {
-    padding: 0.25rem;
-  }
-
-  .post--meta {
-    display: flex;
-    margin-top: 1rem;
-  }
-
-  .post--tags {
-    margin-top: 1.5rem;
-  }
-
-  .post--tags a {
-    display: inline-block;
-    padding: 0.2rem 0.5rem;
-    margin: 0.5rem 0.4rem 0.3rem 0;
-    border-radius: var(--border-radius);
-    background: rgba(17, 188, 226, 0.12);
-    transition:
-      background ease-out 120ms,
-      color ease-out 120ms;
-  }
-
-  .post--tags a:hover {
-    background: var(--accent);
-    color: #fff;
-  }
-
-  .post--author {
-    display: flex;
-    align-items: center;
-  }
-
-  .post--author img {
-    width: 56px;
-    height: 56px;
-  }
-
-  .post--frontmatter {
-    display: flex;
-    flex-direction: column;
-    margin-left: 1rem;
-  }
-
-  .post-data {
-    margin-top: 0.4rem;
-  }
-
-  .post-data-inner {
-    display: flex;
-    align-items: center;
-  }
-
-  @media screen and (min-width: 600px) {
-    .post-info {
-      flex-direction: row;
-      justify-content: space-between;
-    }
-
-    .post--author img {
-      width: 84px;
-      height: 84px;
-    }
-  }
-</style>
-
-<article>
-  <a
-    href={`/blog/${post.id}`}
-    class="post-link">
-    {post.data.title}
-  </a>
-  <div class="post--inner">
-    <div class="post-info">
-      <div class="post--meta">
-        <span class="post--author">
-          <a href="/igorskyflyer/">
-            <Image
-              src="/assets/author/igorskyflyer-mini.webp"
-              alt="igorskyflyer's profile photo"
-              loading="eager"
-              width="84"
-              height="84"
-              quality="max"
-            />
-          </a>
-        </span>
-        <div class="post--frontmatter">
-          <a href="/igorskyflyer/">Igor Dimitrijević (igorskyflyer)</a>
-          <div class="post-data">
-            <div class="post-data-inner">
-              <Icon
-                name="mdi:clock-outline"
-                width={24}
-              />&nbsp;
-              {postPublishedDate}
-            </div>
-            <div class="post-data-inner">
-              <Icon
-                name="ic:baseline-menu-book"
-                width={24}
-              />&nbsp;
-              {minutesRead}
-            </div>
-          </div>
-        </div>
-      </div>
-      {
-        tags.length > 0 && (
-          <div class="post--tags">
-            {tags.map((tagName: string) => (
-              <a href={`/blog/tag/${tagName}`}>{tagName}</a>
-            ))}
-          </div>
-        )
-      }
-    </div>
-    <p class="post-description">
+    <div class="post-excerpt-wrapper">
       <PostExcerpt
         post={post}
         words={32}
@@ -172,6 +31,229 @@ const postPublishedDate = postDate(post.data.publishDate)
         smartEllipsis={true}
         useConstraints="all"
       />
-    </p>
+    </div>
+
+    {
+      tags.length > 0 && (
+        <ul
+          class="tag-list"
+          aria-label="Post tags">
+          {tags.map((tagName: string) => (
+            <li>
+              <a
+                href={`/blog/tag/${tagName}/`}
+                class="tag-badge">
+                #{tagName}
+              </a>
+            </li>
+          ))}
+        </ul>
+      )
+    }
   </div>
+
+  <footer class="post-footer">
+    <a
+      href="/igorskyflyer/"
+      class="author-link">
+      <Image
+        src="/assets/author/igorskyflyer-mini.webp"
+        alt="Igor Dimitrijević"
+        loading="lazy"
+        width="44"
+        height="44"
+        class="author-avatar"
+      />
+      <span class="author-name">Igor Dimitrijević</span>
+    </a>
+
+    <div class="meta-details">
+      <span class="meta-item">
+        <Icon
+          name="mdi:clock-outline"
+          class="meta-icon"
+        />
+        {postPublishedDate}
+      </span>
+      <span
+        class="meta-dot"
+        aria-hidden="true"
+        >•</span
+      >
+      <span class="meta-item">
+        <Icon
+          name="ic:baseline-menu-book"
+          class="meta-icon"
+        />
+        {minutesRead}
+      </span>
+    </div>
+  </footer>
 </article>
+
+<style>
+  .post-card {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+    transition:
+      transform 180ms ease,
+      border-color 180ms ease,
+      box-shadow 180ms ease;
+    box-sizing: border-box;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    background-color: #0d1117;
+    padding: clamp(1.25rem, 3vw, 1.75rem);
+    height: 100%;
+  }
+
+  .post-card:hover {
+    transform: translateY(-3px);
+    box-shadow:
+      0 10px 28px rgba(0, 0, 0, 0.4),
+      0 0 16px rgba(88, 166, 255, 0.15);
+    border-color: #58a6ff;
+    background-color: #161b22;
+  }
+
+  .post-body {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+  }
+
+  .post-title-link {
+    text-decoration: none;
+  }
+
+  /* Make the card's main area clickable via pseudo-element */
+  .post-title-link::after {
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    content: '';
+  }
+
+  .post-title {
+    transition: color 150ms ease;
+    margin: 0 0 0.85rem 0;
+    color: #f0f6fc;
+    font-weight: 700;
+    font-size: clamp(1.2rem, 2vw, 1.45rem);
+    line-height: 1.35;
+  }
+
+  .post-card:hover .post-title {
+    color: #58a6ff;
+  }
+
+  /* Target both raw text and any paragraphs rendered by PostExcerpt */
+  .post-excerpt-wrapper {
+    margin-bottom: 1.25rem;
+    color: #8b949e;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    line-height: 1.6;
+  }
+
+  .post-excerpt-wrapper :global(p) {
+    margin: 0;
+    color: #8b949e;
+  }
+
+  /* Keep inner links accessible above the cover link */
+  .tag-list,
+  .post-footer {
+    position: relative;
+    z-index: 2;
+  }
+
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: auto 0 1.25rem 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .tag-badge {
+    display: inline-block;
+    transition:
+      background-color 150ms ease,
+      border-color 150ms ease,
+      color 150ms ease;
+    border: 1px solid rgba(56, 139, 253, 0.25);
+    border-radius: 20px;
+    background-color: rgba(56, 139, 253, 0.1);
+    padding: 0.2rem 0.65rem;
+    color: #58a6ff;
+    font-weight: 500;
+    font-size: 0.78rem;
+    text-decoration: none;
+  }
+
+  .tag-badge:hover {
+    border-color: #58a6ff;
+    background-color: #1f6beb;
+    color: #ffffff;
+  }
+
+  .post-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: auto;
+    border-top: 1px solid #21262d;
+    padding-top: 1rem;
+  }
+
+  .author-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: #c9d1d9;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-decoration: none;
+  }
+
+  .author-link:hover .author-name {
+    color: #58a6ff;
+    text-decoration: underline;
+  }
+
+  .author-avatar {
+    border: 1px solid #30363d;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .meta-details {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: #8b949e;
+    font-size: 0.8rem;
+  }
+
+  .meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    white-space: nowrap;
+  }
+
+  .meta-icon {
+    width: 15px;
+    height: 15px;
+    color: #8b949e;
+  }
+
+  .meta-dot {
+    opacity: 0.5;
+  }
+</style>
