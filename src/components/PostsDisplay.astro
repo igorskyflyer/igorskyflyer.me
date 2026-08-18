@@ -4,11 +4,14 @@ import PostPreview from '@components/PostPreview.astro'
 const { posts } = Astro.props
 ---
 
-{
-  posts.map((postData: any) => (
-    <>
-      <PostPreview post={postData} />
-      <br />
-    </>
-  ))
-}
+<div class="posts">
+  {posts.map((postData: any) => <PostPreview post={postData} />)}
+</div>
+
+<style>
+  .posts {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+</style>
