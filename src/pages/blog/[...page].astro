@@ -112,25 +112,25 @@ export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
     display: flex;
     flex-direction: column;
     gap: clamp(2rem, 4vw, 3.5rem);
+    box-sizing: border-box;
     margin: 0 auto;
     padding: clamp(1rem, 3vw, 2.5rem) clamp(1rem, 4vw, 2rem);
-    max-width: 900px;
     width: 100%;
-    box-sizing: border-box;
+    max-width: 900px;
   }
 
   .archive-header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
     gap: clamp(0.5rem, 1.5vw, 0.85rem);
+    text-align: center;
   }
 
   .archive-title {
     margin: 0;
-    font-size: clamp(2rem, 5vw, 3.25rem);
     font-weight: 800;
+    font-size: clamp(2rem, 5vw, 3.25rem);
     line-height: 1.1;
     letter-spacing: -0.02em;
   }
@@ -142,10 +142,10 @@ export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
     align-items: center;
     gap: 0.75rem;
     margin: 0;
+    max-width: 65ch;
     color: #94a3b8;
     font-size: clamp(0.95rem, 2vw, 1.15rem);
     line-height: 1.5;
-    max-width: 65ch;
   }
 
   .page-badge {
@@ -156,8 +156,8 @@ export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
     background: rgba(255, 255, 255, 0.05);
     padding: 0.15rem 0.65rem;
     color: var(--link, #0ea8ff);
-    font-size: 0.8rem;
     font-weight: 600;
+    font-size: 0.8rem;
     white-space: nowrap;
   }
 
@@ -199,8 +199,8 @@ export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
     background: rgba(255, 255, 255, 0.03);
     padding: clamp(0.4rem, 1.5vw, 0.6rem) clamp(0.85rem, 2.5vw, 1.25rem);
     color: #f8fafc;
-    font-size: clamp(0.875rem, 1.5vw, 1rem);
     font-weight: 500;
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
     text-decoration: none;
   }
 
@@ -219,8 +219,8 @@ export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
 
   .pagination-status {
     color: #64748b;
-    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
     font-weight: 600;
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
     white-space: nowrap;
   }
 
