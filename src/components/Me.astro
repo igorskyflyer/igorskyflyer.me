@@ -198,8 +198,8 @@
   }
 
   h4 {
-    opacity: 0.6;
     margin: 0 0 0.5rem 0;
+    color: var(--text-muted);
     font-size: 0.85rem;
     letter-spacing: 0.05em;
     text-transform: uppercase;
@@ -207,7 +207,6 @@
 
   h2 {
     margin: 0 0 2rem 0;
-    color: #fff;
     font-size: clamp(1.75rem, 3vw, 2.5rem);
     line-height: 1.2;
   }
@@ -228,15 +227,22 @@
 
   .card-column {
     display: flex;
-    flex: 1;
     flex-direction: column;
     gap: 1.25rem;
     width: 100%;
   }
 
+  .col-bio {
+    flex: 5.5 1 0%;
+  }
+
+  .col-details {
+    flex: 4.5 1 0%;
+  }
+
   .bio-lead {
     margin: 0;
-    color: #f1f5f9;
+    color: var(--text-primary);
     font-weight: 500;
     font-size: 1.1rem;
     line-height: 1.5;
@@ -244,7 +250,7 @@
 
   .bio-text {
     margin: 0;
-    color: #94a3b8;
+    color: var(--text-muted);
     font-size: 0.925rem;
     line-height: 1.6;
   }
@@ -258,10 +264,10 @@
 
   .badge {
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: var(--btn-radius, 9999px);
-    background: rgba(255, 255, 255, 0.04);
+    border-radius: var(--btn-radius);
+    background: color-mix(in srgb, var(--text-primary) 4%, transparent);
     padding: 0.35rem 0.7rem;
-    color: #e2e8f0;
+    color: var(--text-secondary);
     font-weight: 600;
     font-size: 0.9rem;
   }
@@ -271,12 +277,12 @@
     flex-wrap: wrap;
     gap: 1.25rem;
     margin-top: 0.25rem;
-    color: #64748b;
+    color: var(--text-muted);
     font-size: 0.85rem;
   }
 
   .meta-info a {
-    color: var(--link, #0ea8ff);
+    color: var(--link);
     text-decoration: none;
   }
 
@@ -289,10 +295,11 @@
   .btn-primary,
   .btn-secondary {
     transition:
-      transform 200ms ease,
-      background-color 200ms ease,
-      border-color 200ms ease;
-    border-radius: var(--btn-radius, 9999px);
+      transform 120ms ease,
+      background-color 120ms ease,
+      border-color 120ms ease,
+      box-shadow 120ms ease;
+    border-radius: var(--btn-radius);
     padding: 0.75rem 1.25rem;
     font-weight: 600;
     font-size: 0.875rem;
@@ -300,24 +307,31 @@
   }
 
   .btn-primary {
-    background: var(--primary, #002f9c);
-    color: #fff;
+    background: var(--primary);
+    color: var(--btn-text);
+  }
+
+  .btn-primary:visited {
+    color: var(--btn-text);
   }
 
   .btn-primary:hover {
     transform: translateY(-2px);
-    background: var(--accent, #3869c2);
+    box-shadow: 0 0 24px color-mix(in srgb, var(--accent) 50%, transparent);
+    background: var(--accent);
+    color: var(--btn-text-hover);
   }
 
   .btn-secondary {
     border: 1px solid rgba(255, 255, 255, 0.15);
-    color: #e2e8f0;
+    color: var(--text-secondary);
   }
 
   .btn-secondary:hover {
     transform: translateY(-2px);
-    border-color: var(--link, #0ea8ff);
-    background: rgba(14, 168, 255, 0.08);
+    border-color: var(--link);
+    background: color-mix(in srgb, var(--link) 8%, transparent);
+    color: var(--text-primary);
   }
 
   .status-dot {
@@ -345,15 +359,15 @@
       border-color 180ms ease,
       background-color 180ms ease;
     border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: var(--radius, 8px);
-    background: rgba(93, 93, 243, 0.02);
+    border-radius: var(--radius);
+    background: color-mix(in srgb, var(--accent) 2%, transparent);
     padding: 0.75rem 0.85rem;
   }
 
   .cred-item:hover {
     transform: translateY(-2px);
-    border-color: rgba(255, 255, 255, 0.15);
-    background: rgba(119, 110, 252, 0.15);
+    border-color: color-mix(in srgb, var(--text-primary) 15%, transparent);
+    background: color-mix(in srgb, var(--accent) 15%, transparent);
   }
 
   .cred-icon {
@@ -367,12 +381,12 @@
 
   .cred-item strong {
     display: block;
-    color: #f1f5f9;
+    color: var(--text-primary);
     font-size: 0.85rem;
   }
 
   .col-details a {
-    color: var(--link, #0ea8ff);
+    color: var(--link);
   }
 
   .col-details a:hover {
@@ -380,7 +394,7 @@
   }
 
   .cred-item span {
-    color: #64748b;
+    color: var(--text-muted);
     font-size: 0.9rem;
   }
 
@@ -401,8 +415,8 @@
       border-color 180ms ease,
       background-color 180ms ease;
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: var(--radius, 8px);
-    background: rgba(255, 255, 255, 0.02);
+    border-radius: var(--radius);
+    background: color-mix(in srgb, var(--text-primary) 2%, transparent);
     padding: 0.5rem;
   }
 
@@ -414,8 +428,8 @@
 
   .gallery-badge:hover {
     transform: translateY(-2px);
-    border-color: rgba(45, 212, 191, 0.4);
-    background: rgba(45, 212, 191, 0.06);
+    border-color: color-mix(in srgb, var(--link) 40%, transparent);
+    background: color-mix(in srgb, var(--link) 6%, transparent);
   }
 
   .certs-footer {
@@ -424,7 +438,7 @@
   }
 
   .certs-link {
-    color: var(--link, #0ea8ff);
+    color: var(--link);
     font-size: 0.825rem;
     text-decoration: none;
   }
@@ -436,7 +450,7 @@
   .domains-section h5,
   .focus-list h5 {
     margin: 0 0 0.75rem 0;
-    color: #64748b;
+    color: var(--text-muted);
     font-weight: 700;
     font-size: 0.7rem;
     letter-spacing: 0.08em;
@@ -453,18 +467,18 @@
     flex-direction: column;
     gap: 0.25rem;
     border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: var(--radius, 8px);
-    background: rgba(0, 0, 0, 0.25);
+    border-radius: var(--radius);
+    background: color-mix(in srgb, var(--bg-color) 80%, black);
     padding: 0.75rem;
   }
 
   .domain-box strong {
-    color: #e2e8f0;
+    color: var(--text-secondary);
     font-size: 0.825rem;
   }
 
   .domain-box span {
-    color: #94a3b8;
+    color: var(--text-muted);
     font-size: 0.75rem;
     line-height: 1.35;
   }
@@ -472,7 +486,7 @@
   .focus-list ul {
     margin: 0;
     padding-left: 0.3rem;
-    color: #94a3b8;
+    color: var(--text-muted);
     line-height: 1.6;
     list-style: none;
   }
