@@ -1,5 +1,5 @@
 ---
-import { Icon } from 'astro-icon/components'
+import SocialIcon from '@components/SocialIcon.astro'
 ---
 
 <section
@@ -32,54 +32,27 @@ import { Icon } from 'astro-icon/components'
       >
     </div>
     <div id="hero-social">
-      <a
+      <SocialIcon
         href="https://github.com/igorskyflyer"
-        rel="external noopener noreferrer"
-        target="_blank"
-        aria-label="igorskyflyer's GitHub profile"
-        title="igorskyflyer's GitHub profile"
-        class="social-icon-link social-github">
-        <Icon
-          name="mdi:github"
-          class="social-icon"
-        />
-      </a>
-      <a
+        label="igorskyflyer's GitHub profile"
+        variant="github"
+      />
+      <SocialIcon
         href="https://www.linkedin.com/in/igorskyflyer/"
-        rel="external noopener noreferrer"
-        target="_blank"
-        aria-label="igorskyflyer's LinkedIn profile"
-        title="igorskyflyer's LinkedIn profile"
-        class="social-icon-link social-linkedin">
-        <Icon
-          name="mdi:linkedin"
-          class="social-icon"
-        />
-      </a>
-      <a
+        label="igorskyflyer's LinkedIn profile"
+        variant="linkedin"
+      />
+      <SocialIcon
         href="https://npmjs.com/~igorskyflyer"
-        rel="external noopener noreferrer"
-        target="_blank"
-        aria-label="igorskyflyer's npm profile"
-        title="igorskyflyer's npm profile"
-        class="social-icon-link social-npm">
-        <Icon
-          name="mdi:npm"
-          class="social-icon"
-        />
-      </a>
-      <a
+        label="igorskyflyer's npm profile"
+        variant="npm"
+      />
+      <SocialIcon
         href="mailto:connect@igorskyflyer.me"
-        rel="external noopener noreferrer"
-        target="_blank"
-        aria-label="Contact igorskyflyer via email"
-        title="Contact igorskyflyer via email"
-        class="social-icon-link social-email">
-        <Icon
-          name="mdi:email"
-          class="social-icon"
-        />
-      </a>
+        label="Contact igorskyflyer via email"
+        variant="email"
+        inbound={true}
+      />
     </div>
   </div>
   <div id="hero-photo">
@@ -177,7 +150,6 @@ import { Icon } from 'astro-icon/components'
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
     background: rgba(0, 128, 266, 0.3);
     pointer-events: auto;
-    color: #e2e8f0;
     font-size: 0.8rem;
   }
 
@@ -312,56 +284,5 @@ import { Icon } from 'astro-icon/components'
     display: inline-flex;
     gap: 24px;
     margin-top: 2rem;
-  }
-
-  .social-icon-link {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    transition:
-      color 200ms ease,
-      background-color 200ms ease,
-      border-color 200ms ease,
-      transform 200ms cubic-bezier(0.16, 1, 0.3, 1);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.03);
-    width: 48px;
-    height: 48px;
-    color: #94a3b8;
-  }
-
-  .social-icon-link:hover {
-    transform: translateY(-3px);
-    color: #fff;
-  }
-
-  .social-icon {
-    width: 32px;
-    height: 32px;
-  }
-
-  .social-github:hover {
-    box-shadow: 0 0 20px 4px rgba(106, 115, 125, 0.7);
-    border-color: #6a737d;
-    background-color: #24292e;
-  }
-
-  .social-linkedin:hover {
-    box-shadow: 0 0 20px 4px rgba(112, 181, 255, 0.7);
-    border-color: #70b5ff;
-    background-color: #0a66c2;
-  }
-
-  .social-npm:hover {
-    box-shadow: 0 0 20px 4px rgba(255, 139, 138, 0.7);
-    border-color: #ff8b8a;
-    background-color: #cb3837;
-  }
-
-  .social-email:hover {
-    box-shadow: 0 0 20px 4px rgba(255, 179, 128, 0.7);
-    border-color: #ffb380;
-    background-color: #ff6600;
   }
 </style>
