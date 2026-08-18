@@ -6,20 +6,15 @@ import type { PageProps } from '@interfaces/PageProps.ts'
 import { Icon } from 'astro-icon/components'
 import { Image } from 'astro:assets'
 
-const {
-  title,
-  description,
-  featuredImage,
-  keywords = '',
-  post
-} = Astro.props as PageProps
+const { title, description, featuredImage, keywords, post } =
+  Astro.props as PageProps
 
-const publishDate = post?.publishDate || new Date()
-const minutesRead = post?.minutesRead || ''
-const tags = post?.tags || []
+if (!post) {
+  throw new Error('Post prop is required.')
+}
 
 const pageTitle = `${title} - Blog | ${SiteName}`
-const postPublishedDate = postDate(publishDate)
+const postPublishedDate = postDate(post.publishDate.toString())
 
 const schema = {
   '@context': 'https://schema.org',
@@ -34,7 +29,7 @@ const schema = {
     name: 'Igor Dimitrijević',
     url: new URL('/igorskyflyer/', Astro.site || Astro.url).toString()
   },
-  datePublished: new Date(publishDate).toISOString(),
+  datePublished: new Date(post.publishDate).toISOString(),
   publisher: {
     '@type': 'Organization',
     name: SiteName
@@ -60,7 +55,7 @@ const schema = {
       href="/blog/"
       class="back-link"
       aria-label="Back to all posts">
-      <span aria-hidden="true">&larr;</span> Back to all posts
+      <span aria-hidden="true">&#9664;</span> Back to all posts
     </a>
 
     <article class="post-article">
@@ -71,7 +66,7 @@ const schema = {
           <a
             href="/igorskyflyer/"
             class="author-link"
-            title="Igor Dimitrijević">
+            title="Igor Dimitrijević (igorskyflyer)">
             <Image
               src="/assets/author/igorskyflyer-mini.webp"
               alt="Igor Dimitrijević"
@@ -81,7 +76,12 @@ const schema = {
               quality="max"
               class="author-avatar"
             />
-            <span class="author-name">Igor Dimitrijević</span>
+            <div>
+              <span class="author-name">Igor Dimitrijević (igorskyflyer)</span>
+              <p class="author-occupation">
+                Senior Full-Stack Software Engineer
+              </p>
+            </div>
           </a>
 
           <div class="meta-details">
@@ -90,7 +90,7 @@ const schema = {
                 name="mdi:clock-outline"
                 class="meta-icon"
               />
-              <time datetime={new Date(publishDate).toISOString()}
+              <time datetime={new Date(post.publishDate).toISOString()}
                 >{postPublishedDate}</time
               >
             </span>
@@ -104,17 +104,17 @@ const schema = {
                 name="ic:baseline-menu-book"
                 class="meta-icon"
               />
-              {minutesRead}
+              {post.minutesRead}
             </span>
           </div>
         </div>
 
         {
-          tags.length > 0 && (
+          post.tags.length > 0 && (
             <ul
               class="tag-list"
               aria-label="Post tags">
-              {tags.map((tagName: string) => (
+              {post.tags.map((tagName: string) => (
                 <li>
                   <a
                     href={`/blog/tag/${tagName}/`}
@@ -149,7 +149,6 @@ const schema = {
     transition:
       color 150ms ease,
       transform 150ms ease;
-    margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
     color: #8b949e;
     font-weight: 500;
     font-size: 1.05rem;
@@ -164,14 +163,19 @@ const schema = {
   .post-article {
     display: flex;
     flex-direction: column;
+    margin-top: 2rem;
+  }
+
+  :global(.post-content a),
+  :global(.post-content a:visited) {
+    color: var(--link);
   }
 
   .post-header {
     display: flex;
     flex-direction: column;
-    margin-bottom: clamp(2rem, 5vw, 3.5rem);
     border-bottom: 1px solid #30363d;
-    padding-bottom: clamp(1.5rem, 4vw, 2.5rem);
+    padding-bottom: clamp(1rem, 1vw, 2rem);
   }
 
   .post-title {
@@ -181,12 +185,12 @@ const schema = {
     font-size: clamp(2rem, 5vw, 3.25rem);
     line-height: 1.15;
     letter-spacing: -0.02em;
-    text-wrap: balance;
   }
 
   .post-meta-bar {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
     gap: clamp(1rem, 3vw, 2rem);
     margin-bottom: 1.5rem;
@@ -200,6 +204,12 @@ const schema = {
     font-weight: 600;
     font-size: 1rem;
     text-decoration: none;
+  }
+
+  .author-occupation {
+    opacity: 0.8;
+    font-style: italic;
+    font-size: 0.8rem;
   }
 
   .author-link:hover .author-name {
