@@ -9,7 +9,7 @@ const keywords =
   'contact, email, message, software engineer, full-stack, developer, igorskyflyer, igor dimitrijević'
 const pageTitle = 'Contact & Inquiries'
 const pageTagline =
-  'Reach out for full-stack engineering, software architecture consulting, and professional collaborations.'
+  'Reach out for senior-level full-stack engineering, software architecture consulting, and professional collaborations.'
 ---
 
 <Page
@@ -20,34 +20,109 @@ const pageTagline =
   pageTagline={pageTagline}
   featuredImage="">
   <Fragment slot="body">
-    <form
-      action="https://api.web3forms.com/submit"
-      method="POST">
-      <input
-        type="hidden"
-        name="access_key"
-        value="d692d221-3dfb-44e6-8454-aad7563b95f7"
-      />
-      <input
-        type="text"
-        name="name"
-        required
-      />
-      <input
-        type="email"
-        name="email"
-        required
-      />
-      <textarea
-        name="message"
-        required
-      ></textarea>
-      <div
-        class="h-captcha"
-        data-captcha="true">
-      </div>
-      <button type="submit">Submit</button>
-    </form>
+    <section class="contact-section">
+      <form
+        action="https://api.web3forms.com/submit"
+        method="POST"
+        class="contact-form"
+        id="contact-form">
+        <input
+          type="hidden"
+          name="access_key"
+          value="d692d221-3dfb-44e6-8454-aad7563b95f7"
+        />
+        <input
+          type="hidden"
+          name="subject"
+          value="New Inquiry from igorskyflyer.me"
+        />
+        <input
+          type="hidden"
+          name="from_name"
+          value="igorskyflyer.me Contact System"
+        />
+
+        <input
+          type="checkbox"
+          name="botcheck"
+          class="honeypot"
+          tabindex="-1"
+          autocomplete="off"
+        />
+
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            autocomplete="name"
+            placeholder="John Doe"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            autocomplete="email"
+            placeholder="john@example.com"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            required
+            rows="6"
+            minlength="10"
+            placeholder="How can we collaborate?"
+          ></textarea>
+        </div>
+
+        <div class="h-captcha-container">
+          <div
+            class="h-captcha"
+            data-captcha="true">
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          class="btn-primary btn-cta">
+          Send Message
+        </button>
+
+        <p class="trust-signal">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><rect
+              x="3"
+              y="11"
+              width="18"
+              height="11"
+              rx="2"
+              ry="2"
+            ></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg
+          >
+          Your information is secure. I typically respond within 24 to 48 hours.
+        </p>
+      </form>
+    </section>
 
     <script
       src="https://web3forms.com/client/script.js"
@@ -56,3 +131,90 @@ const pageTagline =
     ></script>
   </Fragment>
 </Page>
+
+<style>
+  .contact-section {
+    margin: 0 auto;
+    padding: 2rem 0;
+    max-width: 600px;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
+    border-radius: 12px;
+    background: var(--surface-color, rgba(255, 255, 255, 0.03));
+    padding: 2rem;
+  }
+
+  .honeypot {
+    display: none;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  label {
+    color: var(--text-primary, #eaeaea);
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+
+  input,
+  textarea {
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
+    border: 1px solid var(--input-border, rgba(255, 255, 255, 0.2));
+    border-radius: 8px;
+    background: var(--input-bg, rgba(0, 0, 0, 0.2));
+    padding: 0.875rem 1rem;
+    width: 100%;
+    color: var(--text-primary, #ffffff);
+    font-size: 1rem;
+    font-family: inherit;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--text-muted, rgba(255, 255, 255, 0.4));
+  }
+
+  input:focus-visible,
+  textarea:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--brand-color-alpha, rgba(79, 172, 254, 0.25));
+    border-color: var(--brand-color, #4facfe);
+  }
+
+  textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+
+  .h-captcha-container {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0 auto;
+    min-height: 78px;
+  }
+
+  .trust-signal {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: -0.5rem;
+    color: var(--text-muted, rgba(255, 255, 255, 0.6));
+    font-size: 0.85rem;
+  }
+
+  .trust-signal svg {
+    opacity: 0.7;
+  }
+</style>
