@@ -2,37 +2,76 @@
 import Feed from '@components/Feed.astro'
 import Hero from '@components/Hero.astro'
 import Me from '@components/Me.astro'
-import Page from '@components/Page.astro'
+import NavBtn from '@components/NavBtn.astro'
+import PageFooter from '@components/PageFooter.astro'
+import PageHead from '@components/PageHead.astro'
+import PageHeader from '@components/PageHeader.astro'
 import ScrollDown from '@components/ScrollDown.astro'
 import Stats from '@components/Stats.astro'
 import { activities } from '@data/activities/feed.ts'
 import { SiteName } from '@data/site.ts'
+
+const title = `${SiteName} | Senior Full-Stack Software Engineer`
+const description =
+  'Portfolio and technical blog of Igor Dimitrijević (igorskyflyer), Senior Full-Stack Software Engineer specializing in TypeScript, DX tooling, and performance-first architectures.'
+const keywords =
+  'igorskyflyer, igor dimitrijević, full-stack engineer, software engineer, typescript, javascript, astro, open source, dx tooling, web architecture, blog'
+const featuredImage = 'https://igorskyflyer.me/assets/author/igorskyflyer.webp'
 ---
 
-<Page
-  title={`${SiteName} | Senior Full-Stack Software Engineer`}
-  description="Portfolio and technical blog of Igor Dimitrijević (igorskyflyer), Senior Full-Stack Software Engineer specializing in TypeScript, DX tooling, and performance-first architectures."
-  keywords="igorskyflyer, igor dimitrijević, full-stack engineer, software engineer, typescript, javascript, astro, open source, dx tooling, web architecture, blog"
-  featuredImage="https://igorskyflyer.me/assets/author/igorskyflyer.webp"
-  isHome={true}>
-  <Fragment slot="body">
-    <div class="fold-group">
-      <Hero />
-      <Stats />
-      <ScrollDown
-        color="#ffffff"
-        size="24px"
-      />
-    </div>
-    <Me />
-    <Feed activities={activities} />
-  </Fragment>
-</Page>
+<!doctype html>
+<html
+  lang="en"
+  dir="ltr">
+  <PageHead
+    title={title}
+    description={description}
+    keywords={keywords}
+    featuredImage={featuredImage}
+  />
+  <body>
+    <PageHeader />
+    <main>
+      <div class="fold-group">
+        <Hero />
+        <Stats />
+        <ScrollDown
+          color="#ffffff"
+          size="24px"
+        />
+      </div>
+      <Me />
+      <Feed activities={activities} />
+    </main>
+    <NavBtn />
+    <PageFooter />
+  </body>
+</html>
 
 <style>
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(4rem, 10vw, 8.5rem);
+    margin: 0.5rem auto 0 auto;
+    width: 92%;
+  }
+
+  main a,
+  main a:visited {
+    color: var(--link);
+    text-decoration: none;
+  }
+
   .fold-group {
     display: flex;
     flex-direction: column;
     gap: clamp(2rem, 3vw, 2rem);
+  }
+
+  @media screen and (min-width: 768px) {
+    main {
+      width: 88%;
+    }
   }
 </style>
