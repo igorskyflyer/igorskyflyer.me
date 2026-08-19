@@ -19,6 +19,7 @@ const postPublishedDate = postDate(post.data.publishDate)
       <a
         href={`/blog/${post.id}/`}
         class="post-title-link">
+        <!-- {data.featuredImage && <img src={data.featuredImage} />} -->
         <h2 class="post-title">{post.data.title}</h2>
       </a>
     </header>
@@ -136,6 +137,9 @@ const postPublishedDate = postDate(post.data.publishDate)
     z-index: 1;
     inset: 0;
     content: '';
+  }
+
+  .post-title-link img {
   }
 
   .post-title {
@@ -267,6 +271,10 @@ const postPublishedDate = postDate(post.data.publishDate)
   @media screen and (max-width: 480px) {
     .tag-badge {
       margin-top: 0.7rem;
+    }
+
+    .post-footer {
+      justify-content: center;
     }
   }
 </style>
