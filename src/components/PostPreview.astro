@@ -9,7 +9,7 @@ const { post } = Astro.props
 const { remarkPluginFrontmatter: data } = await render(post)
 
 const minutesRead = data.minutesRead
-const tags = post.data.tags || []
+const tags = post.data.tags
 const postPublishedDate = postDate(post.data.publishDate)
 ---
 
@@ -54,43 +54,43 @@ const postPublishedDate = postDate(post.data.publishDate)
   </div>
 
   <footer class="post-footer">
-    <a
-      href="/igorskyflyer/"
-      class="author-link">
-      <Image
-        src="/assets/author/igorskyflyer-mini.webp"
-        alt="Igor Dimitrijević"
-        loading="lazy"
-        width="44"
-        height="44"
-        class="author-avatar"
-      />
-      <div>
-        <span class="author-name">Igor Dimitrijević (igorskyflyer)</span>
-        <p class="author-occupation">Senior Full-Stack Software Engineer</p>
-      </div>
-    </a>
+    <Image
+      src="/assets/author/igorskyflyer-mini.webp"
+      alt="Igor Dimitrijević"
+      loading="lazy"
+      width="44"
+      height="44"
+      class="author-avatar"
+    />
+    <div class="post-meta">
+      <a
+        href="/igorskyflyer/"
+        class="author-link">
+      </a>
+      <span class="author-name">Igor Dimitrijević (igorskyflyer)</span>
+      <p class="author-occupation">Senior Full-Stack Software Engineer</p>
 
-    <div class="meta-details">
-      <span class="meta-item">
-        <Icon
-          name="mdi:clock-outline"
-          class="meta-icon"
-        />
-        {postPublishedDate}
-      </span>
-      <span
-        class="meta-dot"
-        aria-hidden="true"
-        >•</span
-      >
-      <span class="meta-item">
-        <Icon
-          name="ic:baseline-menu-book"
-          class="meta-icon"
-        />
-        {minutesRead}
-      </span>
+      <div class="meta-details">
+        <span class="meta-item">
+          <Icon
+            name="mdi:clock-outline"
+            class="meta-icon"
+          />
+          {postPublishedDate}
+        </span>
+        <span
+          class="meta-dot"
+          aria-hidden="true"
+          >•</span
+        >
+        <span class="meta-item">
+          <Icon
+            name="ic:baseline-menu-book"
+            class="meta-icon"
+          />
+          {minutesRead}
+        </span>
+      </div>
     </div>
   </footer>
 </article>
@@ -156,7 +156,7 @@ const postPublishedDate = postDate(post.data.publishDate)
   }
 
   .post-excerpt-wrapper {
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.25rem;
     color: #8b949e;
     font-size: clamp(0.9rem, 1.5vw, 1rem);
     line-height: 1.6;
@@ -188,6 +188,7 @@ const postPublishedDate = postDate(post.data.publishDate)
       background-color 150ms ease,
       border-color 150ms ease,
       color 150ms ease;
+    margin-top: 1rem;
     border: 1px solid rgba(56, 139, 253, 0.25);
     border-radius: 20px;
     background-color: rgba(56, 139, 253, 0.1);
@@ -207,7 +208,6 @@ const postPublishedDate = postDate(post.data.publishDate)
   .post-footer {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     align-items: center;
     gap: 0.75rem;
     margin-top: auto;
@@ -247,6 +247,7 @@ const postPublishedDate = postDate(post.data.publishDate)
     display: flex;
     align-items: center;
     gap: 0.4rem;
+    margin-top: 0.75rem;
     color: #8b949e;
     font-size: 0.8rem;
   }
@@ -269,12 +270,16 @@ const postPublishedDate = postDate(post.data.publishDate)
   }
 
   @media screen and (max-width: 480px) {
-    .tag-badge {
-      margin-top: 0.7rem;
-    }
-
     .post-footer {
       justify-content: center;
+    }
+
+    .post-meta {
+      text-align: center;
+    }
+
+    .author-link {
+      text-align: center;
     }
   }
 </style>
