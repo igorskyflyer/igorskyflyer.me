@@ -16,7 +16,7 @@ const blog = defineCollection({
     tags: z.array(z.string()).default([]),
     draft: z.boolean().default(false),
     excerpt: z.string().optional().default(''),
-    description: z.string().max(120).default(''),
+    description: z.string().max(150).default(''),
     keywords: z.string().max(120).default(''),
     minutesRead: z.string().optional().default('')
   })
