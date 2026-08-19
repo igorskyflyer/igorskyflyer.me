@@ -4,17 +4,23 @@
 import Page from '@components/Page.astro'
 import { schema } from '@data/schema/igorskyflyer.ts'
 import { SiteName } from '@data/site.ts'
-const pageTitle = `About Igor Dimitrijević | ${SiteName}`
-const pageDescription =
+
+const title = `About Igor Dimitrijević | ${SiteName}`
+const description =
   'Senior, freelance full-stack software engineer and open source maintainer with a BSc (Hons) in IT & Software Engineering. Explore my professional background, technical stack, and open source ecosystem.'
-const pageKeywords =
+const keywords =
   'Igor Dimitrijević, igorskyflyer, software engineer, full-stack developer, open source, TypeScript, Astro, software architecture'
+const pageTitle = 'About Igor Dimitrijević'
+const pageTagline =
+  'Senior level full stack software engineer and open source maintainer building high performance web architectures and developer tooling.'
 ---
 
 <Page
-  title={pageTitle}
-  description={pageDescription}
-  keywords={pageKeywords}
+  title={title}
+  description={description}
+  keywords={keywords}
+  pageTitle={pageTitle}
+  pageTagline={pageTagline}
   featuredImage="https://igorskyflyer.me/assets/author/igorskyflyer.webp">
   <Fragment slot="head">
     <link
@@ -29,7 +35,7 @@ const pageKeywords =
   </Fragment>
   <section slot="body">
     <div id="intro">
-      <h1>Igor Dimitrijević (igorskyflyer)</h1>
+      <h2>Igor Dimitrijević (igorskyflyer)</h2>
       <blockquote class="intro-quote">
         Freelance Senior Full-Stack Software Engineer • Open Source Maintainer •
         Web, Desktop & Mobile • BSc Hons IT • 20+ Years of Experience
@@ -58,7 +64,7 @@ const pageKeywords =
       <div
         class="timeline"
         id="tech-origin">
-        <h2 class="section-title">Technical Origin</h2>
+        <h3 class="section-title">Technical Origin</h3>
         <article class="timeline-item">
           <div class="timeline-marker"></div>
           <div class="timeline-content card">
@@ -609,7 +615,7 @@ const pageKeywords =
         </article>
       </div>
 
-      <h2 class="section-title">🤖 Tech Activities</h2>
+      <h3 class="section-title">🤖 Tech Activities</h3>
       <p class="tech-activities-intro">In addition, Igor:</p>
       <div class="activity-registry">
         <a
@@ -1027,7 +1033,7 @@ const pageKeywords =
       </div>
     </div>
 
-    <h2 class="section-title">🚶🏼‍♂️ Personal Traits</h2>
+    <h3 class="section-title">🚶🏼‍♂️ Personal Traits</h3>
     <p class="traits-eyebrow">// beyond the code</p>
 
     <div class="cognitive-panel">
@@ -1183,7 +1189,7 @@ const pageKeywords =
       </article>
     </div>
 
-    <h2 class="section-title">🙆🏻‍♂️ Let&#39;s Connect</h2>
+    <h3 class="section-title">🙆🏻‍♂️ Let&#39;s Connect</h3>
     <span class="trait-kicker">// available endpoints</span>
     <div class="connect-grid">
       <a
@@ -1505,9 +1511,10 @@ const pageKeywords =
     max-width: 94%;
   }
 
-  div#intro h1 {
+  div#intro h2 {
     margin-bottom: 0.5rem;
-    font-size: clamp(1.1rem, 1.15rem + 1.25vw, 2rem);
+    font-size: clamp(1.2rem, 5.5vw, 2rem);
+    white-space: nowrap;
   }
 
   .bio-intro {
