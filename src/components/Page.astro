@@ -10,7 +10,8 @@ const {
   description = '',
   featuredImage = '',
   keywords = '',
-  isHome = false
+  pageTitle = '',
+  pageTagline = ''
 } = Astro.props as PageProps
 ---
 
@@ -24,18 +25,15 @@ const {
     keywords={keywords}
     featuredImage={featuredImage}>
     <slot name="head" />
-		{isHome && (
-      <style is:inline>
-        body main.hero {
-          margin-top: 0.5rem;
-          margin-bottom: 0;
-        }
-      </style>
-    )}
   </PageHead>
   <body>
     <PageHeader />
-    <main class:list={[{ hero: isHome }]}>
+    <header class="page-header">
+      <h1 class="page-title">{pageTitle}</h1>
+      <p class="page-tagline">{pageTagline}</p>
+    </header>
+
+    <main>
       <slot name="body" />
     </main>
     <NavBtn />
@@ -48,7 +46,7 @@ const {
     display: flex;
     flex-direction: column;
     gap: clamp(4rem, 10vw, 8.5rem);
-    margin: 1rem auto;
+    margin: 3rem auto;
     width: 92%;
   }
 
@@ -58,8 +56,39 @@ const {
     text-decoration: none;
   }
 
+  .page-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(0.5rem, 1.5vw, 0.85rem);
+    margin: 3rem auto 0 auto;
+    max-width: 80%;
+    text-align: center;
+  }
+
+  .page-title {
+    margin: 0;
+    font-weight: 800;
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .page-tagline {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0;
+    max-width: 65ch;
+    color: #94a3b8;
+    font-size: clamp(0.95rem, 2vw, 1.15rem);
+    line-height: 1.5;
+  }
+
   @media screen and (min-width: 768px) {
-		main {
+    main {
       width: 88%;
     }
   }
