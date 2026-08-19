@@ -34,7 +34,6 @@ export async function GET(context: APIContext) {
       link: new URL(`/blog/${post.id}/`, siteUrl).href,
       categories: post.data.tags ?? [],
       pubDate: new Date(post.data.publishDate),
-      content: `${post.body?.substring(0, 65)}&hellip;`,
       description: post.data.description,
       customData: [
         '<dc:creator>Igor Dimitrijević (igorskyflyer)</dc:creator>',
