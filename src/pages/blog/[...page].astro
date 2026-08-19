@@ -116,7 +116,7 @@ export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
     margin: 0 auto;
     padding: clamp(1rem, 4vw, 2rem) 0;
     width: 100%;
-    max-width: 900px;
+    max-width: clamp(320px, 92vw, 900px);
   }
 
   .archive-header {
