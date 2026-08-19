@@ -34,10 +34,11 @@ export async function GET(context: APIContext) {
       link: new URL(`/blog/${post.id}/`, siteUrl).href,
       categories: post.data.tags ?? [],
       pubDate: new Date(post.data.publishDate),
-      // description: post.data.description,
+      content: post.body?.substring(0, 65),
+      description: post.data.description,
       customData: [
         '<dc:creator>Igor Dimitrijević (igorskyflyer)</dc:creator>',
-        '<atom:author><atom:name>Igor Dimitrijević (igorskyflyer)</atom:name><atom:uri>https://igorskyflyer.me/igorskyflyer</atom:uri></atom:author>',
+        '<atom:author><atom:name>Igor Dimitrijević (igorskyflyer)</atom:name><atom:uri>https://igorskyflyer.me/igorskyflyer/</atom:uri></atom:author>',
         post.data.featuredImage
           ? `<enclosure url="${new URL(post.data.featuredImage, siteUrl)}" type="image/png" length="0" />`
           : ''
