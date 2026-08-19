@@ -4,17 +4,20 @@ import Timeline from '@components/Timeline.astro'
 import { activities } from '@data/activities/timeline.ts'
 import { SiteName } from '@data/site.ts'
 
-const pageTitle = `Timeline & Technical Archive | ${SiteName}`
-const pageDescription =
+const title = `Timeline & Technical Archive | ${SiteName}`
+const description =
   'Comprehensive archive log of software engineering milestones, open-source contributions, security vulnerabilities, certifications, and project history.'
-const pageKeywords =
+const keywords =
   'timeline, software milestones, open source, certifications, release history, igorskyflyer, igor dimitrijević'
+const pageTitle = 'Engineering Timeline & Technical Archive'
+const pageTagline =
+  'Chronological record of software milestones, open source contributions, security advisories, and project history.'
 
 const schemaData = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
-  name: pageTitle,
-  description: pageDescription,
+  name: title,
+  description: description,
   mainEntity: {
     '@type': 'Person',
     name: 'Igor Dimitrijević',
@@ -28,9 +31,11 @@ const schemaData = {
 ---
 
 <Page
-  title={pageTitle}
-  description={pageDescription}
-  keywords={pageKeywords}>
+  title={title}
+  description={description}
+  keywords={keywords}
+  pageTitle={pageTitle}
+  pageTagline={pageTagline}>
   >
   <script
     is:inline
@@ -39,15 +44,6 @@ const schemaData = {
     slot="head"
   />
   <section slot="body">
-    <header class="timeline-header">
-      <h1>Timeline</h1>
-      <h2 class="description no-select">
-        This document serves as an archive of events over the years regarding
-        Igor Dimitrijević's (igorskyflyer) technical journey, education,
-        open-source commitment and contributions.
-      </h2>
-    </header>
-
     <Timeline activities={activities} />
 
     <div class="photo">
@@ -68,26 +64,6 @@ const schemaData = {
 </Page>
 
 <style>
-  header {
-    margin-bottom: 2rem;
-  }
-
-  header h1 {
-    margin: 0 auto 0.5rem auto;
-  }
-
-  header h2.description {
-    margin-top: 2rem;
-    border: 1px solid var(--border-color);
-    border-left: 3px solid var(--accent, #3abfc7);
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.015);
-    padding: 1.25rem;
-    font-size: clamp(0.9rem, 0.8rem + 0.25vw, 1rem);
-    line-height: 1.6;
-    text-align: left;
-  }
-
   section {
     margin: auto;
     min-width: 100%;
@@ -101,13 +77,5 @@ const schemaData = {
     align-items: center;
     margin-top: 3rem;
     text-align: center;
-  }
-
-  @media (max-width: 768px) {
-    header h2.description {
-      border-left: 1px solid var(--border-color);
-      padding: 2.25rem;
-      text-align: center;
-    }
   }
 </style>
