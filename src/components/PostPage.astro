@@ -97,7 +97,7 @@ const schema = {
             <span
               class="meta-dot"
               aria-hidden="true"
-              >•</span
+              >&#9679;</span
             >
             <span class="meta-item">
               <Icon
@@ -139,7 +139,7 @@ const schema = {
   .post-layout {
     margin: 0 auto;
     padding: clamp(1rem, 3vw, 2rem) 0;
-    max-width: 860px;
+    max-width: 100%;
   }
 
   .back-link {
@@ -266,6 +266,7 @@ const schema = {
       background-color 150ms ease,
       border-color 150ms ease,
       color 150ms ease;
+    margin-top: 1rem;
     border: 1px solid rgba(56, 139, 253, 0.25);
     border-radius: 20px;
     background-color: rgba(56, 139, 253, 0.1);
@@ -286,5 +287,101 @@ const schema = {
     color: #c9d1d9;
     font-size: clamp(1.05rem, 2vw, 1.15rem);
     line-height: 1.7;
+  }
+
+  :global(pre) {
+    position: relative;
+    transition:
+      transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 0.2s;
+    box-shadow:
+      0 4px 24px rgba(0, 0, 0, 0.35),
+      inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    padding-top: 3.5rem;
+    font-feature-settings:
+      'liga' 1,
+      'calt' 1;
+  }
+
+  :global(pre):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+  }
+
+  :global(pre code) {
+    counter-reset: line;
+    font-size: 0.92em;
+    line-height: 1.65;
+    font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+    letter-spacing: 0.01em;
+    tab-size: 2;
+  }
+
+  :global(pre)::before {
+    position: absolute;
+    inset: 0 0 auto 0;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.15),
+      transparent
+    );
+    height: 1px;
+    content: '';
+  }
+
+  :global(pre)::after {
+    position: absolute;
+    top: 0.6rem;
+    right: 1rem;
+    opacity: 0.7;
+    content: attr(data-language);
+    color: #fff;
+    font-weight: bold;
+    font-size: 0.7rem;
+    font-family: ui-monospace, monospace;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+  }
+
+  :global(pre .line) {
+    display: inline-block;
+    transition: background-color 0.15s ease;
+    border-radius: 4px;
+    padding-inline: 0.25rem;
+    width: 100%;
+  }
+
+  :global(pre .line)::before {
+    display: inline-block;
+    opacity: 0.35;
+    counter-increment: line;
+    margin-right: 1em;
+    width: 2em;
+    content: counter(line);
+    user-select: none;
+    text-align: right;
+  }
+
+  :global(pre .line):hover {
+    background-color: rgba(36, 91, 255, 0.15);
+  }
+
+  @media screen and (max-width: 640px) {
+    .post-header {
+      justify-content: center;
+      text-align: center;
+    }
+
+    .post-meta-bar {
+      justify-content: center;
+    }
+
+    .tag-list {
+      justify-content: center;
+    }
   }
 </style>
