@@ -148,6 +148,7 @@ img {
     transform 130ms cubic-bezier(0.16, 1, 0.3, 1),
     box-shadow 130ms ease;
   will-change: transform;
+  cursor: pointer;
   border: 2px solid transparent;
   border-radius: var(--btn-radius);
   padding: 0.85rem 1.5rem;
@@ -166,6 +167,7 @@ img {
 }
 
 .btn-primary {
+  cursor: pointer;
   border-color: transparent;
   background-color: var(--primary);
   color: #fff;
@@ -187,6 +189,7 @@ img {
 }
 
 .btn-secondary {
+  cursor: pointer;
   border-color: rgba(255, 255, 255, 0.15);
   background-color: transparent;
 }
