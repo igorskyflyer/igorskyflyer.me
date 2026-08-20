@@ -1,8 +1,8 @@
 ---
 import NavBtn from '@components/NavBtn.astro'
-import PageFooter from '@components/PageFooter.astro'
-import PageHead from '@components/PageHead.astro'
-import PageHeader from '@components/PageHeader.astro'
+import Footer from '@components/Footer.astro'
+import Head from '@components/Head.astro'
+import Header from '@components/Header.astro'
 import type { PageProps } from '@interfaces/PageProps.ts'
 
 const {
@@ -22,15 +22,15 @@ import '@ui/main-layout.css'
 <html
   lang="en"
   dir="ltr">
-  <PageHead
+  <Head
     title={title}
     description={description}
     keywords={keywords}
     featuredImage={featuredImage}>
     <slot name="head" />
-  </PageHead>
+  </Head>
   <body>
-    <PageHeader />
+    <Header />
     {
       header && (
         <style>
@@ -77,6 +77,6 @@ import '@ui/main-layout.css'
       <slot name="body" />
     </main>
     <NavBtn />
-    <PageFooter />
+    <Footer />
   </body>
 </html>
