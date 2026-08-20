@@ -1,0 +1,29 @@
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local('Poppins'),
+    url('/font/Poppins.woff2') format('woff2');
+  font-family: 'Poppins';
+  font-display: optional;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(3rem, 7vw, 4.5rem);
+  margin: 1rem auto;
+  width: 92%;
+}
+
+main a,
+main a:visited {
+  color: var(--link);
+  text-decoration: none;
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    width: 88%;
+  }
+}
