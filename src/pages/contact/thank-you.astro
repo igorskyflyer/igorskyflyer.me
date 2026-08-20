@@ -1,6 +1,7 @@
 ---
 import Page from '@components/Page.astro'
 import { SiteName } from '@data/site.ts'
+import SafeResource from '@igor.dvlpr/astro-saferesource'
 
 const title: string = `Message Sent | ${SiteName}`
 const description: string =
@@ -65,22 +66,24 @@ const keywords =
         </a>
       </div>
     </section>
-    <script is:inline>
-      const countdown = document.getElementById('countdown')
-      let value = 8
+    <SafeResource>
+      <script is:inline>
+        const countdown = document.getElementById('countdown')
+        let value = 8
 
-      const timer = setInterval(() => {
-        value--
-        countdown.textContent = value
+        const timer = setInterval(() => {
+          value--
+          countdown.textContent = value
 
-        if (value <= 0) {
-          clearInterval(timer)
-        }
-      }, 1000)
+          if (value <= 0) {
+            clearInterval(timer)
+          }
+        }, 1000)
 
-      window.addEventListener('pagehide', () => clearInterval(timer))
-      window.addEventListener('unload', () => clearInterval(timer))
-    </script>
+        window.addEventListener('pagehide', () => clearInterval(timer))
+        window.addEventListener('unload', () => clearInterval(timer))
+      </script>
+    </SafeResource>
   </Fragment>
 </Page>
 
