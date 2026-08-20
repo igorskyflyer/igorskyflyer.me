@@ -1,11 +1,11 @@
 ---
 import Feed from '@components/Feed.astro'
+import Footer from '@components/Footer.astro'
+import Head from '@components/Head.astro'
+import Header from '@components/Header.astro'
 import Hero from '@components/Hero.astro'
 import Me from '@components/Me.astro'
 import NavBtn from '@components/NavBtn.astro'
-import PageFooter from '@components/PageFooter.astro'
-import PageHead from '@components/PageHead.astro'
-import PageHeader from '@components/PageHeader.astro'
 import ScrollDown from '@components/ScrollDown.astro'
 import Stats from '@components/Stats.astro'
 import { activities } from '@data/activities/feed.ts'
@@ -25,14 +25,14 @@ import '@ui/main-layout.css'
 <html
   lang="en"
   dir="ltr">
-  <PageHead
+  <Head
     title={title}
     description={description}
     keywords={keywords}
     featuredImage={featuredImage}
   />
   <body>
-    <PageHeader />
+    <Header />
     <main class="hero">
       <div class="fold-group">
         <Hero />
@@ -46,7 +46,7 @@ import '@ui/main-layout.css'
       <Feed activities={activities} />
     </main>
     <NavBtn />
-    <PageFooter />
+    <Footer />
   </body>
 </html>
 
