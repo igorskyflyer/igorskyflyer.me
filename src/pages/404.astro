@@ -5,10 +5,11 @@ import { SiteName } from '@data/site.ts'
 
 <Page
   title={`404: Page Not Found | ${SiteName}`}
-  description="The page you requested does not exist or has been moved.">
+  description="The page you requested does not exist or has been moved."
+  header={false}>
   <meta
     name="robots"
-    content="noindex, follow"
+    content="noindex, nofollow"
     slot="head"
   />
 
@@ -58,20 +59,19 @@ import { SiteName } from '@data/site.ts'
 
 <style>
   .not-found-wrapper {
-    position: relative;
     display: flex;
-    align-items: center;
+    position: relative;
     justify-content: center;
-    padding: 2rem 1rem;
+    align-items: center;
     box-sizing: border-box;
+    padding: 2rem 1rem;
     overflow: hidden;
   }
 
   .not-found-wrapper::before {
-    content: '';
     position: absolute;
+    animation: twinkle 4s ease-in-out infinite alternate;
     inset: 0;
-    pointer-events: none;
     background-image:
       radial-gradient(1.5px 1.5px at 25px 30px, #ffffff, transparent),
       radial-gradient(2px 2px at 150px 80px, #ffffff, transparent),
@@ -92,16 +92,16 @@ import { SiteName } from '@data/site.ts'
         rgba(255, 255, 255, 0.7),
         transparent
       );
-    background-repeat: repeat;
     background-size: 500px 500px;
-    animation: twinkle 4s ease-in-out infinite alternate;
+    background-repeat: repeat;
+    pointer-events: none;
+    content: '';
   }
 
   .not-found-wrapper::after {
-    content: '';
     position: absolute;
+    animation: twinkle 7s ease-in-out infinite alternate-reverse;
     inset: 0;
-    pointer-events: none;
     background-image:
       radial-gradient(1px 1px at 80px 140px, #ffffff, transparent),
       radial-gradient(1px 1px at 220px 290px, #ffffff, transparent),
@@ -116,18 +116,19 @@ import { SiteName } from '@data/site.ts'
         rgba(255, 255, 255, 0.8),
         transparent
       );
-    background-repeat: repeat;
     background-size: 600px 600px;
-    animation: twinkle 7s ease-in-out infinite alternate-reverse;
+    background-repeat: repeat;
+    pointer-events: none;
+    content: '';
   }
 
   .illustration {
+    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.5));
+    animation: float 6s ease-in-out infinite;
+    will-change: transform;
     width: 100%;
     height: auto;
     object-fit: contain;
-    animation: float 6s ease-in-out infinite;
-    will-change: transform;
-    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.5));
   }
 
   @keyframes float {
@@ -150,21 +151,21 @@ import { SiteName } from '@data/site.ts'
   }
 
   .not-found-card {
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    padding: 3rem 2rem;
     backdrop-filter: blur(12px);
+    padding: 3rem 2rem;
+    width: 100%;
+    text-align: center;
   }
 
   .illustration-container {
-    width: 100%;
-    max-width: 360px;
-    margin-bottom: 2rem;
     display: flex;
     justify-content: center;
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 360px;
   }
 
   .illustration {
@@ -177,84 +178,84 @@ import { SiteName } from '@data/site.ts'
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.35rem 0.85rem;
-    background: rgba(239, 68, 68, 0.1);
+    margin-bottom: 1.25rem;
     border: 1px solid rgba(239, 68, 68, 0.25);
     border-radius: 2rem;
+    background: rgba(239, 68, 68, 0.1);
+    padding: 0.35rem 0.85rem;
     color: #f87171;
     font-size: 0.825rem;
-    margin-bottom: 1.25rem;
   }
 
   .status-dot {
-    width: 8px;
-    height: 8px;
+    box-shadow: 0 0 8px #ef4444;
     border-radius: 50%;
     background-color: #ef4444;
-    box-shadow: 0 0 8px #ef4444;
+    width: 8px;
+    height: 8px;
   }
 
   .title {
     margin: 0 0 0.75rem 0;
-    font-size: clamp(1.75rem, 4vw, 2.5rem);
-    font-weight: 700;
     color: #f8fafc;
+    font-weight: 700;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
     letter-spacing: -0.025em;
   }
 
   .description {
     margin: 0 0 2rem 0;
-    font-size: 1rem;
-    color: #94a3b8;
-    line-height: 1.6;
     max-width: 440px;
+    color: #94a3b8;
+    font-size: 1rem;
+    line-height: 1.6;
   }
 
   .actions {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
     justify-content: center;
+    gap: 1rem;
     width: 100%;
   }
 
   .btn {
     display: inline-flex;
-    align-items: center;
     justify-content: center;
-    padding: 0.75rem 1.5rem;
-    font-size: 0.925rem;
-    font-weight: 600;
-    border-radius: 0.75rem;
-    text-decoration: none;
-    cursor: pointer;
+    align-items: center;
     transition: all 180ms ease;
+    cursor: pointer;
     border: none;
+    border-radius: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    font-size: 0.925rem;
+    text-decoration: none;
   }
 
   .btn-primary {
+    box-shadow: 0 4px 14px rgba(0, 47, 156, 0.35);
     background: var(--primary, #002f9c);
     color: #ffffff;
-    box-shadow: 0 4px 14px rgba(0, 47, 156, 0.35);
   }
 
   .btn-primary:hover {
-    background: #003ebd;
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(0, 47, 156, 0.5);
+    background: #003ebd;
   }
 
   .btn-secondary {
+    border: 1px solid rgba(255, 255, 255, 0.1);
     background: rgba(255, 255, 255, 0.05);
     color: #cbd5e1;
-    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .btn-secondary:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.2);
     background: rgba(255, 255, 255, 0.1);
     color: #ffffff;
-    border-color: rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
   }
 
   @media (max-width: 480px) {
