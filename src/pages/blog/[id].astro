@@ -1,5 +1,5 @@
 ---
-import PostPage from '@components/PostPage.astro'
+import Post from '@components/Post.astro'
 import { getCollection, render } from 'astro:content'
 
 export async function getStaticPaths() {
@@ -14,7 +14,7 @@ const { post } = Astro.props
 const { Content, remarkPluginFrontmatter } = await render(post)
 ---
 
-<PostPage
+<Post
   title={post.data.title}
   description={post.data.description}
   featuredImage={post.data.featuredImage}
@@ -25,4 +25,4 @@ const { Content, remarkPluginFrontmatter } = await render(post)
     minutesRead: remarkPluginFrontmatter.minutesRead
   }}>
   <Content />
-</PostPage>
+</Post>
