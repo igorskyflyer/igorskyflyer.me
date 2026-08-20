@@ -6,7 +6,7 @@ const title = `About This Site & Architecture | ${SiteName}`
 const description =
   'Technical architecture, build stack, and design principles behind this site. Built with Astro, static HTML output, and zero unnecessary client JS overhead.'
 const keywords =
-  'about site, website architecture, tech stack, astro, web performance, static site generator, chimera theme, igorskyflyer, igor dimitrijević'
+  'about site, website architecture, tech stack, astro, web performance, static site generator, igorskyflyer, igor dimitrijević'
 const pageTitle = 'About This Site & Architecture'
 const pageTagline =
   'Technical architecture, build stack, and design principles behind this site.'
@@ -42,5 +42,161 @@ const schemaData = {
     slot="head"
   />
 
-  <Fragment slot="body"></Fragment>
+  <section
+    slot="body"
+    class="about-content">
+    <h2>Core Philosophy</h2>
+    <p>
+      This platform is engineered with a strict focus on raw performance,
+      accessibility, and architectural minimalism. It avoids heavy third-party
+      UI libraries, generic CSS frameworks, and unnecessary client-side
+      JavaScript execution. Every byte is optimized to serve content instantly,
+      consistently achieving a 100 PageSpeed Insights score.
+    </p>
+
+    <h2>Edge Caching Strategy</h2>
+    <p>
+      Resource delivery is optimized via granular cache-control headers matched
+      to asset volatility:
+    </p>
+    <ul>
+      <li>
+        <strong>Static Assets & SVGs:</strong> Publicly cached with extended max-age
+        tolerances.
+      </li>
+      <li>
+        <strong>Astro Bundles:</strong> Immutable caching for compiled assets to maximize
+        repeat-visit performance.
+      </li>
+      <li>
+        <strong>Typography:</strong> Long-term caching for font files to eliminate
+        layout shift and redundant network overhead.
+      </li>
+      <li>
+        <strong>Blog Paths:</strong> Structured TTL configurations balancing content
+        freshness with edge delivery speed.
+      </li>
+    </ul>
+
+    <h2>Security & Hardening</h2>
+    <p>
+      The application layer implements defense-in-depth security policies
+      through strict response headers:
+    </p>
+    <ul>
+      <li>
+        <strong>Content Security Policy (CSP):</strong> Enforces granular script execution
+        boundaries, frame restrictions, and trusted asset sources.
+      </li>
+      <li>
+        <strong>Permissions Policy:</strong> Explicitly revokes access to unused browser
+        APIs and hardware sensors.
+      </li>
+      <li>
+        <strong>Origin Isolation:</strong> Enforces cross-origin resource, opener,
+        and embedder policies alongside strict frame denial and content-type sniffing
+        protection.
+      </li>
+    </ul>
+
+    <h2>The Build Stack</h2>
+    <ul>
+      <li>
+        <strong>Astro 7+:</strong> Leveraged for its component islands architecture,
+        static site generation, and type-safe Content Collections.
+      </li>
+      <li>
+        <strong>Zero CSS Frameworks:</strong> Styles are written in native, scoping-aware
+        CSS using modern layout primitives without preprocessors or utility frameworks.
+      </li>
+      <li>
+        <strong>Minimal JavaScript:</strong> Client-side scripting is eliminated wherever
+        possible, relying entirely on native HTML rendering and static output.
+      </li>
+    </ul>
+
+    <h2>Custom Component Architecture</h2>
+    <p>
+      Instead of relying on external component libraries, the interface is built
+      entirely from custom-crafted internal components and proprietary packages
+      developed for maximum control and consistency:
+    </p>
+
+    <ul class="component-list">
+      <li><code>Brand.astro</code> - identity and logo rendering</li>
+      <li><code>Comments.astro</code> - lightweight discussion interface</li>
+      <li><code>Feed.astro</code> - syndication and data distribution</li>
+      <li>
+        <code>Footer.astro</code> & <code>Header.astro</code> - layout boundary modules
+      </li>
+      <li><code>Head.astro</code> - metadata and SEO optimization handler</li>
+      <li>
+        <code>Hero.astro</code> & <code>Me.astro</code> - personal introduction and
+        landing views
+      </li>
+      <li>
+        <code>NavBtn.astro</code> & <code>ScrollDown.astro</code> - navigation micro-interactions
+      </li>
+      <li>
+        <code>Page.astro</code> & <code>Post.astro</code> - core structural wrappers
+      </li>
+      <li>
+        <code>PostPreview.astro</code> & <code>PostsDisplay.astro</code> - article
+        index engines
+      </li>
+      <li><code>SocialIcon.astro</code> - interactive social icons</li>
+      <li>
+        <code>Stats.astro</code> & <code>Timeline.astro</code> - professional metrics
+        and history visualization
+      </li>
+    </ul>
+  </section>
 </Page>
+
+<style>
+  p {
+    margin: 0;
+  }
+
+  .about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    box-sizing: border-box;
+    margin: 0 auto;
+    width: 100%;
+    max-width: clamp(320px, 92vw, 800px);
+    color: #e2e8f0;
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  .about-content h2 {
+    margin-top: 1rem;
+    margin-bottom: -0.5rem;
+    color: #f8fafc;
+    font-weight: 700;
+    font-size: 1.35rem;
+  }
+
+  .about-content ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 0;
+    padding-left: 1.25rem;
+  }
+
+  .component-list li {
+    margin-bottom: 0.25rem;
+  }
+
+  .about-content code {
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.15rem 0.35rem;
+    color: var(--link, #0ea8ff);
+    font-size: 0.9rem;
+    font-family: monospace;
+  }
+</style>
