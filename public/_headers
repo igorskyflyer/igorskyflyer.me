@@ -16,6 +16,9 @@
 
 ### Security START
 
+/contact/*
+  Content-Security-Policy: default-src * data: blob: 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; script-src 'self' 'sha256-RflZ5xJ47LHRhFv7NdVQL8RJ21fnrDFOyeFlLobq+r4=' 'sha256-3fG8VnL6PFA7RyDVnkG5bk03GMi6Xvy1tIKkSMKJ+Ds=' 'sha256-SxBU3PKZBUWAglRt3a7pBW0BZOiKZ/XSjHCB7Hhf3I0=' 'sha256-H/iK4Ntu+VUoX501G+Gcjq55i5kU8PN3xUQ1QATL6IM=' google.com gstatic.com web3forms.com hcaptcha.com *.hcaptcha.com cloudflareinsights.com;
+
 /*
   X-Frame-Options: DENY
   X-XSS-Protection: 1; mode=block
@@ -32,8 +35,5 @@
   Access-Control-Allow-Headers: Content-Type
   Vary: Origin
   X-Author: Igor Dimitrijević (igorskyflyer)
-
-/contact
-  Content-Security-Policy: default-src * data: blob: 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; script-src 'self' 'sha256-RflZ5xJ47LHRhFv7NdVQL8RJ21fnrDFOyeFlLobq+r4=' 'sha256-3fG8VnL6PFA7RyDVnkG5bk03GMi6Xvy1tIKkSMKJ+Ds=' 'sha256-SxBU3PKZBUWAglRt3a7pBW0BZOiKZ/XSjHCB7Hhf3I0=' 'sha256-H/iK4Ntu+VUoX501G+Gcjq55i5kU8PN3xUQ1QATL6IM=' google.com gstatic.com web3forms.com hcaptcha.com *.hcaptcha.com cloudflareinsights.com;
 
 ### Security END
