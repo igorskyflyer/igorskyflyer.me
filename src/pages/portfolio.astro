@@ -2,19 +2,20 @@
 import Page from '@components/Page.astro'
 import { SiteName } from '@data/site.ts'
 
-const pageTitle = `Software Engineering Portfolio & CV | ${SiteName}`
-const pageDescription =
-  'Official portfolio and CV of Igor Dimitrijević (igorskyflyer), Senior Full-Stack Software Engineer. Technical stack, engineering timeline, and downloadable PDF resume.'
-const pageKeywords =
-  'portfolio, cv, resume, full stack engineer, igor dimitrijević, igorskyflyer, software engineering, typescript, developer experience, open source'
-
-const cvPdfPath = '/docs/Igor-Dimitrijevic-CV.pdf'
+const title = `Software Engineering Portfolio & CV | ${SiteName}`
+const description =
+  'Official portfolio and CV of Igor Dimitrijević (igorskyflyer), Senior full-stack Software Engineer. Technical stack, engineering timeline, and downloadable PDF resume.'
+const keywords =
+  'portfolio, cv, resume, full-stack engineer, igor dimitrijević, igorskyflyer, software engineering, typescript, developer experience, open source'
+const pageTitle = 'Software Engineering Portfolio & CV'
+const pageTagline =
+  'Technical timeline, open source architecture, and downloadable CV of a senior full-stack engineer.'
 
 const schemaData = {
   '@context': 'https://schema.org',
   '@type': 'ProfilePage',
-  name: pageTitle,
-  description: pageDescription,
+  name: title,
+  description: description,
   mainEntity: {
     '@type': 'Person',
     name: 'Igor Dimitrijević',
@@ -25,7 +26,7 @@ const schemaData = {
       'TypeScript',
       'JavaScript',
       'AST Compilers',
-      'Domain-Specific Languages',
+      'Domain Specific Languages',
       'Developer Experience'
     ],
     hasCredential: [
@@ -40,32 +41,943 @@ const schemaData = {
 ---
 
 <Page
-  title={pageTitle}
-  description={pageDescription}
-  keywords={pageKeywords}>
+  title={title}
+  description={description}
+  keywords={keywords}
+  pageTitle={pageTitle}
+  pageTagline={pageTagline}>
   <script
     is:inline
     type="application/ld+json"
     set:html={JSON.stringify(schemaData)}
     slot="head"
   />
-  <link
-    rel="alternate"
-    type="application/pdf"
-    href={cvPdfPath}
-    title="Igor Dimitrijević - CV (PDF)"
-    slot="head"
-  />
 
-  <Fragment slot="body">
-    <section class="portfolio-header">
-      <h1>Portfolio & Curriculum Vitae</h1>
-      <a
-        href={cvPdfPath}
-        rel="noopener noreferrer"
-        class="btn-cta btn-primary">
-        Download CV
-      </a>
+  <section
+    slot="body"
+    class="portfolio-container">
+    <section class="metrics-grid">
+      <div class="metric-card">
+        <span class="metric-val">4M+</span>
+        <span class="metric-lbl">Yearly Requests (Scrollend Polyfill)</span>
+      </div>
+      <div class="metric-card">
+        <span class="metric-val">16.7x</span>
+        <span class="metric-lbl">Productivity Gain (Aria & ADBT)</span>
+      </div>
+      <div class="metric-card">
+        <span class="metric-val">365K+</span>
+        <span class="metric-lbl">VS Code Installs</span>
+      </div>
+      <div class="metric-card">
+        <span class="metric-val">102K+</span>
+        <span class="metric-lbl">npm Installs (60 Packages)</span>
+      </div>
+      <div class="metric-card">
+        <span class="metric-val">10K+</span>
+        <span class="metric-lbl">Monthly Active Users (AdVoid)</span>
+      </div>
     </section>
-  </Fragment>
+
+    <section class="section-block">
+      <h2>Impact & Notable Contributions</h2>
+      <ul class="impact-list">
+        <li>
+          <a
+            href="https://www.jsdelivr.com/package/gh/igorskyflyer/npm-scrollend-polyfill">
+            <strong>Scrollend Polyfill</strong>
+          </a>: Powering <code>3.975M</code> yearly requests with <code
+            >+49,500%</code
+          > (<code>~496x</code>) growth.
+        </li>
+        <li>
+          <a href="https://github.com/aria-toolkit/aria-cli"
+            ><strong>Aria</strong></a
+          > &amp;
+          <a href="https://github.com/adbt-lang/adbt"><strong>ADBT</strong></a>:
+          Specialized compiler and DSL architecture yielding a <code>16.7x</code
+          > productivity gain in automated ad block filter maintenance.
+        </li>
+        <li>
+          <a href="https://marketplace.visualstudio.com/publishers/igordvlpr">
+            <strong>Visual Studio Code Extensions</strong>
+          </a>: <code>363.5K+</code> installs as Verified Publisher, including flagship
+          <a
+            href="https://marketplace.visualstudio.com/items?itemName=igordvlpr.open-in-browser">
+            <strong>Open in Browser</strong>
+          </a>.
+        </li>
+        <li>
+          <a href="https://www.npmjs.com/~igorskyflyer"
+            ><strong>Open Source Footprint</strong></a
+          >: <code>102K+</code> installs across <code>60</code> npm packages and <code
+            >10K+</code
+          > installs for official
+          <a href="https://astro.build/integrations?search=igor.dvlpr"
+            ><strong>Astro integrations</strong></a
+          > (CSP safe/rendering).
+        </li>
+        <li>
+          <a href="https://github.com/the-advoid/ad-void"
+            ><strong>AdVoid Filter Ecosystem</strong></a
+          >: Modular filter lists blocking ads, trackers, malware, phishing, and
+          web clutter, serving <code>10K+</code> monthly active users.
+        </li>
+        <li>
+          <a href="https://github.com/igorskyflyer/npm-zep"
+            ><strong>Zep</strong></a
+          >: State driven debounce engine featuring built in telemetry for
+          managed execution lifecycle in high concurrency environments.
+        </li>
+        <li>
+          <a href="https://github.com/igorskyflyer/commoji"
+            ><strong>Commoji</strong></a
+          >: Expressive, visual psychology based semantic commit tagging system.
+        </li>
+        <li>
+          <strong>Global Delivery</strong>: Solutions for recurring
+          international clients in <code>10</code> countries with proven testimonials;
+          recipient of Best Site (2009) award at age <code>16</code>.
+        </li>
+        <li>
+          <strong>Technical Breadth</strong>: Holder of <code>30+</code> certifications
+          and a BSc (Hons) IT, specializing in Software Engineering with <code
+            >20+</code
+          > years of active development.
+        </li>
+      </ul>
+      <p class="sub-link">
+        More details available on the <a
+          href="https://github.com/igorskyflyer/igorskyflyer/blob/main/notable-projects.md"
+          ><strong>Notable Projects</strong></a
+        > page.
+      </p>
+    </section>
+
+    <section class="section-block">
+      <h2>Current Roles</h2>
+      <div class="role-card">
+        <h3>Senior Full-Stack Engineer</h3>
+        <p class="role-subtitle">
+          SissiS (Luxury Retail) &amp; Sensomed (Healthcare)
+        </p>
+        <p class="role-focus">
+          Focus: WordPress/WooCommerce platform engineering, backend automation,
+          security hardening.
+        </p>
+        <ul class="role-details">
+          <li>
+            <strong>SissiS</strong>: Built custom WordPress/WooCommerce plugin
+            suite from scratch (PHP, no third party frameworks) for order export
+            (XML/JSON), CSV based order migration, FTP synced tracking updates,
+            Cron driven automation, and custom HTTP security headers.
+            Multilingual (EN/DE) implemented natively, without translation
+            plugins.
+          </li>
+          <li>
+            <strong>Sensomed</strong>: Delivered WordPress/WooCommerce
+            storefront built from static Photoshop design with custom theme/post
+            templates, product variation and category filtering, Google
+            Translate based multilingual support, and security header hardening.
+            Advised on accessibility improvements.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <h2>Dev Setup</h2>
+      <div class="setup-grid">
+        <div class="setup-item">
+          <p class="setup-label">Machine</p>
+          <span class="setup-val">Lenovo IdeaPad 3 15ABA7</span>
+        </div>
+        <div class="setup-item">
+          <p class="setup-label">CPU</p>
+          <span class="setup-val"
+            >AMD Ryzen 7 5825U (Zen 3, 8C/16T, 2.0–4.5 GHz, 7nm)</span
+          >
+        </div>
+        <div class="setup-item">
+          <p class="setup-label">GPU</p>
+          <span class="setup-val">AMD Radeon Graphics (Vega 8, iGPU)</span>
+        </div>
+        <div class="setup-item">
+          <p class="setup-label">RAM</p>
+          <span class="setup-val">16GB DDR4</span>
+        </div>
+        <div class="setup-item">
+          <p class="setup-label">Storage</p>
+          <span class="setup-val">512GB Crucial SSD</span>
+        </div>
+        <div class="setup-item">
+          <p class="setup-label">Display</p>
+          <span class="setup-val">15.6" FHD 1920×1080</span>
+        </div>
+        <div class="setup-item">
+          <p class="setup-label">IDE / Editor</p>
+          <div class="setup-subgrid">
+            <div class="sub-row">
+              <strong>Primary:</strong> VS Code
+              <ul class="setup-nested-list">
+                <li>
+                  Theme: <a
+                    href="https://marketplace.visualstudio.com/items?itemName=igordvlpr.kai-theme"
+                    >Kai</a
+                  >
+                </li>
+                <li>Font: Monaspace Argon</li>
+              </ul>
+            </div>
+            <div class="sub-row">
+              <strong>Other:</strong> Visual Studio, Android Studio
+            </div>
+          </div>
+        </div>
+        <div class="setup-item">
+          <p class="setup-label">Additional IDEs</p>
+          <span class="setup-val">Visual Studio, Android Studio</span>
+        </div>
+        <div class="setup-item">
+          <p class="setup-label">OS</p>
+          <span class="setup-val">Windows, Linux</span>
+        </div>
+        <div class="setup-item">
+          <p class="setup-label">Commits</p>
+          <span class="setup-val"
+            ><a href="https://github.com/igorskyflyer/commoji">Commoji</a></span
+          >
+        </div>
+        <div class="setup-item">
+          <p class="setup-label">Tooling</p>
+          <span class="setup-val"
+            ><a href="https://github.com/igorskyflyer/dotfiles"
+              >@igorskyflyer/dotfiles</a
+            ></span
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block tech-stack-section">
+      <h2>Tech Stack</h2>
+      <div class="tech-grid">
+        <div
+          class="tech-card"
+          style="--theme: #4a90e2">
+          <div class="tech-header">
+            <div class="tech-icon-wrapper"><div class="logo-web"></div></div>
+            <h3>Web</h3>
+          </div>
+          <p>
+            HTML, CSS, Sass, JavaScript, TypeScript, Node.js, PHP, Astro, PWA,
+            WordPress, WooCommerce
+          </p>
+        </div>
+
+        <div
+          class="tech-card"
+          style="--theme: #9b59b6">
+          <div class="tech-header">
+            <div class="tech-icon-wrapper">
+              <div class="logo-desktop"></div>
+            </div>
+            <h3>Desktop</h3>
+          </div>
+          <p>C#, Pascal, Delphi</p>
+        </div>
+
+        <div
+          class="tech-card"
+          style="--theme: #27ae60">
+          <div class="tech-header">
+            <div class="tech-icon-wrapper"><div class="logo-mobile"></div></div>
+            <h3>Mobile</h3>
+          </div>
+          <p>Java (Android), Flutter</p>
+        </div>
+
+        <div
+          class="tech-card"
+          style="--theme: #e67e22">
+          <div class="tech-header">
+            <div class="tech-icon-wrapper"><div class="logo-ui"></div></div>
+            <h3>UI / UX</h3>
+          </div>
+          <p>Figma, Affinity Designer, Adobe XD, Illustrator, Photoshop</p>
+        </div>
+
+        <div
+          class="tech-card"
+          style="--theme: #e74c3c">
+          <div class="tech-header">
+            <div class="tech-icon-wrapper">
+              <div class="logo-tooling"></div>
+            </div>
+            <h3>Tooling</h3>
+          </div>
+          <p>esbuild, Vite, Biome, Vitest, Composer</p>
+        </div>
+
+        <div
+          class="tech-card"
+          style="--theme: #0ea5e9; --fg: #ffffff;">
+          <div class="tech-header">
+            <div class="tech-icon-wrapper"><div class="logo-ext"></div></div>
+            <h3>Extensibility</h3>
+          </div>
+          <p>VS Code extensions / themes, UserScripts</p>
+        </div>
+
+        <div
+          class="tech-card"
+          style="--theme: #00bcd4">
+          <div class="tech-header">
+            <div class="tech-icon-wrapper"><div class="logo-env"></div></div>
+            <h3>Environments</h3>
+          </div>
+          <p>Windows, WSL (Ubuntu), Linux (Mint, Manjaro)</p>
+        </div>
+
+        <div
+          class="tech-card"
+          style="--theme: #6c5ce7">
+          <div class="tech-header">
+            <div class="tech-icon-wrapper">
+              <div class="logo-platforms"></div>
+            </div>
+            <h3>Platforms</h3>
+          </div>
+          <p>Cloudflare, Vercel, Netlify</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="portfolio-quote">
+      <blockquote>"Built for elegance. Shaped for endurance."</blockquote>
+      <p>Igor Dimitrijević (igorskyflyer)</p>
+    </footer>
+  </section>
 </Page>
+
+<style>
+  .portfolio-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 0 auto;
+    padding: 1rem 0;
+    max-width: 960px;
+    color: #e2e8f0;
+  }
+
+  .portfolio-container a {
+    transition:
+      color 0.2s,
+      text-shadow 0.2s;
+    color: #63b3ed;
+    text-decoration: none;
+  }
+
+  .portfolio-container a:hover {
+    color: #90cdf4;
+    text-shadow: 0 0 8px rgba(99, 179, 237, 0.4);
+  }
+
+  .portfolio-container code {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 0.15rem 0.35rem;
+    color: #e2e8f0;
+    font-size: 0.85em;
+  }
+
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .metric-card {
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(10px);
+    transition:
+      transform 0.3s ease,
+      border-color 0.3s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    background: linear-gradient(
+      145deg,
+      rgba(20, 22, 26, 0.7) 0%,
+      rgba(10, 12, 15, 0.9) 100%
+    );
+    padding: 1.25rem;
+  }
+
+  .metric-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(74, 144, 226, 0.3);
+  }
+
+  .metric-val {
+    background: linear-gradient(135deg, #4a90e2, #63b3ed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+
+  .metric-lbl {
+    margin-top: 0.35rem;
+    color: #94a3b8;
+    font-weight: 500;
+    font-size: 0.85rem;
+  }
+
+  .section-block {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 1.25rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    background: linear-gradient(
+      155deg,
+      rgba(30, 32, 36, 0.6) 0%,
+      rgba(15, 17, 20, 0.8) 100%
+    );
+    padding: 2rem;
+    overflow: hidden;
+  }
+
+  .section-block::before {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle at 100% 0%,
+      rgba(74, 144, 226, 0.05) 0%,
+      transparent 40%
+    );
+    pointer-events: none;
+    content: '';
+  }
+
+  .section-block h2 {
+    margin: 0;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: 0.5px;
+  }
+
+  .section-block h3 {
+    color: #f8fafc;
+  }
+
+  .impact-list,
+  .role-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    margin: 0;
+    padding-left: 1.25rem;
+    color: #cbd5e1;
+    line-height: 1.6;
+  }
+
+  .impact-list li::marker,
+  .role-details li::marker {
+    color: #4a90e2;
+  }
+
+  .sub-link {
+    margin: 0.5rem 0 0 0;
+    color: #94a3b8;
+    font-size: 0.95rem;
+  }
+
+  .role-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    border-left: 3px solid #4a90e2;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 1.25rem;
+  }
+
+  .role-card h3 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+
+  .role-subtitle {
+    margin: 0;
+    color: #94a3b8;
+    font-style: italic;
+  }
+
+  .role-focus {
+    margin: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 0.5rem;
+    color: #cbd5e1;
+    font-size: 0.95rem;
+  }
+
+  .setup-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 0.85rem;
+    font-size: 0.9rem;
+  }
+
+  .setup-item {
+    transition:
+      background 0.3s ease,
+      border-color 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 0.75rem 1rem;
+    color: #cbd5e1;
+  }
+
+  .setup-item:hover {
+    border-color: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .setup-item strong {
+    color: #f8fafc;
+  }
+
+  .setup-label {
+    font-style: italic;
+  }
+
+  .setup-val {
+    font-weight: bold;
+  }
+
+  .cta-wrapper {
+    margin-top: 1rem;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+    border-radius: 8px;
+    background: linear-gradient(135deg, #4a90e2, #3178c6);
+    padding: 0.75rem 1.5rem;
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(74, 144, 226, 0.5);
+    color: #ffffff;
+  }
+
+  .tech-stack-section {
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    padding: 0;
+  }
+
+  .tech-stack-section::before {
+    display: none;
+  }
+
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .tech-card {
+    --fg: #ffffff;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    transition:
+      transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.3s ease;
+    box-shadow: 0 10px 24px -16px rgba(0, 0, 0, 0.6);
+    border: 1px solid color-mix(in srgb, var(--fg) 18%, transparent);
+    border-radius: 16px;
+    background: linear-gradient(
+      155deg,
+      var(--theme) 0%,
+      color-mix(in srgb, var(--theme) 55%, #050608) 100%
+    );
+    padding: 1.5rem;
+    overflow: hidden;
+    color: var(--fg);
+    user-select: none;
+  }
+
+  .tech-card::before {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle at 85% -10%,
+      color-mix(in srgb, var(--fg) 35%, transparent) 0%,
+      transparent 55%
+    );
+    pointer-events: none;
+    content: '';
+  }
+
+  .tech-card:hover {
+    transform: translateY(-6px) scale(1.015);
+    box-shadow: 0 20px 40px -16px var(--theme);
+  }
+
+  .tech-header {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .tech-header h3 {
+    margin: 0;
+    color: var(--fg);
+    font-size: 1.1rem;
+    text-shadow:
+      1px 1px 1px rgba(0, 0, 0, 0.15),
+      2px 2px 2px rgba(0, 0, 0, 0.2),
+      3px 3px 3px rgba(0, 0, 0, 0.25),
+      4px 4px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  .tech-card p {
+    position: relative;
+    margin: 0;
+    color: color-mix(in srgb, var(--fg) 85%, transparent);
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .tech-icon-wrapper {
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--fg) 22%, transparent);
+    border-radius: 12px;
+    background: color-mix(in srgb, var(--fg) 16%, transparent);
+    width: 48px;
+    height: 48px;
+    color: var(--fg);
+  }
+
+  .tech-card:hover .tech-icon-wrapper {
+    transform: rotate(-8deg) scale(1.1);
+  }
+
+  .logo-web {
+    position: relative;
+    border: 2px solid currentColor;
+    border-radius: 5px;
+    width: 28px;
+    height: 20px;
+    overflow: hidden;
+  }
+  .logo-web::before {
+    position: absolute;
+    opacity: 0.3;
+    inset: 0 0 auto 0;
+    background: currentColor;
+    height: 6px;
+    content: '';
+  }
+  .logo-web::after {
+    position: absolute;
+    top: 2px;
+    left: 3px;
+    box-shadow:
+      6px 0 #febc2e,
+      12px 0 #28c840;
+    border-radius: 50%;
+    background: #ff5f57;
+    width: 2.5px;
+    height: 2.5px;
+    content: '';
+  }
+
+  .logo-desktop {
+    position: relative;
+    margin-bottom: 6px;
+    border: 2px solid currentColor;
+    border-radius: 3px;
+    width: 28px;
+    height: 18px;
+  }
+  .logo-desktop::before {
+    position: absolute;
+    top: 4px;
+    left: 3px;
+    opacity: 0.55;
+    background: currentColor;
+    width: 12px;
+    height: 2px;
+    content: '';
+  }
+  .logo-desktop::after {
+    position: absolute;
+    bottom: -6px;
+    left: 8px;
+    border: 2px solid currentColor;
+    border-top: none;
+    width: 8px;
+    height: 4px;
+    content: '';
+  }
+
+  .logo-mobile {
+    position: relative;
+    border: 2px solid currentColor;
+    border-radius: 5px;
+    width: 16px;
+    height: 28px;
+  }
+  .logo-mobile::before {
+    position: absolute;
+    top: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 0 0 3px 3px;
+    background: currentColor;
+    width: 7px;
+    height: 3px;
+    content: '';
+  }
+  .logo-mobile::after {
+    position: absolute;
+    bottom: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 1px;
+    background: currentColor;
+    width: 6px;
+    height: 2px;
+    content: '';
+  }
+
+  .logo-ui {
+    position: relative;
+    border: 2px solid currentColor;
+    border-radius: 3px;
+    width: 18px;
+    height: 13px;
+  }
+  .logo-ui::before {
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    opacity: 0.55;
+    border: 2px solid currentColor;
+    border-radius: 3px;
+    width: 18px;
+    height: 13px;
+    content: '';
+  }
+  .logo-ui::after {
+    position: absolute;
+    right: -6px;
+    bottom: -6px;
+    opacity: 0.55;
+    border: 2px solid currentColor;
+    border-radius: 3px;
+    width: 18px;
+    height: 13px;
+    content: '';
+  }
+
+  .logo-tooling {
+    position: relative;
+    border-radius: 50%;
+    background: repeating-conic-gradient(
+      currentColor 0deg 16deg,
+      transparent 16deg 32deg
+    );
+    width: 28px;
+    height: 28px;
+    -webkit-mask-image: radial-gradient(
+      circle,
+      transparent 30%,
+      black 32%,
+      black 60%,
+      transparent 62%
+    );
+    mask-image: radial-gradient(
+      circle,
+      transparent 30%,
+      black 32%,
+      black 60%,
+      transparent 62%
+    );
+  }
+  .logo-tooling::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: currentColor;
+    width: 8px;
+    height: 8px;
+    content: '';
+  }
+
+  .logo-ext {
+    position: relative;
+    border: 2px solid currentColor;
+    border-radius: 3px;
+    width: 18px;
+    height: 18px;
+  }
+  .logo-ext::before {
+    position: absolute;
+    top: 3px;
+    right: -7px;
+    border: 2px solid currentColor;
+    border-left: 2px solid transparent;
+    border-radius: 50%;
+    width: 7px;
+    height: 7px;
+    content: '';
+  }
+  .logo-ext::after {
+    position: absolute;
+    top: -7px;
+    left: 3px;
+    border: 2px solid currentColor;
+    border-bottom: 2px solid transparent;
+    border-radius: 50%;
+    width: 7px;
+    height: 7px;
+    content: '';
+  }
+
+  .logo-env {
+    position: relative;
+    border: 2px solid currentColor;
+    border-radius: 4px;
+    width: 30px;
+    height: 22px;
+  }
+  .logo-env::before {
+    position: absolute;
+    top: 8px;
+    left: 5px;
+    transform: rotate(45deg);
+    border-top: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    width: 6px;
+    height: 6px;
+    content: '';
+  }
+  .logo-env::after {
+    position: absolute;
+    bottom: 5px;
+    left: 14px;
+    background: currentColor;
+    width: 8px;
+    height: 2px;
+    content: '';
+  }
+
+  .logo-platforms {
+    position: relative;
+    margin-top: 8px;
+    border-radius: 8px;
+    background: currentColor;
+    width: 26px;
+    height: 13px;
+  }
+  .logo-platforms::before {
+    position: absolute;
+    top: -8px;
+    left: 2px;
+    border-radius: 50%;
+    background: currentColor;
+    width: 14px;
+    height: 14px;
+    content: '';
+  }
+  .logo-platforms::after {
+    position: absolute;
+    top: -6px;
+    left: 13px;
+    border-radius: 50%;
+    background: currentColor;
+    width: 10px;
+    height: 10px;
+    content: '';
+  }
+
+  .portfolio-quote {
+    position: relative;
+    padding: 3rem 0 1rem;
+    text-align: center;
+  }
+
+  .portfolio-quote::before {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.15),
+      transparent
+    );
+    width: 150px;
+    height: 1px;
+    content: '';
+  }
+
+  .portfolio-quote blockquote {
+    margin: 0 0 0.75rem 0;
+    color: #e2e8f0;
+    font-style: italic;
+    font-size: 1.3rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .portfolio-quote p {
+    margin: 0;
+    color: #94a3b8;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  .setup-subgrid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-top: 0.2rem;
+  }
+
+  .sub-row {
+    color: #cbd5e1;
+    font-size: 0.85rem;
+    line-height: 1.3;
+  }
+</style>
