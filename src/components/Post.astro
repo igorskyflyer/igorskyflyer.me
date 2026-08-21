@@ -13,7 +13,7 @@ if (!post) {
   throw new Error('Post prop is required.')
 }
 
-const pageTitle = `${title} - Blog | ${SiteName}`
+const heading = `${title} - Blog | ${SiteName}`
 const postPublishedDate = postDate(post.publishDate.toString())
 
 const schema = {
@@ -38,11 +38,10 @@ const schema = {
 ---
 
 <Page
-  title={pageTitle}
+  title={heading}
   description={description}
   keywords={keywords}
-  featuredImage={featuredImage}
-  header={false}>
+  featuredImage={featuredImage}>
   <script
     type="application/ld+json"
     slot="head"
@@ -57,7 +56,6 @@ const schema = {
     <article class="post-article">
       <header class="post-header">
         <h1 class="post-title">{title}</h1>
-
         <div class="post-meta-bar">
           <a
             href="/igorskyflyer/"
@@ -94,7 +92,14 @@ const schema = {
             </span>
           </div>
         </div>
+      </header>
 
+      <section class="post-content">
+        <slot />
+      </section>
+
+      <div class="post-tags">
+        Tagged with:
         {
           post.tags.length > 0 && (
             <ul class="tag-list" aria-label="Post tags">
@@ -108,11 +113,7 @@ const schema = {
             </ul>
           )
         }
-      </header>
-
-      <section class="post-content">
-        <slot />
-      </section>
+      </div>
     </article>
   </div>
 </Page>
@@ -161,7 +162,7 @@ const schema = {
   }
 
   .post-title {
-    margin: 0 0 clamp(1.5rem, 3vw, 2rem) 0;
+    margin: 0 0 1rem 0;
     color: #f0f6fc;
     font-weight: 800;
     font-size: clamp(2rem, 5vw, 3.25rem);
@@ -234,7 +235,7 @@ const schema = {
   }
 
   .tag-list {
-    display: flex;
+    display: inline-flex;
     flex-wrap: wrap;
     gap: 0.5rem;
     margin: 0;
@@ -248,7 +249,7 @@ const schema = {
       background-color 150ms ease,
       border-color 150ms ease,
       color 150ms ease;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     border: 1px solid rgba(56, 139, 253, 0.25);
     border-radius: 20px;
     background-color: rgba(56, 139, 253, 0.1);
@@ -269,6 +270,14 @@ const schema = {
     color: #c9d1d9;
     font-size: clamp(1.05rem, 2vw, 1.15rem);
     line-height: 1.7;
+  }
+
+  .post-tags {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0 0 0;
   }
 
   :global(pre) {
@@ -359,10 +368,6 @@ const schema = {
     }
 
     .post-meta-bar {
-      justify-content: center;
-    }
-
-    .tag-list {
       justify-content: center;
     }
   }
