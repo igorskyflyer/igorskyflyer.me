@@ -75,6 +75,9 @@ importers:
       '@igor.dvlpr/astro-post-excerpt':
         specifier: 4.1.1-alpha.0
         version: 4.1.1-alpha.0(astro@7.2.4(@astrojs/markdown-remark@7.2.4(supports-color@7.2.0))(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.1)(@types/node@26.1.2)(terser@5.49.2))(supports-color@7.2.0)
+      '@igorskyflyer/prettier-config':
+        specifier: ^1.0.1
+        version: 1.0.1(prettier@3.9.6)
       '@igorskyflyer/zitto':
         specifier: ^1.0.0
         version: 1.0.0
@@ -537,6 +540,11 @@ packages:
     resolution: {integrity: sha512-U7IqROdqZCA2GalLA1xr+2ix0ZnWbqlWI5CblcdJ9LvFW+m83AmHzZ/7lUNJ3p9w33zIOikVVBWoqnIlkgrphQ==}
     engines: {node: '>=20.0'}
     deprecated: ⚠️ This package has been deprecated due to technical difficulties. Please install @igorskyflyer/rawelement instead.
+
+  '@igorskyflyer/prettier-config@1.0.1':
+    resolution: {integrity: sha512-vHorOR2RAFjE7ScJSsCRBDgvT2XdgD2X+VG6FNBdefcyHHwEatPWH+ob0yf+Bgvg7B29+GuY/uEesnS6d5UPvQ==}
+    peerDependencies:
+      prettier: ^3.8.1
 
   '@igorskyflyer/strip-yaml-front-matter@1.1.1':
     resolution: {integrity: sha512-3oc1BDqn2lXDFQDdvqqBQVHU8pWLhgVyPU7xXmTpLKruPxN6qLLGIE3intf+iXDS7fFAEcXtMctOdaNiW1nvlg==}
@@ -2652,6 +2660,10 @@ snapshots:
       astro: 7.2.4(@astrojs/markdown-remark@7.2.4(supports-color@7.2.0))(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.1)(@types/node@26.1.2)(terser@5.49.2)
 
   '@igor.dvlpr/rawelement@1.1.0': {}
+
+  '@igorskyflyer/prettier-config@1.0.1(prettier@3.9.6)':
+    dependencies:
+      prettier: 3.9.6
 
   '@igorskyflyer/strip-yaml-front-matter@1.1.1': {}
 
