@@ -99,7 +99,7 @@ const schema = {
       </section>
 
       <div class="post-tags">
-        Tagged with:
+        <span>Tagged with:</span>
         {
           post.tags.length > 0 && (
             <ul class="tag-list" aria-label="Post tags">
@@ -273,11 +273,10 @@ const schema = {
   }
 
   .post-tags {
-    display: flex;
-    justify-content: center;
+    display: inline-flex;
     align-items: center;
     gap: 1rem;
-    margin: 2rem 0 0 0;
+    margin: 2rem 0 0;
   }
 
   :global(pre) {
@@ -369,6 +368,20 @@ const schema = {
 
     .post-meta-bar {
       justify-content: center;
+    }
+
+    .post-tags {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem 1rem;
+      margin: 2rem 0 0;
+    }
+
+    .post-tags .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
     }
   }
 </style>
