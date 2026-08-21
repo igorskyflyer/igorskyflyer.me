@@ -1,5 +1,5 @@
 ---
-import Page from '@components/Page.astro'
+import SinglePage from '@components/SinglePage.astro'
 import { SiteName } from '@data/site.ts'
 
 const title = `Projects & Developer Tools | ${SiteName}`
@@ -7,8 +7,8 @@ const description =
   'Explore software, custom DSLs, compilers, and developer tools built by Igor Dimitrijević (igorskyflyer). Lightweight, high-performance utilities.'
 const keywords =
   'open source, developer tools, npm packages, custom DSLs, AST compilers, vs code extensions, typescript, javascript, igor dimitrijević, igorskyflyer'
-const pageTitle = 'Projects & Work'
-const pageTagline =
+const heading = 'Projects & Work'
+const tagline =
   'Open-source developer tools, custom software, and client solutions.'
 
 const schemaData = {
@@ -25,12 +25,12 @@ const schemaData = {
 }
 ---
 
-<Page
+<SinglePage
   title={title}
   description={description}
   keywords={keywords}
-  pageTitle={pageTitle}
-  pageTagline={pageTagline}>
+  heading={heading}
+  tagline={tagline}>
   <script
     is:inline
     type="application/ld+json"
@@ -38,4 +38,4 @@ const schemaData = {
     slot="head"
   />
   <Fragment slot="body"></Fragment>
-</Page>
+</SinglePage>
