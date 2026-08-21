@@ -55,7 +55,7 @@ const localDate = getLocalDate(now)
 
       <div class="footer-copyright">
         {
-          import.meta.env.DEV && (
+          import.meta.env.PROD && (
             <div id="version-info">
               <span>
                 Version: <strong>{localDate}</strong>
