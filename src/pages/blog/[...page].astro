@@ -1,6 +1,6 @@
 ---
-import Page from '@components/Page.astro'
 import PostsDisplay from '@components/PostsDisplay.astro'
+import SinglePage from '@components/SinglePage.astro'
 import { PostsPerPage, SiteName } from '@data/site.ts'
 import type { Page as BlogPage, GetStaticPaths } from 'astro'
 import { getCollection } from 'astro:content'
@@ -19,8 +19,8 @@ const description =
   'Read technical articles, software engineering insights, tutorials, and development updates written by Igor Dimitrijević (igorskyflyer).'
 const keywords =
   'software engineering, web development, full-stack, blog, programming, JavaScript, TypeScript, Astro, technical articles, igor dimitrijević, igorskyflyer'
-const pageTitle = 'Technical Articles'
-const pageTagline =
+const heading = 'Technical Articles'
+const tagline =
   'Software engineering, web architectures, and performance development.'
 
 export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
@@ -36,16 +36,14 @@ export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
 }
 ---
 
-<Page
+<SinglePage
   title={title}
   description={description}
   keywords={keywords}
-  pageTitle={pageTitle}
-  pageTagline={pageTagline}
+  heading={heading}
+  tagline={tagline}
   featuredImage="">
-  <div
-    class="archive-container"
-    slot="body">
+  <div class="archive-container" slot="body">
     {
       page.lastPage > 1 && (
         <p class="page-badge">
@@ -60,10 +58,7 @@ export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
 
     {
       page.lastPage > 1 && (
-        <nav
-          class="pagination"
-          role="navigation"
-          aria-label="Pagination">
+        <nav class="pagination" role="navigation" aria-label="Pagination">
           <div class="pagination-slot">
             {page.url.prev ? (
               <a
@@ -73,9 +68,7 @@ export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
                 <span aria-hidden="true">&larr;</span> Previous
               </a>
             ) : (
-              <span
-                class="pagination-btn disabled"
-                aria-disabled="true">
+              <span class="pagination-btn disabled" aria-disabled="true">
                 <span aria-hidden="true">&larr;</span> Previous
               </span>
             )}
@@ -94,9 +87,7 @@ export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
                 Next <span aria-hidden="true">&rarr;</span>
               </a>
             ) : (
-              <span
-                class="pagination-btn disabled"
-                aria-disabled="true">
+              <span class="pagination-btn disabled" aria-disabled="true">
                 Next <span aria-hidden="true">&rarr;</span>
               </span>
             )}
@@ -105,7 +96,7 @@ export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
       )
     }
   </div>
-</Page>
+</SinglePage>
 
 <style>
   .archive-container {
