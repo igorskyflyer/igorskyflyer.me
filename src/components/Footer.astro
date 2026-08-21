@@ -1,6 +1,10 @@
 ---
 import SocialIcon from '@components/SocialIcon.astro'
-import { getYear } from '@functions/utilities.ts'
+import { getLocalDate } from '@functions/utilities.ts'
+
+const now = new Date()
+const year = now.getFullYear()
+const localDate = getLocalDate(now)
 ---
 
 <footer class="site-footer">
@@ -49,28 +53,19 @@ import { getYear } from '@functions/utilities.ts'
         <a href="/rss.xml">RSS Feed</a>
       </nav>
 
-      <p class="footer-meta">
-        Built with <span class="footer-heart" aria-label="love">&hearts;</span> and
-        <a
-          href="https://astro.build"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="astro-link">🚀 Astro</a
-        > by
-        <a href="/igorskyflyer/" class="footer-author">Igor Dimitrijević</a>
-      </p>
-
-      <p class="footer-copyright">
-        &copy; {getYear()} Igor Dimitrijević. All rights reserved.
-        <br />
+      <div class="footer-copyright">
         {
-          import.meta.env.PROD && (
-            <em>
-              Version: <strong>{Date.now()}</strong>
-            </em>
+          import.meta.env.DEV && (
+            <div id="version-info">
+              <span>
+                Version: <strong>{localDate}</strong>
+              </span>
+            </div>
           )
         }
-      </p>
+        <br />
+        &copy; {year} Igor Dimitrijević. All rights reserved.
+      </div>
     </div>
   </div>
 </footer>
@@ -179,37 +174,9 @@ import { getYear } from '@functions/utilities.ts'
     font-size: 0.75rem;
   }
 
-  .footer-meta {
-    margin: 0;
-    color: #cbd5e1;
-    font-size: 0.85rem;
-  }
-
-  .footer-heart {
-    display: inline-block;
-    color: #ff4d4d;
-    font-size: 1.1em;
-  }
-
-  .astro-link,
-  .footer-author {
-    transition: color 150ms ease;
-    color: #e2e8f0;
-    font-weight: 500;
-    text-decoration: none;
-  }
-
-  .footer-author {
-    color: var(--link, #0ea8ff);
-  }
-
-  .astro-link:hover,
-  .footer-author:hover {
-    text-decoration: underline;
-  }
-
   .footer-copyright {
     margin: 0;
+    margin-top: 2rem;
     color: #64748b;
     font-size: 0.775rem;
   }
