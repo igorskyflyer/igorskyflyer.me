@@ -86,7 +86,7 @@ import { getLocalDate, getYear } from '@functions/utilities.ts'
         {
           import.meta.env.PROD && (
             <em>
-              Version: <strong>{getLocalDate()}</strong>
+              Version: <strong>{Date.now()}</strong> (<strong>{getLocalDate()}</strong>)
             </em>
           )
         }
