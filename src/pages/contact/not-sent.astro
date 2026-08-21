@@ -1,0 +1,123 @@
+---
+import Page from '@components/Page.astro'
+import { SiteName } from '@data/site.ts'
+import SafeResource from '@igor.dvlpr/astro-saferesource'
+
+const title: string = `Message Not Sent | ${SiteName}`
+---
+
+<Page title={title}>
+  {
+    import.meta.env.PROD && (
+      <meta http-equiv="refresh" content="8; url=/" slot="head" />
+    )
+  }
+  <meta name="robots" content="noindex, nofollow" slot="head" />
+
+  <Fragment slot="body">
+    <section class="error-section">
+      <div class="error-card">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="64"
+          height="64"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="var(--error-color, #ff4b4b)"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="error-icon"
+          ><circle cx="12" cy="12" r="10"></circle><line
+            x1="15"
+            y1="9"
+            x2="9"
+            y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg
+        >
+
+        <h2>Transmission Failed</h2>
+        <p>
+          Your message could not be sent due to a network error. Please check
+          your connection and try again.
+        </p>
+
+        <p>
+          You will be redirected to the homepage in <span id="countdown">8</span
+          > seconds.
+        </p>
+
+        <a href="/" class="btn-primary btn-cta"> Return to Homepage </a>
+      </div>
+    </section>
+    <SafeResource>
+      <script is:inline>
+        const countdown = document.getElementById('countdown')
+        let value = 8
+
+        const timer = setInterval(() => {
+          value--
+          countdown.textContent = value
+
+          if (value <= 0) {
+            clearInterval(timer)
+          }
+        }, 1000)
+
+        window.addEventListener('pagehide', () => clearInterval(timer))
+        window.addEventListener('unload', () => clearInterval(timer))
+      </script>
+    </SafeResource>
+  </Fragment>
+</Page>
+
+<style>
+  .error-section {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 2rem 0;
+    max-width: 100%;
+  }
+
+  .error-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
+    border-radius: 12px;
+    background: var(--surface-color, rgba(255, 255, 255, 0.03));
+    padding: 3rem 2rem;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+  }
+
+  .error-icon {
+    margin-bottom: 0.5rem;
+  }
+
+  h2 {
+    margin: 0;
+    color: var(--text-primary, #eaeaea);
+    font-size: 1.75rem;
+  }
+
+  p {
+    margin: 0;
+    color: var(--text-muted, rgba(255, 255, 255, 0.6));
+    line-height: 1.6;
+  }
+
+  a {
+    display: inline-block;
+    margin-top: 1rem;
+    text-decoration: none;
+  }
+
+  #countdown {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+</style>
