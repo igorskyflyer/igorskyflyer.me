@@ -4,88 +4,57 @@ import Brand from './Brand.astro'
 
 <header>
   <Brand />
-  <nav
-    id="menu-navigation"
-    role="navigation"
-    aria-label="Site's menu">
+  <nav id="menu-navigation" role="navigation" aria-label="Site's menu">
     <button
       id="hamburger-icon"
       class="no-select"
       type="button"
       popovertarget="menu-dialog"
       aria-label="Toggle navigation menu">
-      <svg
-        viewBox="0 0 10 8"
-        width="52"
-        height="52">
-        <path
-          d="M1 1h8M3 4h6M1 7h8"
-          stroke="#fff"
-          stroke-linecap="round"
+      <svg viewBox="0 0 10 8" width="52" height="52">
+        <path d="M1 1h8M3 4h6M1 7h8" stroke="#fff" stroke-linecap="round"
         ></path>
       </svg>
     </button>
 
-    <div
-      id="menu-dialog"
-      popover="auto">
+    <div id="menu-dialog" popover="auto">
       <button
         id="menu-close"
         type="button"
         popovertarget="menu-dialog"
         popovertargetaction="hide"
         aria-label="Close navigation menu">
-        <svg
-          viewBox="0 0 16 16"
-          width="20"
-          height="20">
+        <svg viewBox="0 0 16 16" width="20" height="20">
           <path
             d="M1 1l14 14M15 1L1 15"
             stroke="#fff"
             stroke-width="1.5"
-            stroke-linecap="round"
-          ></path>
+            stroke-linecap="round"></path>
         </svg>
       </button>
       <ul id="menu">
         <li>
-          <a
-            href="/#"
-            class="no-select"
-            >Home</a>
+          <a href="/#" class="no-select">Home</a>
         </li>
         <li>
-          <a
-            href="/blog/#"
-            class="no-select"
-            >Blog</a>
+          <a href="/blog/#" class="no-select">Blog</a>
         </li>
         <li>
-          <a
-            href="/portfolio/#"
-            class="no-select"
-            >Portfolio</a>
+          <a href="/portfolio/#" class="no-select">Portfolio</a>
         </li>
         <li>
           <li>
-            <a
-              href="/projects/#"
-              class="no-select"
-              >Projects</a>
+            <a href="/projects/#" class="no-select">Projects</a>
           </li>
         </li>
         <li>
-          <a
-            href="/contact/#"
-            class="no-select"
-            >Contact</a>
+          <a href="/contact/#" class="no-select">Contact</a>
         </li>
         <li>
           <a
             href="https://ko-fi.com/igorskyflyer"
             target="_blank"
-            rel="noopener noreferrer"
-            >Support me</a
+            rel="noopener noreferrer">Support me</a
           >
         </li>
       </ul>
