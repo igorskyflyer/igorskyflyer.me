@@ -49,13 +49,8 @@ const schema = {
     set:html={JSON.stringify(schema)}
   />
 
-  <div
-    class="post-layout"
-    slot="body">
-    <a
-      href="/blog/"
-      class="back-link"
-      aria-label="Back to all posts">
+  <div class="post-layout" slot="body">
+    <a href="/blog/" class="back-link" aria-label="Back to all posts">
       <span aria-hidden="true">&#9664;</span> Back to all posts
     </a>
 
@@ -87,24 +82,14 @@ const schema = {
 
           <div class="meta-details">
             <span class="meta-item">
-              <Icon
-                name="mdi:clock-outline"
-                class="meta-icon"
-              />
+              <Icon name="mdi:clock-outline" class="meta-icon" />
               <time datetime={new Date(post.publishDate).toISOString()}
                 >{postPublishedDate}</time
               >
             </span>
-            <span
-              class="meta-dot"
-              aria-hidden="true"
-              >•</span
-            >
+            <span class="meta-dot" aria-hidden="true">•</span>
             <span class="meta-item">
-              <Icon
-                name="ic:baseline-menu-book"
-                class="meta-icon"
-              />
+              <Icon name="ic:baseline-menu-book" class="meta-icon" />
               {post.minutesRead}
             </span>
           </div>
@@ -112,14 +97,10 @@ const schema = {
 
         {
           post.tags.length > 0 && (
-            <ul
-              class="tag-list"
-              aria-label="Post tags">
+            <ul class="tag-list" aria-label="Post tags">
               {post.tags.map((tagName: string) => (
                 <li>
-                  <a
-                    href={`/blog/tag/${tagName}/`}
-                    class="tag-badge">
+                  <a href={`/blog/tag/${tagName}/`} class="tag-badge">
                     #{tagName}
                   </a>
                 </li>
