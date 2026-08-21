@@ -1,5 +1,5 @@
 ---
-import Page from '@components/Page.astro'
+import SinglePage from '@components/SinglePage.astro'
 import { SiteName } from '@data/site.ts'
 
 const title = `Software Engineering Portfolio & CV | ${SiteName}`
@@ -7,8 +7,8 @@ const description =
   'Official portfolio and CV of Igor Dimitrijević (igorskyflyer), Senior full-stack Software Engineer. Technical stack, engineering timeline, and downloadable PDF resume.'
 const keywords =
   'portfolio, cv, resume, full-stack engineer, igor dimitrijević, igorskyflyer, software engineering, typescript, developer experience, open source'
-const pageTitle = 'Software Engineering Portfolio & CV'
-const pageTagline =
+const heading = 'Software Engineering Portfolio & CV'
+const tagline =
   'Technical timeline, open source architecture, and downloadable CV of a senior full-stack engineer.'
 
 const schemaData = {
@@ -40,12 +40,12 @@ const schemaData = {
 }
 ---
 
-<Page
+<SinglePage
   title={title}
   description={description}
   keywords={keywords}
-  pageTitle={pageTitle}
-  pageTagline={pageTagline}>
+  heading={heading}
+  tagline={tagline}>
   <script
     is:inline
     type="application/ld+json"
@@ -340,7 +340,7 @@ const schemaData = {
       <p>Igor Dimitrijević (igorskyflyer)</p>
     </footer>
   </section>
-</Page>
+</SinglePage>
 
 <style>
   .portfolio-container {
