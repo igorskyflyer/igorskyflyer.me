@@ -1,5 +1,5 @@
 ---
-import Page from '@components/Page.astro'
+import SinglePage from '@components/SinglePage.astro'
 import Timeline from '@components/Timeline.astro'
 import { activities } from '@data/activities/timeline.ts'
 import { SiteName } from '@data/site.ts'
@@ -9,8 +9,8 @@ const description =
   'Comprehensive archive log of software engineering milestones, open-source contributions, security vulnerabilities, certifications, and project history.'
 const keywords =
   'timeline, software milestones, open source, certifications, release history, igorskyflyer, igor dimitrijević'
-const pageTitle = 'Engineering Timeline & Technical Archive'
-const pageTagline =
+const heading = 'Engineering Timeline & Technical Archive'
+const tagline =
   'Chronological record of software milestones, open source contributions, security advisories, and project history.'
 
 const schemaData = {
@@ -30,12 +30,12 @@ const schemaData = {
 }
 ---
 
-<Page
+<SinglePage
   title={title}
   description={description}
   keywords={keywords}
-  pageTitle={pageTitle}
-  pageTagline={pageTagline}>
+  heading={heading}
+  tagline={tagline}>
   >
   <script
     is:inline
@@ -61,7 +61,7 @@ const schemaData = {
       </figure>
     </div>
   </section>
-</Page>
+</SinglePage>
 
 <style>
   section {
