@@ -1,21 +1,14 @@
 ---
-import Page from '@components/Page.astro'
 import { SiteName } from '@data/site.ts'
+import SinglePage from '@components/SinglePage.astro'
 ---
 
-<Page
+<SinglePage
   title={`404: Page Not Found | ${SiteName}`}
-  description="The page you requested does not exist or has been moved."
-  header={false}>
-  <meta
-    name="robots"
-    content="noindex, nofollow"
-    slot="head"
-  />
+  description="The page you requested does not exist or has been moved.">
+  <meta name="robots" content="noindex, nofollow" slot="head" />
 
-  <section
-    class="not-found-wrapper"
-    slot="body">
+  <section class="not-found-wrapper" slot="body">
     <div class="not-found-card">
       <div class="illustration-container">
         <img
@@ -41,11 +34,7 @@ import { SiteName } from '@data/site.ts'
       </p>
 
       <div class="actions">
-        <a
-          href="/"
-          class="btn btn-primary">
-          Back to Home
-        </a>
+        <a href="/" class="btn btn-primary"> Back to Home </a>
         <button
           type="button"
           onclick="history.back()"
@@ -55,7 +44,7 @@ import { SiteName } from '@data/site.ts'
       </div>
     </div>
   </section>
-</Page>
+</SinglePage>
 
 <style>
   .not-found-wrapper {
