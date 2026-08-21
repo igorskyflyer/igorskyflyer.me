@@ -27,6 +27,9 @@
 /*.png
   cache-control: public, max-age=604800, must-revalidate
 
+/*.webp
+  cache-control: public, max-age=604800, must-revalidate
+
 /*.svg
   cache-control: public, max-age=86400, must-revalidate
 
