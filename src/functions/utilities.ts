@@ -1,11 +1,11 @@
 // Author: Igor Dimitrijević (@igorskyflyer)
 
-export function getYear() {
-  return new Date().getFullYear()
-}
+export function getLocalDate(date: Date = new Date()): string {
+  if (!date) {
+    return ''
+  }
 
-export function getLocalDate() {
-  return new Date().toLocaleString('en-uk', {
+  return date.toLocaleString('en-uk', {
     day: '2-digit',
     month: 'short',
     year: 'numeric',
