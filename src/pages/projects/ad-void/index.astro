@@ -1,0 +1,42 @@
+---
+import SinglePage from '@components/SinglePage.astro'
+import { SiteName } from '@data/site.ts'
+
+const title = `AdVoid | ${SiteName}`
+const description =
+  'A set of modular, highly-optimized, and efficient filter lists that block ads, trackers, malware, phishing, and intrusive Web clutter.'
+const keywords =
+  'advoid, ad-block, filter lists, privacy, trackers, malware, igor dimitrijević, igorskyflyer'
+const heading = 'AdVoid'
+const tagline =
+  'A set of modular, highly-optimized, and efficient filter lists that block ads, trackers, malware, phishing, and intrusive Web clutter.'
+
+const schemaData = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: title,
+  description:
+    'AdVoid is a privacy-first ad-block filter list by Igor Dimitrijević (@igorskyflyer), trusted by hundreds of thousands.',
+  author: {
+    '@type': 'Person',
+    name: 'Igor Dimitrijević',
+    alternateName: 'igorskyflyer',
+    jobTitle: 'Senior-level Full-Stack Software Engineer'
+  }
+}
+---
+
+<SinglePage
+  title={title}
+  description={description}
+  keywords={keywords}
+  heading={heading}
+  tagline={tagline}>
+  <script
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify(schemaData)}
+    slot="head"
+  />
+  <Fragment slot="body"></Fragment>
+</SinglePage>
