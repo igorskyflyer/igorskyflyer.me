@@ -16,9 +16,7 @@ const postPublishedDate = postDate(post.data.publishDate)
 <article class="post-card">
   <div class="post-body">
     <header class="post-header">
-      <a
-        href={`/blog/${post.id}/`}
-        class="post-title-link">
+      <a href={`/blog/${post.id}/`} class="post-title-link">
         <!-- {data.featuredImage && <img src={data.featuredImage} />} -->
         <h2 class="post-title">{post.data.title}</h2>
       </a>
@@ -36,14 +34,10 @@ const postPublishedDate = postDate(post.data.publishDate)
 
     {
       tags.length > 0 && (
-        <ul
-          class="tag-list"
-          aria-label="Post tags">
+        <ul class="tag-list" aria-label="Post tags">
           {tags.map((tagName: string) => (
             <li>
-              <a
-                href={`/blog/tag/${tagName}/`}
-                class="tag-badge">
+              <a href={`/blog/tag/${tagName}/`} class="tag-badge">
                 #{tagName}
               </a>
             </li>
@@ -63,31 +57,18 @@ const postPublishedDate = postDate(post.data.publishDate)
       class="author-avatar"
     />
     <div class="post-meta">
-      <a
-        href="/igorskyflyer/"
-        class="author-link">
-      </a>
+      <a href="/igorskyflyer/" class="author-link"> </a>
       <span class="author-name">Igor Dimitrijević (igorskyflyer)</span>
       <p class="author-occupation">Senior Full-Stack Software Engineer</p>
 
       <div class="meta-details">
         <span class="meta-item">
-          <Icon
-            name="mdi:clock-outline"
-            class="meta-icon"
-          />
+          <Icon name="mdi:clock-outline" class="meta-icon" />
           {postPublishedDate}
         </span>
-        <span
-          class="meta-dot"
-          aria-hidden="true"
-          >•</span
-        >
+        <span class="meta-dot" aria-hidden="true">•</span>
         <span class="meta-item">
-          <Icon
-            name="ic:baseline-menu-book"
-            class="meta-icon"
-          />
+          <Icon name="ic:baseline-menu-book" class="meta-icon" />
           {minutesRead}
         </span>
       </div>
