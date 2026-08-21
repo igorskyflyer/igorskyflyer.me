@@ -1,19 +1,19 @@
 ---
-import Page from '@components/Page.astro'
+import SinglePage from '@components/SinglePage.astro'
 import { SiteName } from '@data/site.ts'
 
-const pageTitle = `High School Memory & Gift | ${SiteName}`
+const heading = `High School Memory & Gift | ${SiteName}`
 const pageDescription =
   "Explore a personal archive featuring the symbolic farewell gift and handwritten dedication from Igor Dimitrijević's IT professor at the close of high school in May 2012."
 const pageKeywords =
   'Igor Dimitrijević high school memory, IT professor gift, Želim ti puno sreće, Nina Štajnbek book, personal archives'
 ---
 
-<Page
-  title={pageTitle}
+<SinglePage
+  title={heading}
   description={pageDescription}
   keywords={pageKeywords}>
   <Fragment slot="body">
     <h1>Highschool Memories</h1>
   </Fragment>
-</Page>
+</SinglePage>
