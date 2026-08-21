@@ -38,6 +38,7 @@
   "homepage": "https://github.com/igorskyflyer/igorskyflyer.me#readme",
   "devDependencies": {
     "@igor.dvlpr/astro-post-excerpt": "4.1.1-alpha.0",
+    "@igorskyflyer/prettier-config": "^1.0.1",
     "@igorskyflyer/zitto": "^1.0.0",
     "astro": "^7.2.4",
     "astro-compress": "^2.4.3",
