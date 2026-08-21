@@ -1,0 +1,40 @@
+---
+import SinglePage from '@components/SinglePage.astro'
+import { SiteName } from '@data/site.ts'
+
+const title = `Aria | ${SiteName}`
+const description = 'Ad-block template (ADBT) compiler.'
+const keywords =
+  'aria, compiler, ad-block template, adbt, filter lists, igor dimitrijević, igorskyflyer'
+const heading = 'Aria'
+const tagline = 'An efficient Ad-block filter list compiler.'
+
+const schemaData = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: title,
+  description:
+    'Aria is an Ad-block template (ADBT) compiler by Igor Dimitrijević (@igorskyflyer).',
+  author: {
+    '@type': 'Person',
+    name: 'Igor Dimitrijević',
+    alternateName: 'igorskyflyer',
+    jobTitle: 'Staff Full Stack Software Engineer'
+  }
+}
+---
+
+<SinglePage
+  title={title}
+  description={description}
+  keywords={keywords}
+  heading={heading}
+  tagline={tagline}>
+  <script
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify(schemaData)}
+    slot="head"
+  />
+  <Fragment slot="body"></Fragment>
+</SinglePage>
