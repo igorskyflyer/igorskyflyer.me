@@ -1,8 +1,8 @@
 ---
-import NavBtn from '@components/NavBtn.astro'
 import Footer from '@components/Footer.astro'
 import Head from '@components/Head.astro'
 import Header from '@components/Header.astro'
+import NavBtn from '@components/NavBtn.astro'
 import type { PageProps } from '@interfaces/PageProps.ts'
 
 const {
@@ -19,9 +19,7 @@ import '@ui/main-layout.css'
 ---
 
 <!doctype html>
-<html
-  lang="en"
-  dir="ltr">
+<html lang="en" dir="ltr">
   <Head
     title={title}
     description={description}
@@ -33,39 +31,6 @@ import '@ui/main-layout.css'
     <Header />
     {
       header && (
-        <style>
-          .page-header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: clamp(0.5rem, 1.5vw, 0.85rem);
-            margin: 3rem auto;
-            max-width: 80%;
-            text-align: center;
-          }
-
-        .page-title {
-          margin: 0;
-          font-weight: 800;
-          font-size: clamp(2rem, 5vw, 3.25rem);
-          line-height: 1.1;
-          letter-spacing: -0.02em;
-        }
-
-        .page-tagline {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-          align-items: center;
-          gap: 0.75rem;
-          margin: 0;
-          max-width: 65ch;
-          color: #94a3b8;
-          font-size: clamp(0.95rem, 2vw, 1.15rem);
-          line-height: 1.5;
-        }
-        </style>
-
         <header class="page-header">
           <h1 class="page-title">{pageTitle}</h1>
           <p class="page-tagline">{pageTagline}</p>
@@ -80,3 +45,32 @@ import '@ui/main-layout.css'
     <Footer />
   </body>
 </html>
+
+<style>
+  .page-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(0.5rem, 1.5vw, 0.85rem);
+    margin: 3rem auto;
+    max-width: 80%;
+    text-align: center;
+  }
+
+  .page-title {
+    margin: 0;
+    font-weight: 800;
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .page-tagline {
+    margin: 0;
+    max-width: 65ch;
+    color: #94a3b8;
+    font-size: clamp(0.95rem, 2vw, 1.15rem);
+    line-height: 1.5;
+    text-align: center;
+  }
+</style>
