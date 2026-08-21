@@ -13,6 +13,11 @@ export const activities: IDecadeBlock[] = [
         entries: [
           {
             category: 'contribution',
+            date: 'Aug 21',
+            html: 'Igor opened an <a href="https://github.com/surjithctly/web3forms-docs/issues/25" target="_blank" rel="noopener noreferrer">issue</a> and submitted a <a href="https://github.com/surjithctly/web3forms-docs/pull/26" target="_blank" rel="noopener noreferrer">PR</a> to <code>surjithctly/web3forms-docs</code> noting incorrect service URLs in the documentation for <strong>pro</strong> users (which damages user trust and conversion) and he provided a fix for it.'
+          },
+          {
+            category: 'contribution',
             date: 'Aug 05',
             html: 'Igor opened an <a href="https://github.com/Automattic/harper/issues/3961" target="_blank" rel="noopener noreferrer">issue</a> at <code>Automattic/harper</code> noting that <code>SentenceCapitalization</code> gets flagged incorrectly.'
           },
