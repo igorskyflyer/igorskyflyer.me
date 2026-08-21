@@ -1,7 +1,7 @@
 ### Caching START
 
-/*.svg
-  cache-control: public, max-age=31536000, immutable
+/*
+  cache-control: public, max-age=0, must-revalidate
 
 /_astro/*
   cache-control: public, max-age=31536000, immutable
@@ -10,7 +10,40 @@
   cache-control: public, max-age=31536000, immutable
 
 /blog/*
-  cache-control: public, max-age=25920
+  cache-control: public, max-age=0, must-revalidate
+
+/.well-known/*
+  cache-control: public, max-age=0, must-revalidate
+
+/docs/*
+  cache-control: public, max-age=86400, must-revalidate
+
+/assets/*
+  cache-control: public, max-age=86400, must-revalidate
+
+/*.ico
+  cache-control: public, max-age=604800, must-revalidate
+
+/*.png
+  cache-control: public, max-age=604800, must-revalidate
+
+/*.svg
+  cache-control: public, max-age=86400, must-revalidate
+
+/sw.js
+  cache-control: no-store, no-cache, must-revalidate
+
+/robots.txt
+  cache-control: public, max-age=0, must-revalidate
+
+/d924033882444c97b79d562aa41ddea9.txt
+  cache-control: public, max-age=0, must-revalidate
+
+/site.webmanifest
+  cache-control: public, max-age=604800, must-revalidate
+
+/web-app-manifest-*
+  cache-control: public, max-age=604800, must-revalidate
 
 ### Caching END
 
