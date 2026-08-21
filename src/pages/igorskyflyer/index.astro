@@ -1,7 +1,7 @@
 ---
 // Author: Igor Dimitrijević (@igorskyflyer)
 
-import Page from '@components/Page.astro'
+import SinglePage from '@components/SinglePage.astro'
 import { schema } from '@data/schema/igorskyflyer.ts'
 import { SiteName } from '@data/site.ts'
 
@@ -10,17 +10,17 @@ const description =
   'Senior, freelance full-stack software engineer and open source maintainer with a BSc (Hons) in IT & Software Engineering. Explore my professional background, technical stack, and open source ecosystem.'
 const keywords =
   'Igor Dimitrijević, igorskyflyer, software engineer, full-stack developer, open source, TypeScript, Astro, software architecture'
-const pageTitle = 'About Igor Dimitrijević'
-const pageTagline =
+const heading = 'About Igor Dimitrijević'
+const tagline =
   'Senior level full stack software engineer and open source maintainer building high performance web architectures and developer tooling.'
 ---
 
-<Page
+<SinglePage
   title={title}
   description={description}
   keywords={keywords}
-  pageTitle={pageTitle}
-  pageTagline={pageTagline}
+  heading={heading}
+  tagline={tagline}
   featuredImage="https://igorskyflyer.me/assets/author/igorskyflyer.webp">
   <Fragment slot="head">
     <script
@@ -57,9 +57,7 @@ const pageTagline =
     </div>
 
     <div id="sections-wrapper">
-      <div
-        class="timeline"
-        id="tech-origin">
+      <div class="timeline" id="tech-origin">
         <h3 class="section-title">Technical Origin</h3>
         <article class="timeline-item">
           <div class="timeline-marker"></div>
@@ -303,8 +301,7 @@ const pageTagline =
               the cohort opted for the test, Igor chose to build. The result was <a
                 href="https://github.com/igorskyflyer/cs-bench-pro"
                 target="_blank"
-                rel="noopener noreferrer"
-                ><strong>BenchPro</strong></a
+                rel="noopener noreferrer"><strong>BenchPro</strong></a
               >. Using <strong>C#</strong> and <strong>Win32 Interop</strong>,
               he engineered a multi threaded suite that utilized <strong
                 >Monte Carlo</strong
@@ -340,8 +337,7 @@ const pageTagline =
               result, <a
                 href="https://github.com/igorskyflyer/calculus-ex"
                 target="_blank"
-                rel="noopener noreferrer"
-                ><strong>CalculusEx</strong></a
+                rel="noopener noreferrer"><strong>CalculusEx</strong></a
               >, earned a perfect 10 (A) and finally closed the long standing
               challenge.
             </p>
@@ -501,8 +497,7 @@ const pageTagline =
               public and is available on its official repository, <a
                 href="https://github.com/igorskyflyer/android-neovisio-app-store"
                 target="_blank"
-                rel="noopener noreferrer"
-                ><strong>NeoVisio AppStore</strong></a
+                rel="noopener noreferrer"><strong>NeoVisio AppStore</strong></a
               >.
             </p>
             <blockquote>
@@ -513,8 +508,7 @@ const pageTagline =
               snapshots of the ecosystem's public release can be found on <a
                 href="https://alternativeto.net/software/neovisio"
                 target="_blank"
-                rel="noopener noreferrer"
-                ><strong>AlternativeTo</strong></a
+                rel="noopener noreferrer"><strong>AlternativeTo</strong></a
               > and 2 related applications lists (<a
                 href="https://alternativeto.net/lists/9567/software-and-app-discovery"
                 target="_blank"
@@ -523,8 +517,7 @@ const pageTagline =
               > and <a
                 href="https://alternativeto.net/lists/7520/apk-sources"
                 target="_blank"
-                rel="noopener noreferrer"
-                ><strong>APK Sources</strong></a
+                rel="noopener noreferrer"><strong>APK Sources</strong></a
               >).
             </blockquote>
           </div>
@@ -848,16 +841,10 @@ const pageTagline =
           <strong class="activity-name">Upcoming Tech</strong>
           <span class="activity-tagline">eyes these upcoming technologies</span>
           <div class="activity-links">
-            <a
-              href="https://pyscript.net"
-              target="_blank"
-              rel="noopener"
+            <a href="https://pyscript.net" target="_blank" rel="noopener"
               >PyScript</a
             >
-            <a
-              href="https://formkit.com"
-              target="_blank"
-              rel="noopener"
+            <a href="https://formkit.com" target="_blank" rel="noopener"
               >FormKit</a
             >
           </div>
@@ -876,18 +863,10 @@ const pageTagline =
           <strong class="activity-name">Rust &amp; wgpu</strong>
           <span class="activity-tagline">explores</span>
           <div class="activity-links">
-            <a
-              href="https://www.rust-lang.org"
-              target="_blank"
-              rel="noopener"
+            <a href="https://www.rust-lang.org" target="_blank" rel="noopener"
               >Rust</a
             >
-            <a
-              href="https://wgpu.rs"
-              target="_blank"
-              rel="noopener"
-              >wgpu</a
-            >
+            <a href="https://wgpu.rs" target="_blank" rel="noopener">wgpu</a>
           </div>
         </div>
         <a
@@ -981,14 +960,12 @@ const pageTagline =
             <a
               href="https://github.com/topics/igorskyflyer"
               target="_blank"
-              rel="noopener"
-              >igorskyflyer</a
+              rel="noopener">igorskyflyer</a
             >
             <a
               href="https://github.com/topics/igor-dimitrijevic"
               target="_blank"
-              rel="noopener"
-              >Igor Dimitrijević</a
+              rel="noopener">Igor Dimitrijević</a
             >
           </div>
         </div>
@@ -1499,7 +1476,7 @@ const pageTagline =
       <strong>Igor Dimitrijević (<em>igorskyflyer</em>)</strong>
     </div>
   </section>
-</Page>
+</SinglePage>
 
 <style>
   div#intro {
