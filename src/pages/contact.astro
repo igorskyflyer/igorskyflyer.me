@@ -1,24 +1,24 @@
 ---
-import Page from '@components/Page.astro'
 import { SiteName } from '@data/site.ts'
 import SafeResource from '@igor.dvlpr/astro-saferesource'
+import SinglePage from '@components/SinglePage.astro'
 
 const title: string = `Contact | ${SiteName}`
 const description: string =
   'Get in touch with Igor Dimitrijević for software engineering inquiries, collaborations, or professional contact.'
 const keywords =
   'contact, email, message, software engineer, full-stack, developer, igorskyflyer, igor dimitrijević'
-const pageTitle = 'Contact & Inquiries'
-const pageTagline =
+const heading = 'Contact & Inquiries'
+const tagline =
   'Reach out for senior-level full-stack engineering, software architecture consulting, and professional collaborations.'
 ---
 
-<Page
+<SinglePage
   title={title}
   description={description}
   keywords={keywords}
-  pageTitle={pageTitle}
-  pageTagline={pageTagline}
+  heading={heading}
+  tagline={tagline}
   featuredImage="">
   <Fragment slot="body">
     <section class="contact-section">
@@ -154,7 +154,7 @@ const pageTagline =
       </script>
     </SafeResource>
   </Fragment>
-</Page>
+</SinglePage>
 
 <style>
   .contact-section {
