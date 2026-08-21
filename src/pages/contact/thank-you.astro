@@ -4,17 +4,10 @@ import { SiteName } from '@data/site.ts'
 import SafeResource from '@igor.dvlpr/astro-saferesource'
 
 const title: string = `Message Sent | ${SiteName}`
-const description: string =
-  'Thank you for reaching out. Your message has been successfully delivered.'
-const keywords =
-  'success, message sent, contact, igorskyflyer, igor dimitrijević'
 ---
 
 <Page
   title={title}
-  description={description}
-  keywords={keywords}
-  featuredImage=""
   header={false}>
   {
     import.meta.env.PROD && (
@@ -27,7 +20,7 @@ const keywords =
   }
   <meta
     name="robots"
-    content="noindex, follow"
+    content="noindex, nofollow"
     slot="head"
   />
   <Fragment slot="body">
