@@ -1,11 +1,10 @@
 ---
 import { SiteName } from '@data/site.ts'
-import SinglePage from '@components/SinglePage.astro'
+import Page from '@components/Page.astro'
+import SafeResource from '@igor.dvlpr/astro-saferesource'
 ---
 
-<SinglePage
-  title={`404: Page Not Found | ${SiteName}`}
-  description="The page you requested does not exist or has been moved.">
+<Page title={`404: Page Not Found | ${SiteName}`}>
   <meta name="robots" content="noindex, nofollow" slot="head" />
 
   <section class="not-found-wrapper" slot="body">
@@ -38,13 +37,24 @@ import SinglePage from '@components/SinglePage.astro'
         <button
           type="button"
           onclick="history.back()"
-          class="btn btn-secondary">
+          disabled="true"
+          class="btn btn-secondary"
+          id="btn-back">
           Previous Page
         </button>
       </div>
     </div>
   </section>
-</SinglePage>
+  <SafeResource>
+    <script>
+      const btnBack = document.querySelector<HTMLButtonElement>('btn-back')
+
+      if (btnBack && window.history.length > 1) {
+        btnBack.disabled = false
+      }
+    </script>
+  </SafeResource>
+</Page>
 
 <style>
   .not-found-wrapper {
@@ -53,67 +63,93 @@ import SinglePage from '@components/SinglePage.astro'
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    padding: 2rem 1rem;
+    padding: 0 1rem;
     overflow: hidden;
   }
 
-  .not-found-wrapper::before {
+  .not-found-wrapper::before,
+  .not-found-wrapper::after {
     position: absolute;
-    animation: twinkle 4s ease-in-out infinite alternate;
+    will-change: opacity, transform;
     inset: 0;
+    pointer-events: none;
+    content: '';
+  }
+
+  .not-found-wrapper::before {
+    animation: pulseStar 4s ease-in-out 16 alternate;
     background-image:
-      radial-gradient(1.5px 1.5px at 25px 30px, #ffffff, transparent),
-      radial-gradient(2px 2px at 150px 80px, #ffffff, transparent),
+      radial-gradient(3px 3px at 25px 30px, #ffffff, transparent),
       radial-gradient(
-        1px 1px at 280px 120px,
-        rgba(255, 255, 255, 0.8),
+        5px 5px at 150px 80px,
+        rgba(255, 255, 255, 0.9),
         transparent
       ),
-      radial-gradient(2.5px 2.5px at 400px 200px, #ffffff, transparent),
       radial-gradient(
-        1px 1px at 500px 50px,
+        2px 2px at 280px 120px,
         rgba(255, 255, 255, 0.6),
         transparent
       ),
-      radial-gradient(2px 2px at 650px 300px, #ffffff, transparent),
+      radial-gradient(6px 6px at 400px 200px, #ffffff, transparent),
       radial-gradient(
-        1px 1px at 720px 180px,
+        2px 2px at 500px 50px,
+        rgba(255, 255, 255, 0.5),
+        transparent
+      ),
+      radial-gradient(
+        4px 4px at 650px 300px,
+        rgba(255, 255, 255, 0.8),
+        transparent
+      ),
+      radial-gradient(
+        3px 3px at 720px 180px,
         rgba(255, 255, 255, 0.7),
         transparent
       );
     background-size: 500px 500px;
-    background-repeat: repeat;
-    pointer-events: none;
-    content: '';
   }
 
   .not-found-wrapper::after {
-    position: absolute;
-    animation: twinkle 7s ease-in-out infinite alternate-reverse;
-    inset: 0;
+    animation: pulseStar 7s ease-in-out 16 alternate-reverse;
     background-image:
-      radial-gradient(1px 1px at 80px 140px, #ffffff, transparent),
-      radial-gradient(1px 1px at 220px 290px, #ffffff, transparent),
       radial-gradient(
-        1.5px 1.5px at 340px 60px,
+        2px 2px at 80px 140px,
+        rgba(255, 255, 255, 0.7),
+        transparent
+      ),
+      radial-gradient(4px 4px at 220px 290px, #ffffff, transparent),
+      radial-gradient(
+        6px 6px at 340px 60px,
         rgba(255, 255, 255, 0.9),
         transparent
       ),
-      radial-gradient(1px 1px at 450px 380px, #ffffff, transparent),
       radial-gradient(
-        1.5px 1.5px at 600px 120px,
+        3px 3px at 450px 380px,
+        rgba(255, 255, 255, 0.6),
+        transparent
+      ),
+      radial-gradient(
+        5px 5px at 600px 120px,
         rgba(255, 255, 255, 0.8),
         transparent
       );
     background-size: 600px 600px;
-    background-repeat: repeat;
-    pointer-events: none;
-    content: '';
+  }
+
+  @keyframes pulseStar {
+    0% {
+      transform: scale(0.85);
+      opacity: 0.15;
+    }
+    100% {
+      transform: scale(1.15);
+      opacity: 1;
+    }
   }
 
   .illustration {
     filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.5));
-    animation: float 6s ease-in-out infinite;
+    animation: float 6s ease-in-out 16;
     will-change: transform;
     width: 100%;
     height: auto;
@@ -123,19 +159,13 @@ import SinglePage from '@components/SinglePage.astro'
   @keyframes float {
     0%,
     100% {
-      transform: translateY(0px) rotate(0deg);
+      transform: translate3d(0px, 0px, 0px) rotate(0deg);
     }
-    50% {
-      transform: translateY(-18px) rotate(4deg);
+    33% {
+      transform: translate3d(-15px, -24px, 0px) rotate(-4deg);
     }
-  }
-
-  @keyframes twinkle {
-    0% {
-      opacity: 0.2;
-    }
-    100% {
-      opacity: 0.8;
+    66% {
+      transform: translate3d(12px, -10px, 0px) rotate(3deg);
     }
   }
 
@@ -245,6 +275,10 @@ import SinglePage from '@components/SinglePage.astro'
     border-color: rgba(255, 255, 255, 0.2);
     background: rgba(255, 255, 255, 0.1);
     color: #ffffff;
+  }
+
+  #btn-back:disabled {
+    cursor: not-allowed;
   }
 
   @media (max-width: 480px) {
