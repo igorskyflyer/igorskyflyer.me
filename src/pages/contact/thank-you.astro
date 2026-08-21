@@ -6,23 +6,14 @@ import SafeResource from '@igor.dvlpr/astro-saferesource'
 const title: string = `Message Sent | ${SiteName}`
 ---
 
-<Page
-  title={title}
-  header={false}>
+<Page title={title}>
   {
     import.meta.env.PROD && (
-      <meta
-        http-equiv="refresh"
-        content="8; url=/"
-        slot="head"
-      />
+      <meta http-equiv="refresh" content="8; url=/" slot="head" />
     )
   }
-  <meta
-    name="robots"
-    content="noindex, nofollow"
-    slot="head"
-  />
+  <meta name="robots" content="noindex, nofollow" slot="head" />
+
   <Fragment slot="body">
     <section class="success-section">
       <div class="success-card">
@@ -52,11 +43,7 @@ const title: string = `Message Sent | ${SiteName}`
           > seconds.
         </p>
 
-        <a
-          href="/"
-          class="btn-primary btn-cta">
-          Return to Homepage
-        </a>
+        <a href="/" class="btn-primary btn-cta"> Return to Homepage </a>
       </div>
     </section>
     <SafeResource>
