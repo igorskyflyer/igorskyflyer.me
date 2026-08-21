@@ -14,9 +14,7 @@ const { activities = [] } = Astro.props
   <div class="decades-list">
     {
       activities.map((decadeGroup) => (
-        <details
-          class="decade-card"
-          open={decadeGroup.open}>
+        <details class="decade-card" open={decadeGroup.open}>
           <summary class="decade-summary">
             <span class="decade-title">
               <span class="decade-icon">{decadeGroup.icon}</span>
@@ -31,9 +29,7 @@ const { activities = [] } = Astro.props
           <div class="decade-body">
             {decadeGroup.years.map((yearGroup, yearIndex) => (
               <div class="year-section">
-                <div
-                  class="year-header"
-                  id={yearGroup.year.toString()}>
+                <div class="year-header" id={yearGroup.year.toString()}>
                   <code>{yearGroup.year}</code>
                 </div>
 
@@ -50,18 +46,12 @@ const { activities = [] } = Astro.props
                         <time>{entry.date}</time>
                       </div>
 
-                      <div
-                        class="timeline-entry"
-                        set:html={entry.html}
-                      />
+                      <div class="timeline-entry" set:html={entry.html} />
                     </article>
                   ))}
                 </div>
                 {yearIndex < decadeGroup.years.length - 1 && (
-                  <div
-                    class="separator"
-                    aria-hidden="true"
-                  />
+                  <div class="separator" aria-hidden="true" />
                 )}
               </div>
             ))}
