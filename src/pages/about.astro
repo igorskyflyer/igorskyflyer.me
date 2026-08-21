@@ -1,5 +1,5 @@
 ---
-import Page from '@components/Page.astro'
+import SinglePage from '@components/SinglePage.astro'
 import { SiteName } from '@data/site.ts'
 
 const title = `About This Site & Architecture | ${SiteName}`
@@ -7,8 +7,8 @@ const description =
   'Technical architecture, build stack, and design principles behind this site. Built with Astro, static HTML output, and zero unnecessary client JS overhead.'
 const keywords =
   'about site, website architecture, tech stack, astro, web performance, static site generator, igorskyflyer, igor dimitrijević'
-const pageTitle = 'About This Site & Architecture'
-const pageTagline =
+const heading = 'About This Site & Architecture'
+const tagline =
   'Technical architecture, build stack, and design principles behind this site.'
 
 const schemaData = {
@@ -29,12 +29,12 @@ const schemaData = {
 }
 ---
 
-<Page
+<SinglePage
   title={title}
   description={description}
   keywords={keywords}
-  pageTitle={pageTitle}
-  pageTagline={pageTagline}>
+  heading={heading}
+  tagline={tagline}>
   <script
     is:inline
     type="application/ld+json"
@@ -42,9 +42,7 @@ const schemaData = {
     slot="head"
   />
 
-  <section
-    slot="body"
-    class="about-content">
+  <section slot="body" class="about-content">
     <h2>Core Philosophy</h2>
     <p>
       This platform is engineered with a strict focus on raw performance,
@@ -151,7 +149,7 @@ const schemaData = {
       </li>
     </ul>
   </section>
-</Page>
+</SinglePage>
 
 <style>
   p {
