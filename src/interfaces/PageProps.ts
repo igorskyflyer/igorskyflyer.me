@@ -7,8 +7,7 @@ export interface PageProps {
   description: string
   featuredImage: string
   keywords: string
-  pageTitle?: string
-  pageTagline?: string
-  header?: boolean
+  heading?: string
+  tagline?: string
   post?: CollectionEntry<'blog'>['data']
 }
