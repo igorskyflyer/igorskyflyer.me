@@ -1,0 +1,44 @@
+---
+import type { PageProps } from '@interfaces/PageProps.ts'
+
+export interface Props {
+  heading?: string
+  tagline?: string
+}
+
+const { heading = '', tagline = '' } = Astro.props as PageProps
+---
+
+<header class="page-header">
+  <h1 class="page-heading">{heading}</h1>
+  <p class="page-tagline">{tagline}</p>
+</header>
+
+<style>
+  .page-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(0.5rem, 1.5vw, 0.85rem);
+    margin: 3rem auto;
+    max-width: 80%;
+    text-align: center;
+  }
+
+  .page-heading {
+    margin: 0;
+    font-weight: 800;
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .page-tagline {
+    margin: 0;
+    max-width: 65ch;
+    color: #94a3b8;
+    font-size: clamp(0.95rem, 2vw, 1.15rem);
+    line-height: 1.5;
+    text-align: center;
+  }
+</style>
