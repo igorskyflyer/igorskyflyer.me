@@ -1,0 +1,39 @@
+---
+import Footer from '@components/Footer.astro'
+import Head from '@components/Head.astro'
+import Header from '@components/Header.astro'
+import NavBtn from '@components/NavBtn.astro'
+import type { PageProps } from '@interfaces/PageProps.ts'
+import Title from './Title.astro'
+
+const {
+  title = '',
+  description = '',
+  featuredImage = '',
+  keywords = '',
+  heading = '',
+  tagline = ''
+} = Astro.props as PageProps
+
+import '@ui/main-layout.css'
+---
+
+<!doctype html>
+<html lang="en" dir="ltr">
+  <Head
+    title={title}
+    description={description}
+    keywords={keywords}
+    featuredImage={featuredImage}>
+    <slot name="head" />
+  </Head>
+  <body>
+    <Header />
+    <Title heading={heading} tagline={tagline} />
+    <main>
+      <slot name="body" />
+    </main>
+    <NavBtn />
+    <Footer />
+  </body>
+</html>
