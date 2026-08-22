@@ -11,9 +11,9 @@ export const activities: IActivityItem[] = [
       'https://www.credly.com/badges/055328d9-6684-47ec-9c87-ee037ab89948',
     details: [
       {
-        text: 'This introductory course takes you inside the world of cybersecurity. You will learn cybersecurity basics to protect your personal digital life and gain insights into the biggest security challenges companies, governments, and educational institutions face today.'
-      }
-    ]
+        text: 'This introductory course takes you inside the world of cybersecurity. You will learn cybersecurity basics to protect your personal digital life and gain insights into the biggest security challenges companies, governments, and educational institutions face today.',
+      },
+    ],
   },
   {
     category: 'release',
@@ -22,8 +22,8 @@ export const activities: IActivityItem[] = [
     titleLink:
       'https://github.com/igorskyflyer/userscript-github-unmute-images',
     details: [
-      { text: 'Removes the muted background color from images on GitHub.' }
-    ]
+      { text: 'Removes the muted background color from images on GitHub.' },
+    ],
   },
   {
     category: 'package',
@@ -32,27 +32,27 @@ export const activities: IActivityItem[] = [
     details: [
       {
         text: 'Biome config - v3.0.3',
-        link: 'https://github.com/igorskyflyer/npm-biome-config/releases/tag/v3.0.3'
+        link: 'https://github.com/igorskyflyer/npm-biome-config/releases/tag/v3.0.3',
       },
       {
         text: 'TSConfig - v2.0.1',
-        link: 'https://github.com/igorskyflyer/npm-tsconfig/releases/tag/v2.0.1'
+        link: 'https://github.com/igorskyflyer/npm-tsconfig/releases/tag/v2.0.1',
       },
       {
         text: 'astro-component - v1.1.1',
-        link: 'https://github.com/igorskyflyer/npm-astro-component/releases/tag/v1.1.1'
+        link: 'https://github.com/igorskyflyer/npm-astro-component/releases/tag/v1.1.1',
       },
       {
         text: 'astro-render-component - v2.0.2',
-        link: 'https://github.com/igorskyflyer/npm-astro-render-component/releases/tag/v2.0.2'
-      }
-    ]
+        link: 'https://github.com/igorskyflyer/npm-astro-render-component/releases/tag/v2.0.2',
+      },
+    ],
   },
   {
     category: 'identity',
     date: '2026-07-04',
     title: 'Became a Verified Entity on Google /g/11kc3sl0nv',
-    titleLink: 'https://www.google.com/search?kgmid=/g/11kc3sl0nv'
+    titleLink: 'https://www.google.com/search?kgmid=/g/11kc3sl0nv',
   },
   {
     category: 'contribution',
@@ -64,33 +64,33 @@ export const activities: IActivityItem[] = [
         links: [
           {
             text: '#4007',
-            url: 'https://github.com/Devolutions/UniGetUI/issues/4007'
-          }
-        ]
+            url: 'https://github.com/Devolutions/UniGetUI/issues/4007',
+          },
+        ],
       },
       {
         text: 'Fixed UI ⇔ state mismatch for upgradable packages in Avalonia/legacy modes',
         links: [
           {
             text: '#4793',
-            url: 'https://github.com/Devolutions/UniGetUI/issues/4793'
+            url: 'https://github.com/Devolutions/UniGetUI/issues/4793',
           },
           {
             text: '#4009',
-            url: 'https://github.com/Devolutions/UniGetUI/issues/4009'
-          }
-        ]
+            url: 'https://github.com/Devolutions/UniGetUI/issues/4009',
+          },
+        ],
       },
       {
         text: 'Revised and fixed the Serbian translation',
         links: [
           {
             text: '#4590',
-            url: 'https://github.com/Devolutions/UniGetUI/issues/4590'
-          }
-        ]
-      }
-    ]
+            url: 'https://github.com/Devolutions/UniGetUI/issues/4590',
+          },
+        ],
+      },
+    ],
   },
   {
     category: 'repository',
@@ -102,11 +102,11 @@ export const activities: IActivityItem[] = [
         links: [
           {
             text: '@igorskyflyer/dotfiles',
-            url: 'https://github.com/igorskyflyer/dotfiles'
-          }
-        ]
-      }
-    ]
+            url: 'https://github.com/igorskyflyer/dotfiles',
+          },
+        ],
+      },
+    ],
   },
   {
     category: 'release',
@@ -118,31 +118,35 @@ export const activities: IActivityItem[] = [
         links: [
           {
             text: 'v3.0.0 release notes',
-            url: 'https://github.com/igorskyflyer/commoji/releases/tag/v3.0.0'
-          }
-        ]
-      }
-    ]
+            url: 'https://github.com/igorskyflyer/commoji/releases/tag/v3.0.0',
+          },
+        ],
+      },
+    ],
   },
   {
     category: 'package',
     date: '2025-08-21',
-    title: 'Executing scope-migration',
+    title: 'Executing scope-migration (91% completed)',
     details: [
       {
         text: 'Migrating packages from @igor.dvlpr to @igorskyflyer and adapting all npm packages to security requirements',
         links: [
           {
             text: '@igor.dvlpr',
-            url: 'https://www.npmjs.com/~igor.dvlpr'
+            url: 'https://www.npmjs.com/~igor.dvlpr',
           },
           {
             text: '@igorskyflyer',
-            url: 'https://www.npmjs.com/~igorskyflyer'
-          }
-        ]
-      }
-    ]
+            url: 'https://www.npmjs.com/~igorskyflyer',
+          },
+          {
+            text: 'Official tracker',
+            url: 'https://github.com/igorskyflyer/project-nextwave/milestone/1',
+          },
+        ],
+      },
+    ],
   },
   {
     category: 'contribution',
@@ -155,11 +159,11 @@ export const activities: IActivityItem[] = [
         links: [
           {
             text: 'v1.129.0 milestone',
-            url: 'https://github.com/microsoft/vscode/milestone/435'
-          }
-        ]
-      }
-    ]
+            url: 'https://github.com/microsoft/vscode/milestone/435',
+          },
+        ],
+      },
+    ],
   },
   {
     category: 'contribution',
@@ -172,15 +176,15 @@ export const activities: IActivityItem[] = [
         links: [
           {
             text: 'PR #3040',
-            url: 'https://github.com/npmx-dev/npmx.dev/pull/3040'
+            url: 'https://github.com/npmx-dev/npmx.dev/pull/3040',
           },
           {
             text: 'v0.17.1 release',
-            url: 'https://github.com/npmx-dev/npmx.dev/releases/tag/v0.17.1'
-          }
-        ]
-      }
-    ]
+            url: 'https://github.com/npmx-dev/npmx.dev/releases/tag/v0.17.1',
+          },
+        ],
+      },
+    ],
   },
   {
     category: 'publication',
@@ -190,8 +194,8 @@ export const activities: IActivityItem[] = [
       'https://www.linkedin.com/pulse/pnpm-11120-self-update-crash-cannot-use-operator-fix-dimitrijevi%25C4%2587-wpchf/',
     details: [
       {
-        text: 'Documented and provided a fix for a pnpm v11.12.0 self-update crash'
-      }
-    ]
-  }
+        text: 'Documented and provided a fix for a pnpm v11.12.0 self-update crash',
+      },
+    ],
+  },
 ] as const
