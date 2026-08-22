@@ -27,16 +27,16 @@ const schemaData = {
       'JavaScript',
       'AST Compilers',
       'Domain Specific Languages',
-      'Developer Experience'
+      'Developer Experience',
     ],
     hasCredential: [
       {
         '@type': 'EducationalOccupationalCredential',
         credentialCategory: 'degree',
-        name: 'BSc (Hons) in IT & Software Engineering (360 ECTS)'
-      }
-    ]
-  }
+        name: 'BSc (Hons) in IT & Software Engineering (360 ECTS)',
+      },
+    ],
+  },
 }
 ---
 
@@ -45,7 +45,8 @@ const schemaData = {
   description={description}
   keywords={keywords}
   heading={heading}
-  tagline={tagline}>
+  tagline={tagline}
+>
   <script
     is:inline
     type="application/ld+json"
@@ -82,7 +83,8 @@ const schemaData = {
       <ul class="impact-list">
         <li>
           <a
-            href="https://www.jsdelivr.com/package/gh/igorskyflyer/npm-scrollend-polyfill">
+            href="https://www.jsdelivr.com/package/gh/igorskyflyer/npm-scrollend-polyfill"
+          >
             <strong>Scrollend Polyfill</strong>
           </a>: Powering <code>3.975M</code> yearly requests with <code
             >+49,500%</code
@@ -101,7 +103,8 @@ const schemaData = {
             <strong>Visual Studio Code Extensions</strong>
           </a>: <code>363.5K+</code> installs as Verified Publisher, including flagship
           <a
-            href="https://marketplace.visualstudio.com/items?itemName=igordvlpr.open-in-browser">
+            href="https://marketplace.visualstudio.com/items?itemName=igordvlpr.open-in-browser"
+          >
             <strong>Open in Browser</strong>
           </a>.
         </li>
@@ -152,112 +155,7 @@ const schemaData = {
       </p>
     </section>
 
-    <section class="section-block">
-      <h2>Current Roles</h2>
-      <div class="role-card">
-        <h3>Senior Full-Stack Engineer</h3>
-        <p class="role-subtitle">
-          SissiS (Luxury Retail) &amp; Sensomed (Healthcare)
-        </p>
-        <p class="role-focus">
-          Focus: WordPress/WooCommerce platform engineering, backend automation,
-          security hardening.
-        </p>
-        <ul class="role-details">
-          <li>
-            <strong>SissiS</strong>: Built custom WordPress/WooCommerce plugin
-            suite from scratch (PHP, no third party frameworks) for order export
-            (XML/JSON), CSV based order migration, FTP synced tracking updates,
-            Cron driven automation, and custom HTTP security headers.
-            Multilingual (EN/DE) implemented natively, without translation
-            plugins.
-          </li>
-          <li>
-            <strong>Sensomed</strong>: Delivered WordPress/WooCommerce
-            storefront built from static Photoshop design with custom theme/post
-            templates, product variation and category filtering, Google
-            Translate based multilingual support, and security header hardening.
-            Advised on accessibility improvements.
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section-block">
-      <h2>Dev Setup</h2>
-      <div class="setup-grid">
-        <div class="setup-item">
-          <p class="setup-label">Machine</p>
-          <span class="setup-val">Lenovo IdeaPad 3 15ABA7</span>
-        </div>
-        <div class="setup-item">
-          <p class="setup-label">CPU</p>
-          <span class="setup-val"
-            >AMD Ryzen 7 5825U (Zen 3, 8C/16T, 2.0–4.5 GHz, 7nm)</span
-          >
-        </div>
-        <div class="setup-item">
-          <p class="setup-label">GPU</p>
-          <span class="setup-val">AMD Radeon Graphics (Vega 8, iGPU)</span>
-        </div>
-        <div class="setup-item">
-          <p class="setup-label">RAM</p>
-          <span class="setup-val">16GB DDR4</span>
-        </div>
-        <div class="setup-item">
-          <p class="setup-label">Storage</p>
-          <span class="setup-val">512GB Crucial SSD</span>
-        </div>
-        <div class="setup-item">
-          <p class="setup-label">Display</p>
-          <span class="setup-val">15.6" FHD 1920×1080</span>
-        </div>
-        <div class="setup-item">
-          <p class="setup-label">IDE / Editor</p>
-          <div class="setup-subgrid">
-            <div class="sub-row">
-              <strong>Primary:</strong> VS Code
-              <ul class="setup-nested-list">
-                <li>
-                  Theme: <a
-                    href="https://marketplace.visualstudio.com/items?itemName=igordvlpr.kai-theme"
-                    >Kai</a
-                  >
-                </li>
-                <li>Font: Monaspace Argon</li>
-              </ul>
-            </div>
-            <div class="sub-row">
-              <strong>Other:</strong> Visual Studio, Android Studio
-            </div>
-          </div>
-        </div>
-        <div class="setup-item">
-          <p class="setup-label">Additional IDEs</p>
-          <span class="setup-val">Visual Studio, Android Studio</span>
-        </div>
-        <div class="setup-item">
-          <p class="setup-label">OS</p>
-          <span class="setup-val">Windows, Linux</span>
-        </div>
-        <div class="setup-item">
-          <p class="setup-label">Commits</p>
-          <span class="setup-val"
-            ><a href="https://github.com/igorskyflyer/commoji">Commoji</a></span
-          >
-        </div>
-        <div class="setup-item">
-          <p class="setup-label">Tooling</p>
-          <span class="setup-val"
-            ><a href="https://github.com/igorskyflyer/dotfiles"
-              >@igorskyflyer/dotfiles</a
-            ></span
-          >
-        </div>
-      </div>
-    </section>
-
-    <section class="section-block tech-stack-section">
+    <section class="section-block tech-stack-section" id="tech-stack">
       <h2>Tech Stack</h2>
       <div class="tech-grid">
         <div class="tech-card" style="--theme: #4a90e2">
@@ -331,6 +229,111 @@ const schemaData = {
             <h3>Platforms</h3>
           </div>
           <p>Cloudflare, Vercel, Netlify</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block" id="current-roles">
+      <h2>Current Roles</h2>
+      <div class="role-card">
+        <h3>Senior Full-Stack Engineer</h3>
+        <p class="role-subtitle">
+          SissiS (Luxury Retail) &amp; Sensomed (Healthcare)
+        </p>
+        <p class="role-focus">
+          Focus: WordPress/WooCommerce platform engineering, backend automation,
+          security hardening.
+        </p>
+        <ul class="role-details">
+          <li>
+            <strong>SissiS</strong>: Built custom WordPress/WooCommerce plugin
+            suite from scratch (PHP, no third party frameworks) for order export
+            (XML/JSON), CSV based order migration, FTP synced tracking updates,
+            Cron driven automation, and custom HTTP security headers.
+            Multilingual (EN/DE) implemented natively, without translation
+            plugins.
+          </li>
+          <li>
+            <strong>Sensomed</strong>: Delivered WordPress/WooCommerce
+            storefront built from static Photoshop design with custom theme/post
+            templates, product variation and category filtering, Google
+            Translate based multilingual support, and security header hardening.
+            Advised on accessibility improvements.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section-block" id="dev-setup">
+      <h2>Dev Setup</h2>
+      <div class="setup-grid">
+        <div class="setup-item">
+          <p class="setup-label">Machine</p>
+          <span class="setup-val">Lenovo IdeaPad 3 15ABA7</span>
+        </div>
+        <div class="setup-item">
+          <p class="setup-label">CPU</p>
+          <span class="setup-val"
+            >AMD Ryzen 7 5825U (Zen 3, 8C/16T, 2.0–4.5 GHz, 7nm)</span
+          >
+        </div>
+        <div class="setup-item">
+          <p class="setup-label">GPU</p>
+          <span class="setup-val">AMD Radeon Graphics (Vega 8, iGPU)</span>
+        </div>
+        <div class="setup-item">
+          <p class="setup-label">RAM</p>
+          <span class="setup-val">16GB DDR4</span>
+        </div>
+        <div class="setup-item">
+          <p class="setup-label">Storage</p>
+          <span class="setup-val">512GB Crucial SSD</span>
+        </div>
+        <div class="setup-item">
+          <p class="setup-label">Display</p>
+          <span class="setup-val">15.6" FHD 1920×1080</span>
+        </div>
+        <div class="setup-item">
+          <p class="setup-label">IDE / Editor</p>
+          <div class="setup-subgrid">
+            <div class="sub-row">
+              <strong>Primary:</strong> VS Code
+              <ul class="setup-nested-list">
+                <li>
+                  Theme: <a
+                    href="https://marketplace.visualstudio.com/items?itemName=igordvlpr.kai-theme"
+                    >Kai</a
+                  >
+                </li>
+                <li>Font: Monaspace Argon</li>
+              </ul>
+            </div>
+            <div class="sub-row">
+              <strong>Other:</strong> Visual Studio, Android Studio
+            </div>
+          </div>
+        </div>
+        <div class="setup-item">
+          <p class="setup-label">Additional IDEs</p>
+          <span class="setup-val">Visual Studio, Android Studio</span>
+        </div>
+        <div class="setup-item">
+          <p class="setup-label">OS</p>
+          <span class="setup-val">Windows, Linux</span>
+        </div>
+        <div class="setup-item">
+          <p class="setup-label">Commits</p>
+          <span class="setup-val"
+            ><a href="https://github.com/igorskyflyer/commoji">Commoji</a></span
+          >
+        </div>
+        <div class="setup-item">
+          <p class="setup-label">Tooling</p>
+          <span class="setup-val"
+            ><a href="https://github.com/igorskyflyer/dotfiles"
+              >@igorskyflyer/dotfiles</a
+            ></span
+          >
         </div>
       </div>
     </section>
